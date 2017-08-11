@@ -52,7 +52,7 @@
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    max-width: 100%;
+    max-width: 150%;
     height:auto;
 }
 
@@ -167,6 +167,15 @@
 .featured-products-title:hover span.icon-review{
 	margin-top:20px;
 	transition: all 200ms ease;
+}
+
+.treatments-column h3 a {
+	color: pink;
+	font-size: 18px;		
+}
+
+.treatments-column h3{
+	margin: 10px 0;
 }
 
 
