@@ -78,14 +78,13 @@ body.logged-in{
 	margin-bottom:20px;
 }
 
-.featured-video{
-	height:240px;
+.featured-video {
 	position:relative;
 }
 
-.featured-video img{
-	height:100%;
-	width:auto;
+.featured-video img {
+	height:auto;
+	width:100%;
 	position:absolute;
 }
 
