@@ -4,10 +4,10 @@
 			<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 			<?php if ( !has_post_thumbnail() ): ?><?php echo bi_get_post_image();?>
 			<?php else:?><?php the_post_thumbnail();?><?php endif;?>
-				<!--<div class="featured-video-title">
+				<div class="featured-video-title1">
 					<span><?php the_title();?></span>
 					<span class="icon-play"><i class="fa fa-play-circle-o" aria-hidden="true"></i></span>						
-				</div>-->
+				</div>
 			</a>
 		</div>
 	</div>
