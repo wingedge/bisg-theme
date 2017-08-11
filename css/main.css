@@ -85,9 +85,19 @@ body.logged-in{
 .featured-video img {
 	height:auto;
 	width:100%;
-	position:absolute;
 }
-
+.featured-video .fa.fa-play-circle-o {
+  color: #fff;
+  font-size: 50px;
+  left: 44%;
+  position: absolute;
+  top: 38%;
+  opacity:0;
+  transition:	all 400ms ease;
+}
+.featured-video:hover .fa.fa-play-circle-o {
+  opacity:1;
+}
 .featured-video-title {
 	background: rgba(0, 0, 0, 0.5);
 	width: 100%;
