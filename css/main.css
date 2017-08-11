@@ -178,6 +178,15 @@
 	margin: 10px 0;
 }
 
+.sidebar img{
+	max-width:100%;
+	height:auto;
+}
+
+.sidebar .bi-widget{
+	margin-bottom:20px;
+}
+
 
 /*BELOW DESKTOP SCREENS*/
 @media all and (min-width:961px) {

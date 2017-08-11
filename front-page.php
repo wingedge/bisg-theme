@@ -99,10 +99,12 @@
       </div>
     </div>
     <div id="sidebar" class="sidebar col-md-3">
-      <div class="row">
-      <div class="side-box">&nbsp;</div>
-      <div class="side-box">&nbsp;</div>
-      <div class="side-box">&nbsp;</div>
+      <div class="container-sidebar">
+        <!--
+        <div class="side-box">&nbsp;</div>
+        <div class="side-box">&nbsp;</div>
+        <div class="side-box">&nbsp;</div>
+        -->
         <?php get_sidebar(); ?>
       </div>
     </div>
