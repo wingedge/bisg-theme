@@ -197,3 +197,24 @@ function bi_display_products(){
     	wp_reset_postdata();
 	}		
 }
+
+function bi_display_product_sidebar(){
+	$args = array(
+		//'category_name' 	=> 'Tried Tested Loved',
+		'posts_per_page' 	=> 4,
+		'post_type'			=> 'product',
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',		
+	);
+
+	$query = new WP_Query( $args );	
+	$postCtr=1;
+	if ($query->have_posts()) {		
+    	while ($query->have_posts()) {       	
+        	$query->the_post();       	
+        	include(locate_template('section/sidebar-products.php'));
+        	$postCtr++;
+    	}
+    	wp_reset_postdata();
+	}		
+}

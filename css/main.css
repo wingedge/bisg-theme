@@ -1,3 +1,8 @@
+
+body.logged-in{
+	padding-top: 30px;
+}
+
 #masthead {
 	width: 100%;
 	background: #fff;
@@ -5,7 +10,7 @@
 }
 
 .site-footer{
-	background:##ededed;
+	background:#ededed;
 }
 
 .copyright{
@@ -57,7 +62,7 @@
 }
 
 .featured-item {
-	max-height: 180px;
+	max-height: 240px;
 	border: 1px solid #ccc;
 	overflow: hidden;
 	vertical-align:middle;
@@ -120,6 +125,8 @@
 	position: relative;
 	text-align: center;
 	vertical-align: middle;
+	width: 100%;
+	border: 1px solid #ccc;
 }
 
 .featured-products img {
@@ -187,9 +194,38 @@
 	margin-bottom:20px;
 }
 
+.our-partners a{
+	display:inline-block;
+	position:relative;
+	min-height: 150px;
+	width:100%;
+	overflow: hidden;
+}
+.our-partners a img{
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%, -50%);
+}
+
+
+#wpadminbar #wp-admin-bar-customize > .ab-item, 
+#wpadminbar #wp-admin-bar-edit > .ab-item, 
+#wpadminbar #wp-admin-bar-my-account > .ab-item, 
+#wpadminbar #wp-admin-bar-my-sites > .ab-item, 
+#wpadminbar #wp-admin-bar-site-name > .ab-item {
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	width: 40px;
+	padding: 0;
+	color: #a0a5aa;
+	position: relative;
+}
+
 
 /*BELOW DESKTOP SCREENS*/
-@media all and (min-width:961px) {
+@media all and (max-width:960px) {
 	.site-header.affix {
 		position: static;
 	}
