@@ -1,0 +1,183 @@
+#masthead {
+	width: 100%;
+	background: #fff;
+	z-index: 10;
+}
+
+.site-footer{
+	background:##ededed;
+}
+
+.copyright{
+	background:none;
+}
+
+#copyright p, #copyright ul li a {
+    font-size: 12px;   
+    color: #b0b0b0;
+    font-style: normal;
+    font-weight: 400;
+    text-align: left;
+    text-transform: none;
+}
+
+.category-container{
+	margin-bottom:20px;
+}
+
+.category-title a{
+	font-size:18px;
+}
+
+.front-category-image {
+	min-height: 280px;
+	position: relative;
+	background-position: center center;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+    -o-background-size: cover;
+  	background-size: cover;
+}
+
+.scale-image {
+	position: relative;
+	height: 70px;
+	width:100%;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.scale-image img{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    max-width: 100%;
+    height:auto;
+}
+
+.featured-item {
+	max-height: 180px;
+	border: 1px solid #ccc;
+	overflow: hidden;
+	vertical-align:middle;
+}
+
+.featured-item img {
+	height: 100%;
+	width: auto;
+	vertical-align: middle;
+}
+
+.main-banner{
+	margin-bottom:20px;
+}
+
+.featured-video{
+	height:240px;
+	position:relative;
+}
+
+.featured-video img{
+	height:100%;
+	width:auto;
+	position:absolute;
+}
+
+.featured-video-title {
+	background: rgba(0, 0, 0, 0.5);
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	border-bottom: 40px #000 solid;
+	border-top: 38px #000 solid;
+}
+
+.featured-video-title:hover{
+	background: rgba(0,0,0,0.2);
+	transition:	all 400ms ease;
+}
+
+.featured-video-title span {
+	text-align: center;
+	color: #fff;
+	margin: 15px 10px 0;
+	display: inline-block;
+	font-size: 18px;
+	text-shadow: 1px 1px 3px #000;
+}
+
+.featured-video-title span.icon-play {
+	position: absolute;
+	left: 37%;
+	bottom: 0px;
+	font-size: 50px;
+}
+
+
+.featured-products {
+	height: 220px;
+	position: relative;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.featured-products img {
+	height: 100%;
+	width: auto;
+	background:1px solid #ccc;
+}
+
+.featured-products-title {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgb(232, 0, 98, 0.25);
+	text-align: 0;
+	top: 56%;
+	text-align: center;
+}
+
+.featured-products-title span {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	color: #fff;
+	text-shadow: 1px 1px 1px #000;
+	font-size: 16px;
+	line-height: 100%;
+}
+
+.featured-products-title span.icon-review {
+	font-size: 17px;
+	color: #fff;
+	border: 1px solid #fff;
+	display: inline-block;
+	width: 80%;
+	border-radius: 16px;
+	background: rgba(204, 7, 30, 0.5);
+	margin-top: 300px
+}
+
+.featured-products-title:hover{
+	top:0;
+	transition: all 200ms ease;
+}
+.featured-products-title:hover span.icon-review{
+	margin-top:20px;
+	transition: all 200ms ease;
+}
+
+
+/*BELOW DESKTOP SCREENS*/
+@media all and (min-width:961px) {
+	.site-header.affix {
+		position: static;
+	}
+
+	.pink-dashed span{
+		font-size:22px;
+	}
+
+} 
