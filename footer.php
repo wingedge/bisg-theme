@@ -53,14 +53,18 @@
   </div>
 </div>
 <div class="copyright">
-  <div class="container"><div class="row">
-    <div class="col-md-12">
-      Copyright &copy; <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Beauty Insider <?php echo date('Y');?></a>.         
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        Copyright &copy; <a href="<?php echo esc_url( home_url( '/' ) ); ?>">Beauty Insider <?php echo date('Y');?></a>.         
         All Rights Reserved. Designed By: <a href="http://mapletreemedia.com/">Mapletree Media Pte Ltd</a>
+      </div>
     </div>
   </div>
 </div>
 <!-- canvass-->
+
+
 
 <?php wp_footer(); ?>
 </body></html>
