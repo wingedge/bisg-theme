@@ -6,7 +6,12 @@ body.logged-in{
 #masthead {
 	width: 100%;
 	background: #fff;
-	z-index: 10;
+	z-index: 100;
+	
+}
+
+.site-header.affix{
+	transition: all 800ms ease;
 }
 
 .site-footer{
