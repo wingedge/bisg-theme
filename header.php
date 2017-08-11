@@ -19,19 +19,23 @@ html {
 </style>
 </head>
 <body <?php body_class(); ?>>
+<?php /* disable the canvass menu 
 <div class="navmenu navmenu-default navmenu-fixed-left offcanvas">
   <?php get_template_part('section/nav','offcanvass');?>
 </div>
+*/?>
 <div class="canvas">
 <div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="250">
   <div class="container">
     <div class="row">
       <div id="site-logo" class="col-sm-6">
+        <?php /* disable the canvass menu 
         <button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".navmenu" data-canvas="body"> 
         <span class="icon-bar"></span>
         <span class="icon-bar"></span> 
         <span class="icon-bar"></span> 
         </button>
+        */ ?>
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <img src="<?php echo get_theme_file_uri( '/img/newlogo.png' ); ?>" class="img-responsive site-logo-img"/> </a> </div>
       <div id="site-topmenu" class="col-sm-6">
         <?php //get_template_part('section/nav','top');?>
@@ -48,10 +52,10 @@ html {
             <li><a href="http://betabisg.mapletreemedia.com/professionals">Professional</a></li>
           </ul>
         </div>
-      </div>
+      </div> 
     </div>
   </div>
-  <div id="main-nav" class="main-navigation hidden-xs clearfix">
+  <div id="main-nav" class="main-navigation clearfix">
     <div class="container">
       <div class="row">
         <?php get_template_part('section/nav','main');?>
