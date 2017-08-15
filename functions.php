@@ -88,15 +88,28 @@ add_action( 'wp_enqueue_scripts', 'bisg_custom_script', 100 );
 
 add_action( 'widgets_init', 'bisg_theme_widgets_init' );
 function bisg_theme_widgets_init() {
-    register_sidebar( array(
-        'name' => __( 'Main Sidebar', 'bisg' ),
-        'id' => 'sidebar-main',
-        'description' => __( 'Widgets in this area will be shown on all posts and pages.', 'bisg' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>',
-    ) );
+    register_sidebar( 
+    	array(
+        	'name' => __( 'Frontpage Sidebar', 'bisg' ),
+        	'id' => 'sidebar-main',
+        	'description' => __( 'Widgets in this area will be shown on the front page.', 'bisg' ),
+        	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+    	)
+    );
+    register_sidebar( 
+    	array(
+        	'name' => __( 'Category Sidebar', 'bisg' ),
+        	'id' => 'sidebar-category',
+        	'description' => __( 'Widgets in this area will be shown on category pages.', 'bisg' ),
+        	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+    		),
+    );
 }
 
 function bisg_dummy($str,$style){
