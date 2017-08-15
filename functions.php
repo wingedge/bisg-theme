@@ -170,7 +170,7 @@ function bi_display_featured(){
 	}		
 }
 
-function bi_display_popular_videos($args=NULL){
+function bi_display_popular_videos($args=array()){
 	$default = array(
 		//'category_name' 	=> 'featured',
 		'posts_per_page' 	=> 10,
