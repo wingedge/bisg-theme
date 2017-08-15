@@ -2,25 +2,22 @@
 <?php if ( is_active_sidebar( 'sidebar-main' ) ) : ?>
 <?php dynamic_sidebar( 'sidebar-main' ); ?>
 <?php else:?>
+
 <div class="row">
   <div class="col-md-12 s-widget">
     <div class="find-exact-what-you-need">
       <h1>Find Exactly What You Need!</h1>
     </div>
   </div>
-  <div class="col-md-12 s-widget">
-    <div class="recent-review">
+  <div class="col-md-12 recent-review s-widget">
+    <div class="recent-review-box">
       <h1>Recent Reviews</h1>
       <p>Real women talk about products and treaments</p>
-      <div class="recent-review-box">
-        <img src="<?php bloginfo( 'template_url' ); ?>/img/Shea-Butter-Hand-Cream.jpg"/>
-      	<strong>Thick and non sticky</strong>
-        <span>L'OCCITANE Shea Butter Hand Cream</span>
-        <div class="recent-review-comment-box">
-        <img src="<?php bloginfo( 'template_url' ); ?>/img/picture.jpg"/>
-        <i>Shi Hui Tan</i>
-        <p>I like how it is non sticky and really thick. Really helped my dry hands to survive in the air-conditioned office or in cold countries. In addition to that, it gets absorbed into my skin really quickly thus it is not sticky at all.</p>
-        </div>
+      <div class="recent-review-product-box">
+      <img src="<?php bloginfo( 'template_url' ); ?>/img/Shea-Butter-Hand-Cream.jpg"/> <strong>Thick and non sticky</strong> <span>L'OCCITANE Shea Butter Hand Cream</span> </div>
+      <div class="recent-review-comment-box">
+      <img src="<?php bloginfo( 'template_url' ); ?>/img/picture.jpg"/> <i>Shi Hui Tan</i>
+      <p>I like how it is non sticky and really thick. Really helped my dry hands to survive in the air-conditioned office or in cold countries. In addition to that, it gets absorbed into my skin really quickly thus it is not sticky at all.</p>
       </div>
     </div>
   </div>
