@@ -170,15 +170,18 @@ function bi_display_featured(){
 	}		
 }
 
-function bi_display_popular_videos(){
-	$args = array(
+function bi_display_popular_videos($args=NULL){
+	$default = array(
 		//'category_name' 	=> 'featured',
 		'posts_per_page' 	=> 10,
 		'post_type'			=> 'post',
 		'order' 			=> 'DESC',
 		'orderby'			=> 'date',
-		'category_name'		=> 'most-popular-video',		
+		'category_name'		=> 'most-popular-video',	
+		'file_template'	 	=> 'section/frontpage-video.php',
 	);
+
+	$args = array_merge($default,$args);
 
 	$query = new WP_Query( $args );	
 	$postCtr=1;

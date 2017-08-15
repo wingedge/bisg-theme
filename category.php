@@ -6,10 +6,10 @@
 	</div>
 	<div class="row">
 		<div id="category-main-slider" class="category-main-slider col-md-5">
-			slider	
+			<h2><?php ucwords(single_cat_title());?></h2>
 		</div>
 		<div id="category-articles" class="category-articles col-md-4">
-			latest articles
+			<h2>Latest in <?php ucwords(single_cat_title());?></h2>
 		</div>
 		<div id="category-articles" class="category-articles col-md-3">
 			<?php get_sidebar('category');?>
