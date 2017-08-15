@@ -526,6 +526,18 @@ border: medium none;
 .subscribe-form input[type="button"]:hover {
 	background:#111;
 }
+.treatments-column > h3 {
+  padding: 0;
+  margin: 0;
+  margin-top: 5px;
+}
+.treatments-column > h3 a {
+  padding: 0;
+  margin: 0;
+  display:block;
+  font-size: 21px;
+  color: #e80062;
+}
 @media all and (max-width:767px) {
  #site-topmenu {
  display:none;
