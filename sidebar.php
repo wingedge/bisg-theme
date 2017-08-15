@@ -14,7 +14,7 @@
   <div class="col-md-12 s-widget">
     <div> <img src="<?php bloginfo( 'template_url' ); ?>/img/Award-winners-1.jpeg"/> </div>
   </div>
-  <div class="col-md-12 s-widget">
+  <div class="col-md-12 s-featured-video s-widget">
     <div class="featured-video-container slick-slider-one" id="sidebar-product-carousel">
       <?php bi_display_product_sidebar();?>
     </div>

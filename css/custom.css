@@ -540,12 +540,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', end
   margin-bottom: 25px;
 }
 .find-exact-what-you-need > h1 {
+  background: rgba(0, 0, 0, 0) url("../img/redline.jpg") no-repeat scroll center bottom;
   color: #666;
   font-family: "Playfair Display",serif;
+  font-size: 45px;
   font-style: italic;
   font-weight: 700;
+  padding-bottom: 35px;
   text-align: center;
-  background:url(../img/redline.jpg) bottom center no-repeat;
+}
+.sidebar-products-title {
+  background: #e80062 none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  font-size: 15px;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none !important;
+}
+.col-md-12.s-featured-video.s-widget {
+  padding: 0!important;
 }
 @media all and (max-width:767px) {
  #site-topmenu {
