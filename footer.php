@@ -75,7 +75,7 @@
         <input type="text" value="enter your email addess" />
         <input name="" type="button" value="subscribe now" />
         </form>
-        <h3 class="footer-sub-title">Advertise with us Email or fill out the form here</h3>
+        <h3 class="footer-sub-title">Advertise with us <a href="mailto:sean@mapletreemedia.com">Email </a> or fill out the form <a href="http://beautyinsider.sg/advertise-with-us/">here</a></h3>
       </div>
     </div>
   </div>
