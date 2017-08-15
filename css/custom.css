@@ -603,9 +603,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', end
   font-weight: 500;
 } 
 .star-rating {
-    text-align: center;
-    font-size: 29px;
-    color: #fff68f;
+  color: #fff68f;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.star-rating .fa {
+  margin: 0 2px;
+}
+.star-rating .fa.fa-star.grey-star {
+  color: #ccc;
 }
 .recent-review.s-widget > div {
   background: #e80062 none repeat scroll 0 0;
