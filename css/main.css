@@ -871,12 +871,3 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	position: relative;
 }
 
-/*BELOW DESKTOP SCREENS*/
-@media all and (max-width:960px) {
- .site-header.affix {
- position: static;
-}
- .pink-dashed span {
- font-size:22px;
-}
-}

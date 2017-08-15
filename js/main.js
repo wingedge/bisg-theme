@@ -19,7 +19,7 @@ $j(document).ready(function(){
 	        slidesToShow: 3,
 	        slidesToScroll: 3,
 	        infinite: true,
-	        dots: true
+	        dots: false
 	      }
 	    },
 	    {
@@ -57,7 +57,7 @@ $j(document).ready(function(){
 	        slidesToShow: 3,
 	        slidesToScroll: 3,
 	        infinite: true,
-	        dots: true
+	        dots: false
 	      }
 	    },
 	    {
@@ -95,7 +95,7 @@ $j(document).ready(function(){
 	        slidesToShow: 1,
 	        slidesToScroll: 1,
 	        infinite: true,
-	        dots: true
+	        dots: false
 	      }
 	    },
 	    {

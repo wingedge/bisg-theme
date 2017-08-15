@@ -80,13 +80,13 @@ function bisg_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'bisg_scripts' );
 
-function bisg_custom_script(){
+function bisg_load_theme(){
 	// load it last
     wp_enqueue_style( 'bisgtheme-main', get_theme_file_uri( '/css/main.css' ), array(), '1.0' );
-	wp_enqueue_style('custom-style',get_stylesheet_directory_uri().'/css/custom.css');
+	wp_enqueue_style('responsive-style',get_stylesheet_directory_uri().'/css/responsive.css');
 }
 
-add_action( 'wp_enqueue_scripts', 'bisg_custom_script', 100 ); 
+add_action( 'wp_enqueue_scripts', 'bisg_load_theme', 100 ); // load last
 
 
 add_action( 'widgets_init', 'bisg_theme_widgets_init' );
