@@ -24,15 +24,17 @@
 					    'posts_per_page' 	=> 3,
 					    'category_name' 	=> NULL, //reset
 					    'file_template'	 	=> 'section/category-video.php',
+					    /* no tax yet, not finished with recategorizing
 					    'tax_query' 		=> array( array(
 										            'taxonomy' => 'category',
 										            'field' => 'slug',
 										            'terms' => 'makeup-videos',
-										            //'operator' => 'AND'
-						))
+										            //'operator' => 'AND' 
+						))*/
 					);
 				?>
 				<?php bi_display_popular_videos($videosArgs);?>
+				
 			</div>
 			
 		</div>
@@ -45,12 +47,14 @@
 					'post_type'			=> 'product',			    
 				    'category_name' 	=> NULL, //reset
 				    'file_template'	 	=> 'section/category-products.php',
+				    /*
 				    'tax_query' 		=> array( array(
 									            'taxonomy' => 'category',
 									            'field' => 'slug',
 									            'terms' => 'makeup-videos',
 									            //'operator' => 'AND'
-					))
+									           
+					)) */
 				);
 			?>
 			<?php bi_display_products($productArgs);?>
