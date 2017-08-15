@@ -17,7 +17,7 @@
       	<img src="<?php bloginfo( 'template_url' ); ?>/img/Shea-Butter-Hand-Cream.jpg"/> 
       	<strong>Thick and non sticky</strong> 
       	<span>L'OCCITANE Shea Butter Hand Cream</span>
-      	<div class="star-rating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></div>
+      	<div class="star-rating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></div> 
       </div>
       <div class="recent-review-comment-box">
       <img src="<?php bloginfo( 'template_url' ); ?>/img/picture.jpg"/> <i>Shi Hui Tan</i>
