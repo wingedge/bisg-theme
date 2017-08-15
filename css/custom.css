@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:400,700');
 @import url('https://fonts.googleapis.com/css?family=Catamaran:300,400,500,600,700,800');
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700i');
 body {
 	font-family: "Catamaran", sans-serif;
 	font-size:16px;
@@ -494,16 +494,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	text-transform: uppercase;
 }
 .subscribe-form input[type="text"] {
-  border: medium none;
-  color: #666;
-  font-size: 13px;
-  line-height: 1.2;
-  margin-bottom: 5px;
-  margin-top: 15px;
-  padding: 15px 10px;
-  text-align: center;
-  text-transform: uppercase;
-  width: 100%;
+	border: medium none;
+	color: #666;
+	font-size: 13px;
+	line-height: 1.2;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	padding: 15px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
 }
 .subscribe-form input[type="button"] {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e02f78+0,e24386+100 */
@@ -512,29 +512,40 @@ background: rgb(224,47,120); /* Old browsers */
 	background: -webkit-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); /* IE6-9 */
-border: medium none;
-    color: #fff;
-    font-weight: 500;
-    line-height: 1;
-    padding: 15px 5px;
-    text-transform: uppercase;
-    width: 100%;
+	border: medium none;
+	color: #fff;
+	font-weight: 500;
+	line-height: 1;
+	padding: 15px 5px;
+	text-transform: uppercase;
+	width: 100%;
 	transition: all 400ms ease;
 }
 .subscribe-form input[type="button"]:hover {
 	background:#111;
 }
 .treatments-column > h3 {
-  padding: 0;
-  margin: 0;
-  margin-top: 5px;
+	padding: 0;
+	margin: 0;
+	margin-top: 5px;
 }
 .treatments-column > h3 a {
-  padding: 0;
-  margin: 0;
-  display:block;
-  font-size: 21px;
-  color: #e80062;
+	padding: 0;
+	margin: 0;
+	display:block;
+	font-size: 21px;
+	color: #e80062;
+}
+.sidebar .s-widget > div {
+  margin-bottom: 25px;
+}
+.find-exact-what-you-need > h1 {
+  color: #666;
+  font-family: "Playfair Display",serif;
+  font-style: italic;
+  font-weight: 700;
+  text-align: center;
+  background:url(../img/redline.jpg) bottom center no-repeat;
 }
 @media all and (max-width:767px) {
  #site-topmenu {
