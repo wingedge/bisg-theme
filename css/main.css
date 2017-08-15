@@ -415,6 +415,127 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', end
 	FRONT PAGE 
 */
 
+.category-title {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100&0.8+0,0.8+100 */
+background: -moz-linear-gradient(top, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', endColorstr='#cce80062', GradientType=0 ); /* IE6-9 */
+	text-align: center;
+	margin: 0;
+	padding: 15px 0;
+	z-index:20;
+	position:absoute;
+	left:0;
+	top:0;
+}
+.category-title a {
+	color: #fff;
+	font-family: "Playfair Display", serif;
+	font-size: 24px;
+	text-transform: capitalize;
+	text-decoration: none !important;
+	transition: all 400ms ease;
+}
+.category-title a:hover {
+	opacity:0.8
+}
+.category-article {
+	position: absolute;
+	border: 0;
+	bottom: 0;
+	padding: 15px;
+	width: 100%;
+	min-height: 80%;
+	text-align: center;
+	z-index:15;
+	transition: all 400ms ease;
+	font-family: "Catamaran", sans-serif;
+	opacity:0;
+	transition: all 400ms ease;
+}
+.category-article:hover {
+	background:rgba(231, 0, 98, 0.8);
+	opacity:1;
+}
+.category-article a {
+	color: #fff;
+	display: block;
+	font-size: 15px;
+	line-height: 1.2;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 400ms ease;
+}
+.category-mini-container {
+	background: #f7f7f7 none repeat scroll 0 0;
+	margin-bottom: 5px;
+	max-height: 65px;
+	min-height: 65px;
+	overflow:hidden;
+}
+.category-thumbnail-mini {
+	background: #ccc none repeat scroll 0 0;
+	display: inline-block;
+	min-height: 65px;
+	padding-right: 0;
+}
+.category-mini-article {
+	display: inline-block;
+	margin: 0;
+	padding:0;
+}
+.category-mini-article a {
+	color: #333;
+	display: block;
+	font-family: "Catamaran", sans-serif;
+	font-weight: 400;
+	line-height: 1.2;
+	font-size: 13px;
+	width: 100%;
+	max-width: 93%;
+	padding: 8px;
+	text-decoration:none !important;
+	transition: all 400ms ease;
+}
+.category-mini-article a:hover {
+	color: #e80062;
+}
+.category-columns > div > div {
+	margin-bottom: 15px;
+}
+.pink-dashed {
+	text-align:center !important;
+	width:100%;
+	position:relative;
+	background:url(../img/pink-divider.jpg) repeat-x left center;
+	margin:40px 0;
+	margin-bottom:25px !important;
+}
+.pink-dashed span {
+	background: #fff none repeat scroll 0 0;
+	color: #e80062;
+	display: inline-block;
+	font-family: "Playfair Display", serif;
+	font-size: 32px;
+	padding: 0 30px;
+}
+.home .tp-thumb-title {
+	padding: 10px!important;
+	margin: 0!important;
+	font-family: "Catamaran", sans-serif!important;
+	letter-spacing: 0!important;
+	font-size: 15px!important;
+	text-align: left!important;
+	display: block;
+	transition: all 400ms ease;
+	font-weight: 400!important;
+}
+.home .tp-thumb.selected .tp-thumb-title, .home .tp-thumb .tp-thumb-title:hover {
+	background: #e80062!important;
+	color: #fff!important;
+}
+
 .category-title a {
 	font-size:18px;
 }
