@@ -188,7 +188,7 @@ function bi_display_popular_videos($args=array()){
 	if ($query->have_posts()) {		
     	while ($query->have_posts()) {       	
         	$query->the_post();       	
-        	include(locate_template('section/frontpage-video.php'));
+        	include(locate_template($args['file_template']));
         	$postCtr++;
     	}
     	wp_reset_postdata();
