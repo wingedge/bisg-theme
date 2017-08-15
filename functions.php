@@ -195,21 +195,24 @@ function bi_display_popular_videos($args=array()){
 	}		
 }
 
-function bi_display_products(){
-	$args = array(
+function bi_display_products($arg = array()){
+	$default = array(
 		//'category_name' 	=> 'featured',
 		'posts_per_page' 	=> 10,
 		'post_type'			=> 'product',
 		'order' 			=> 'DESC',
-		'orderby'			=> 'date',		
+		'orderby'			=> 'date',
+		'file_template'		=> 'section/frontpage-products.php',
 	);
+
+	$args = array_merge($default,$args);
 
 	$query = new WP_Query( $args );	
 	$postCtr=1;
 	if ($query->have_posts()) {		
     	while ($query->have_posts()) {       	
         	$query->the_post();       	
-        	include(locate_template('section/frontpage-products.php'));
+        	include(locate_template($args['file_template']));
         	$postCtr++;
     	}
     	wp_reset_postdata();

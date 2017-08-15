@@ -17,7 +17,8 @@
 	</div>
 	<div class="row">
 		<div class="col-md-6 category-videos">
-			<?php ucwords(single_cat_title());?> Videos
+			<h2><?php ucwords(single_cat_title());?> Videos</h2>
+			<div class="category-video-containers row">
 			<?php /*set arguments */
 				$videos = array(
 				    'posts_per_page' 	=> 3,
@@ -33,7 +34,8 @@
 				    )
 				);
 			?>
-			 <?php bi_display_popular_videos($videos);?>
+			<?php bi_display_popular_videos($videos);?>
+			</div>
 			
 		</div>
 		<div class="col-md-6">
