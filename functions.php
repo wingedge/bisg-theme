@@ -52,6 +52,7 @@ require_once('lib/navwalker.php'); // used for bootstrap navigation layout
 require_once('lib/extract-image.php');
 require_once('lib/post-types.php'); // post types
 require_once('lib/taxonomies.php'); // taxonomies (categories/tags)
+require_once('lib/breadcrumbs.php'); // breadcrumbs
 
 function bisg_scripts(){
 	// fonts
