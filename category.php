@@ -18,7 +18,23 @@
 	<div class="row">
 		<div class="col-md-6 category-videos">
 			<?php ucwords(single_cat_title());?> Videos
-			videos here
+			<?php /*set arguments */
+				$videos = array(
+				    'posts_per_page' 	=> 3,
+				    'category_name' 	=> NULL, //reset
+				    'file_template'	 	=> 'section/category-video.php',
+				    'tax_query' 		=> array(
+									        array(
+									            'taxonomy' => 'category',
+									            'field' => 'slug',
+									            'terms' => 'makeup-videos',
+									            //'operator' => 'AND'
+									        )
+				    )
+				);
+			?>
+			 <?php bi_display_popular_videos($videos);?>
+			
 		</div>
 		<div class="col-md-6">
 			<?php ucwords(single_cat_title());?> Products
