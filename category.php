@@ -11,14 +11,19 @@
 		<div id="category-articles" class="category-articles col-md-4">
 			latest articles
 		</div>
-		<div id="category-articles" class="category-articles col-md-4">
+		<div id="category-articles" class="category-articles col-md-3">
 			<?php get_sidebar('category');?>
 		</div>
-
-
-
-
-
+	</div>
+	<div class="row">
+		<div class="col-md-6 category-videos">
+			<?php ucwords(single_cat_title());?> Videos
+			videos here
+		</div>
+		<div class="col-md-6">
+			<?php ucwords(single_cat_title());?> Products
+			products here
+		</div>
 	</div>
 </div>
 
