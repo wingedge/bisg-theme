@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col-md-12">
-        	<div>
+        	<div class="featured-video-container slick-slider-one" id="sidebar-product-carousel">
             	<?php bi_display_product_sidebar();?>
             </div>
         </div>
