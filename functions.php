@@ -98,18 +98,7 @@ function bisg_theme_widgets_init() {
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>',
     	)
-    );
-    register_sidebar( 
-    	array(
-        	'name' => __( 'Category Sidebar', 'bisg' ),
-        	'id' => 'sidebar-category',
-        	'description' => __( 'Widgets in this area will be shown on category pages.', 'bisg' ),
-        	'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</div>',
-			'before_title'  => '<h2 class="widgettitle">',
-			'after_title'   => '</h2>',
-    		),
-    );
+    );   
 }
 
 function bisg_dummy($str,$style){
