@@ -508,6 +508,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
   width: 100%;
 }
 .subscribe-form input[type="button"] {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e02f78+0,e24386+100 */
+background: rgb(224,47,120); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); /* IE6-9 */
 }
 @media all and (max-width:767px) {
  #site-topmenu {
