@@ -97,8 +97,9 @@ function bisg_theme_widgets_init() {
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>',
-    		),
-
+    	)
+    );
+    register_sidebar( 
     	array(
         	'name' => __( 'Category Sidebar', 'bisg' ),
         	'id' => 'sidebar-category',
