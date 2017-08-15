@@ -91,7 +91,7 @@
       </div>
       <div class="row">
         <div class="col-md-12 col-xs-12 treatments-column-content">
-          <h3>More Than Just a Singapore Beauty Magazine</h3>
+          <h2>More Than Just a Singapore Beauty Magazine</h2>
           <p>Beauty Insider is your best source for Singapore beauty reviews on makeup, skincare, haircare, spas and salons. We don’t just give beauty tips and trends — we tell which beauty products and treatments really work!<br>
             Our exclusive Beauty Insider Rewards program also lets you earn points you can exchange for prizes, and the chance to join contests or get special beauty freebies. You can also be selected to join the Beauty Insider Trial team, where you’ll be given beauty samples to review.<br>
             Beauty Insider is your chance to read, discover, and try the best beauty products and treatments in Singapore. Whether you’re looking for a brightening cream, an anti-aging routine, or the latest treatment for acne scars or tighter pores, we are your number one source for Singapore beauty.</p>
