@@ -2,4 +2,4 @@
 	<?php dynamic_sidebar( 'sidebar-category' ); ?>
 <?php else:?>
 	recent articles
-<?php endif;?
+<?php endif; ?>
