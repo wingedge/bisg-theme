@@ -39,7 +39,7 @@ html {
         <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <img src="<?php echo get_theme_file_uri( '/img/newlogo.png' ); ?>" class="img-responsive site-logo-img"/> </a> </div>
       <div id="site-topmenu" class="col-sm-6">
         <?php //get_template_part('section/nav','top');?>
-        <div id="main-toplink">
+        <div id="main-toplink"> 
           <ul>
             <li><a href="http://betabisg.mapletreemedia.com/write-a-review/">Write A Review</a></li>
             <li><a href="http://betabisg.mapletreemedia.com/my-account/">My Account</a></li>
