@@ -16,7 +16,11 @@
         <img src="<?php bloginfo( 'template_url' ); ?>/img/Shea-Butter-Hand-Cream.jpg"/>
       	<strong>Thick and non sticky</strong>
         <span>L'OCCITANE Shea Butter Hand Cream</span>
-        <p>I like how it is non sticky and really thick. Really helped my dry hands to survive in the air-conditioned office or in cold countries. In addition to that, it gets absorbed into my skin really quickly thus it is not sticky at all.<i>Shi Hui Tan</i></p>
+        <div class="recent-review-comment-box">
+        <img src="<?php bloginfo( 'template_url' ); ?>/img/picture.jpg"/>
+        <i>Shi Hui Tan</i>
+        <p>I like how it is non sticky and really thick. Really helped my dry hands to survive in the air-conditioned office or in cold countries. In addition to that, it gets absorbed into my skin really quickly thus it is not sticky at all.</p>
+        </div>
       </div>
     </div>
   </div>
