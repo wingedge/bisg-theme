@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-12">
       <div class="our-partners">        
-        <h4>Our Partners</h4>
+        <h3 class="pink-dashed"><span>Our Partners</span></h3>
         <div id="our_partners" class="text-center"> 
           <div class="col-md-2 col-xs-6">        
             <a href="http://justrunlah.com/" target="_blank" rel="noopener"> 
