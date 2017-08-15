@@ -1,20 +1,288 @@
+/*
+	BASIC ELEMENTS
+*/
+body {
+	font-family: "Catamaran", sans-serif;
+	font-size:16px;
+}
+
+*::before, *::after {
+ box-sizing: border-box;
+}
+
+p {
+	font-family: "Catamaran", sans-serif;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: "Catamaran", sans-serif;
+	font-weight: 500;
+	line-height: 1.1;
+}
+
+img {
+	max-width:100%;
+}
+
 body.logged-in {
 	padding-top: 30px;
 }
+
+
+
+
+/* 
+	HEADER
+*/
+
 #masthead {
 	width: 100%;
 	background: #fff;
 	z-index: 100;
+	padding-top;
 }
 .site-header.affix {
 	transition: all 800ms ease;
+	border-bottom: 1px solid #ccc;
 }
-.site-footer {
-	background:#ededed;
+
+.site-logo-img {
+	margin: 10px 0px;
+	width:auto;
+	max-height:100px;
 }
-.copyright {
-	background:none;
+
+/* SEARCH */
+
+.main-search {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100 */
+background: rgb(198,0,70); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
+#main-search input {
+	border: medium none;
+	border-radius: 1px;
+	color: #999;
+	line-height: 34px;
+	margin: 5px 0;
+	padding: 0 10px;
+	width: 100% !important;
+}
+.social-icons {
+	background-image: url("../img/divider.jpg");
+	border-right: medium none;
+	background-repeat: repeat-y;
+	background-position: center right;
+}
+
+.social-icons, .search-box {
+	margin: 0;
+	padding: 5px 0;
+}
+.social-icons .fa {
+	font-size:inherit !important;
+}
+.socialicons .fa {
+	border: 1px solid #fff;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 14px;
+	height: 27px;
+	line-height: 27px;
+	margin-right: 3px;
+	margin-top: 12px;
+	text-align: center;
+	width: 27px;
+}
+.socialicons > a {
+	display:inline-block;
+	float: left;
+}
+.socialicons span {
+	color: #fff;
+	display: inline-block;
+	float: left;
+	font-family: "Saira Extra Condensed", sans-serif;
+	font-size: 15px;
+	margin-right: 3px;
+	margin-top: 16px;
+}
+.register-btn {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e02f78+0,e24386+100 */
+background: rgb(224,47,120); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); /* IE6-9 */
+	border-radius: 1px;
+	color: #fff !important;
+	display: block;
+	font-family: "Saira Extra Condensed", sans-serif;
+	font-size: 19px !important;
+	line-height: 32px;
+	margin: 10px 0;
+	padding: 0 10px;
+	text-align: center;
+	text-transform: uppercase;
+	border:1px solid #e94c8e;
+	text-decoration:none !important;
+	transition: all 400ms ease;
+}
+.register-btn:hover {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e05991+0,e02f78+100 */
+background: rgb(224,89,145); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', endColorstr='#e02f78', GradientType=0 ); /* IE6-9 */
+}
+
+/* 
+	TOP NAVIGATION 
+*/
+
+.top-navigation a {
+	font-size: 13px;
+	font-weight: 500;
+	font-family: "Catamaran", sans-serif;
+	line-height: 1;
+}
+#main-toplink ul {
+	display: inline-block;
+	margin: 0;
+	padding: 0 10px;
+	vertical-align: top;
+}
+#main-toplink {
+	float: right;
+	padding-top: 18px;
+}
+#main-toplink li {
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+#main-toplink a {
+	color: #973f64;
+	display: block;
+	font-family: "Catamaran", sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	line-height: 1.6;
+	text-transform: uppercase;
+	transition: all 400ms ease;
+	text-decoration:none;
+}
+#main-toplink a:hover {
+	color: #222;
+}
+
+/*
+	MAIN NAVIGATION
+*/
+
+.navbar-nav > li > a {
+	font-family: "Catamaran", sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	color:#222;
+	text-transform:uppercase;
+	transition: all 400ms ease;
+}
+.navbar-nav > li > a:hover {
+	color:#e80062;
+}
+
+.navbar-toggle {
+	float: none;
+	position: absolute;
+	right: 0;
+}
+.navbar-toggle {
+	background: #e80062 none repeat scroll 0 0;
+	margin-right: 10px;
+	padding: 10px;
+}
+.navbar-toggle .icon-bar {
+	background: #fff;
+}
+
+.nav > li > a {
+	font-size: 13px;
+	padding: 10px 15px;
+}
+.nav > li:nth-child(1) > a {
+ padding-left:0;
+}
+.navbar-collapse {
+	padding-left: 0;
+	padding-right: 0;
+}
+.nav.navbar-nav {
+	text-align:left;
+}
+.navbar {
+	border: none;
+	margin-bottom: 0;
+	min-height: inherit;
+}
+#main-nav {
+	background:#f7f7f7;
+}
+
+.navbar-nav > li > ul.sub-menu {
+	display:none;
+	transition: all 400ms ease;
+}
+.navbar-nav > li > ul.sub-menu {
+	background: #e80062 none repeat scroll 0 0;
+	font-size: 12px;
+	line-height: 1;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	text-transform: uppercase;
+	z-index: 999;
+	min-width:130px;
+	transition: all 400ms ease;
+}
+.navbar-nav > li > ul.sub-menu li {
+	margin: 0;
+	padding: 3px 0;
+	list-style:none;
+	transition: all 400ms ease;
+}
+.navbar-nav > li > ul.sub-menu li:hover {
+	background:#ca0055;
+}
+.navbar-nav > li:hover > ul.sub-menu {
+	display:block;
+}
+.navbar-nav > li > ul.sub-menu li a {
+	color: #fff;
+	display: block;
+	padding: 5px 10px;
+	line-height: 1.2;
+	text-decoration:none !important;
+	transition: all 400ms ease;
+}
+.navbar-nav > li > ul.sub-menu li a:hover {
+	color:#ffdfee;
+}
+.navbar-header {
+	position: absolute;
+	z-index: 9999;
+	top: 0;
+	right: 13px;
+	margin-top: -53px;
+}
+
+/*
+	FOOTER
+*/
+
 #copyright p, #copyright ul li a {
 	font-size: 12px;
 	color: #b0b0b0;
@@ -23,9 +291,130 @@ body.logged-in {
 	text-align: left;
 	text-transform: none;
 }
-.category-container {
-	margin-bottom:20px;
+
+.copyright {
+	background: #333 none repeat scroll 0 0;
+	color: #e6e6e6;
+	font-size: 13px;
+	padding: 25px 0;
+	text-align: center;
+	text-transform: uppercase;
 }
+.copyright a {
+	color: #e6e6e6;
+	text-decoration:underline;
+	transition: all 400ms ease;
+}
+.copyright a:hover {
+	color: #fff;
+}
+
+.site-footer {
+	background:#ededed;
+	margin-top: 35px;
+	padding: 25px 0;
+}
+.footer-title {
+	font-size: 21px;
+	margin: 10px 0 15px;
+	padding: 0;
+	text-transform: uppercase;
+}
+.site-footer a, .site-footer strong {
+	color:#e80062;
+}
+.site-footer .layoutbox {
+	font-size: 15px;
+	font-weight: 300;
+}
+.site-footer .layoutbox ul {
+	padding:0;
+	margin:0;
+}
+.site-footer .layoutbox li {
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+.site-footer .layoutbox li a {
+	color:#333;
+}
+.phicon {
+	background: rgba(0, 0, 0, 0) url("../img/phicon.png") no-repeat scroll 0 0 / contain;
+	display: inline-block;
+	height: 30px;
+	margin-right: 5px;
+	width: 30px;
+}
+.biph {
+	line-height: 30px;
+}
+.socialmediaicon {
+	background: rgba(0, 0, 0, 0) url("../img/socialmediaicon.jpg") no-repeat scroll 0 0 / 60px 60px;
+	border-radius: 50%;
+	display: inline-block;
+	height: 30px;
+	margin-right: 5px;
+	width: 30px;
+}
+.socialmediaicon.icon-instagram {
+	background-position: -30px 0;
+}
+.socialmediaicon.icon-youtube {
+	background-position: -30px -30px;
+}
+.socialmediaicon.icon-twitter {
+	background-position: 0 -30px;
+}
+.icon-title {
+	display: inline-block;
+	line-height: 36px;
+	position: absolute;
+}
+.footer-sub-title {
+	font-size: 18px;
+	text-align: center;
+	text-transform: uppercase;
+}
+.subscribe-form input[type="text"] {
+	border: medium none;
+	color: #666;
+	font-size: 13px;
+	line-height: 1.2;
+	margin-bottom: 5px;
+	margin-top: 15px;
+	padding: 15px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	width: 100%;
+}
+.subscribe-form input[type="button"] {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e02f78+0,e24386+100 */
+background: rgb(224,47,120); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); /* IE6-9 */
+	border: medium none;
+	color: #fff;
+	font-weight: 500;
+	line-height: 1;
+	padding: 15px 5px;
+	text-transform: uppercase;
+	width: 100%;
+	transition: all 400ms ease;
+}
+.subscribe-form input[type="button"]:hover {
+	background:#111;
+}
+
+
+
+
+/*
+	FRONT PAGE 
+*/
+
 .category-title a {
 	font-size:18px;
 }
@@ -65,8 +454,15 @@ body.logged-in {
 	width: auto;
 	vertical-align: middle;
 }
+
+.category-container {
+	margin-bottom:20px;
+}
+
+
 .main-banner {
 	margin-bottom:20px;
+	background-color: #ccc;
 }
 .featured-video {
 	position:relative;
@@ -75,6 +471,7 @@ body.logged-in {
 	height:auto;
 	width:100%;
 }
+
 .featured-video .fa.fa-play-circle-o {
 	color: #fff;
 	font-size: 50px;
@@ -112,6 +509,148 @@ body.logged-in {
 	bottom: 0px;
 	font-size: 50px;
 }
+
+.side-box {
+	background: #ccc;
+	min-height: 300px;
+	margin-bottom:10px;
+}
+
+.view-more-cat-btn {
+	background: #e80062;
+	display: block;
+	color: #fff !important;
+	text-decoration:none !important;
+	text-align: center;
+	font-size: 12px;
+	line-height: 2;
+	transition: all 400ms ease;
+}
+.view-more-cat-btn:hover {
+	background: #666;
+}
+.beauty-treatments-title > a {
+	color: #e80062;
+	font-size: 18px;
+}
+.beauty-treatments-title {
+	margin: 5px 0 0;
+	padding: 0;
+}
+.treatments-column > div {
+	background: #faf3f6 none repeat scroll 0 0;
+	font-size: 14px;
+	min-height: 350px;
+	padding: 10px;
+	transition: all 400ms ease;
+}
+.treatments-column > div:hover {
+	background: #fbfbfb!important;
+}
+.featured-item img, .featured-video img {
+	opacity:0.8;
+	transition: all 400ms ease;
+}
+.featured-item img:hover, .featured-video img:hover {
+	opacity:1;
+}
+
+.treatments-column h3 {
+	padding: 0;
+	margin: 0;
+	margin-top: 5px;
+}
+.treatments-column h3 a {
+	padding: 0;
+	margin: 0;
+	display:block;
+	font-size: 21px;
+	color: #e80062;
+}
+.sidebar .s-widget > div {
+  margin-bottom: 25px;
+}
+.find-exact-what-you-need > h1 {
+  background: rgba(0, 0, 0, 0) url("../img/redline.jpg") no-repeat scroll center bottom;
+  color: #666;
+  font-family: "Playfair Display",serif;
+  font-size: 45px;
+  font-style: italic;
+  font-weight: 700;
+  padding-bottom: 35px;
+  text-align: center;
+}
+.sidebar-products-title {
+  background: #e80062 none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  font-size: 15px;
+  padding: 8px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration:none !important;
+}
+.col-md-12.s-featured-video.s-widget {
+  padding: 0!important;
+}
+.recent-review-box > h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 10px 0 5px;
+}
+.recent-review-box {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.recent-review-product-box > strong {
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.recent-review-product-box > span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.recent-review-comment-box {
+  font-size: 13px;
+  background: #ce0057;
+  padding: 10px;
+}
+.recent-review-comment-box > img {
+  float: left;
+  max-width: 55px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.recent-review-comment-box > i {
+  color: #fff68f;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+} 
+.star-rating {
+  color: #fff68f;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.star-rating .fa {
+  margin: 0 2px;
+}
+.star-rating .fa.fa-star.grey-star {
+  color: #ccc;
+}
+.recent-review.s-widget > div {
+  background: #e80062 none repeat scroll 0 0;
+  color: #fff;
+  padding: 15px;
+}
+
 .featured-products {
 	height: 220px;
 	position: relative;
@@ -173,8 +712,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	width: 100%;
 }
 .home .featured-products-title:hover {
-	height: 100% !important;
-	background:#e80062 !important;
+	height: 100%;
+	background:#e80062;
 	padding-top:25px;
 }
 .home .featured-products-title:hover span.fp-title {
@@ -210,6 +749,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	color: #a0a5aa;
 	position: relative;
 }
+
 /*BELOW DESKTOP SCREENS*/
 @media all and (max-width:960px) {
  .site-header.affix {

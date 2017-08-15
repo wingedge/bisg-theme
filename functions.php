@@ -56,7 +56,10 @@ require_once('lib/breadcrumbs.php'); // breadcrumbs
 
 function bisg_scripts(){
 	// fonts
-	wp_enqueue_style( 'bisg-font-monseratt', 'https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700');	
+	//wp_enqueue_style( 'bisg-font-monseratt', 'https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700');	
+	wp_enqueue_style( 'bisg-font-saira', 'https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:400,700');
+	wp_enqueue_style( 'bisg-font-catamaran', 'https://fonts.googleapis.com/css?family=Catamaran:300,400,500,600,700,800');
+	wp_enqueue_style( 'bisg-font-playfair', 'https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
 	// style css
 	wp_enqueue_style( 'bisgtheme-style', get_stylesheet_uri() );
 	wp_enqueue_style( 'bisgtheme-bootstrap', get_theme_file_uri( '/css/bootstrap.min.css' ), array( 'bisgtheme-style' ), '1.0' );	

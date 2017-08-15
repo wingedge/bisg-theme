@@ -34,7 +34,7 @@
 					);
 				?>
 				<?php bi_display_popular_videos($videosArgs);?>
-				
+
 			</div>
 			
 		</div>
@@ -46,7 +46,7 @@
 				    'posts_per_page' 	=> 10,
 					'post_type'			=> 'product',			    
 				    'category_name' 	=> NULL, //reset
-				    'file_template'	 	=> 'section/category-products.php',
+				    'file_template'	 	=> 'section/category-product.php',
 				    /*
 				    'tax_query' 		=> array( array(
 									            'taxonomy' => 'category',
@@ -57,7 +57,7 @@
 					)) */
 				);
 			?>
-			<?php bi_display_products($productArgs);?>
+			<?php bi_display_products($productArgs); ?>
 		</div>
 	</div>
 </div>
