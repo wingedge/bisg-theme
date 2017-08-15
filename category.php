@@ -12,8 +12,13 @@
 			latest articles
 		</div>
 		<div id="category-articles" class="category-articles col-md-4">
-			recent articles
-		</div>		
+			<?php get_sidebar('category');?>
+		</div>
+
+
+
+
+
 	</div>
 </div>
 
