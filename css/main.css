@@ -38,6 +38,7 @@ body.logged-in {
 	-o-background-size: cover;
 	background-size: cover;
 }
+
 .scale-image {
 	position: relative;
 	height: 70px;
