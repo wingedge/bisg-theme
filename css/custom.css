@@ -490,8 +490,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 }
 .footer-sub-title {
 	font-size: 18px;
-	margin: 10px 0 0;
-	padding: 0;
 	text-align: center;
 	text-transform: uppercase;
 }
