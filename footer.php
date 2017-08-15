@@ -38,16 +38,44 @@
   <div class="container">
     <div class="row">
       <div class="col-md-3 layoutbox ">
-        <?php bisg_dummy('FOOTER COLUMN','padding:100px 0;');?>
+        <h3 class="footer-title">Connect with us!</h3>
+       	<ul>
+        	<li class="biph"><a href="#"><span class="phicon"></span><span class="icon-title">BeautyInsider PH</span></a></li>
+            <li><a href="#"><span class="socialmediaicon icon-fb"></span><span class="icon-title">Facebook</span></a></li>
+            <li><a href="#"><span class="socialmediaicon icon-instagram"></span><span class="icon-title">Instagram</span></a></li>
+            <li><a href="#"><span class="socialmediaicon icon-youtube"></span><span class="icon-title">Youtube</span></a></li>
+            <li><a href="#"><span class="socialmediaicon icon-twitter"></span><span class="icon-title">Twitter</span></a></li>
+        </ul>
       </div>
       <div class="col-md-3 layoutbox ">
-        <?php bisg_dummy('FOOTER COLUMN','padding:100px 0;');?>
+        <h3 class="footer-title">Get in touch with us!</h3>
+        <strong>Mapletree Media Pte Ltd</strong><br/>
+        Atrix #01-07,<br/>
+        82 Lorong 23 Geylang<br/>
+        Singapore 388409<br/>
+        <a href="www.mapletreemedia.com">www.mapletreemedia.com</a>
       </div>
       <div class="col-md-3 layoutbox ">
-        <?php bisg_dummy('FOOTER COLUMN','padding:100px 0;');?>
+        <h3 class="footer-title">Quick Links</h3>
+        <ul>
+        	<li><a href="#">Rewards and Redemption</a></li>
+            <li><a href="#">Contributors</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Trial Team Form</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Hey Gorgeous Bag</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Beauty Influencers</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">How to Claim your Rewards</a></li>
+        </ul>
       </div>
-      <div class="col-md-3 layoutbox ">
-        <?php bisg_dummy('FOOTER COLUMN','padding:100px 0;');?>
+      <div class="col-md-3 layoutbox  subscribe-form">        
+        <form>
+        <input type="text" value="enter your email addess" />
+        <input name="" type="button" value="subscribe now" />
+        </form>
+        <h3 class="footer-sub-title">Advertise with us Email or fill out the form here</h3>
       </div>
     </div>
   </div>

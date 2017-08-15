@@ -1,54 +1,43 @@
-
-body.logged-in{
+body.logged-in {
 	padding-top: 30px;
 }
-
 #masthead {
 	width: 100%;
 	background: #fff;
 	z-index: 100;
-	
 }
-
-.site-header.affix{
+.site-header.affix {
 	transition: all 800ms ease;
 }
-
-.site-footer{
+.site-footer {
 	background:#ededed;
 }
-
-.copyright{
+.copyright {
 	background:none;
 }
-
 #copyright p, #copyright ul li a {
-    font-size: 12px;   
-    color: #b0b0b0;
-    font-style: normal;
-    font-weight: 400;
-    text-align: left;
-    text-transform: none;
+	font-size: 12px;
+	color: #b0b0b0;
+	font-style: normal;
+	font-weight: 400;
+	text-align: left;
+	text-transform: none;
 }
-
-.category-container{
+.category-container {
 	margin-bottom:20px;
 }
-
-.category-title a{
+.category-title a {
 	font-size:18px;
 }
-
 .front-category-image {
 	min-height: 280px;
 	position: relative;
 	background-position: center center;
 	-webkit-background-size: cover;
-  	-moz-background-size: cover;
-    -o-background-size: cover;
-  	background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
-
 .scale-image {
 	position: relative;
 	height: 70px;
@@ -56,51 +45,45 @@ body.logged-in{
 	display: inline-block;
 	overflow: hidden;
 }
-
-.scale-image img{
+.scale-image img {
 	position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    max-width: 150%;
-    height:auto;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	max-width: 150%;
+	height:auto;
 }
-
 .featured-item {
 	max-height: 240px;
 	border: 1px solid #ccc;
 	overflow: hidden;
 	vertical-align:middle;
 }
-
 .featured-item img {
 	height: 100%;
 	width: auto;
 	vertical-align: middle;
 }
-
-.main-banner{
+.main-banner {
 	margin-bottom:20px;
 }
-
 .featured-video {
 	position:relative;
 }
-
 .featured-video img {
 	height:auto;
 	width:100%;
 }
 .featured-video .fa.fa-play-circle-o {
-  color: #fff;
-  font-size: 50px;
-  left: 44%;
-  position: absolute;
-  top: 38%;
-  opacity:0;
+	color: #fff;
+	font-size: 50px;
+	left: 44%;
+	position: absolute;
+	top: 38%;
+	opacity:0;
 }
 .featured-video:hover .fa.fa-play-circle-o {
-  opacity:1;
+	opacity:1;
 }
 .featured-video-title {
 	background: rgba(0, 0, 0, 0.5);
@@ -110,12 +93,10 @@ body.logged-in{
 	border-bottom: 40px #000 solid;
 	border-top: 38px #000 solid;
 }
-
-.featured-video-title:hover{
-	background: rgba(0,0,0,0.2);
+.featured-video-title:hover {
+	background: rgba(0, 0, 0, 0.2);
 	transition:	all 400ms ease;
 }
-
 .featured-video-title span {
 	text-align: center;
 	color: #fff;
@@ -124,15 +105,12 @@ body.logged-in{
 	font-size: 18px;
 	text-shadow: 1px 1px 3px #000;
 }
-
 .featured-video-title span.icon-play {
 	position: absolute;
 	left: 37%;
 	bottom: 0px;
 	font-size: 50px;
 }
-
-
 .featured-products {
 	height: 220px;
 	position: relative;
@@ -141,107 +119,88 @@ body.logged-in{
 	width: 100%;
 	border: 1px solid #ccc;
 }
-
 .featured-products img {
 	height: 100%;
 	width: auto;
 	background:1px solid #ccc;
 }
 .home .featured-products-title {
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100&0.8+0,0.8+100 */
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100&0.8+0,0.8+100 */
 background: -moz-linear-gradient(top, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', endColorstr='#cce80062', GradientType=0 ); /* IE6-9 */
-  bottom: 0;
-  color: #fff;
-  font-family: "Catamaran",sans-serif;
-  line-height: 1.1;
-  height: 68px;
-  padding: 10px 5px;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  transition: all 200ms ease 0s;
+	bottom: 0;
+	color: #fff;
+	font-family: "Catamaran", sans-serif;
+	line-height: 1.1;
+	height: 68px;
+	padding: 10px 5px;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	transition: all 200ms ease 0s;
 }
 .home .featured-products-title span.fp-title {
-  color: #fff;
-  display: block;
-  font-family: "Catamaran",sans-serif;
-  font-size: 13px;
-  font-weight: 400;
-  height: 60px;
-  line-height: 100%;
-  padding: 0 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
+	color: #fff;
+	display: block;
+	font-family: "Catamaran", sans-serif;
+	font-size: 13px;
+	font-weight: 400;
+	height: 60px;
+	line-height: 100%;
+	padding: 0 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 100%;
 }
 .home .featured-products-title span.icon-review {
-  background: #fff none repeat scroll 0 0;
-  border-radius: 1px;
-  color: #111;
-  display: block;
-  font-family: "Catamaran",sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 100%;
-  margin: 0 auto;
-  max-width: 90%;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: all 200ms ease 0s;
-  width: 100%;
+	background: #fff none repeat scroll 0 0;
+	border-radius: 1px;
+	color: #111;
+	display: block;
+	font-family: "Catamaran", sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	line-height: 100%;
+	margin: 0 auto;
+	max-width: 90%;
+	padding: 5px 10px;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 200ms ease 0s;
+	width: 100%;
 }
-.home .featured-products-title:hover
-{
+.home .featured-products-title:hover {
 	height: 100% !important;
 	background:#e80062 !important;
 	padding-top:25px;
 }
 .home .featured-products-title:hover span.fp-title {
-  height: auto;
-  padding-bottom: 25px;
+	height: auto;
+	padding-bottom: 25px;
 }
-.treatments-column h3 a {
-	color: pink;
-	font-size: 18px;		
-}
-
-.treatments-column h3{
-	margin: 10px 0;
-}
-
-.sidebar img{
+.sidebar img {
 	max-width:100%;
 	height:auto;
 }
-
-.sidebar .bi-widget{
+.sidebar .bi-widget {
 	margin-bottom:20px;
 }
-
-.our-partners a{
+.our-partners a {
 	display:inline-block;
 	position:relative;
 	min-height: 150px;
 	width:100%;
 	overflow: hidden;
 }
-.our-partners a img{
-   position: absolute;
-   left: 50%;
-   top: 50%;
-   transform: translate(-50%, -50%);
+.our-partners a img {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
 }
-
-
-#wpadminbar #wp-admin-bar-customize > .ab-item, 
-#wpadminbar #wp-admin-bar-edit > .ab-item, 
-#wpadminbar #wp-admin-bar-my-account > .ab-item, 
-#wpadminbar #wp-admin-bar-my-sites > .ab-item, 
-#wpadminbar #wp-admin-bar-site-name > .ab-item {
+#wpadminbar #wp-admin-bar-customize > .ab-item, #wpadminbar #wp-admin-bar-edit > .ab-item, #wpadminbar #wp-admin-bar-my-account > .ab-item, #wpadminbar #wp-admin-bar-my-sites > .ab-item, #wpadminbar #wp-admin-bar-site-name > .ab-item {
 	text-indent: 100%;
 	white-space: nowrap;
 	overflow: hidden;
@@ -250,16 +209,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	color: #a0a5aa;
 	position: relative;
 }
-
-
 /*BELOW DESKTOP SCREENS*/
 @media all and (max-width:960px) {
-	.site-header.affix {
-		position: static;
-	}
-
-	.pink-dashed span{
-		font-size:22px;
-	}
-
-} 
+ .site-header.affix {
+ position: static;
+}
+ .pink-dashed span {
+ font-size:22px;
+}
+}
