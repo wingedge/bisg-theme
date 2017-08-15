@@ -195,7 +195,7 @@ function bi_display_popular_videos($args=array()){
 	}		
 }
 
-function bi_display_products($arg = array()){
+function bi_display_products($args = array()){
 	$default = array(
 		//'category_name' 	=> 'featured',
 		'posts_per_page' 	=> 10,
