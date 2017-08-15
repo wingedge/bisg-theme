@@ -14,7 +14,11 @@
       <h1>Recent Reviews</h1>
       <p>Real women talk about products and treaments</p>
       <div class="recent-review-product-box">
-      <img src="<?php bloginfo( 'template_url' ); ?>/img/Shea-Butter-Hand-Cream.jpg"/> <strong>Thick and non sticky</strong> <span>L'OCCITANE Shea Butter Hand Cream</span> </div>
+      	<img src="<?php bloginfo( 'template_url' ); ?>/img/Shea-Butter-Hand-Cream.jpg"/> 
+      	<strong>Thick and non sticky</strong> 
+      	<span>L'OCCITANE Shea Butter Hand Cream</span>
+      	<div class="star-rating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i></div>
+      </div>
       <div class="recent-review-comment-box">
       <img src="<?php bloginfo( 'template_url' ); ?>/img/picture.jpg"/> <i>Shi Hui Tan</i>
       <p>I like how it is non sticky and really thick. Really helped my dry hands to survive in the air-conditioned office or in cold countries. In addition to that, it gets absorbed into my skin really quickly thus it is not sticky at all.</p>

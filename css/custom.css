@@ -562,6 +562,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', end
 .col-md-12.s-featured-video.s-widget {
   padding: 0!important;
 }
+.recent-review-box > h1 {
+  font-size: 32px;
+  font-weight: 300;
+  margin: 10px 0 5px;
+}
+.recent-review-box {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+}
+.recent-review-product-box > strong {
+  display: block;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+.recent-review-product-box > span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+.recent-review-comment-box {
+  font-size: 13px;
+  background: #ce0057;
+  padding: 10px;
+}
+.recent-review-comment-box > img {
+  float: left;
+  max-width: 55px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+.recent-review-comment-box > i {
+  color: #fff68f;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+}
+.recent-review.s-widget > div {
+  background: #e80062 none repeat scroll 0 0;
+  color: #fff;
+  padding: 15px;
+}
 @media all and (max-width:767px) {
  #site-topmenu {
  display:none;
