@@ -24,7 +24,7 @@
           <img src="/wp-content/uploads/2016/04/swas-logo.png" class="img-responsive" alt="Spa &amp; Wellness">
         </a>
         </div>
-        <div class="col-md-3 col-xs-12">        
+        <div class="col-md-3 col-xs-6">        
         <a href="http://www.cosmoprof.com.sg/" target="_blank" rel="noopener">
           <img src="/wp-content/uploads/2016/04/cosmo-prof-acad-web.png" class="img-responsive"  alt="Cosnoprof">
         </a>
