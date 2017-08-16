@@ -145,6 +145,28 @@ function bi_display_brand($brand, $type = 'post'){
 	}	
 }
 
+function bi_display_articles($args){
+	$default = array(
+		//'category_name' 	=> 'featured',
+		'posts_per_page' 	=> 8,
+		'post_type'			=> 'post',
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',		
+		'file_template'	 	=> 'section/category-articles.php',
+	);
+
+	$args = array_merge($default,$args);	
+	$query = new WP_Query( $args );	
+	$postCtr=1;
+	if ($query->have_posts()) {		
+    	while ($query->have_posts()) {       
+        	$query->the_post();       	
+        	include(locate_template($args['file_template']));
+        	$postCtr++;
+    	}
+    	wp_reset_postdata();
+	}	
+}
 
 
 function bi_display_featured(){
