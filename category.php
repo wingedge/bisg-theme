@@ -1,4 +1,10 @@
 <?php get_header(); ?>
+<style>
+.category-page .slick-slide img,
+.category-page .recent-article-row img {
+    height: auto !important;
+}
+</style>
 <div class="main-content container category-page">
 	<div class="row breadcrumbs-row">
 		<?php bi_breadcrumbs();?>
