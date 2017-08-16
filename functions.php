@@ -145,7 +145,7 @@ function bi_display_brand($brand, $type = 'post'){
 	}	
 }
 
-function bi_display_articles($args){
+function bi_display_articles($args=array()){
 	$default = array(
 		//'category_name' 	=> 'featured',
 		'posts_per_page' 	=> 8,
