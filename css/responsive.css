@@ -57,9 +57,13 @@
 }
 
 
-/*BELOW DESKTOP SCREENS*/
-@media all and (max-width:960px) {
-	 .site-header.affix {
+/*IPADS*/
+@media (max-width: 1199px) { }
+
+
+/*TABLETS*/
+@media (max-width: 991px)  { 
+	.site-header.affix {
 	 position: static;
 	}
 	 .pink-dashed span {
@@ -82,3 +86,11 @@
 		width: 25px;
 	}
 }
+
+
+/*PHONES LANDSCAPE*/
+@media (max-width: 767px)  { }
+
+
+/*PHONES*/
+@media (max-width: 479px)  { }
