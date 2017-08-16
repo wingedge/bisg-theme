@@ -18,24 +18,24 @@
       </div>
       <div class="row">
         <div class="col-md-4">
-          <?php bi_display_brand('makeup');?>
+          <?php bi_display_brand(array('category_name'=>'makeup'));?>
         </div>
         <div class="col-md-4">
-          <?php bi_display_brand('skincare');?>
+          <?php bi_display_brand(array('category_name'=>'skincare'));?>
         </div>
         <div class="col-md-4">
-          <?php bi_display_brand('hair');?>
+          <?php bi_display_brand(array('category_name'=>'hair'));?>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4">
-          <?php bi_display_brand('spas');?>
+          <?php bi_display_brand(array('category_name'=>'spas'));?>
         </div>
         <div class="col-md-4">
-          <?php bi_display_brand('salons');?>
+          <?php bi_display_brand(array('category_name'=>'salons'));?>
         </div>
         <div class="col-md-4">
-          <?php bi_display_brand('wellness');?>
+          <?php bi_display_brand(array('category_name'=>'wellness'));?>
         </div>
       </div>
       <div class="row">

@@ -121,24 +121,27 @@ function bisg_dummy($str,$style){
 	echo $txt;
 }
 
-function bi_display_brand($brand, $type = 'post'){	
-	$args = array(
-		'category_name' 	=> $brand,
+function bi_display_brand($args){	
+	$default = array(
+		'category_name' 	=> 'makeup',
 		'posts_per_page' 	=> 3,
-		'post_type'			=> $type,
+		'post_type'			=> 'post',
 		'order' 			=> 'DESC',
 		'orderby'			=> 'date',
+		'file_template'		=> 'section/frontpage-category.php',
 	);
 
+	$args = array_merge($default,$args);	
+
 	$postCtr=1;
-	$brandUrl = get_category_link( get_cat_ID( $brand ) );
+	$brandUrl = get_category_link( get_cat_ID( $args['category_name'] ) );
 	$query = new WP_Query( $args );
 	if ($query->have_posts()) {
     	while ($query->have_posts()) {       	
         	$query->the_post();        	
         	// get the frontpage category box from section and render
         	//get_template_part('section/frontpage','category'); 
-        	include(locate_template('section/frontpage-category.php'));
+        	include(locate_template($args['file_template']));
         	$postCtr++;
     	}
     	wp_reset_postdata();

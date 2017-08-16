@@ -10,8 +10,9 @@
 		</div>
 		<div id="category-articles" class="category-articles col-md-4">
 			<h3>Latest in <?php ucwords(single_cat_title());?></h3>
+			
 		</div>
-		<div id="category-articles" class="category-articles col-md-3">
+		<div id="all-articles" class="all-articles col-md-3">
 			<?php get_sidebar('category');?>
 		</div>
 	</div>
