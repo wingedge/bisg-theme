@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="main-content container">
-	<div class="row">
+	<div class="row breadcrumbs-row">
 		<?php bi_breadcrumbs();?>
 	</div>
 	<div class="row">
