@@ -1,6 +1,33 @@
+/*HI RES*/
+@media (max-width: 1199px) { }
 
-@media all and (max-width:767px) {
- 	#site-topmenu {
+
+/*TABLETS*/
+@media (max-width: 991px)  { 
+	.site-header.affix {
+	 position: static;
+	}
+	 .pink-dashed span {
+	 font-size:22px;
+	}
+
+	.nav > li > a {
+		font-size: 13px;
+		padding: 10px 10px;
+	}
+
+	.register-btn{
+		font-size:15px !important;
+	}
+
+	.socialicons .fa {	
+		font-size: 13px;
+		height: 25px;
+		line-height: 22px;	
+		width: 25px;
+	}
+
+	#site-topmenu {
 	 display:none;
 	}
 	 #site-logo > a {
@@ -36,61 +63,28 @@
 	}
 }
 
-@media all and (max-width:610px) {
- .socialicons {
-	 display:none;
-	}
-	 div#main-search {
-	 width: 60%;
-	}
-	 div#main-registration {
-	 width: 40%;
-	 padding-right: 0!important;
-	}
-	 @media all and (max-width:400px) {
-	 #main-registration {
-	 display:none!important;
-	}
-	 div#main-search {
-	 width: 100%;
-	}
-}
-
-
-/*IPADS*/
-@media (max-width: 1199px) { }
-
-
-/*TABLETS*/
-@media (max-width: 991px)  { 
-	.site-header.affix {
-	 position: static;
-	}
-	 .pink-dashed span {
-	 font-size:22px;
-	}
-
-	.nav > li > a {
-		font-size: 13px;
-		padding: 10px 10px;
-	}
-
-	.register-btn{
-		font-size:15px !important;
-	}
-
-	.socialicons .fa {	
-		font-size: 13px;
-		height: 25px;
-		line-height: 22px;	
-		width: 25px;
-	}
-}
-
 
 /*PHONES LANDSCAPE*/
-@media (max-width: 767px)  { }
+@media (max-width: 767px)  { 
+	.socialicons {
+	 	display:none;
+	}
+	div#main-search {
+		width: 60%;
+	}
+	div#main-registration {
+		width: 40%;
+		padding-right: 0!important;
+	}
+}
 
 
 /*PHONES*/
-@media (max-width: 479px)  { }
+@media (max-width: 479px)  { 
+	#main-registration {
+		 display:none!important;
+	}
+	div#main-search {
+		 width: 100%;
+	}
+}
