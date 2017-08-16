@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-
-<div class="main-content container">
+<div class="main-content container category-page">
 	<div class="row breadcrumbs-row">
 		<?php bi_breadcrumbs();?>
 	</div>
@@ -18,7 +17,6 @@
 			<div class="category-articles-container slick-slider-one">			
 				<?php bi_display_brand($catArticleArgsNew);?>
 			</div>
-
 		</div>
 		<div id="category-articles" class="category-articles col-md-4">
 			<h3>Latest in <?php ucwords(single_cat_title());?></h3>
