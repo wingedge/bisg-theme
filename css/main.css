@@ -58,7 +58,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	line-height: 34px;
 	margin: 5px 0;
 	padding: 0 10px;
-	width: 100% !important;
+	width: 100%;
 }
 .social-icons {
 	background-image: url("../img/divider.jpg");
@@ -71,7 +71,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	padding: 5px 0;
 }
 .social-icons .fa {
-	font-size:inherit !important;
+	font-size:inherit;
 }
 .socialicons .fa {
 	border: 1px solid #fff;
@@ -106,17 +106,17 @@ background: rgb(224,47,120); /* Old browsers */
 	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); /* IE6-9 */
 	border-radius: 1px;
-	color: #fff !important;
+	color: #fff;
 	display: block;
 	font-family: "Saira Extra Condensed", sans-serif;
-	font-size: 19px !important;
+	font-size: 19px;
 	line-height: 32px;
 	margin: 10px 0;
 	padding: 0 10px;
 	text-align: center;
 	text-transform: uppercase;
 	border:1px solid #e94c8e;
-	text-decoration:none !important;
+	text-decoration:none;
 	transition: all 400ms ease;
 }
 .register-btn:hover {
@@ -249,7 +249,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 	display: block;
 	padding: 5px 10px;
 	line-height: 1.2;
-	text-decoration:none !important;
+	text-decoration:none;
 	transition: all 400ms ease;
 }
 .navbar-nav > li > ul.sub-menu li a:hover {

@@ -7,8 +7,8 @@
 	.site-header.affix {
 	 position: static;
 	}
-	 .pink-dashed span {
-	 font-size:22px;
+	.pink-dashed span {
+		font-size:22px;
 	}
 
 	.nav > li > a {
@@ -17,7 +17,7 @@
 	}
 
 	.register-btn{
-		font-size:15px !important;
+		font-size:15px;
 	}
 
 	.socialicons .fa {	
@@ -35,18 +35,18 @@
 	 text-align: center;
 	}
 	 .main-search {
-	 padding: 5px 15px !important;
+	 padding: 5px 15px;
 	}
 	 .navbar-nav {
-	 margin: 10px!important;
+	 margin: 10px;
 	}
-	 .navbar-nav > li > ul.sub-menu {
-	 position: inherit;
-	}
+	
+
 	 .img-responsive.site-logo-img {
 	 max-width: 80%;
 	 height: auto;
 	}
+	/*
 	.category-columns > div > div {
 	    max-width: 400px!important;
 	    margin: 0 auto!important;
@@ -54,10 +54,12 @@
 	    float: none!important;
 	    margin-bottom: 15px!important;
 	}
+	
 	div#sidebar {
 	    max-width: 400px !important;
 	    margin: 0 auto !important;
 	}
+	*/
 	.s-widget > div > img {
 	    width: 100%;
 	}
@@ -75,6 +77,10 @@
 	div#main-registration {
 		width: 40%;
 		padding-right: 0!important;
+	}
+
+	.navbar-nav > li > ul.sub-menu {
+	 position: inherit;
 	}
 }
 
