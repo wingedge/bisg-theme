@@ -10,7 +10,7 @@
 		</div>
 		<div id="category-articles" class="category-articles col-md-4">
 			<h3>Latest in <?php ucwords(single_cat_title());?></h3>
-			
+			<?php bi_display_brand(array('category_name'=>single_cat_title(null,false)));?>
 		</div>
 		<div id="all-articles" class="all-articles col-md-3">
 			<?php get_sidebar('category');?>
