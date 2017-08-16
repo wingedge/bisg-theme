@@ -57,7 +57,9 @@
 					)) */
 				);
 			?>
-			<?php bi_display_products($productArgs); ?>
+			<div class="category-product-container slick-slider-four" id="products-carousel">
+				<?php bi_display_products($productArgs); ?>
+			</div>
 		</div>
 	</div>
 </div>
