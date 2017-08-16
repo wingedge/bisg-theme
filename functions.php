@@ -134,7 +134,7 @@ function bi_display_brand($args){
 	$args = array_merge($default,$args);	
 
 	$postCtr=1;
-	$brandUrl = get_category_link( get_cat_ID( $args['category_name'] ) );
+	$brandUrl = get_category_link( get_cat_ID( $args['category_name'] ) );	
 	$query = new WP_Query( $args );
 	if ($query->have_posts()) {
     	while ($query->have_posts()) {       	
