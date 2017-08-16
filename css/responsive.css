@@ -30,11 +30,11 @@
  height: auto;
 }
 .category-columns > div > div {
-    max-width: 400px;
-    margin: 0 auto;
-    display: block;
-    float: none;
-    margin-bottom: 15px;
+    max-width: 400px!important;
+    margin: 0 auto!important;
+    display: block!important;
+    float: none!important;
+    margin-bottom: 15px!important;
 }
 }
  @media all and (max-width:610px) {
