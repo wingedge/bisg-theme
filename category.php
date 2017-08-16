@@ -7,10 +7,32 @@
 	<div class="row">
 		<div id="category-main-slider" class="category-main-slider col-md-5">
 			<h3><?php ucwords(single_cat_title());?></h3>
+
+			<?php 
+				$catArticleArgsNew = array(
+					'category_name' => single_cat_title(null,false),
+					'post_per_page'	=> 3,
+					'file_template' => 'section/category-article-slider.php',					
+				);
+			?>
+			<div class="category-articles-container slick-slider-one">			
+				<?php bi_display_brand($catArticleArgsNew);?>
+			</div>
+
 		</div>
 		<div id="category-articles" class="category-articles col-md-4">
 			<h3>Latest in <?php ucwords(single_cat_title());?></h3>
-			<?php bi_display_brand(array('category_name'=>single_cat_title(null,false)));?>
+			<?php 
+				$catArticleArgs = array(
+					'category_name' => single_cat_title(null,false),
+					'post_per_page'	=> 8,
+					'file_template' => 'section/category-articles.php',
+					'offset' => 3, // skips first 3 since its displayed earlier
+				);
+			?>
+			<div class="category-articles-container">			
+				<?php bi_display_brand($catArticleArgs);?>
+			</div>
 		</div>
 		<div id="all-articles" class="all-articles col-md-3">
 			<?php get_sidebar('category');?>
