@@ -37,7 +37,7 @@
 <div class="site-footer">
   <div class="container">
     <div class="row">
-      <div class="col-md-3 col-sm-3 ">
+      <div class="col-md-3 col-sm-3 footerbox">
         <h3 class="footer-title">Connect with us!</h3>
        	<ul>
         	<li class="biph"><a href="#"><span class="phicon"></span><span class="icon-title">BeautyInsider PH</span></a></li>
@@ -47,7 +47,7 @@
             <li><a href="#"><span class="socialmediaicon icon-twitter"></span><span class="icon-title">Twitter</span></a></li>
         </ul>
       </div>
-      <div class="col-md-3 col-sm-4 ">
+      <div class="col-md-3 col-sm-4 footerbox">
         <h3 class="footer-title">Get in touch with us!</h3>
         <strong>Mapletree Media Pte Ltd</strong><br/>
         Atrix #01-07,<br/>
@@ -55,7 +55,7 @@
         Singapore 388409<br/>
         <a href="www.mapletreemedia.com">www.mapletreemedia.com</a>
       </div>
-      <div class="col-md-3 col-sm-5">
+      <div class="col-md-3 col-sm-5 footerbox">
         <h3 class="footer-title">Quick Links</h3>
         <ul>
         	<li><a href="#">Rewards and Redemption</a></li>
@@ -70,7 +70,7 @@
             <li><a href="#">How to Claim your Rewards</a></li>
         </ul>
       </div>
-      <div class="col-md-3 col-sm-12">        
+      <div class="col-md-3 col-sm-12 footerbox">        
         <div class="subscribe-form">
           <form>
           <input type="text" value="enter your email addess" />

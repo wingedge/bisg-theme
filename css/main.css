@@ -304,20 +304,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 .site-footer a, .site-footer strong {
 	color:#e80062;
 }
-.site-footer .layoutbox {
+.site-footer .footerbox {
 	font-size: 15px;
 	font-weight: 300;
 }
-.site-footer .layoutbox ul {
+.site-footer .footerbox ul {
 	padding:0;
 	margin:0;
 }
-.site-footer .layoutbox li {
+.site-footer .footerbox li {
 	padding:0;
 	margin:0;
 	list-style:none;
 }
-.site-footer .layoutbox li a {
+.site-footer .footerbox li a {
 	color:#333;
 }
 .phicon {
