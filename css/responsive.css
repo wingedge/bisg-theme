@@ -36,6 +36,13 @@
     float: none!important;
     margin-bottom: 15px!important;
 }
+div#sidebar {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.s-widget > div > img {
+    width: 100%;
+}
 }
  @media all and (max-width:610px) {
  .socialicons {
