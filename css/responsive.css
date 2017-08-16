@@ -37,8 +37,8 @@
     margin-bottom: 15px!important;
 }
 div#sidebar {
-    max-width: 400px;
-    margin: 0 auto;
+    max-width: 400px !important;
+    margin: 0 auto !important;
 }
 .s-widget > div > img {
     width: 100%;
