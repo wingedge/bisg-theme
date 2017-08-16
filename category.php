@@ -16,7 +16,11 @@
 </style>
 <div class="category-page">
   <div class="row breadcrumbs-row">
-    <?php bi_breadcrumbs();?>
+    <div class="container">
+      <div class="col-md-12">
+        <?php bi_breadcrumbs();?>
+      </div>
+    </div>
   </div>
   <div class="main-content container">
     <div class="row">
