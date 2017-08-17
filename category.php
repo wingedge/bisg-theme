@@ -126,6 +126,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
+        </div>
+        <div class="row">
           <div class="category-video-containers col-md-6">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
