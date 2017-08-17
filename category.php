@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <style>
-.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .featured-category-video img, .category-articles img  {
+.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .featured-category-video img, .category-articles img {
 	height: auto !important;
 }
 .breadcrumbs {
@@ -79,27 +79,26 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	padding: 15px;
 }
 .category-articles .recent-article-thumb {
-  max-height: 147px;
-  overflow: hidden;
+	max-height: 147px;
+	overflow: hidden;
 }
-.category-articles .recent-article-title a
-{
+.category-articles .recent-article-title a {
 	text-decoration:none !important;
 }
 .category-articles .recent-article-title .fp-title {
-  background: #efefef none repeat scroll 0 0;
-  color: #333;
-  display: block;
-  font-size: 13px;
-  line-height: 1.3;
-  min-height: 72px;
-  padding: 10px;
-  text-transform: uppercase;
+	background: #efefef none repeat scroll 0 0;
+	color: #333;
+	display: block;
+	font-size: 13px;
+	line-height: 1.3;
+	min-height: 72px;
+	padding: 10px;
+	text-transform: uppercase;
 }
 </style>
 <div class="category-page">
-  <div class="row breadcrumbs-row">
-    <div class="container">
+  <div class="container">
+    <div class="row breadcrumbs-row">
       <div class="col-md-12">
         <?php bi_breadcrumbs();?>
       </div>
@@ -132,17 +131,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
                 <?php ucwords(single_cat_title());?>
                 </span> </h3>
               <div class="recent-article-row">
-              <?php 
+                <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 8,
 					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
-			  ?>              
-              <div class="row category-articles-container">
-                <?php bi_display_brand($catArticleArgs);?>
-              </div>
+			  ?>
+                <div class="row category-articles-container">
+                  <?php bi_display_brand($catArticleArgs);?>
+                </div>
               </div>
             </div>
           </div>
