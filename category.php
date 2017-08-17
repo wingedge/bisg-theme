@@ -149,7 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   height: auto;
   width: 100%;
 }
-.category-video-box > div .category-video-title {
+.category-video-box .category-video-title {
   bottom: 35%;
   display: block;
   margin: 0 auto;
@@ -170,10 +170,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   margin: 0 auto;
   text-align: center;
 }
-.category-video-box > div:hover .category-video-title
+.category-video-box a:hover .category-video-title
 {
 	display:block;
 }
+
+.category-video-box .post{
+	width:100%;
+	min-height:200px;
+	position: relative;
+}
+.category-video-box .post .img{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	max-width: 150%;
+	height:auto;
+}
+
 </style>
 <div class="category-page">
  <?php include('section/breadcrumbs.php'); ?>
