@@ -58,8 +58,25 @@
   margin-bottom: 15px;
 }
 .recent-articles .recent-article-thumb {
-  padding: 0;
   margin: 0;
+  padding-right: 0;
+}
+.all-articles .cat-titles {
+  color: #fff;
+  font-family: "Playfair Display",serif;
+  line-height: 1;
+  margin-bottom: 0;
+  padding: 10px 15px;
+  	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100 */
+background: rgb(198,0,70); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
+}
+.recent-articles {
+  background: #f7f7f7 none repeat scroll 0 0;
+  padding: 15px;
 }
 </style>
 <div class="category-page">
