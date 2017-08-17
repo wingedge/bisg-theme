@@ -16,6 +16,22 @@
 .cat-titles.pink-dashed > span {
     font-size: 24px;
 }
+.category-main-slider {
+  color: #666;
+  font-weight: 300;
+}
+.category-main-slider .fp-title {
+  color: #e80062 !important;
+  display: block;
+  font-size: 21px;
+  line-height: 1.1;
+  padding: 10px 0;
+  font-weight: 500;
+  text-decoration:none !important;
+}
+.category-articles-container .recent-article-row {
+  background: #efefef none repeat scroll 0 0;
+}
 </style>
 <div class="category-page">
   <div class="row breadcrumbs-row">
