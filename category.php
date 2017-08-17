@@ -85,6 +85,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	padding: 10px;
 	text-transform: uppercase;
 }
+.category-main-slider .cat-titles.pink-dashed {
+  text-align: left!important;
+}
+.category-main-slider .cat-titles.pink-dashed > span {
+  font-size: 32px;
+  padding-left: 0;
+}
 </style>
 <div class="category-page">
  <?php include('section/breadcrumbs.php'); ?>
