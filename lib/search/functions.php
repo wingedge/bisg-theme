@@ -12,11 +12,12 @@ function getposttypesearch_box() {
 //Enqueue script
 function ajax_filter_posts_scripts() {
     wp_enqueue_style( 'custom-search', get_stylesheet_directory_uri() . '/lib/search/css/search_style.css' );
- 	  wp_register_script('afp_script', get_stylesheet_directory_uri() . '/lib/search/js/ajax-filter-posts.js', false, null, false);
+ 	  wp_register_script('afp_script', get_stylesheet_directory_uri() . '/lib/search/js/ajax-filter-posts.js', array('jquery'), null, false);
  	  wp_enqueue_script('afp_script');
  	  wp_localize_script( 'afp_script', 'afp_vars', array(
         'afp_nonce' => wp_create_nonce( 'afp_nonce' ), // Create nonce which we later will use to verify AJAX request
-        'afp_ajax_url' => admin_url( 'admin-ajax.php' ),     
+        'afp_ajax_url' => admin_url( 'admin-ajax.php' ),  
+        'afp_site_url' => home_url('/'),   
       )
  	  );
 }
@@ -26,7 +27,6 @@ add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
 //Script for getting post
 function ajax_filter_get_posts($search_tag) {
 	// Verify nonce
- 	die('test');
   if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
     die('Permission denied');
 

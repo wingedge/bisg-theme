@@ -2,6 +2,11 @@
 #tagged-posts {
     width:70%;
     height:auto;
+    display:none;
+    position:absolute;
+    background:#fff;
+    z-index: 60;
+    padding:20px;    
 }
 
 #posttype_search {
@@ -29,4 +34,14 @@
     font-family:Montserrat;
     font-weight:500;
     font-style:normal"
+}
+
+#loading {
+    position: absolute;
+    background: #fff;
+    width: 100%;
+    border: 1px solid #ccc;
+    z-index: 60;
+    padding: 20px;
+    display:none;
 }
