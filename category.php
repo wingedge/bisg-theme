@@ -13,6 +13,9 @@
 	margin: 0;
 	padding: 5px;
 }
+.cat-titles.pink-dashed > span {
+    font-size: 24px;
+}
 </style>
 <div class="category-page">
   <div class="row breadcrumbs-row">
