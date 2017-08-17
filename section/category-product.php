@@ -1,5 +1,5 @@
 <div class="item <?php if ($postCtr <= 1):?> active<?php endif;?>">
-<div class="col-md-12">
+<div class="<?php echo $args['column_width'];?>">
 	<div id="post-<?php the_ID(); ?>" <?php post_class('featured-products category-products'); ?> >
 		<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 		<?php if ( !has_post_thumbnail() ): ?>

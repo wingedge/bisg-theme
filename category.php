@@ -180,7 +180,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	min-height:200px;
 	position: relative;
 }
-.category-video-box .post .img{
+.category-video-box .post img{
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -191,7 +191,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 
 </style>
 <div class="category-page">
- <?php include('section/breadcrumbs.php'); ?>
+ <?php get_template_part('section/breadcrumbs'); ?>
   <div class="main-content container">
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
@@ -263,7 +263,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 				    'posts_per_page' 	=> 10,
 					'post_type'			=> 'product',			    
 				    'category_name' 	=> NULL, //reset
-				    'file_template'	 	=> 'section/category-product.php',
+				    'file_template'	 	=> 'section/category-product.php',				    
 				    /*
 				    'tax_query' 		=> array( array(
 									            'taxonomy' => 'category',
@@ -274,7 +274,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					)) */
 				);
 			?>
-              <div class="category-product-container slick-slider-four" id="products-carousel">
+              <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
                 <?php bi_display_products($productArgs); ?>
               </div>
             </div>

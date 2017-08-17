@@ -237,6 +237,7 @@ function bi_display_products($args = array()){
 		'order' 			=> 'DESC',
 		'orderby'			=> 'date',
 		'file_template'		=> 'section/frontpage-products.php',
+		'column_width'		=> 'col-md-12',
 	);
 
 	$args = array_merge($default,$args);

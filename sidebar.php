@@ -42,7 +42,16 @@
 <div class="row">
   <div class="col-md-12 col-sm-6 s-featured-video s-widget">
     <div class="featured-video-container slick-slider-one" id="sidebar-product-carousel">
-      <?php bi_display_product_sidebar();?>
+      <?php $sidebarArgs = array(          
+          'posts_per_page'  => 4,
+          'post_type'     => 'product',
+          'order'       => 'DESC',
+          'orderby'     => 'date', 
+          'file_template'   => 'section/sidebar-products.php', 
+        );
+
+      ?>
+      <?php bi_display_products($sidebarArgs);?>
     </div>
   </div>
   <div class="col-md-12 col-sm-6 s-widget">
