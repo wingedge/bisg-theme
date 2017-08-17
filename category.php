@@ -93,6 +93,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 .category-recent-articles .recent-article-title a {
 	text-decoration:none !important;
+	transition: all 400ms ease 0s;
+}
+.category-recent-articles .recent-article-title a:hover
+{
+	color:#e80062;
 }
 .category-recent-articles .recent-article-title .fp-title {
 	color: #333;
@@ -100,6 +105,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	font-size: 13px;
 	line-height: 1.3;
 	text-transform: uppercase;
+	transition: all 400ms ease 0s;
 }
 .category-main-slider .cat-titles.pink-dashed {
   text-align: left!important;
