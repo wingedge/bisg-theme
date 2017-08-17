@@ -32,6 +32,35 @@
 .category-articles-container .recent-article-row > div > div {
   background: #efefef none repeat scroll 0 0;
 }
+.category-articles-container .recent-article-row {
+  margin-bottom: 15px;
+}
+.category-articles-container .recent-article-row .recent-article-title {
+  font-size: 13px;
+  padding: 0;
+  text-transform: uppercase;
+}
+.category-articles-container .recent-article-row .recent-article-title a {
+    color: #333;
+    text-decoration: none;
+}
+.recent-articles .fp-title {
+  color: #333;
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.category-articles-container .recent-article-row .recent-article-title a:hover, .recent-articles .fp-title:hover {
+    color: #e80062;
+    text-decoration: none;
+}
+.recent-articles .recent-article-row {
+  margin-bottom: 15px;
+}
+.recent-articles .recent-article-thumb {
+  padding: 0;
+  margin: 0;
+}
 </style>
 <div class="category-page">
   <div class="row breadcrumbs-row">
