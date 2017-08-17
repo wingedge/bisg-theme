@@ -11,6 +11,18 @@ body {
 p {
 	font-family: "Catamaran", sans-serif;
 }
+a
+{
+	text-decoration:none;
+}
+a:hover
+{
+	color:#e80062;
+}
+a:focus
+{
+	color:#e80062;
+}
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 	font-family: "Catamaran", sans-serif;
 	font-weight: 500;
@@ -127,6 +139,7 @@ background: rgb(224,89,145); /* Old browsers */
 	background: -webkit-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to bottom, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', endColorstr='#e02f78', GradientType=0 ); /* IE6-9 */
+color:#fff;
 }
 /* 
 	TOP NAVIGATION 
