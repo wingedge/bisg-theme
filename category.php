@@ -99,7 +99,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
         <div class="row">
-          <div id="category-main-slider" class="category-main-slider col-md-12">
+          <div id="category-main-slider" class="category-main-slider col-md-7">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
@@ -116,7 +116,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-          <div id="category-articles" class="category-articles col-md-12">
+          <div id="category-articles" class="category-articles col-md-5">
             <div>
               <h3 class="cat-titles pink-dashed"><span>Latest in
                 <?php ucwords(single_cat_title());?>
