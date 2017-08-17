@@ -51,7 +51,8 @@
 	margin: 0;
 	padding-right: 0;
 }
-.all-articles .cat-titles {
+.all-articles .cat-titles,
+.category-articles .cat-titles {
 	color: #fff;
 	font-family: "Playfair Display", serif;
 	line-height: 1;
@@ -76,13 +77,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	text-decoration:none !important;
 }
 .category-articles .recent-article-title .fp-title {
-	background: #efefef none repeat scroll 0 0;
 	color: #333;
 	display: block;
 	font-size: 13px;
 	line-height: 1.3;
-	min-height: 72px;
-	padding: 10px;
 	text-transform: uppercase;
 }
 .category-main-slider .cat-titles.pink-dashed {
@@ -118,9 +116,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
           </div>
           <div id="category-articles" class="category-articles col-md-5">
             <div>
-              <h3 class="cat-titles pink-dashed"><span>Latest in
-                <?php ucwords(single_cat_title());?>
-                </span> </h3>
+              <h3 class="cat-titles">Latest in <?php ucwords(single_cat_title());?></h3>
               <div class="recent-article-row">
                 <?php 
 				$catArticleArgs = array(
