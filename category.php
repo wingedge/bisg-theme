@@ -131,7 +131,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
                 Videos</span></h3>
-              <div class="category-video-containers row">
+              <div class="category-video-containers">
                 <?php /*set arguments */
 					$videosArgs = array(
 					    'posts_per_page' 	=> 3,
