@@ -68,7 +68,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 .category-recent-articles .recent-article-wrap {
 	background: #f7f7f7 none repeat scroll 0 0;
-	padding: 15px;
+	padding: 0 15px;
 }
 .category-recent-articles .recent-article-thumb {
 	max-height: 147px;
@@ -112,6 +112,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   margin: 0 15px;
   padding-bottom: 10px;
   padding-top: 15px;
+}
+.all-articles .recent-articles > div:nth-child(last)
+{
+	border-bottom: none;
 }
 </style>
 <div class="category-page">
