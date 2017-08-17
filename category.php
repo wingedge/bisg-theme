@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <style>
-.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img {
+.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .category-video-containers img {
 	height: auto !important;
 }
 .breadcrumbs {
