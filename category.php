@@ -66,6 +66,19 @@ background: rgb(198,0,70); /* Old browsers */
 	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
+.cat-bottom-title {
+	color: #fff;
+	font-family: "Playfair Display", serif;
+	line-height: 1;
+	margin-bottom: 0;
+	padding: 10px 15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100 */
+background: rgb(198,0,70); /* Old browsers */
+	background: -moz-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
+}
 .category-recent-articles .recent-article-wrap {
 	background: #f7f7f7 none repeat scroll 0 0;
 	padding: 0 15px;
@@ -168,9 +181,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
         <div class="row">
           <div class="category-video-containers col-md-12">
             <div>
-              <h3 class="cat-titles pink-dashed"><span>
-                <?php ucwords(single_cat_title());?>
-                Videos</span></h3>
+              <h3 class="cat-bottom-title"><?php ucwords(single_cat_title());?> Videos</h3>
               <div class="category-video-box">
                 <?php /*set arguments */
 					$videosArgs = array(
@@ -192,9 +203,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
           </div>
           <div class="category-product-containers  col-md-12">
             <div>
-              <h3 class="cat-titles pink-dashed"><span>
-                <?php ucwords(single_cat_title());?>
-                Products</span></h3>
+              <h3 class="cat-bottom-title"><?php ucwords(single_cat_title());?> Products</span></h3>
               <?php /*set arguments */
 				$productArgs = array(
 				    'posts_per_page' 	=> 10,
