@@ -113,14 +113,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               <h3 class="cat-titles pink-dashed"><span>Latest in
                 <?php ucwords(single_cat_title());?>
                 </span> </h3>
+              <div class="row recent-article-row recent-article-row-<?php echo $postCtr;?>">
               <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 8,
-					'file_template' => 'section/category-articles.php',
+					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
-			?>
+			  ?>
+              </div>
               <div class="category-articles-container">
                 <?php bi_display_brand($catArticleArgs);?>
               </div>
