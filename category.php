@@ -170,7 +170,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   margin: 0 auto;
   text-align: center;
 }
-.category-video-box .category-video-title:hover
+.category-video-box > div:hover .category-video-title
 {
 	display:block;
 }
