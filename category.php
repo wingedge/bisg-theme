@@ -25,7 +25,7 @@
   <div class="main-content container">
     <div class="row">
       <div id="category-main-slider" class="category-main-slider col-md-5">
-        <h3 class="cat-titles">
+        <h3 class="cat-titles pink-dashed">
           <?php ucwords(single_cat_title());?>
         </h3>
         <?php 
@@ -40,7 +40,7 @@
         </div>
       </div>
       <div id="category-articles" class="category-articles col-md-4">
-        <h3 class="cat-titles">Latest in
+        <h3 class="cat-titles pink-dashed">Latest in
           <?php ucwords(single_cat_title());?>
         </h3>
         <?php 
@@ -56,13 +56,13 @@
         </div>
       </div>
       <div id="all-articles" class="all-articles col-md-3">
-        <h3 class="cat-titles">Recent Posts</h3>
+        <h3 class="cat-titles pink-dashed">Recent Posts</h3>
         <?php get_sidebar('category');?>
       </div>
     </div>
     <div class="row">
       <div class="col-md-6 category-videos">
-        <h3 class="cat-titles">
+        <h3 class="cat-titles pink-dashed">
           <?php ucwords(single_cat_title());?>
           Videos</h3>
         <div class="category-video-containers row">
@@ -84,7 +84,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <h3 class="cat-titles">
+        <h3 class="cat-titles pink-dashed">
           <?php ucwords(single_cat_title());?>
           Products</h3>
         <div class="category-video-containers row">
