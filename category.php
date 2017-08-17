@@ -30,18 +30,22 @@
   padding-left: 0;
   padding-top: 0;
   text-transform: uppercase;
+  transition: all 400ms ease 0s;
 }
 .category-articles-container .recent-article-row .recent-article-title a {
 	color: #333;
 	text-decoration: none;
+	transition: all 400ms ease 0s;
 }
 .recent-articles .fp-title {
 	color: #333;
 	display: block;
 	font-size: 13px;
 	text-transform: uppercase;
+	transition: all 400ms ease 0s;
 }
-.category-articles-container .recent-article-row .recent-article-title a:hover, .recent-articles .fp-title:hover {
+.category-articles-container .recent-article-row .recent-article-title a:hover, 
+.recent-articles .fp-title:hover {
 	color: #e80062;
 	text-decoration: none;
 }
@@ -70,7 +74,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	color: #fff;
 	font-family: "Playfair Display", serif;
 	line-height: 1;
-	margin-bottom: 0;
+	margin-bottom: 15px;
 	padding: 10px 15px;
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100 */
 background: rgb(198,0,70); /* Old browsers */
@@ -134,6 +138,35 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   border: medium none;
   margin-bottom: 0;
   padding-bottom: 0;
+}
+.category-video-box img {
+  height: auto;
+  width: 100%;
+}
+.category-video-box .category-video-title {
+  bottom: 35%;
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  text-align: center;
+  width: 86%;
+  z-index: 999;
+  width: 100%;
+}
+.category-video-box .category-video-title .fa {
+  color: #fff;
+  float: none;
+  font-size: 50px;
+  height: 50px;
+  line-height: 1;
+  margin: 0 auto;
+  text-align: center;
+  display:none;
+  transition: all 400ms ease 0s;
+}
+.category-video-box .category-video-title:hover .fa
+{
+	display:block;
 }
 </style>
 <div class="category-page">
