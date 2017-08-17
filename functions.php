@@ -273,3 +273,24 @@ function bi_display_product_sidebar(){
     	wp_reset_postdata();
 	}		
 }
+
+/*function to check if taxonomy is a parent*/
+function bi_check_category() {    
+    if (is_category() && !is_feed()) {
+        
+    	if ( is_category(get_cat_id('face')) ){
+    		load_template(TEMPLATEPATH . '/category-general.php');
+    		exit;
+    	}
+        /*
+        if (is_category(get_cat_id('projects')) || cat_is_ancestor_of(get_cat_id('projects'), get_query_var('cat'))) {
+            load_template(TEMPLATEPATH . '/category-projects.php');
+            exit;
+        }
+        */
+
+
+    }
+}
+
+add_action('template_redirect', 'bi_check_category');
