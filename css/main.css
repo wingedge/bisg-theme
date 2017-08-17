@@ -838,3 +838,27 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	color: #a0a5aa;
 	position: relative;
 }
+.breadcrumbs {
+	margin: 0;
+	padding: 0;
+  color: #666;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.bread-link.bread-home {
+  color: #666;
+}
+.bread-current.bread-cat {
+  color: #e80062;
+  font-weight: 300;
+}
+.breadcrumbs li {
+	display: inline-block;
+	list-style: outside none none;
+	margin: 0;
+	padding: 5px;
+}
+.breadcrumbs-container {
+  background: #f7f7f7 none repeat scroll 0 0;
+}

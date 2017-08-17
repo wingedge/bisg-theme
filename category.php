@@ -3,16 +3,6 @@
 .category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .featured-category-video img, .category-articles img {
 	height: auto !important;
 }
-.breadcrumbs {
-	margin: 0;
-	padding: 0;
-}
-.breadcrumbs li {
-	display: inline-block;
-	list-style: outside none none;
-	margin: 0;
-	padding: 5px;
-}
 .cat-titles.pink-dashed > span {
 	font-size: 24px;
 }
@@ -97,13 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 </style>
 <div class="category-page">
-  <div class="container">
-    <div class="row breadcrumbs-row">
-      <div class="col-md-12">
-        <?php bi_breadcrumbs();?>
-      </div>
-    </div>
-  </div>
+ <?php include "section/breadcrumbs.php"; ?>
   <div class="main-content container">
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
