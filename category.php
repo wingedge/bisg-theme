@@ -113,9 +113,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   padding-bottom: 10px;
   padding-top: 15px;
 }
-.all-articles .recent-articles > div:nth-child(last)
+.all-articles .recent-articles > div:nth-last-child(1)
 {
-	border-bottom: none;
+	border-bottom: none !important;
+}
+.category-recent-articles .category-articles-container > div:nth-last-child(1) {
+  border: medium none;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 </style>
 <div class="category-page">
