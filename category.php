@@ -26,9 +26,10 @@
 	margin-bottom: 15px;
 }
 .category-articles-container .recent-article-row .recent-article-title {
-	font-size: 13px;
-	padding: 0;
-	text-transform: uppercase;
+  font-size: 13px;
+  padding-left: 0;
+  padding-top: 0;
+  text-transform: uppercase;
 }
 .category-articles-container .recent-article-row .recent-article-title a {
 	color: #333;
@@ -117,16 +118,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
           <div id="category-articles" class="category-articles col-md-5">
             <div>
               <h3 class="cat-titles">Latest in <?php ucwords(single_cat_title());?></h3>
-              <div class="recent-article-row">
+              <div class="recent-article-wrap">
                 <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 8,
-					'file_template' => 'section/category-articles.php',
+					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
 			  ?>
-                <div class="row category-articles-container">
+                <div class="category-articles-container">
                   <?php bi_display_brand($catArticleArgs);?>
                 </div>
               </div>
