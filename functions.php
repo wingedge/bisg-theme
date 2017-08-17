@@ -274,22 +274,17 @@ function bi_display_product_sidebar(){
 	}		
 }
 
-/*function to check if taxonomy is a parent*/
+/*function to check if taxonomy is level 0, if not use generic category*/
 function bi_check_category() {    
     if (is_category() && !is_feed()) {
         
-    	if ( is_category(get_cat_id('face')) ){
+    	$category = get_category( get_query_var( 'cat' ) );
+		$catId = $category->cat_ID;
+
+    	if ( is_category($catId) && $category->category_parent > 0 ){
     		load_template(TEMPLATEPATH . '/category-general.php');
     		exit;
-    	}
-        /*
-        if (is_category(get_cat_id('projects')) || cat_is_ancestor_of(get_cat_id('projects'), get_query_var('cat'))) {
-            load_template(TEMPLATEPATH . '/category-projects.php');
-            exit;
-        }
-        */
-
-
+    	}       
     }
 }
 
