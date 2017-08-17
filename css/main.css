@@ -897,3 +897,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	display: block;
 	transition: all 600ms ease;
 }
+
+.category-row{
+	margin-bottom:20px;
+}
