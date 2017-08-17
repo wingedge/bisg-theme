@@ -104,6 +104,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   margin-bottom: 15px;
   padding-bottom: 15px;
 }
+.all-articles .recent-articles {
+  background: #f7f7f7 none repeat scroll 0 0;
+}
+.all-articles .recent-articles > div {
+  border-bottom: 1px solid #dfdfdf;
+  margin: 15px 0;
+  padding-bottom: 10px;
+}
 </style>
 <div class="category-page">
  <?php include('section/breadcrumbs.php'); ?>
