@@ -40,8 +40,7 @@
         </div>
       </div>
       <div id="category-articles" class="category-articles col-md-4">
-        <h3 class="cat-titles pink-dashed">Latest in
-          <span><?php ucwords(single_cat_title());?></span>
+        <h3 class="cat-titles pink-dashed"><span>Latest in <?php ucwords(single_cat_title());?></span>
         </h3>
         <?php 
 				$catArticleArgs = array(
@@ -62,9 +61,7 @@
     </div>
     <div class="row">
       <div class="col-md-6 category-videos">
-        <h3 class="cat-titles pink-dashed">
-          <span><?php ucwords(single_cat_title());?>
-          Videos</span></h3>
+        <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?> Videos</span></h3>
         <div class="category-video-containers row">
           <?php /*set arguments */
 					$videosArgs = array(
@@ -85,8 +82,7 @@
       </div>
       <div class="col-md-6">
         <h3 class="cat-titles pink-dashed">
-          <span><?php ucwords(single_cat_title());?></span>
-          Products</h3>
+          <span><?php ucwords(single_cat_title());?> Products</span></h3>
         <div class="category-video-containers row">
           <?php /*set arguments */
 				$productArgs = array(
