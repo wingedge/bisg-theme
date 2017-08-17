@@ -126,23 +126,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div id="all-articles" class="all-articles col-md-3">
-        <div>
-          <h3 class="cat-titles"><span>Recent Posts</span></h3>
-          <?php get_sidebar('category');?>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 category-videos">
-        <div>
-          <h3 class="cat-titles pink-dashed"><span>
-            <?php ucwords(single_cat_title());?>
-            Videos</span></h3>
-          <div class="category-video-containers row">
-            <?php /*set arguments */
+          <div class="col-md-6 category-videos">
+            <div>
+              <h3 class="cat-titles pink-dashed"><span>
+                <?php ucwords(single_cat_title());?>
+                Videos</span></h3>
+              <div class="category-video-containers row">
+                <?php /*set arguments */
 					$videosArgs = array(
 					    'posts_per_page' 	=> 3,
 					    'category_name' 	=> NULL, //reset
@@ -156,17 +146,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 						))*/
 					);
 				?>
-            <?php bi_display_popular_videos($videosArgs);?>
+                <?php bi_display_popular_videos($videosArgs);?>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="category-video-containers row">
-          <div>
-            <h3 class="cat-titles pink-dashed"><span>
-              <?php ucwords(single_cat_title());?>
-              Products</span></h3>
-            <?php /*set arguments */
+          <div class="category-video-containers row">
+            <div>
+              <h3 class="cat-titles pink-dashed"><span>
+                <?php ucwords(single_cat_title());?>
+                Products</span></h3>
+              <?php /*set arguments */
 				$productArgs = array(
 				    'posts_per_page' 	=> 10,
 					'post_type'			=> 'product',			    
@@ -182,10 +171,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					)) */
 				);
 			?>
-            <div class="category-product-container slick-slider-four" id="products-carousel">
-              <?php bi_display_products($productArgs); ?>
+              <div class="category-product-container slick-slider-four" id="products-carousel">
+                <?php bi_display_products($productArgs); ?>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div id="all-articles" class="all-articles col-md-3">
+        <div>
+          <h3 class="cat-titles"><span>Recent Posts</span></h3>
+          <?php get_sidebar('category');?>
         </div>
       </div>
     </div>
