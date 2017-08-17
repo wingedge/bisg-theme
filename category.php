@@ -66,7 +66,7 @@ background: rgb(198,0,70); /* Old browsers */
 	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
-.category-recent-articles {
+.category-recent-articles .recent-article-wrap {
 	background: #f7f7f7 none repeat scroll 0 0;
 	padding: 15px;
 }
