@@ -66,9 +66,15 @@ html {
 <div class="main-search clearfix">
   <div class="container">
     <div class="row">
-      <div class="col-md-2 col-sm-3 col-xs-4 socialicons"> <span>FOLLOW US ON :</span> <a href="https://www.facebook.com/BeautyInsiderSG/"><i class="fa fa-facebook" aria-hidden="true"></i></a> <a href="https://www.instagram.com/beautyinsidersg/"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a> <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> </div>
+      <div class="col-md-2 col-sm-3 col-xs-4 socialicons"> <span>FOLLOW US ON :</span> 
+        <a href="https://www.facebook.com/BeautyInsiderSG/"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
+        <a href="https://www.instagram.com/beautyinsidersg/"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a> 
+        <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> 
+        </div>      
       <div id="main-search" class="col-md-7 col-sm-7 col-xs-5 search-box">
-        <input name="" placeholder="Search your favourite brands here" type="text">
+        <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">
+        <div id="loading"></div>
+        <div id="tagged-posts"></div>
       </div>
       <div id="main-registration" class="col-md-3 col-sm-2 col-xs-3 registration-box"><a href="#" class="register-btn">login/register</a></div>
     </div>
