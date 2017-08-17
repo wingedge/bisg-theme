@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-4 recent-article-row-<?php echo $postCtr;?>">
   <div id="post-<?php the_ID(); ?>" <?php post_class('recent-article-post'); ?>>
     <div>
     <div class="col-md-4 recent-article-thumb"> <a href="<?php the_permalink();?>" title="<?php the_title();?>">
