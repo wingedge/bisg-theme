@@ -149,7 +149,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   height: auto;
   width: 100%;
 }
-.category-video-box .category-video-title {
+.category-video-box > div .category-video-title {
   bottom: 35%;
   display: block;
   margin: 0 auto;
