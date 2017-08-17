@@ -126,12 +126,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-          <div class="col-md-6 category-videos">
+          <div class="category-video-containers col-md-6">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
                 Videos</span></h3>
-              <div class="category-video-containers">
+              <div class="category-video-box">
                 <?php /*set arguments */
 					$videosArgs = array(
 					    'posts_per_page' 	=> 3,
@@ -150,7 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-          <div class="category-video-containers row">
+          <div class="category-product-containers  col-md-6">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
