@@ -812,8 +812,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	width: 100%;
 }
 .featured-products-title:hover {
-	height: 100%;
-	background:#e80062;
+	height: 100%;	
 	padding-top:25px;
 }
 .featured-products-title:hover span.fp-title {
@@ -899,11 +898,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 }
 
 .category-row{
-	margin-bottom:20px;
+	/*margin-bottom:20px;*/
 }
 
 .category-row .product {
 	max-height: 200px;
 	position: relative;
 	overflow: hidden;
+	margin-bottom:20px;
 }

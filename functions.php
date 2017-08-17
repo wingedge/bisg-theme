@@ -53,6 +53,7 @@ require_once('lib/extract-image.php');
 require_once('lib/post-types.php'); // post types
 require_once('lib/taxonomies.php'); // taxonomies (categories/tags)
 require_once('lib/breadcrumbs.php'); // breadcrumbs
+require_once('lib/search/functions.php'); // breadcrumbs
 
 function bisg_scripts(){
 	// fonts
