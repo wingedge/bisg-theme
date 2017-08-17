@@ -26,7 +26,8 @@ add_action('wp_enqueue_scripts', 'ajax_filter_posts_scripts', 100);
 //Script for getting post
 function ajax_filter_get_posts($search_tag) {
 	// Verify nonce
- 	if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
+ 	die('test');
+  if( !isset( $_POST['afp_nonce'] ) || !wp_verify_nonce( $_POST['afp_nonce'], 'afp_nonce' ) )
     die('Permission denied');
 
 	//get seach string var
@@ -38,7 +39,11 @@ $filter_args_post = array(
 	'post_status'    => 'publish',
 	'post_type'	 => 'post',
 	'posts_per_page' => '4',
-	'tag' => $search_tag,
+	'tax_query'    => array(array(
+                        'taxonomy' => 'category',
+                        'field' => 'slug',
+                        'terms' => $search_tag,
+                     )),
  
 );
 
@@ -48,8 +53,11 @@ $filter_args_products = array(
 	'post_status'    => 'publish',
 	'post_type'	 => 'product',
 	'posts_per_page' => '4',	
-	'product_tag' => $search_tag,
- 
+	'tax_query'    => array(array(
+      'taxonomy' => 'category',
+      'field' => 'slug',
+      'terms' => $search_tag,
+   )), 
 );
 
 //query establishments 
@@ -58,7 +66,11 @@ $filter_args_establishments = array(
 	'post_status'    => 'publish',
 	'post_type'	 => 'establishment',
 	'posts_per_page' => '4',
-	'establishment_tag' => $search_tag,
+	'tax_query'    => array(array(
+      'taxonomy' => 'category',
+      'field' => 'slug',
+      'terms' => $search_tag,
+   )),
  
 );
 

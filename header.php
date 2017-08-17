@@ -73,8 +73,10 @@ html {
         </div>      
       <div id="main-search" class="col-md-7 col-sm-7 col-xs-5 search-box">
         <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">
-        <div id="loading"></div>
-        <div id="tagged-posts"></div>
+        <div class="result-box">
+          <div id="loading"></div>
+          <div id="tagged-posts"></div>
+        </div>
       </div>
       <div id="main-registration" class="col-md-3 col-sm-2 col-xs-3 registration-box"><a href="#" class="register-btn">login/register</a></div>
     </div>
