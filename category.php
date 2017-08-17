@@ -86,10 +86,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 .category-main-slider .cat-titles.pink-dashed {
   text-align: left!important;
+  margin-top:25px !important;
 }
 .category-main-slider .cat-titles.pink-dashed > span {
   font-size: 32px;
   padding-left: 0;
+}
+.category-articles-container {
+  background: #f7f7f7 none repeat scroll 0 0;
+  padding: 15px;
+}
+.category-articles-container .recent-article-title {
+  padding-left: 0;
+}
+.category-articles-container > div {
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+}
+.category-articles-container > div:hover
+{
+	background:#fff;
+}
+.recent-articles .recent-article-row {
+  border-bottom: 1px solid #dfdfdf;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
 }
 </style>
 <div class="category-page">
