@@ -1,12 +1,13 @@
 
 #tagged-posts {
-    width:70%;
-    height:auto;
-    display:none;
-    position:absolute;
-    background:#fff;
+    width: 100%;
+    height: auto;
+    display: none;
+    position: absolute;
+    background: #fff;
     z-index: 60;
-    padding:20px;    
+    padding: 20px;
+    border: 2px solid #ccc;
 }
 
 #posttype_search {
