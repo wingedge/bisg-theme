@@ -254,30 +254,10 @@ function bi_display_products($args = array()){
 	}		
 }
 
-function bi_display_product_sidebar(){
-	$args = array(
-		//'category_name' 	=> 'Tried Tested Loved',
-		'posts_per_page' 	=> 4,
-		'post_type'			=> 'product',
-		'order' 			=> 'DESC',
-		'orderby'			=> 'date',		
-	);
-
-	$query = new WP_Query( $args );	
-	$postCtr=1;
-	if ($query->have_posts()) {		
-    	while ($query->have_posts()) {       	
-        	$query->the_post();       	
-        	include(locate_template('section/sidebar-products.php'));
-        	$postCtr++;
-    	}
-    	wp_reset_postdata();
-	}		
-}
-
 /*function to check if taxonomy is level 0, if not use generic category*/
 function bi_check_category() {    
-    if (is_category() && !is_feed()) {
+    
+    if (is_category() && !is_feed() ) {
         
     	$category = get_category( get_query_var( 'cat' ) );
 		$catId = $category->cat_ID;

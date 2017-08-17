@@ -19,23 +19,29 @@
       <div class="row">
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'makeup'));?>
+          <div class="pink-dashed readmore"><a href="<?php echo get_category_link( get_cat_ID('makeup'));?>"><span>View More</span></a></div>
         </div>
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'skincare'));?>
+          <div class="pink-dashed readmore"><a href="<?php echo get_category_link( get_cat_ID('skincare'));?>"><span>View More</span></a></div>
         </div>
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'hair'));?>
+          <div class="pink-dashed readmore"><a href="<?php echo get_category_link( get_cat_ID('hair'));?>"><span>View More</span></a></div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'spas'));?>
+          <div class="pink-dashed readmore"><a href="<?php echo get_category_link( get_cat_ID('spas'));?>"><span>View More</span></a></div>
         </div>
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'salons'));?>
+          <div class="pink-dashed readmore"><a href="<?php echo get_category_link( get_cat_ID('salons'));?>"><span>View More</span></a></div>
         </div>
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'wellness'));?>
+          <div class="pink-dashed readmore"><a href="<?php echo get_category_link( get_cat_ID('wellness'));?>"><span>View More</span></a></div>
         </div>
       </div>
       <div class="row">

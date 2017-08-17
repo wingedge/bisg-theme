@@ -241,13 +241,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 	text-transform: uppercase;
 	z-index: 999;
 	min-width:130px;
-	transition: all 400ms ease;
+	transition: all 600ms ease;
 }
 .navbar-nav > li > ul.sub-menu li {
 	margin: 0;
 	padding: 3px 0;
 	list-style:none;
-	transition: all 400ms ease;
+	transition: all 600ms ease;
 }
 .navbar-nav > li > ul.sub-menu li:hover {
 	background:#ca0055;
@@ -261,7 +261,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 	padding: 5px 10px;
 	line-height: 1.2;
 	text-decoration:none;
-	transition: all 400ms ease;
+	transition: all 600ms ease;
 }
 .navbar-nav > li > ul.sub-menu li a:hover {
 	color:#ffdfee;
@@ -423,7 +423,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	font-family: "Playfair Display", serif;
 	font-size: 24px;
 	text-transform: capitalize;
-	text-decoration: none !important;
+	text-decoration: none;
 	transition: all 400ms ease;
 }
 .category-title a:hover {
@@ -484,7 +484,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	width: 100%;
 	max-width: 93%;
 	padding: 8px;
-	text-decoration:none !important;
+	text-decoration:none;
 	transition: all 400ms ease;
 }
 .category-mini-article a:hover {
@@ -494,12 +494,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	margin-bottom: 15px;
 }
 .pink-dashed {
-	text-align:center !important;
+	text-align:center;
 	width:100%;
 	position:relative;
 	background:url(../img/pink-divider.jpg) repeat-x left center;
 	margin:40px 0;
-	margin-bottom:25px !important;
+	margin-bottom:25px;
 }
 .pink-dashed span {
 	background: #fff none repeat scroll 0 0;
@@ -509,20 +509,20 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	font-size: 32px;
 	padding: 0 30px;
 }
-.home .tp-thumb-title {
-	padding: 10px!important;
-	margin: 0!important;
-	font-family: "Catamaran", sans-serif!important;
-	letter-spacing: 0!important;
-	font-size: 15px!important;
-	text-align: left!important;
+.tp-thumb-title {
+	padding: 10px;
+	margin: 0;
+	font-family: "Catamaran", sans-serif;
+	letter-spacing: 0;
+	font-size: 15px;
+	text-align: left;
 	display: block;
 	transition: all 400ms ease;
-	font-weight: 400!important;
+	font-weight: 400;
 }
-.home .tp-thumb.selected .tp-thumb-title, .home .tp-thumb .tp-thumb-title:hover {
-	background: #e80062!important;
-	color: #fff!important;
+.tp-thumb.selected .tp-thumb-title, .tp-thumb .tp-thumb-title:hover {
+	background: #e80062;
+	color: #fff;
 }
 .category-title a {
 	font-size:18px;
@@ -621,8 +621,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 .view-more-cat-btn {
 	background: #e80062;
 	display: block;
-	color: #fff !important;
-	text-decoration:none !important;
+	color: #fff;
+	text-decoration:none;
 	text-align: center;
 	font-size: 12px;
 	line-height: 2;
@@ -647,7 +647,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	transition: all 400ms ease;
 }
 .treatments-column > div:hover {
-	background: #fbfbfb!important;
+	background: #fbfbfb;
 }
 .featured-item img, .featured-video img {
 	opacity:0.8;
@@ -689,10 +689,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	padding: 8px;
 	text-align: center;
 	text-transform: uppercase;
-	text-decoration:none !important;
+	text-decoration:none;
 }
 .col-md-12.s-featured-video.s-widget {
-	padding: 0!important;
+	padding: 0;
 }
 .recent-review-box > h1 {
 	font-size: 32px;
@@ -764,7 +764,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	width: auto;
 	background:1px solid #ccc;
 }
-.home .featured-products-title {
+.featured-products-title {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100&0.8+0,0.8+100 */
 background: -moz-linear-gradient(top, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 0.8) 0%, rgba(232, 0, 98, 0.8) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -781,7 +781,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	width: 100%;
 	transition: all 200ms ease 0s;
 }
-.home .featured-products-title span.fp-title {
+.featured-products-title span.fp-title {
 	color: #fff;
 	display: block;
 	font-family: "Catamaran", sans-serif;
@@ -794,7 +794,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	text-transform: uppercase;
 	width: 100%;
 }
-.home .featured-products-title span.icon-review {
+.featured-products-title span.icon-review {
 	background: #fff none repeat scroll 0 0;
 	border-radius: 1px;
 	color: #111;
@@ -811,12 +811,12 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	transition: all 200ms ease 0s;
 	width: 100%;
 }
-.home .featured-products-title:hover {
+.featured-products-title:hover {
 	height: 100%;
 	background:#e80062;
 	padding-top:25px;
 }
-.home .featured-products-title:hover span.fp-title {
+.featured-products-title:hover span.fp-title {
 	height: auto;
 	padding-bottom: 25px;
 }
@@ -872,4 +872,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 }
 .breadcrumbs-container {
 	background: #f7f7f7 none repeat scroll 0 0;
+}
+
+.readmore {
+	display: block;
+	width: 100%;
+	text-align: center;
+}
+.pink-dashed.readmore {
+	margin: 0;
+}
+
+
+.readmore a, .readmore a span{
+	font-family:"Playfair Display", serif;
+	color: #e80062;
+	font-weight: 400;
+	text-transform:uppercase;
+	transition: all 400ms ease;
+	font-size:14px;
+}
+
+.navbar-nav > li:hover > ul.sub-menu {
+	display: block;
+	transition: all 600ms ease;
 }

@@ -14,20 +14,20 @@
 						$catId = $category->cat_ID;
 						$catSlug = $category->slug;
 
+						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+						//$query = new WP_Query( array( 'paged' => $paged ) );
+
 						$productArgs = array(
-				    		'posts_per_page' 	=> 10,
+				    		'posts_per_page' 	=> -1,
 							'post_type'			=> 'product',			    
 				    		'category_name' 	=> NULL, //reset
-				    		'file_template'	 	=> 'section/category-product.php',				    		
-				    		'tax_query' 		=> array( array(
-									            'taxonomy' => 'category',
-									            'field' => 'slug',
-									            'terms' => $catSlug,
-									            //'operator' => 'AND'									           
-							)) 	
+				    		'file_template'	 	=> 'section/category-product.php',		
+				    		'column_width'		=> 'col-md-3',
+				    		'paged'				=> $paged,		    		
+				    		'cat' 				=> $catId,
 						);
 					?>              
-                	<?php bi_display_products($productArgs); ?>
+                	<?php bi_display_products($productArgs); ?>					
                 </div>
 			</div>
 			<div id="all-articles" class="all-articles col-md-3">
