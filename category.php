@@ -50,7 +50,7 @@
 }
 .recent-articles .recent-article-thumb {
 	margin: 0;
-	padding-right: 0;
+	padding: 0;
 }
 .all-articles .cat-titles,
 .category-recent-articles .cat-titles {
@@ -109,8 +109,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 .all-articles .recent-articles > div {
   border-bottom: 1px solid #dfdfdf;
-  margin: 15px 0;
+  margin: 0 15px;
   padding-bottom: 10px;
+  padding-top: 15px;
 }
 </style>
 <div class="category-page">
@@ -143,7 +144,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
                 <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
-					'post_per_page'	=> 8,
+					'post_per_page'	=> 5,
 					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
