@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <style>
-.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .category-video-containers img {
+.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .featured-category-video img {
 	height: auto !important;
 }
 .breadcrumbs {
@@ -91,7 +91,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
         <div class="row">
-          <div id="category-main-slider" class="category-main-slider col-md-6">
+          <div id="category-main-slider" class="category-main-slider col-md-12">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
@@ -108,7 +108,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-          <div id="category-articles" class="category-articles col-md-6">
+          <div id="category-articles" class="category-articles col-md-12">
             <div>
               <h3 class="cat-titles pink-dashed"><span>Latest in
                 <?php ucwords(single_cat_title());?>
@@ -128,7 +128,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
           </div>
         </div>
         <div class="row">
-          <div class="category-video-containers col-md-6">
+          <div class="category-video-containers col-md-12">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
@@ -152,7 +152,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-          <div class="category-product-containers  col-md-6">
+          <div class="category-product-containers  col-md-12">
             <div>
               <h3 class="cat-titles pink-dashed"><span>
                 <?php ucwords(single_cat_title());?>
