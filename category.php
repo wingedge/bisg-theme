@@ -131,7 +131,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               <h3 class="cat-titles pink-dashed"><span>Latest in
                 <?php ucwords(single_cat_title());?>
                 </span> </h3>
-              <div class="row recent-article-row">
+              <div class="recent-article-row">
               <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
