@@ -53,7 +53,7 @@
 	padding-right: 0;
 }
 .all-articles .cat-titles,
-.category-articles .cat-titles {
+.category-recent-articles .cat-titles {
 	color: #fff;
 	font-family: "Playfair Display", serif;
 	line-height: 1;
@@ -66,18 +66,18 @@ background: rgb(198,0,70); /* Old browsers */
 	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
-.recent-articles {
+.category-recent-articles {
 	background: #f7f7f7 none repeat scroll 0 0;
 	padding: 15px;
 }
-.category-articles .recent-article-thumb {
+.category-recent-articles .recent-article-thumb {
 	max-height: 147px;
 	overflow: hidden;
 }
-.category-articles .recent-article-title a {
+.category-recent-articles .recent-article-title a {
 	text-decoration:none !important;
 }
-.category-articles .recent-article-title .fp-title {
+.category-recent-articles .recent-article-title .fp-title {
 	color: #333;
 	display: block;
 	font-size: 13px;
@@ -137,7 +137,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               </div>
             </div>
           </div>
-          <div id="category-articles" class="category-articles col-md-5">
+          <div id="category-recent-articles" class="category-recent-articles col-md-5">
             <div>
               <h3 class="cat-titles">Latest in <?php ucwords(single_cat_title());?></h3>
               <div class="recent-article-wrap">
