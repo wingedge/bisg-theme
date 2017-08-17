@@ -150,7 +150,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               <?php 
 				$catArticleArgsNew = array(
 					'category_name' => single_cat_title(null,false),
-					'post_per_page'	=> 3,
+					'post_per_page'	=> 5,
 					'file_template' => 'section/category-article-slider.php',					
 				);
 			?>
@@ -166,7 +166,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
                 <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
-					'post_per_page'	=> 5,
+					'post_per_page'	=> 10,
 					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
@@ -185,7 +185,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
               <div class="category-video-box">
                 <?php /*set arguments */
 					$videosArgs = array(
-					    'posts_per_page' 	=> 3,
+					    'posts_per_page' 	=> 4,
 					    'category_name' 	=> NULL, //reset
 					    'file_template'	 	=> 'section/category-video.php',
 					    /* no tax yet, not finished with recategorizing
