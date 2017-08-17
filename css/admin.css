@@ -1,13 +1,13 @@
 body.login {
-	background:url(../img/login-brackground-2.jpg) no-repeat left top;
+	background:url(../img/login-background-2.jpg) no-repeat left top;
 	background-size: cover cover;
 }
 body.login div#login {}
 body.login div#login h1 {}
 body.login div#login h1 a {
 	background:url(../img/Beauty-Insider-Logo.jpg) no-repeat left top;
-	
-
+	width:250px;
+	height:80px;
 }
 body.login div#login form#loginform {}
 body.login div#login form#loginform p {}
