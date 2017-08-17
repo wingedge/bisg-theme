@@ -24,7 +24,7 @@
   </div>
   <div class="main-content container">
     <div class="row">
-      <div id="category-main-slider" class="category-main-slider col-md-5">
+      <div id="category-main-slider" class="category-main-slider col-md-5"><div>
         <h3 class="cat-titles pink-dashed">
           <span><?php ucwords(single_cat_title());?></span>
         </h3>
@@ -38,8 +38,8 @@
         <div class="category-articles-container slick-slider-one">
           <?php bi_display_brand($catArticleArgsNew);?>
         </div>
-      </div>
-      <div id="category-articles" class="category-articles col-md-4">
+      </div></div>
+      <div id="category-articles" class="category-articles col-md-4"><div>
         <h3 class="cat-titles pink-dashed"><span>Latest in <?php ucwords(single_cat_title());?></span>
         </h3>
         <?php 
@@ -53,14 +53,14 @@
         <div class="category-articles-container">
           <?php bi_display_brand($catArticleArgs);?>
         </div>
-      </div>
-      <div id="all-articles" class="all-articles col-md-3">
+      </div></div>
+      <div id="all-articles" class="all-articles col-md-3"><div>
         <h3 class="cat-titles pink-dashed"><span>Recent Posts</span></h3>
         <?php get_sidebar('category');?>
-      </div>
+      </div></div>
     </div>
     <div class="row">
-      <div class="col-md-6 category-videos">
+      <div class="col-md-6 category-videos"><div>
         <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?> Videos</span></h3>
         <div class="category-video-containers row">
           <?php /*set arguments */
@@ -79,11 +79,10 @@
 				?>
           <?php bi_display_popular_videos($videosArgs);?>
         </div>
-      </div>
-      <div class="col-md-6">
-        <h3 class="cat-titles pink-dashed">
-          <span><?php ucwords(single_cat_title());?> Products</span></h3>
-        <div class="category-video-containers row">
+      </div></div>
+      <div class="col-md-6">        
+        <div class="category-video-containers row"><div>
+        <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?> Products</span></h3>
           <?php /*set arguments */
 				$productArgs = array(
 				    'posts_per_page' 	=> 10,
@@ -103,7 +102,7 @@
           <div class="category-product-container slick-slider-four" id="products-carousel">
             <?php bi_display_products($productArgs); ?>
           </div>
-        </div>
+        </div></div>
       </div>
     </div>
   </div>
