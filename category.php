@@ -56,6 +56,7 @@
         </div>
       </div>
       <div id="all-articles" class="all-articles col-md-3">
+        <h3>Recent Posts</h3>
         <?php get_sidebar('category');?>
       </div>
     </div>
