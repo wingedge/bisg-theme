@@ -158,6 +158,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   width: 86%;
   z-index: 999;
   width: 100%;
+  display:none;
+  transition: all 400ms ease 0s;
 }
 .category-video-box .category-video-title .fa {
   color: #fff;
@@ -167,10 +169,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   line-height: 1;
   margin: 0 auto;
   text-align: center;
-  display:none;
-  transition: all 400ms ease 0s;
 }
-.category-video-box .category-video-title:hover .fa
+.category-video-box .category-video-title:hover
 {
 	display:block;
 }
