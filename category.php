@@ -87,7 +87,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 </style>
 <div class="category-page">
- <?php include "section/breadcrumbs.php"; ?>
+ <?php include('section/breadcrumbs.php'); ?>
   <div class="main-content container">
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
