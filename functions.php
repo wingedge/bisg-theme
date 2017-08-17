@@ -88,8 +88,8 @@ function bisg_load_theme(){
 add_action( 'wp_enqueue_scripts', 'bisg_load_theme', 100 ); // load last
 
 function bisg_load_admin_theme(){	
-    wp_enqueue_style( 'bisg-custom-login', get_stylesheet_directory_uri() . '/admin.css' );
-    wp_enqueue_script( 'bisg-custom-login-js', get_stylesheet_directory_uri() . '/js-admin.js' );
+    wp_enqueue_style( 'bisg-custom-login', get_stylesheet_directory_uri() . '/css/admin.css' );
+    wp_enqueue_script( 'bisg-custom-login-js', get_stylesheet_directory_uri() . '/js/js-admin.js' );
 }
 add_action( 'login_enqueue_scripts', 'bisg_load_admin_theme' );
 
