@@ -103,7 +103,7 @@
         </div>
       </div></div>
       <div id="all-articles" class="all-articles col-md-3"><div>
-        <h3 class="cat-titles pink-dashed"><span>Recent Posts</span></h3>
+        <h3 class="cat-titles"><span>Recent Posts</span></h3>
         <?php get_sidebar('category');?>
       </div></div>
     </div>
