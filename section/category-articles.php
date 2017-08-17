@@ -1,6 +1,7 @@
 <div class="row recent-article-row recent-article-row-<?php echo $postCtr;?>">
 	<div id="post-<?php the_ID(); ?>" <?php post_class('recent-article-post'); ?>>
-		<div class="col-md-4 recent-article-thumb">
+		<div class="col-md-12"><h3>Recent Posts</h3></div>
+        <div class="col-md-4 recent-article-thumb">
 			<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 				<?php if ( !has_post_thumbnail() ): ?><?php echo bi_get_post_image();?><?php else:?><?php the_post_thumbnail();?><?php endif;?>
 			</a>

@@ -1,6 +1,5 @@
 <div class="item <?php if ($postCtr <= 1):?> active<?php endif;?>">
 	<div class="col-md-12">
-    	<h3>Recent Posts</h3>
 		<div id="post-<?php the_ID(); ?>" <?php post_class('sidebar-products'); ?> >
 			<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 			<?php if ( !has_post_thumbnail() ): ?>
