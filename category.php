@@ -86,7 +86,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	text-transform: uppercase;
 }
 </style>
-<div class="category-page">
+<div class="category-page"> 
  <?php include('section/breadcrumbs.php'); ?>
   <div class="main-content container">
     <div class="row">
