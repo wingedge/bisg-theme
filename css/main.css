@@ -901,3 +901,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 .category-row{
 	margin-bottom:20px;
 }
+
+.category-row .product {
+	max-height: 200px;
+	position: relative;
+	overflow: hidden;
+}
