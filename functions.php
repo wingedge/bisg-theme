@@ -85,8 +85,14 @@ function bisg_load_theme(){
     wp_enqueue_style( 'bisgtheme-main', get_theme_file_uri( '/css/main.css' ), array(), '1.0' );
 	wp_enqueue_style('responsive-style',get_stylesheet_directory_uri().'/css/responsive.css');
 }
-
 add_action( 'wp_enqueue_scripts', 'bisg_load_theme', 100 ); // load last
+
+function bisg_load_admin_theme(){	
+    wp_enqueue_style( 'bisg-custom-login', get_stylesheet_directory_uri() . '/admin.css' );
+    wp_enqueue_script( 'bisg-custom-login-js', get_stylesheet_directory_uri() . '/js-admin.js' );
+}
+add_action( 'login_enqueue_scripts', 'bisg_load_admin_theme' );
+
 
 
 add_action( 'widgets_init', 'bisg_theme_widgets_init' );
