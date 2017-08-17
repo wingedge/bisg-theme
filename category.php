@@ -126,7 +126,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 8,
-					'file_template' => 'section/catpage-category-articles.php',
+					'file_template' => 'section/category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
 			  ?>
