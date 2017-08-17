@@ -37,5 +37,4 @@
 		</div>
 	</div>
 </div>
-show products
 <?php get_footer(); ?>
