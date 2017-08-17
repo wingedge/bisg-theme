@@ -14,60 +14,60 @@
 	padding: 5px;
 }
 .cat-titles.pink-dashed > span {
-    font-size: 24px;
+	font-size: 24px;
 }
 .category-main-slider {
-  color: #666;
-  font-weight: 300;
+	color: #666;
+	font-weight: 300;
 }
 .category-main-slider .fp-title {
-  color: #e80062 !important;
-  display: block;
-  font-size: 21px;
-  line-height: 1.1;
-  padding: 10px 0;
-  font-weight: 500;
-  text-decoration:none !important;
+	color: #e80062 !important;
+	display: block;
+	font-size: 21px;
+	line-height: 1.1;
+	padding: 10px 0;
+	font-weight: 500;
+	text-decoration:none !important;
 }
 .category-articles-container .recent-article-row > div > div {
-  background: #efefef none repeat scroll 0 0;
+	background: #efefef none repeat scroll 0 0;
 }
 .category-articles-container .recent-article-row {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 .category-articles-container .recent-article-row .recent-article-title {
-  font-size: 13px;
-  padding: 0;
-  text-transform: uppercase;
+	font-size: 13px;
+	padding: 0;
+	text-transform: uppercase;
 }
 .category-articles-container .recent-article-row .recent-article-title a {
-    color: #333;
-    text-decoration: none;
+	color: #333;
+	text-decoration: none;
 }
 .recent-articles .fp-title {
-  color: #333;
-  display: block;
-  font-size: 13px;
-  text-transform: uppercase;
+	color: #333;
+	display: block;
+	font-size: 13px;
+	text-transform: uppercase;
 }
 .category-articles-container .recent-article-row .recent-article-title a:hover, .recent-articles .fp-title:hover {
-    color: #e80062;
-    text-decoration: none;
+	color: #e80062;
+	text-decoration: none;
 }
 .recent-articles .recent-article-row {
-  margin-bottom: 15px;
+	margin-bottom: 15px;
 }
 .recent-articles .recent-article-thumb {
-  margin: 0;
-  padding-right: 0;
+	margin: 0;
+	padding-right: 0;
 }
 .all-articles .cat-titles {
-  color: #fff;
-  font-family: "Playfair Display",serif;
-  line-height: 1;
-  margin-bottom: 0;
-  padding: 10px 15px;
-  	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100 */
+	color: #fff;
+	font-family: "Playfair Display", serif;
+	line-height: 1;
+	margin-bottom: 0;
+	padding: 10px 15px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100 */
 background: rgb(198,0,70); /* Old browsers */
 	background: -moz-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* FF3.6-15 */
 	background: -webkit-linear-gradient(top, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* Chrome10-25,Safari5.1-6 */
@@ -75,8 +75,8 @@ background: rgb(198,0,70); /* Old browsers */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
 .recent-articles {
-  background: #f7f7f7 none repeat scroll 0 0;
-  padding: 15px;
+	background: #f7f7f7 none repeat scroll 0 0;
+	padding: 15px;
 }
 </style>
 <div class="category-page">
@@ -89,25 +89,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   </div>
   <div class="main-content container">
     <div class="row">
-      <div id="category-main-slider" class="category-main-slider col-md-5"><div>
-        <h3 class="cat-titles pink-dashed">
-          <span><?php ucwords(single_cat_title());?></span>
-        </h3>
-        <?php 
+      <div id="category-content-left" class="category-content-left col-md-9">
+        <div class="row">
+          <div id="category-main-slider" class="category-main-slider col-md-6">
+            <div>
+              <h3 class="cat-titles pink-dashed"><span>
+                <?php ucwords(single_cat_title());?>
+                </span></h3>
+              <?php 
 				$catArticleArgsNew = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 3,
 					'file_template' => 'section/category-article-slider.php',					
 				);
 			?>
-        <div class="category-articles-container slick-slider-one">
-          <?php bi_display_brand($catArticleArgsNew);?>
-        </div>
-      </div></div>
-      <div id="category-articles" class="category-articles col-md-4"><div>
-        <h3 class="cat-titles pink-dashed"><span>Latest in <?php ucwords(single_cat_title());?></span>
-        </h3>
-        <?php 
+              <div class="category-articles-container slick-slider-one">
+                <?php bi_display_brand($catArticleArgsNew);?>
+              </div>
+            </div>
+          </div>
+          <div id="category-articles" class="category-articles col-md-6">
+            <div>
+              <h3 class="cat-titles pink-dashed"><span>Latest in
+                <?php ucwords(single_cat_title());?>
+                </span> </h3>
+              <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 8,
@@ -115,20 +121,28 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
 			?>
-        <div class="category-articles-container">
-          <?php bi_display_brand($catArticleArgs);?>
+              <div class="category-articles-container">
+                <?php bi_display_brand($catArticleArgs);?>
+              </div>
+            </div>
+          </div>
         </div>
-      </div></div>
-      <div id="all-articles" class="all-articles col-md-3"><div>
-        <h3 class="cat-titles"><span>Recent Posts</span></h3>
-        <?php get_sidebar('category');?>
-      </div></div>
+      </div>
+      <div id="all-articles" class="all-articles col-md-3">
+        <div>
+          <h3 class="cat-titles"><span>Recent Posts</span></h3>
+          <?php get_sidebar('category');?>
+        </div>
+      </div>
     </div>
     <div class="row">
-      <div class="col-md-6 category-videos"><div>
-        <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?> Videos</span></h3>
-        <div class="category-video-containers row">
-          <?php /*set arguments */
+      <div class="col-md-6 category-videos">
+        <div>
+          <h3 class="cat-titles pink-dashed"><span>
+            <?php ucwords(single_cat_title());?>
+            Videos</span></h3>
+          <div class="category-video-containers row">
+            <?php /*set arguments */
 					$videosArgs = array(
 					    'posts_per_page' 	=> 3,
 					    'category_name' 	=> NULL, //reset
@@ -142,13 +156,17 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 						))*/
 					);
 				?>
-          <?php bi_display_popular_videos($videosArgs);?>
+            <?php bi_display_popular_videos($videosArgs);?>
+          </div>
         </div>
-      </div></div>
-      <div class="col-md-6">        
-        <div class="category-video-containers row"><div>
-        <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?> Products</span></h3>
-          <?php /*set arguments */
+      </div>
+      <div class="col-md-6">
+        <div class="category-video-containers row">
+          <div>
+            <h3 class="cat-titles pink-dashed"><span>
+              <?php ucwords(single_cat_title());?>
+              Products</span></h3>
+            <?php /*set arguments */
 				$productArgs = array(
 				    'posts_per_page' 	=> 10,
 					'post_type'			=> 'product',			    
@@ -164,10 +182,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					)) */
 				);
 			?>
-          <div class="category-product-container slick-slider-four" id="products-carousel">
-            <?php bi_display_products($productArgs); ?>
+            <div class="category-product-container slick-slider-four" id="products-carousel">
+              <?php bi_display_products($productArgs); ?>
+            </div>
           </div>
-        </div></div>
+        </div>
       </div>
     </div>
   </div>
