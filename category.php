@@ -29,7 +29,7 @@
   font-weight: 500;
   text-decoration:none !important;
 }
-.category-articles-container .recent-article-row {
+.category-articles-container .recent-article-row > div > div {
   background: #efefef none repeat scroll 0 0;
 }
 </style>
