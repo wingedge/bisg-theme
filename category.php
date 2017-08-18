@@ -8,7 +8,7 @@
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
         <div class="row">
-          <div id="category-main-slider" class="category-main-slider col-md-7">
+          <div id="category-main-slider" class="category-main-slider col-md-8">
             <div>
               <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?></span></h3>
               <?php 
@@ -23,7 +23,7 @@
               </div>
             </div>
           </div>
-          <div id="category-recent-articles" class="category-recent-articles col-md-5">
+          <div id="category-recent-articles" class="category-recent-articles col-md-4">
             <div>
               <h3 class="cat-titles">Latest in
                 <?php ucwords(single_cat_title());?>
