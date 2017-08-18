@@ -1158,3 +1158,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   margin: 0;
   padding: 0;
 }
+
+span.attributes{
+	margin-bottom:20px;
+}
