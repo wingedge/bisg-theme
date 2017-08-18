@@ -1185,3 +1185,34 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	margin: 15px 0;
 	padding: 0;
 }
+.prev-next-button {
+  font-size: 13px;
+  font-weight: 300;
+}
+.prev-btn {
+  float: right;
+  text-align: right;
+}
+.next-btn {
+  float: left;
+}
+.prev-next-button > span {
+  background: #efefef none repeat scroll 0 0;
+  line-height: 1;
+  max-width: 45%;
+  padding: 5px 10px;
+  width: 100%;
+  transition: all 400ms ease 0s;
+}
+.prev-next-button > span:hover
+{
+	background:#e80062;
+}
+.prev-next-button > span a {
+  color: #111;
+  transition: all 400ms ease 0s;
+}
+.prev-next-button > span:hover a
+{
+	 color: #fff;
+}

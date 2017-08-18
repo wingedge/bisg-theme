@@ -49,7 +49,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <div class="prev-next-navigation"><p><?php posts_nav_link('&#8734;','Next','Previous'); ?></p></div>
+      <div class="prev-next-button"><span class="next-btn"><?php previous_post_link(); ?></span><span class="prev-btn"><?php next_post_link(); ?></span></div>
     </div>
   </div>
 </div>
