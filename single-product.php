@@ -24,40 +24,40 @@
           </div>
        
           <div class="col-md-6">
-            <div class="product-attributes"> 
-
-              <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
-              <?php if($attributes):?>                                  
-                <?php foreach($attributes as $attribute):?>
-                  <?php if($attribute->parent > 0):?>
-                    <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="product-attributes"> 
+                  <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
+                  <?php if($attributes):?>                                  
+                    <?php foreach($attributes as $attribute):?>
+                      <?php if($attribute->parent > 0):?>
+                        <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>
+                      <?php endif;?>
+                    <?php endforeach;?>
                   <?php endif;?>
-                <?php endforeach;?>
-              <?php endif;?>
 
-              <?php $attributes = get_the_terms(get_the_id(),'category'); ?>
-              <?php if($attributes):?>                                  
-                <?php foreach($attributes as $attribute):?>
-                  <?php if($attribute->parent > 0):?>
-                    <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>
+                  <?php $attributes = get_the_terms(get_the_id(),'category'); ?>
+                  <?php if($attributes):?>                                  
+                    <?php foreach($attributes as $attribute):?>
+                      <?php if($attribute->parent > 0):?>
+                        <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>
+                      <?php endif;?>
+                    <?php endforeach;?>
                   <?php endif;?>
-                <?php endforeach;?>
-              <?php endif;?>
-
-
+                </div>
+              </div>
             </div>
-          </div>
-
-        </div>
-
-        <div class="row">
-          <div class="col-md-12">
-            <div class="entry-content">
-              <?php the_content(); ?>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="entry-content">
+                  <?php the_content(); ?>
+                </div>
+              </div>
             </div>
-          </div>
         </div>
+        
       </div>
+      
       <?php endwhile; // End the loop. Whew. ?>
     </div>
     <div id="sidebar" class="sidebar col-md-3">
