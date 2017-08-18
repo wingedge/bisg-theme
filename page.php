@@ -1,9 +1,6 @@
 <?php get_header(); ?>
-
+<?php get_template_part('section/breadcrumbs'); ?>
 <div class="main-content container">
-	<div class="row breadcrumbs-row">
-		<?php bi_breadcrumbs();?>
-	</div>
 	<div class="row">
 		<div id="main" class="main-column col-md-12">		
 			<?php while ( have_posts() ) : the_post(); ?>
