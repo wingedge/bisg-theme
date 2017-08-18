@@ -18,12 +18,14 @@
         <div class="row">
           
           <div class="col-md-6">
-            <div class="content-image-banner">
-              <?php the_post_thumbnail();?>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="content-image-banner">
+                  <?php the_post_thumbnail();?>
+                </div>
+              </div>
             </div>
-          </div>
-       
-          <div class="col-md-6">            
+
             <div class="row">              
               <div class="col-md-12">
                 <div class="product-attributes">                   
@@ -48,6 +50,10 @@
                 </div>
               </div>
             </div>
+          </div>
+       
+          <div class="col-md-6">            
+            
             <div class="row">
               <div class="col-md-12">
                 <div class="entry-content">
