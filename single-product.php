@@ -68,7 +68,7 @@
           <h3 class="cat-titles"><span>Recent Blogs</span></h3>
         </div>
       </div>
-      <?php get_sidebar('articles');?>
+      <?php get_sidebar('product');?>
     </div>
   </div>
 </div>
