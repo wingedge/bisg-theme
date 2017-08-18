@@ -76,18 +76,18 @@
  .navbar-nav > li > ul.sub-menu {
  position: inherit;
 }
-.category-page .category-recent-articles .recent-article-title .fp-title {
+.category-recent-articles .recent-article-title .fp-title {
  margin-top: 10px;
 }
-.category-page .category-recent-articles .recent-article-thumb {
+.category-recent-articles .recent-article-thumb {
  max-height: inherit !important;
 }
-.category-page .category-video-box .post {
+.category-video-box .post {
  min-height: inherit !important;
  position: relative;
  width: 100%;
 }
-.category-page .category-video-box .post img {
+.category-video-box .post img {
  position: relative!important;
  height: inherit!important;
 }
