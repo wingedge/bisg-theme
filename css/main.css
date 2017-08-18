@@ -955,8 +955,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	text-transform: uppercase;
 	transition: all 400ms ease 0s;
 }
-.category-page .recent-articles .fp-title:hover
-{
+.category-page .recent-articles .fp-title:hover {
 	color:#e80062 !important;
 }
 .category-page .category-articles-container .recent-article-row .recent-article-title a:hover, .category-page .recent-articles .fp-title:hover {
@@ -1019,8 +1018,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	text-transform: uppercase;
 	transition: all 400ms ease 0s;
 }
-.category-page .category-recent-articles .recent-article-title .fp-title:hover
-{
+.category-page .category-recent-articles .recent-article-title .fp-title:hover {
 	color:#e80062 !important;
 }
 .category-page .category-main-slider .cat-titles.pink-dashed {
@@ -1122,11 +1120,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	margin-right:10px;
 }
 .content-categories .post-categories li a {
-  color: #999;
+	color: #999;
 }
 .content-categories > strong {
-  font-weight: normal;
-  margin-right: 10px;
+	font-weight: normal;
+	margin-right: 10px;
 }
 .content-categories {
 	border-top: 1px solid #ccc;
@@ -1135,8 +1133,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	margin-bottom: 20px;
 	font-size:14px;
 }
-.sidebar .cat-titles 
-{
+.sidebar .cat-titles {
 	color: #fff;
 	font-family: "Playfair Display", serif;
 	line-height: 1;
@@ -1162,30 +1159,29 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
  border-bottom: none !important;
 }
 .sidebar .recent-article-title .fp-title {
-  color: #333;
-  display: block;
-  font-size: 13px;
-  text-transform: uppercase;
-  transition: all 400ms ease 0s;
+	color: #333;
+	display: block;
+	font-size: 13px;
+	text-transform: uppercase;
+	transition: all 400ms ease 0s;
 }
-.sidebar .recent-article-title .fp-title:hover
-{
+.sidebar .recent-article-title .fp-title:hover {
 	color:#e80062 !important;
 }
-.sidebar  .recent-article-thumb {
-  margin: 0;
-  padding: 0;
+.sidebar .recent-article-thumb {
+	margin: 0;
+	padding: 0;
 }
 .single-wrap .content-image-banner img {
-  margin-top: 20px;
-  width: 100%;
+	margin-top: 20px;
+	width: 100%;
 }
 .single-wrap .content-title h2 {
-  background: #fff none repeat scroll 0 0;
-  color: #e80062;
-  display: inline-block;
-  font-family: "Playfair Display",serif;
-  font-size: 32px;
-  margin: 15px 0;
-  padding: 0;
+	background: #fff none repeat scroll 0 0;
+	color: #e80062;
+	display: inline-block;
+	font-family: "Playfair Display", serif;
+	font-size: 32px;
+	margin: 15px 0;
+	padding: 0;
 }

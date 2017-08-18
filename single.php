@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
-
 <div class="main-content container single-wrap">
   <div class="row">
     <div id="main" class="main-column col-md-9">
@@ -49,7 +48,10 @@
     </div>
   </div>
   <div class="row">
-  	<div class="col-md-12"><?php previous_post_link(); ?>    <?php next_post_link(); ?></div>
+    <div class="col-md-12">
+      <?php previous_post_link(); ?>
+      <?php next_post_link(); ?>
+    </div>
   </div>
 </div>
 <?php get_footer(); ?>
