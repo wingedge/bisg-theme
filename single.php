@@ -9,22 +9,22 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="row">
-						<div class="content-image-banner">
+						<div class="content-image-banner col-md-12">
 							<?php the_post_thumbnail();?>
 						</div>
 					</div>
 					<div class="row">
-						<div class="content-title">
+						<div class="content-title col-md-12">
 							<h2><?php the_title();?></h2>
 						</div>
 					</div>
 					<div class="row">
-						<div class="content-categories">
+						<div class="content-categories col-md-12">
 							<?php the_category(); ?>
 						</div>
 					</div>
 					<div class="row">					
-						<div class="entry-content">						
+						<div class="entry-content col-md-12">						
 							<?php the_content(); ?>
 						</div>
 					</div>

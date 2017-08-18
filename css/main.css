@@ -1093,4 +1093,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	max-width: 150%;
 	height:auto;
 }
+
+
 /*end category page*/
+
+/*
+	SINGLE ARTICLES
+*/
+
+.content-categories ul.post-categories{
+	padding:0;
+}
+
+.content-categories .post-categories li {
+	list-style: none;
+	display: inline-block;
+}
