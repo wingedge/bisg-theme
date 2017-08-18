@@ -1,16 +1,16 @@
 <?php get_header(); ?>
 <style>
-.category-page .slick-slide img, .category-page .recent-article-row img, .category-videos img, .featured-category-video img, .category-articles img {
+.category-page .slick-slide img, .category-page .recent-article-row img, .category-page .category-videos img, .category-page .featured-category-video img, .category-page .category-articles img {
 	height: auto !important;
 }
-.cat-titles.pink-dashed > span {
+.category-page .cat-titles.pink-dashed > span {
 	font-size: 24px;
 }
-.category-main-slider {
+.category-page .category-main-slider {
 	color: #666;
 	font-weight: 300;
 }
-.category-main-slider .fp-title {
+.category-page .category-main-slider .fp-title {
 	color: #e80062 !important;
 	display: block;
 	font-size: 21px;
@@ -19,45 +19,43 @@
 	font-weight: 500;
 	text-decoration:none !important;
 }
-.category-articles-container .recent-article-row > div > div {
+.category-page .category-articles-container .recent-article-row > div > div {
 	background: #efefef none repeat scroll 0 0;
 }
-.category-articles-container .recent-article-row {
+.category-page .category-articles-container .recent-article-row {
 	margin-bottom: 15px;
 }
-.category-articles-container .recent-article-row .recent-article-title {
-  font-size: 13px;
-  padding-left: 0;
-  padding-top: 0;
-  text-transform: uppercase;
-  transition: all 400ms ease 0s;
+.category-page .category-articles-container .recent-article-row .recent-article-title {
+	font-size: 13px;
+	padding-left: 0;
+	padding-top: 0;
+	text-transform: uppercase;
+	transition: all 400ms ease 0s;
 }
-.category-articles-container .recent-article-row .recent-article-title a {
+.category-page .category-articles-container .recent-article-row .recent-article-title a {
 	color: #333;
 	text-decoration: none;
 	transition: all 400ms ease 0s;
 }
-.recent-articles .fp-title {
+.category-page .recent-articles .fp-title {
 	color: #333;
 	display: block;
 	font-size: 13px;
 	text-transform: uppercase;
 	transition: all 400ms ease 0s;
 }
-.category-articles-container .recent-article-row .recent-article-title a:hover, 
-.recent-articles .fp-title:hover {
+.category-page .category-articles-container .recent-article-row .recent-article-title a:hover, .category-page .recent-articles .fp-title:hover {
 	color: #e80062;
 	text-decoration: none;
 }
-.recent-articles .recent-article-row {
+.category-page .recent-articles .recent-article-row {
 	margin-bottom: 15px;
 }
-.recent-articles .recent-article-thumb {
+.category-page .recent-articles .recent-article-thumb {
 	margin: 0;
 	padding: 0;
 }
-.all-articles .cat-titles,
-.category-recent-articles .cat-titles {
+.category-page .all-articles .cat-titles, .category-page .category-recent-articles .cat-titles {
 	color: #fff;
 	font-family: "Playfair Display", serif;
 	line-height: 1;
@@ -70,7 +68,7 @@ background: rgb(198,0,70); /* Old browsers */
 	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
-.cat-bottom-title {
+.category-page .cat-bottom-title {
 	color: #fff;
 	font-family: "Playfair Display", serif;
 	line-height: 1;
@@ -83,23 +81,22 @@ background: rgb(198,0,70); /* Old browsers */
 	background: linear-gradient(to bottom, rgba(198, 0, 70, 1) 0%, rgba(232, 0, 98, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', endColorstr='#e80062', GradientType=0 ); /* IE6-9 */
 }
-.category-recent-articles .recent-article-wrap {
+.category-page .category-recent-articles .recent-article-wrap {
 	background: #f7f7f7 none repeat scroll 0 0;
 	padding: 0 15px;
 }
-.category-recent-articles .recent-article-thumb {
+.category-page .category-recent-articles .recent-article-thumb {
 	max-height: 147px;
 	overflow: hidden;
 }
-.category-recent-articles .recent-article-title a {
+.category-page .category-recent-articles .recent-article-title a {
 	text-decoration:none !important;
 	transition: all 400ms ease 0s;
 }
-.category-recent-articles .recent-article-title a:hover
-{
+.category-page .category-recent-articles .recent-article-title a:hover {
 	color:#e80062;
 }
-.category-recent-articles .recent-article-title .fp-title {
+.category-page .category-recent-articles .recent-article-title .fp-title {
 	color: #333;
 	display: block;
 	font-size: 13px;
@@ -107,80 +104,77 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	text-transform: uppercase;
 	transition: all 400ms ease 0s;
 }
-.category-main-slider .cat-titles.pink-dashed {
-  text-align: left!important;
-  margin-top:25px !important;
+.category-page .category-main-slider .cat-titles.pink-dashed {
+	text-align: left!important;
+	margin-top:25px !important;
 }
-.category-main-slider .cat-titles.pink-dashed > span {
-  font-size: 32px;
-  padding-left: 0;
+.category-page .category-main-slider .cat-titles.pink-dashed > span {
+	font-size: 32px;
+	padding-left: 0;
 }
-.category-recent-articles .category-articles-container {
-  background: #f7f7f7 none repeat scroll 0 0;
-  padding: 15px;
+.category-page .category-recent-articles .category-articles-container {
+	background: #f7f7f7 none repeat scroll 0 0;
+	padding: 15px;
 }
-.category-recent-articles .category-articles-container .recent-article-title {
-  padding-left: 0;
+.category-page .category-recent-articles .category-articles-container .recent-article-title {
+	padding-left: 0;
 }
-.category-recent-articles .category-articles-container > div {
-  border-bottom: 1px solid #dfdfdf;
-  margin-bottom: 15px;
-  padding-bottom: 15px;
+.category-page .category-recent-articles .category-articles-container > div {
+	border-bottom: 1px solid #dfdfdf;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
 }
-.all-articles .recent-articles {
-  background: #f7f7f7 none repeat scroll 0 0;
+.category-page .all-articles .recent-articles {
+	background: #f7f7f7 none repeat scroll 0 0;
 }
-.all-articles .recent-articles > div {
-  border-bottom: 1px solid #dfdfdf;
-  margin: 0 15px;
-  padding-bottom: 10px;
-  padding-top: 15px;
+.category-page .all-articles .recent-articles > div {
+	border-bottom: 1px solid #dfdfdf;
+	margin: 0 15px;
+	padding-bottom: 10px;
+	padding-top: 15px;
 }
-.all-articles .recent-articles > div:nth-last-child(1)
-{
-	border-bottom: none !important;
+.category-page .all-articles .recent-articles > div:nth-last-child(1) {
+ border-bottom: none !important;
 }
-.category-recent-articles .category-articles-container > div:nth-last-child(1) {
-  border: medium none;
-  margin-bottom: 0;
-  padding-bottom: 0;
+.category-page .category-recent-articles .category-articles-container > div:nth-last-child(1) {
+ border: medium none;
+ margin-bottom: 0;
+ padding-bottom: 0;
 }
-.category-video-box img {
-  height: auto;
-  width: 100%;
+.category-page .category-video-box img {
+	height: auto;
+	width: 100%;
 }
-.category-video-box .category-video-title {
-  bottom: 35%;
-  display: block;
-  margin: 0 auto;
-  position: absolute;
-  text-align: center;
-  width: 86%;
-  z-index: 999;
-  width: 100%;
-  display:none;
-  transition: all 400ms ease 0s;
+.category-page .category-video-box .category-video-title {
+	bottom: 35%;
+	display: block;
+	margin: 0 auto;
+	position: absolute;
+	text-align: center;
+	width: 86%;
+	z-index: 999;
+	width: 100%;
+	display:none;
+	transition: all 400ms ease 0s;
 }
-.category-video-box .category-video-title .fa {
-  color: #fff;
-  float: none;
-  font-size: 50px;
-  height: 50px;
-  line-height: 1;
-  margin: 0 auto;
-  text-align: center;
+.category-page .category-video-box .category-video-title .fa {
+	color: #fff;
+	float: none;
+	font-size: 50px;
+	height: 50px;
+	line-height: 1;
+	margin: 0 auto;
+	text-align: center;
 }
-.category-video-box a:hover .category-video-title
-{
+.category-page .category-video-box a:hover .category-video-title {
 	display:block;
 }
-
-.category-video-box .post{
+.category-page .category-video-box .post {
 	width:100%;
 	min-height:200px;
 	position: relative;
 }
-.category-video-box .post img{
+.category-page .category-video-box .post img {
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -188,10 +182,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	max-width: 150%;
 	height:auto;
 }
-
 </style>
 <div class="category-page">
- <?php get_template_part('section/breadcrumbs'); ?>
+  <?php get_template_part('section/breadcrumbs'); ?>
   <div class="main-content container">
     <div class="row">
       <div id="category-content-left" class="category-content-left col-md-9">
@@ -215,7 +208,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
           </div>
           <div id="category-recent-articles" class="category-recent-articles col-md-5">
             <div>
-              <h3 class="cat-titles">Latest in <?php ucwords(single_cat_title());?></h3>
+              <h3 class="cat-titles">Latest in
+                <?php ucwords(single_cat_title());?>
+              </h3>
               <div class="recent-article-wrap">
                 <?php 
 				$catArticleArgs = array(
@@ -235,7 +230,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
         <div class="row">
           <div class="category-video-containers col-md-12">
             <div>
-              <h3 class="cat-bottom-title"><?php ucwords(single_cat_title());?> Videos</h3>
+              <h3 class="cat-bottom-title">
+                <?php ucwords(single_cat_title());?>
+                Videos</h3>
               <div class="category-video-box">
                 <?php /*set arguments */
 					$videosArgs = array(
@@ -252,14 +249,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					);
 				?>
                 <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
-				<?php bi_display_popular_videos($videosArgs);?>
+                  <?php bi_display_popular_videos($videosArgs);?>
                 </div>
               </div>
             </div>
           </div>
           <div class="category-product-containers  col-md-12">
             <div>
-              <h3 class="cat-bottom-title"><?php ucwords(single_cat_title());?> Products</span></h3>
+              <h3 class="cat-bottom-title">
+                <?php ucwords(single_cat_title());?>
+                Products</span></h3>
               <?php /*set arguments */
 				$productArgs = array(
 				    'posts_per_page' 	=> 10,
