@@ -76,14 +76,14 @@
  .navbar-nav > li > ul.sub-menu {
  position: inherit;
 }
- .category-recent-articles .recent-article-title .fp-title {
+.category-page .category-recent-articles .recent-article-title .fp-title {
  margin-top: 10px;
 }
 .category-page .category-recent-articles .recent-article-thumb {
- max-height: inherit;
+ max-height: inherit !important;
 }
 .category-page .category-video-box .post {
- min-height: inherit;
+ min-height: inherit !important;
  position: relative;
  width: 100%;
 }
