@@ -1,6 +1,5 @@
-<style>
-.category-page .slick-slide img, .category-page .recent-article-row img, .category-page .category-videos img, .category-page .featured-category-video img, .category-page .category-articles img {
-	height: auto !important;
+<style> .category-page .slick-slide img, .category-page .recent-article-row img, .category-page .category-videos img, .category-page .featured-category-video img, .category-page .category-articles img {
+ height: auto !important;
 }
 .category-page .cat-titles.pink-dashed > span {
 	font-size: 24px;
