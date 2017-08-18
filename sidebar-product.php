@@ -17,7 +17,13 @@
        	</div>       	
 
        	<div class="recent-articles">
-			<?php bi_display_articles(array('posts_per_page'=>5,'post_type'=>'product'));?>
-		</div>
-    </div>
+    			<?php 
+            $relatedProducts =  get_the_category();
+            foreach($relatedProducts as $relatedProduct){         
+              $relatedCategories[] = $relatedProduct->cat_ID;
+            }
+          ?>
+          <?php bi_display_articles(array('posts_per_page'=>5,'post_type'=>'product', 'category__and'=>$relatedCategories));?>
+		    </div>
+  </div>
 <?php endif; ?>
