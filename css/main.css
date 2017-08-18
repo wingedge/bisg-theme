@@ -1093,7 +1093,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	max-width: 150%;
 	height:auto;
 }
-
+.category-page .category-articles-container.slick-slider-one.slick-initialized.slick-slider .slide-article-thumb {
+  background: #efefef none repeat scroll 0 0;
+  max-height: 300px;
+  min-height: 300px;
+  overflow: hidden;
+  position: relative;
+}
 
 /*end category page*/
 
