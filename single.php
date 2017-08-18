@@ -38,16 +38,7 @@
         </div>
       </div>
       <?php endwhile; // End the loop. Whew. ?>
-    </div>
-    <div id="sidebar" class="sidebar col-md-3">
       <div class="row">
-        <div class="col-md-12">
-          <h3 class="cat-titles"><span>Recent Blogs</span></h3>
-        </div>
-      </div>
-      <?php get_sidebar('articles');?>
-    </div>
-    <div class="row">
       <div class="col-md-12">
         <div class="prev-next-button"><span class="next-btn">
           <?php previous_post_link(); ?>
@@ -56,6 +47,15 @@
           </span></div>
       </div>
     </div>
+    </div>
+    <div id="sidebar" class="sidebar col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <h3 class="cat-titles"><span>Recent Blogs</span></h3>
+        </div>
+      </div>
+      <?php get_sidebar('articles');?>
+    </div>    
   </div>
 </div>
 <?php get_footer(); ?>
