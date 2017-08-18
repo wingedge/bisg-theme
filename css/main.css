@@ -1202,6 +1202,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   border-radius: 2px;
   line-height: 1.2;
   max-width: 300px;
+  min-height: 25px;
   padding: 5px 10px;
   transition: all 400ms ease 0s;
   width: 100%;
