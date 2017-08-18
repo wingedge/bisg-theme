@@ -49,8 +49,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <?php previous_post_link(); ?>
-      <?php next_post_link(); ?>
+      <div class="prev-next-navigation"><p><?php posts_nav_link('&#8734;','Next','Previous'); ?></p></div>
     </div>
   </div>
 </div>
