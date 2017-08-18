@@ -62,12 +62,7 @@
       <?php endwhile; // End the loop. Whew. ?>
 
     </div>
-    <div id="sidebar" class="sidebar col-md-3">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="cat-titles"><span>Recent Blogs</span></h3>
-        </div>
-      </div>
+    <div id="sidebar" class="sidebar col-md-3">      
       <?php get_sidebar('product');?>
     </div>
   </div>
