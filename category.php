@@ -251,7 +251,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 						))*/
 					);
 				?>
-                <?php bi_display_popular_videos($videosArgs);?>
+                <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
+				<?php bi_display_popular_videos($videosArgs);?>
+                </div>
               </div>
             </div>
           </div>

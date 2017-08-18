@@ -82,6 +82,17 @@
 	.navbar-nav > li > ul.sub-menu {
 	 position: inherit;
 	}
+	.category-recent-articles .recent-article-title .fp-title {
+  margin-top: 10px;
+}
+.category-page .category-recent-articles .recent-article-thumb {
+    max-height: inherit;
+}
+.category-page .category-video-box .post {
+  min-height: inherit;
+  position: relative;
+  width: 100%;
+}
 }
 
 
