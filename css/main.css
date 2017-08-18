@@ -1103,9 +1103,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 
 .content-categories ul.post-categories{
 	padding:0;
+	display:inline-block;
 }
 
 .content-categories .post-categories li {
 	list-style: none;
 	display: inline-block;
+	margin-right:15px;
+}
+
+.content-categories {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding-top: 10px;
+	margin-bottom: 20px;
 }

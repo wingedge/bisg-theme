@@ -9,30 +9,43 @@
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="row">
-						<div class="content-image-banner col-md-12">
-							<?php the_post_thumbnail();?>
+						<div class="col-md-12">
+							<div class="content-image-banner">
+								<?php the_post_thumbnail();?>
+							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="content-title col-md-12">
-							<h2><?php the_title();?></h2>
+						<div class="col-md-12">
+							<div class="content-title">
+								<h2><?php the_title();?></h2>
+							</div>
 						</div>
 					</div>
 					<div class="row">
-						<div class="content-categories col-md-12">
-							<?php the_category(); ?>
+						<div class="col-md-12">
+							<div class="content-categories">
+								<strong>Categories : </strong> <?php the_category(); ?>
+							</div>
 						</div>
 					</div>
 					<div class="row">					
-						<div class="entry-content col-md-12">						
-							<?php the_content(); ?>
+						<div class="col-md-12">
+							<div class="entry-content">						
+								<?php the_content(); ?>
+							</div>
 						</div>
 					</div>
 				</div>
 			<?php endwhile; // End the loop. Whew. ?>
 		</div>
 		<div id="sidebar" class="sidebar col-md-3">
-			<?php get_sidebar();?>
+			<div class="row">
+				<div class="col-md-12">
+					<h3 class="cat-titles"><span>Recent Blogs</span></h3>
+				</div>
+			</div>
+			<?php get_sidebar('articles');?>			
 		</div>
 	</div>
 </div>
