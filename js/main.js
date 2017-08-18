@@ -138,7 +138,7 @@ var __slice = [].slice;
       var i, _, _ref,
         _this = this;
 
-      this.options = $.extend({}, this.defaults, options);
+      this.options = $j.extend({}, this.defaults, options);
       this.$el = $el;
       _ref = this.defaults;
       for (i in _ref) {
