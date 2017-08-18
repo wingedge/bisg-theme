@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
-<div class="main-content container">
+<div class="main-content container single-wrap">
   <div class="row">
     <div id="main" class="main-column col-md-9">
       <?php while ( have_posts() ) : the_post(); ?>
@@ -45,6 +45,11 @@
         </div>
       </div>
       <?php get_sidebar('articles');?>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="prev-next-navigation"><p><?php posts_nav_link('&#8734;','Next','Previous'); ?></p></div>
     </div>
   </div>
 </div>
