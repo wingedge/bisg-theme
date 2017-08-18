@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php get_header(); 
+	$thisCategory = get_category( get_query_var( 'cat' ) );	
+	$vidCategory = get_category('videos');				
+?>
 <div class="category-page">
   <?php get_template_part('section/breadcrumbs'); ?>
   <div class="main-content container">
@@ -48,21 +51,33 @@
                 <?php ucwords(single_cat_title());?>
                 Videos</h3>
               <div class="category-video-box">
-                <?php /*set arguments */
-					$thisCategory = get_category( get_query_var( 'cat' ) );	
-					$vidCategory = get_category('videos');				
+                <?php /*set arguments */					
 					$videosArgs = array(
 					    'posts_per_page' 	=> 4,
 					    'category_name' 	=> NULL, //reset
 					    'file_template'	 	=> 'section/category-video.php',					    
-					    'tax_query' 		=> array( array(
-										            'taxonomy' => 'category',
-										            'field' => 'id',
-										            'terms' => array($vidCategory->cat_ID,$thisCategory->cat_ID),
-										            'operator' => 'AND',
-						))
+					    'tax_query' 		=> array( 
+					    							'relation' => 'AND',
+					    							array(
+										            	'taxonomy' => 'category',
+										            	'field' => 'slug',
+										            	'terms' => array($thisCategory->slug),
+										            	//'operator' => 'AND',
+										            ),
+										            array(
+										            	'taxonomy' => 'post_format',
+										            	'field' => 'slug',
+										            	'terms' => array('post-format-video'),
+										            	'operator' => 'IN',
+										            )
+					    )
 					);
 				?>
+
+
+
+
+
                 <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
                   <?php bi_display_popular_videos($videosArgs);?>
                 </div>
@@ -78,16 +93,14 @@
 				$productArgs = array(
 				    'posts_per_page' 	=> 10,
 					'post_type'			=> 'product',			    
-				    'category_name' 	=> NULL, //reset
+				    'category_name' 	=> single_cat_title(null,false), //reset
 				    'file_template'	 	=> 'section/category-product.php',				    
-				    /*
-				    'tax_query' 		=> array( array(
+				    /*'tax_query' 		=> array( array(
 									            'taxonomy' => 'category',
 									            'field' => 'slug',
 									            'terms' => 'makeup-videos',
-									            //'operator' => 'AND'
-									           
-					)) */
+									            //'operator' => 'AND'								           
+					))  */	
 				);
 			?>
               <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
