@@ -23,10 +23,10 @@
             </div>
           </div>
        
-          <div class="col-md-6">
-            <div class="row">
+          <div class="col-md-6">            
+            <div class="row">              
               <div class="col-md-12">
-                <div class="product-attributes"> 
+                <div class="product-attributes">                   
                   <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
                   <?php if($attributes):?>                                  
                     <?php foreach($attributes as $attribute):?>
@@ -44,6 +44,7 @@
                       <?php endif;?>
                     <?php endforeach;?>
                   <?php endif;?>
+                
                 </div>
               </div>
             </div>
@@ -54,11 +55,12 @@
                 </div>
               </div>
             </div>
-        </div>
+          </div>
         
+        </div>
       </div>
-      
       <?php endwhile; // End the loop. Whew. ?>
+
     </div>
     <div id="sidebar" class="sidebar col-md-3">
       <div class="row">
