@@ -39,7 +39,7 @@
     					<div class="row category-row">
     					<?php while ($query->have_posts()) :?>       	
         					<?php $query->the_post(); ?>
-							<div class="col-md-4">
+							<div class="col-md-4 col-sm-4">
 								<div id="post-<?php the_ID(); ?>" <?php post_class('featured-products'); ?> >
 									<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 									<?php if ( !has_post_thumbnail() ): ?>
