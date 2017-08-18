@@ -235,6 +235,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
                 Videos</h3>
               <div class="category-video-box">
                 <?php /*set arguments */
+					$thisCategory = get_category( get_query_var( 'cat' ) );					
 					$videosArgs = array(
 					    'posts_per_page' 	=> 4,
 					    'category_name' 	=> NULL, //reset
@@ -243,8 +244,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					    'tax_query' 		=> array( array(
 										            'taxonomy' => 'category',
 										            'field' => 'slug',
-										            'terms' => array('videos'),
-										            'operator' => 'AND',
+										            'terms' => array('videos',$thisCategory->slug),
+										            //'operator' => 'AND',
 						))
 					);
 				?>

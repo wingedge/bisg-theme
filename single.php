@@ -8,9 +8,25 @@
 		<div id="main" class="main-column col-md-9">		
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="entry-content">
-						deeps
-						<?php the_content(); ?>
+					<div class="row">
+						<div class="content-image-banner">
+							<?php the_post_thumbnail();?>
+						</div>
+					</div>
+					<div class="row">
+						<div class="content-title">
+							<h2><?php the_title();?></h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="content-categories">
+							<?php the_category(); ?>
+						</div>
+					</div>
+					<div class="row">					
+						<div class="entry-content">						
+							<?php the_content(); ?>
+						</div>
 					</div>
 				</div>
 			<?php endwhile; // End the loop. Whew. ?>
