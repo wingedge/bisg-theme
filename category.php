@@ -7,16 +7,14 @@
         <div class="row">
           <div id="category-main-slider" class="category-main-slider col-md-7">
             <div>
-              <h3 class="cat-titles pink-dashed"><span>
-                <?php ucwords(single_cat_title());?>
-                </span></h3>
+              <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?></span></h3>
               <?php 
 				$catArticleArgsNew = array(
 					'category_name' => single_cat_title(null,false),
 					'post_per_page'	=> 5,
 					'file_template' => 'section/category-article-slider.php',					
 				);
-			?>
+				?>
               <div class="category-articles-container slick-slider-one">
                 <?php bi_display_brand($catArticleArgsNew);?>
               </div>
@@ -35,7 +33,7 @@
 					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
-			  ?>
+			  	?>
                 <div class="category-articles-container">
                   <?php bi_display_brand($catArticleArgs);?>
                 </div>
@@ -56,8 +54,7 @@
 					$videosArgs = array(
 					    'posts_per_page' 	=> 4,
 					    'category_name' 	=> NULL, //reset
-					    'file_template'	 	=> 'section/category-video.php',
-					    
+					    'file_template'	 	=> 'section/category-video.php',					    
 					    'tax_query' 		=> array( array(
 										            'taxonomy' => 'category',
 										            'field' => 'id',

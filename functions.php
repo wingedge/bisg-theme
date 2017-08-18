@@ -140,6 +140,10 @@ function bisg_dummy($str,$style){
 	echo $txt;
 }
 
+function bi_no_articles(){
+	include(locate_template('section/no-post.php'));
+}
+
 function bi_display_brand($args){	
 	$default = array(
 		'category_name' 	=> 'makeup',
@@ -164,6 +168,8 @@ function bi_display_brand($args){
         	$postCtr++;
     	}
     	wp_reset_postdata();
+	}else{
+		bi_no_articles();
 	}	
 }
 
@@ -187,7 +193,9 @@ function bi_display_articles($args=array()){
         	$postCtr++;
     	}
     	wp_reset_postdata();
-	}	
+	}else{
+		bi_no_articles();
+	}		
 }
 
 
@@ -214,7 +222,9 @@ function bi_display_featured(){
         	$postCtr++;
     	}
     	wp_reset_postdata();
-	}		
+	}else{
+		bi_no_articles();
+	}	
 }
 
 function bi_display_popular_videos($args=array()){
@@ -239,7 +249,9 @@ function bi_display_popular_videos($args=array()){
         	$postCtr++;
     	}
     	wp_reset_postdata();
-	}		
+	}else{
+		bi_no_articles();
+	}	
 }
 
 function bi_display_products($args = array()){
@@ -264,7 +276,9 @@ function bi_display_products($args = array()){
         	$postCtr++;
     	}
     	wp_reset_postdata();
-	}		
+	}else{
+		bi_no_articles();
+	}	
 }
 
 /*function to check if taxonomy is level 0, if not use generic category*/
