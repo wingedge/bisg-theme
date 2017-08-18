@@ -1094,9 +1094,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	height:auto;
 }
 .category-page .category-main-slider .slide-article-thumb {
-  background: red none repeat scroll 0 0;
-  height: 300px;
-  overflow: hidden;
+  background: red none repeat scroll 0 0 !important;
+  max-height: 300px !important;
+  overflow: hidden !important;
 }
 /*end category page*/
 
