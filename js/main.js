@@ -124,7 +124,7 @@ $j(document).ready(function(){
 // Starrr plugin (https://github.com/dobtco/starrr)
 var __slice = [].slice;
 
-(function($, window) {
+(function($j, window) {
   var Starrr;
 
   Starrr = (function() {
@@ -202,7 +202,7 @@ var __slice = [].slice;
     return Starrr;
 
   })();
-  return $.fn.extend({
+  return $j.fn.extend({
     starrr: function() {
       var args, option;
 
@@ -210,9 +210,9 @@ var __slice = [].slice;
       return this.each(function() {
         var data;
 
-        data = $(this).data('star-rating');
+        data = $j(this).data('star-rating');
         if (!data) {
-          $(this).data('star-rating', (data = new Starrr($(this), option)));
+          $j(this).data('star-rating', (data = new Starrr($j(this), option)));
         }
         if (typeof option === 'string') {
           return data[option].apply(data, args);
@@ -222,17 +222,17 @@ var __slice = [].slice;
   });
 })(window.jQuery, window);
 
-$(function() {
-  return $(".starrr").starrr();
+$j(function() {
+  return $j(".starrr").starrr();
 });
 
-$( document ).ready(function() {
+$j( document ).ready(function() {
       
-  $('#hearts').on('starrr:change', function(e, value){
-    $('#count').html(value);
+  $j('#hearts').on('starrr:change', function(e, value){
+    $j('#count').html(value);
   });
   
-  $('#hearts-existing').on('starrr:change', function(e, value){
-    $('#count-existing').html(value);
+  $j('#hearts-existing').on('starrr:change', function(e, value){
+    $j('#count-existing').html(value);
   });
 });
