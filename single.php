@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
+
 <div class="main-content container single-wrap">
   <div class="row">
     <div id="main" class="main-column col-md-9">
@@ -46,10 +47,14 @@
       </div>
       <?php get_sidebar('articles');?>
     </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12">
-      <div class="prev-next-button"><span class="next-btn"><?php previous_post_link(); ?></span><span class="prev-btn"><?php next_post_link(); ?></span></div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="prev-next-button"><span class="next-btn">
+          <?php previous_post_link(); ?>
+          </span><span class="prev-btn">
+          <?php next_post_link(); ?>
+          </span></div>
+      </div>
     </div>
   </div>
 </div>
