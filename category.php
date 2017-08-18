@@ -239,13 +239,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 					    'posts_per_page' 	=> 4,
 					    'category_name' 	=> NULL, //reset
 					    'file_template'	 	=> 'section/category-video.php',
-					    /* no tax yet, not finished with recategorizing
+					    
 					    'tax_query' 		=> array( array(
 										            'taxonomy' => 'category',
 										            'field' => 'slug',
-										            'terms' => 'makeup-videos',
-										            //'operator' => 'AND' 
-						))*/
+										            'terms' => array('videos'),
+										            'operator' => 'AND',
+						))
 					);
 				?>
                 <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
