@@ -1100,7 +1100,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	height:auto;
 }
 .category-page .category-main-slider .slide-article-thumb {
-	background: red none repeat scroll 0 0 !important;
 	max-height: 300px !important;
 	overflow: hidden !important;
 }
@@ -1216,4 +1215,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 .prev-next-button > span:hover a {
 	color: #fff;
+}
+/*end single post*/
+
+.breadcrumbs li .bread-current {
+  color: #111;
+  font-weight: 400;
+  text-transform: none;
+}
+.breadcrumbs li a
+{
+	color:#666;
 }
