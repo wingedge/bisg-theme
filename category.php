@@ -32,7 +32,7 @@
                 <?php 
 				$catArticleArgs = array(
 					'category_name' => single_cat_title(null,false),
-					'post_per_page'	=> 10,
+					'post_per_page'	=> 5,
 					'file_template' => 'section/catpage-category-articles.php',
 					'offset' => 3, // skips first 3 since its displayed earlier
 				);
