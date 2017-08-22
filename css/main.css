@@ -854,7 +854,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	color: #666;
 	font-size: 13px;
 	font-weight: 300;
-	text-transform: uppercase;
+	text-transform: lowercase;
 }
 .bread-link.bread-home {
 	color: #666;
@@ -1163,6 +1163,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	font-size: 13px;
 	text-transform: uppercase;
 	transition: all 400ms ease 0s;
+	font-weight:normal;
 }
 .sidebar .recent-article-title .fp-title:hover {
 	color:#e80062 !important;
@@ -1235,4 +1236,51 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 
 #hearts-existing {
 	font-size: 30px;
+}
+/*single product*/
+.single-product-wrap .content-title 
+{
+  background: #fff none repeat scroll 0 0;
+  color: #e80062;
+  display: inline-block;
+  font-family: "Playfair Display",serif;
+  font-size: 32px;
+  margin: 15px 0;
+  padding: 0;
+}
+.single-product-wrap .nav > li:nth-child(1) > a 
+{
+  padding-left: 15px;
+}
+.single-product-wrap .nav > li > a 
+{
+  font-size: 16px; 
+}
+.single-product-wrap a 
+{
+    color: #e80062;
+    text-decoration: none;
+}
+.single-product-wrap .product-attributes {
+  margin-top: 49px;
+}
+.single-product-wrap .attribute.btn.btn-default.btn-sm {
+  margin: 0;
+}
+.single-product-wrap #tabs-single-product {
+    font-weight: normal;
+}
+/*SUB PAGE*/
+.sub-page {
+  padding: 25px 0 25px;
+}
+.sub-page .content-title 
+{
+  background: transparent;
+  color: #e80062;
+  display: inline-block;
+  font-family: "Playfair Display",serif;
+  font-size: 32px;
+  margin: 15px 0 0;
+  padding: 0;
 }
