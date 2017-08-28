@@ -13,42 +13,43 @@ get_header(); ?>
             <?php the_title();?>
           </h2>
           <hr class="divider"/>
-          <span class="insider-title">
-          <?php the_field('title');?>
-          </span> <a href="<?php the_field('promo_link');?>"><img src="<?php the_field('image');?>" alt="" class="insider-img"/></a>
+          <!---->
+          <span class="insider-title"><?php the_field('title');?></span>
+          <a href="<?php the_field('promo_link');?>"><img src="<?php the_field('image');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
             <h3>GRAB THIS DEAL!</h3>
             <a class="insider-promo_link" href="<?php the_field('promo_link');?>">
             <?php the_field('promo');?>
             </a>
           </div>
-          <span class="insider-title">
-          <?php the_field('title1');?>
-          </span> <a href="<?php the_field('promo_link1');?>"><img src="<?php the_field('image1');?>" alt="" class="insider-img"/></a>
+          <!---->
+          <span class="insider-title"><?php the_field('title1');?></span>
+          <a href="<?php the_field('promo_link1');?>"><img src="<?php the_field('image1');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
             <h3>GRAB THIS DEAL!</h3>
             <a class="insider-promo_link" href="<?php the_field('promo_link1');?>">
             <?php the_field('promo1');?>
             </a>
           </div>
-          <span class="insider-title">
-          <?php the_field('title2');?>
-          </span> <a href="<?php the_field('promo_link2');?>"><img src="<?php the_field('image2');?>" alt="" class="insider-img"/></a>
-          <div class="insider-promo">
-            <h3>GRAB THIS DEAL!</h3>
-            <a class="insider-promo_link" href="<?php the_field('promo_link2');?>">
-            <?php the_field('promo2');?>
-            </a>
-          </div>
-          <span class="insider-title">
-          <?php the_field('title3');?>
-          </span> <a href="<?php the_field('promo_link3');?>"><img src="<?php the_field('image3');?>" alt="" class="insider-img"/></a>
+          <!---->
+          <span class="insider-title"><?php the_field('title3');?></span>
+          <a href="<?php the_field('promo_link3');?>"><img src="<?php the_field('image3');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
             <h3>GRAB THIS DEAL!</h3>
             <a class="insider-promo_link" href="<?php the_field('promo_link3');?>">
             <?php the_field('promo3');?>
             </a>
           </div>
+          <!---->
+          <span class="insider-title"><?php the_field('title4');?></span>
+          <a href="<?php the_field('promo_link4');?>"><img src="<?php the_field('image4');?>" alt="" class="insider-img"/></a>
+          <div class="insider-promo">
+            <h3>GRAB THIS DEAL!</h3>
+            <a class="insider-promo_link" href="<?php the_field('promo_link4');?>">
+            <?php the_field('promo4');?>
+            </a>
+          </div>
+          <!---->
           <?php the_content(); ?>
         </div>
       </div>
