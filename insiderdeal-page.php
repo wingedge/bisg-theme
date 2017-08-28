@@ -32,21 +32,21 @@ get_header(); ?>
             </a>
           </div>
           <!---->
+          <span class="insider-title"><?php the_field('title2');?></span>
+          <a href="<?php the_field('promo_link2');?>"><img src="<?php the_field('image2');?>" alt="" class="insider-img"/></a>
+          <div class="insider-promo">
+            <h3>GRAB THIS DEAL!</h3>
+            <a class="insider-promo_link" href="<?php the_field('promo_link2');?>">
+            <?php the_field('promo2');?>
+            </a>
+          </div>
+          <!---->
           <span class="insider-title"><?php the_field('title3');?></span>
           <a href="<?php the_field('promo_link3');?>"><img src="<?php the_field('image3');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
             <h3>GRAB THIS DEAL!</h3>
             <a class="insider-promo_link" href="<?php the_field('promo_link3');?>">
             <?php the_field('promo3');?>
-            </a>
-          </div>
-          <!---->
-          <span class="insider-title"><?php the_field('title4');?></span>
-          <a href="<?php the_field('promo_link4');?>"><img src="<?php the_field('image4');?>" alt="" class="insider-img"/></a>
-          <div class="insider-promo">
-            <h3>GRAB THIS DEAL!</h3>
-            <a class="insider-promo_link" href="<?php the_field('promo_link4');?>">
-            <?php the_field('promo4');?>
             </a>
           </div>
           <!---->
