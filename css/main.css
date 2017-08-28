@@ -1292,3 +1292,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	font-weight: 400;
 	text-align: left;
 }
+.insider-title {
+  background: #e80062 none repeat scroll 0 0;
+  color: #fff;
+  display: block;
+  font-family: "Playfair Display",serif;
+  font-size: 21px;
+  padding: 15px;
+  text-transform: uppercase;
+  width: -moz-fit-content;
+}

@@ -14,10 +14,10 @@ get_header(); ?>
           </h2>
           <hr class="divider"/>
           <span class="insider-title"><?php the_field('title');?></span>
-          <a href="<?php the_field('promo_link');?>"><img src="<?php the_field('image');?>" alt=""/></a>
+          <a href="<?php the_field('promo_link');?>"><img src="<?php the_field('image');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
           	<h3>GRAB THIS DEAL!</h3>
-            <a href="<?php the_field('promo_link');?>"><?php the_field('promo');?></a>
+            <a class="insider-promo_link" href="<?php the_field('promo_link');?>"><?php the_field('promo');?></a>
           </div>
           <?php the_content(); ?>
         </div>
