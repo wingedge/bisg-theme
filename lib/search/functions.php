@@ -118,7 +118,7 @@ $outputE ='<div style=" border-right: 1px solid #e5e5e5;" class="col-sm-4"><h4>E
 
     $outputE.= '<div class="result-wrap"><a href="'.get_permalink().'">'; 
     $outputE.= '<div class="result-image">'. get_the_post_thumbnail( $post_id, array( 250, 250) ).'</div>';
-    $outputE.= '<h5  class="result-title">'.get_the_title().'</h5></a></div>';  
+    $outputE.= '<span  class="result-title">'.get_the_title().'</span></a></div>';  
     $result = 'success';
 
   endwhile;  else:
