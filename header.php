@@ -16,6 +16,7 @@
 html {
 	margin-top: 0!important;
 }
+<?php the_field('css');?>
 </style>
 </head>
 <body <?php body_class(); ?>>
