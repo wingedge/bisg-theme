@@ -1313,7 +1313,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   color: #fff;
   display: block;
   font-size: 13px;
-  margin: 0 10px 10px;
+  margin: 10px;
   padding: 10px;
   text-transform: uppercase;
 }
@@ -1327,8 +1327,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 }
 .insider-promo {
   background: #111 none repeat scroll 0 0;
-  bottom: 0;
   color: #fff;
-  max-width: -moz-fit-content;
-  position: absolute;
+  display: block;
+  margin: 0 0 0 auto;
+  max-width: 300px;
+  min-width: 300px;
+  padding: 10px 10px 5px;
+  text-align: center;
 }

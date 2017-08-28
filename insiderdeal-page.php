@@ -14,6 +14,7 @@ get_header(); ?>
           </h2>
           <hr class="divider"/>
           <!---->
+          <div class="insider-wrap">
           <span class="insider-title"><?php the_field('title');?></span>
           <a href="<?php the_field('promo_link');?>"><img src="<?php the_field('image');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
@@ -22,7 +23,9 @@ get_header(); ?>
             <?php the_field('promo');?>
             </a>
           </div>
+          </div>
           <!---->
+          <div class="insider-wrap">
           <span class="insider-title"><?php the_field('title1');?></span>
           <a href="<?php the_field('promo_link1');?>"><img src="<?php the_field('image1');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
@@ -31,7 +34,9 @@ get_header(); ?>
             <?php the_field('promo1');?>
             </a>
           </div>
+          </div>
           <!---->
+          <div class="insider-wrap">
           <span class="insider-title"><?php the_field('title2');?></span>
           <a href="<?php the_field('promo_link2');?>"><img src="<?php the_field('image2');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
@@ -40,7 +45,9 @@ get_header(); ?>
             <?php the_field('promo2');?>
             </a>
           </div>
+          </div>
           <!---->
+          <div class="insider-wrap">
           <span class="insider-title"><?php the_field('title3');?></span>
           <a href="<?php the_field('promo_link3');?>"><img src="<?php the_field('image3');?>" alt="" class="insider-img"/></a>
           <div class="insider-promo">
@@ -48,6 +55,7 @@ get_header(); ?>
             <a class="insider-promo_link" href="<?php the_field('promo_link3');?>">
             <?php the_field('promo3');?>
             </a>
+          </div>
           </div>
           <!---->
           <?php the_content(); ?>
