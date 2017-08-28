@@ -16,7 +16,7 @@
       </div>
       <?php endwhile; // End the loop. Whew. ?>
     </div>
-    <div class="ategory-page">
+    <div class="category-page">
     <div id="all-articles" class="all-articles col-md-3">
       <div>
         <h3 class="cat-titles"><span>Recent Posts</span></h3>
