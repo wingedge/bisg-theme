@@ -1335,3 +1335,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
   padding: 10px 10px 5px;
   text-align: center;
 }
+.insider-wrap {
+  border-bottom: 1px solid #111;
+  margin-bottom: 25px;
+  padding-bottom: 0;
+}
