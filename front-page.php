@@ -6,7 +6,7 @@
     <?php putRevSlider( 'homepage-featured-posts' ); ?>
   </div>
 </div>
-<div class="main-content container">
+<div class="main-content container homepage-main">
   <div class="row">
     <div id="main" class="main-column col-md-9 category-columns">
       <div class="row">
