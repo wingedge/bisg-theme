@@ -43,14 +43,14 @@ html {
         <div id="main-toplink"> 
           <ul>
             <li><a href="<?php site_url('/write-a-review/');?>">Write A Review</a></li>
-            <li><a href="http://betabisg.mapletreemedia.com/my-account/">My Account</a></li>
-            <li><a href="http://betabisg.mapletreemedia.com/all-reviews">Read Reviews</a></li>
-            <li><a href="http://betabisg.mapletreemedia.com/insider-deals">Insider Deals</a></li>
+            <li><a href="<?php site_url('/my-account/');?>">My Account</a></li>
+            <li><a href="<?php site_url('/all-reviews/');?>">Read Reviews</a></li>
+            <li><a href="<?php site_url('/insider-deals/');?>">Insider Deals</a></li>
           </ul>
           <ul>
-            <li><a href="http://betabisg.mapletreemedia.com/most-popular-videos">Watch Videos</a></li>
-            <li><a href="http://betabisg.mapletreemedia.com/about-us">About Us</a></li>
-            <li><a href="http://betabisg.mapletreemedia.com/professionals">Professional</a></li>
+            <li><a href="<?php site_url('/most-popular-videos/');?>">Watch Videos</a></li>
+            <li><a href="<?php site_url('/about-us/');?>">About Us</a></li>
+            <li><a href="<?php site_url('/professionals/');?>">Professional</a></li>
           </ul>
         </div>
       </div> 
