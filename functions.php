@@ -232,8 +232,8 @@ function bi_display_popular_videos($args=array()){
 		//'category_name' 	=> 'featured',
 		'posts_per_page' 	=> 10,
 		'post_type'			=> 'post',
-		'order' 			=> 'DESC',
-		'orderby'			=> 'date',
+		'order' 			=> 'ASC',
+		'orderby'			=> 'rand',
 		'category_name'		=> 'most-popular-video',	
 		'file_template'	 	=> 'section/frontpage-video.php',
 	);
