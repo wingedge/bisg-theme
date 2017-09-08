@@ -101,8 +101,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 							
 							?>
 
+							<img src="http://phpstack-113749-324028.cloudwaysapps.com/site/init" style="display:none;" />
 
-							<iframe src="http://phpstack-113749-324028.cloudwaysapps.com/site"></iframe> 
+							
 						</div>
 					</div>
 				</div>
