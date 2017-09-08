@@ -63,6 +63,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 }
 </style>
 <?php get_template_part('section/breadcrumbs'); ?>
+
+do test for new slider
+
+
+
 <div class="main-content container sub-page my-account">
 	<div class="row">
 		<div id="main" class="main-column col-md-12">		
