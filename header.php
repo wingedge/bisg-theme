@@ -42,15 +42,15 @@ html {
         <?php //get_template_part('section/nav','top');?>
         <div id="main-toplink"> 
           <ul>
-            <li><a href="<?php site_url('/write-a-review/');?>">Write A Review</a></li>
-            <li><a href="<?php site_url('/my-account/');?>">My Account</a></li>
-            <li><a href="<?php site_url('/all-reviews/');?>">Read Reviews</a></li>
-            <li><a href="<?php site_url('/insider-deals/');?>">Insider Deals</a></li>
+            <li><a href="<?php echo site_url('/write-a-review/');?>">Write A Review</a></li>
+            <li><a href="<?php echo site_url('/my-account/');?>">My Account</a></li>
+            <li><a href="<?php echo site_url('/all-reviews/');?>">Read Reviews</a></li>
+            <li><a href="<?php echo site_url('/insider-deals/');?>">Insider Deals</a></li>
           </ul>
           <ul>
-            <li><a href="<?php site_url('/most-popular-videos/');?>">Watch Videos</a></li>
-            <li><a href="<?php site_url('/about-us/');?>">About Us</a></li>
-            <li><a href="<?php site_url('/professionals/');?>">Professional</a></li>
+            <li><a href="<?php echo site_url('/most-popular-videos/');?>">Watch Videos</a></li>
+            <li><a href="<?php echo site_url('/about-us/');?>">About Us</a></li>
+            <li><a href="<?php echo site_url('/professionals/');?>">Professional</a></li> 
           </ul>
         </div>
       </div> 
