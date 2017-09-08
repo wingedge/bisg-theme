@@ -34,17 +34,18 @@
     </div>   
   </div>
 </div>
+
 <div class="site-footer">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-3 footerbox">
         <h3 class="footer-title">Connect with us!</h3>
        	<ul>
-        	<li class="biph"><a href="http://www.beautyinsider.ph"><span class="phicon"></span><span class="icon-title">BeautyInsider PH</span></a></li>
-            <li><a href="#"><span class="socialmediaicon icon-fb"></span><span class="icon-title">Facebook</span></a></li>
-            <li><a href="#"><span class="socialmediaicon icon-instagram"></span><span class="icon-title">Instagram</span></a></li>
-            <li><a href="#"><span class="socialmediaicon icon-youtube"></span><span class="icon-title">Youtube</span></a></li>
-            <li><a href="#"><span class="socialmediaicon icon-twitter"></span><span class="icon-title">Twitter</span></a></li>
+        	<li class="biph"><a href="http://www.beautyinsider.ph" target="_blank"><span class="phicon"></span><span class="icon-title">BeautyInsider PH</span></a></li>
+            <li><a href="https://www.facebook.com/BeautyInsiderSG/"  target="_blank"><span class="socialmediaicon icon-fb"></span><span class="icon-title">Facebook</span></a></li>
+            <li><a href="https://www.instagram.com/beautyinsidersg/" target="_blank"><span class="socialmediaicon icon-instagram"></span><span class="icon-title">Instagram</span></a></li>
+            <li><a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA" target="_blank"><span class="socialmediaicon icon-youtube"></span><span class="icon-title">Youtube</span></a></li>
+            <li><a href="https://twitter.com/beauty_sg" target="_blank"><span class="socialmediaicon icon-twitter"></span><span class="icon-title">Twitter</span></a></li>
         </ul>
       </div>
       <div class="col-md-3 col-sm-4 footerbox">
@@ -72,10 +73,7 @@
       </div>
       <div class="col-md-3 col-sm-12 footerbox">        
         <div class="subscribe-form">
-          <form>
-          <input type="text" value="enter your email addess" />
-          <input name="" type="button" value="subscribe now" />
-          </form>
+          <?php echo do_shortcode('[newsletter_form post_name="newsletter-cta" icon_form="f003"]');?>
           <h3 class="footer-sub-title">Advertise with us <a href="mailto:sean@mapletreemedia.com">Email </a> or fill out the form <a href="<?php echo site_url('advertise-with-us');?>">here</a></h3>
         </div>
       </div>
