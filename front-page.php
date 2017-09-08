@@ -79,25 +79,25 @@
       <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div>
           <a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank">
-          <img class="img-responsive" src="http://beautyinsider.sg/wp-content/uploads/2014/09/anti-aging.jpg" alt="anti aging treatments" title="anti aging treatments"></a>
+          <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/anti-aging.jpg" alt="anti aging treatments" title="anti aging treatments"></a>
           <h3><a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank" rel="noopener noreferrer"> ANTI-AGING</a></h3>
           <p>Find the latest non-invasive treatments that fight lines and hyperpigmentation even before they appear. It’s never too early to start your anti-aging regimen!</p>
         </div></div>
         <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div>
         <a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank">
-        <img class="img-responsive" src="http://beautyinsider.sg/wp-content/uploads/2014/09/slimming.jpg" alt="slimming treatments" title="slimming treatments"></a>
+        <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/slimming.jpg" alt="slimming treatments" title="slimming treatments"></a>
           <h3><a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank" rel="noopener noreferrer">SLIMMING</a></h3>
           <p>Break down stubborn fat cells, or smooth cellulite and stretchmarks that stay long after you’ve lost the pounds.</p>
         </div></div>
         <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div> 
         <a href="http://www.aestheticsandbeauty.com/treatment/skin-whitening-rejuvenation/" target="_blank">
-        <img class="img-responsive" src="http://beautyinsider.sg/wp-content/uploads/2014/09/brightening.jpg" alt="brightening treatments" title="brightening treatments"></a>
+        <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/brightening.jpg" alt="brightening treatments" title="brightening treatments"></a>
           <h3><a href="http://www.aestheticsandbeauty.com/treatment/skin-whitening-rejuvenation/" target="_blank" rel="noopener noreferrer">BRIGHTENING</a></h3>
           <p>Find treatments that help fade scars, discoloration, and dullness. Reveal your fairest, most radiant skin yet!</p>
         </div></div>
         <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div> 
         <a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank">
-        <img class="img-responsive" src="http://beautyinsider.sg/wp-content/uploads/2014/09/enhancement.jpg" alt="enhancement treatments" title="enhancement treatments"></a>
+        <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/enhancement.jpg" alt="enhancement treatments" title="enhancement treatments"></a>
           <h3><a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank" rel="noopener noreferrer">ENHANCEMENT</a></h3>
           <p>Find professional, credible and discreet doctors who will work with you to create the body you’ve dreamed of.</p>
         </div></div>
