@@ -71,6 +71,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-content">					
 						<div class="row">
+							<?php /*
 							<div class="col-md-6 accnt-login"><div>
 								<h2 class="content-title">Login</h2>
 								<?php wp_login_form(); ?>
@@ -79,6 +80,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 								<h2 class="content-title">First Time Here? Create your account</h2>
 								<?php wp_login_form(); ?>
 							</div></div>
+							*/ ?>
+							
+							<?php if (isset( $_COOKIE['biReviewer'])){
+								print_r($_COOKIE);
+							}
+							
+							?>
 						</div>
 					</div>
 				</div>
