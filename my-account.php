@@ -82,8 +82,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 							</div></div>
 							*/ ?>
 							
-							<?php if (isset( $_COOKIE['biReviewer'])){
-								print_r($_COOKIE);
+							<?php 
+							print_r($_COOKIE);
+
+							if (isset( $_COOKIE['biReviewer'])){
+
 							}
 							
 							?>
