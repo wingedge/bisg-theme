@@ -37,7 +37,7 @@ html {
         <span class="icon-bar"></span> 
         </button>
         */ ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <img src="<?php echo get_theme_file_uri( '/img/newlogo.png' ); ?>" class="img-responsive site-logo-img"/> </a> </div>
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <img src="<?php echo get_theme_file_uri( '/img/binewlogo.png' ); ?>" class="img-responsive site-logo-img"/> </a> </div>
       <div id="site-topmenu" class="col-sm-6">
         <?php //get_template_part('section/nav','top');?>
         <div id="main-toplink"> 
