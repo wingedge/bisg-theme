@@ -42,8 +42,10 @@ html {
         <?php //get_template_part('section/nav','top');?>
         <div id="main-toplink"> 
           <ul>
+            <!--
             <li><a href="<?php echo site_url('/write-a-review/');?>">Write A Review</a></li>
             <li><a href="<?php echo site_url('/my-account/');?>">My Account</a></li>
+            -->
             <li><a href="<?php echo site_url('/all-reviews/');?>">Read Reviews</a></li>
             <li><a href="<?php echo site_url('/insider-deals/');?>">Insider Deals</a></li>
           </ul>
