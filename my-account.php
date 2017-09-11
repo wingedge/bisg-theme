@@ -84,26 +84,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 							
 							<?php 
 
-
-							if (isset( $_COOKIE['biReviewer'])){
-
-							}else{
-							?>
-							<form action="http://phpstack-113749-324028.cloudwaysapps.com/site/login" method="post">
-								<input type="hidden" name="return_url" value="http://wordpress-113749-323973.cloudwaysapps.com/my-account/" />
-								<input type="text" name="email" class="form-control" placeholder="Email" /><br/>
-								<input type="password" name="password" class="form-control" placeholder="Password" /><br/>
-								<button type="submit">Login</button>
-							</form>
-
-							<?php 							
-							}
+								//bi_api_call();
 							
-							?>
-
-							<img src="http://phpstack-113749-324028.cloudwaysapps.com/site/init" style="display:none;" />
-
-							
+							?>							
 						</div>
 					</div>
 				</div>
