@@ -14,3 +14,25 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+/*HEY GORGEOUS PAGE*/
+.heygorgeous-banner {
+    padding: 30px;
+    background: #001;
+    color: #fff;
+}
+.heygorgeous-banner .title {
+    font-size: 45px;
+    color: #fff;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    font-family: lust,sans-serif;
+}
+.heygorgeous-banner a.hey-btn {
+    color: #fff;
+}
+.heygorgeous-banner a.hey-btn {
+    background: #dd3333;
+    padding: 7px 25px;
+    color: #fff;
+    border-color: #000;
+}

@@ -57,7 +57,7 @@ require_once('lib/taxonomies.php'); // taxonomies (categories/tags)
 require_once('lib/breadcrumbs.php'); // breadcrumbs
 require_once('lib/search/functions.php'); // breadcrumbs
 
-require('lib/api.php');
+
 
 // require guzzle
 

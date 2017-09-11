@@ -26,7 +26,7 @@ html {
 </div>
 */?>
 <div class="canvas">
-<div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="250">
+<div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="161">
   <div class="container">
     <div class="row">
       <div id="site-logo" class="col-sm-6">
@@ -44,8 +44,9 @@ html {
           <ul>
             <!--
             <li><a href="<?php echo site_url('/write-a-review/');?>">Write A Review</a></li>
-            <li><a href="<?php echo site_url('/my-account/');?>">My Account</a></li>
             -->
+            <li><a href="<?php echo site_url('/my-account/');?>">Login</a></li>
+            
             <li><a href="<?php echo site_url('/all-reviews/');?>">Read Reviews</a></li>
             <li><a href="<?php echo site_url('/insider-deals/');?>">Insider Deals</a></li>
           </ul>
@@ -81,7 +82,9 @@ html {
           <div id="tagged-posts"></div>
         </div>
       </div>
-      <div id="main-registration" class="col-md-3 col-sm-2 col-xs-3 registration-box"><a href="#" class="register-btn">login/register</a></div>
+      <div id="main-registration" class="col-md-3 col-sm-2 col-xs-3 registration-box">
+        <a href="#" id="bi-search-btn" class="register-btn">Search</a>
+      </div>
     </div>
   </div>
 </div>
