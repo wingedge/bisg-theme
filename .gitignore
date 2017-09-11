@@ -47,5 +47,5 @@ Temporary Items
 .apdisk
 ftpsync.settings
 ftpsync.settings
-/vendor
-sftp-config.json
+/vendor/*
+sftp-config.json 
