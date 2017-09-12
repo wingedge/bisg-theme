@@ -1,13 +1,18 @@
+.result-box {
+    position: relative;
+}
 
 #tagged-posts {
-    width: 100%;
+    width: 97%;
     height: auto;
     display: none;
     position: absolute;
     background: #fff;
     z-index: 60;
-    padding: 20px;
+    padding: 10px;
     border: 2px solid #ccc;
+    top: 50px;
+    left: 15px;
 }
 
 #posttype_search {
@@ -22,19 +27,42 @@
     padding: 5px;
 }
 
+.result-wrap a {
+    border: 1px solid #ccc;
+    overflow: hidden;
+    display: block;
+    position: relative;
+    z-index:9999;
+}
 .result-image {
     overflow: hidden;
-    float: left;
-    width: 40%;
-    clear: left;
-    border: 1px solid #ccc;
+    float: none;
+    width: 100%;
+    clear: left; 
+    max-height:100px;
 }
 
 .result-title {
-    text-align: center;
-    font-family:Montserrat;
-    font-weight:500;
-    font-style:normal"
+    color: #222;
+    display: block;
+    width:100%:;
+    float: left;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 400;
+    text-align: left;
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background: rgba(255,255,255,0.50);
+    margin: 0;
+    width:100%;
+}
+
+.result-wrap a:hover .result-title{
+    background: rgba(255,255,255,0.90);
+    color:#000;
+    transition:all 400ms ease;
 }
 
 #loading {
@@ -45,4 +73,6 @@
     z-index: 60;
     padding: 20px;
     display:none;
+    top: 50px;
+    left: 15px;
 }

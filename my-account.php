@@ -64,13 +64,19 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 </style>
 <?php get_template_part('section/breadcrumbs'); ?>
 
+
+
 <div class="main-content container sub-page my-account">
 	<div class="row">
 		<div id="main" class="main-column col-md-12">		
+
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-content">					
 						<div class="row">
+							
+
+
 							<?php /*
 							<div class="col-md-6 accnt-login"><div>
 								<h2 class="content-title">Login</h2>
@@ -86,7 +92,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 
 								//bi_api_call();
 							
-							?>							
+							?>	
+													
 						</div>
 					</div>
 				</div>

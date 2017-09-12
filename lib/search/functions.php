@@ -31,19 +31,22 @@ function ajax_filter_get_posts($search_tag) {
     die('Permission denied');
 
 	//get seach string var
-    $search_tag = $_POST['s_string'];   
+$search_term = $_POST['s_string'];   
  
 //query blogs 
-$filter_args_post = array(
-	
+$filter_args_post = array(	
 	'post_status'    => 'publish',
 	'post_type'	 => 'post',
 	'posts_per_page' => '4',
-	'tax_query'    => array(array(
+	's' => $search_term,
+  /*
+  'tax_query'    => array(
+                      array(
                         'taxonomy' => 'category',
                         'field' => 'slug',
                         'terms' => $search_tag,
-                     )),
+                     )
+  ),*/
  
 );
 
@@ -52,12 +55,13 @@ $filter_args_products = array(
 	
 	'post_status'    => 'publish',
 	'post_type'	 => 'product',
-	'posts_per_page' => '4',	
-	'tax_query'    => array(array(
+	'posts_per_page' => '4',
+  's' => $search_term,
+	/*'tax_query'    => array(array(
       'taxonomy' => 'category',
       'field' => 'slug',
       'terms' => $search_tag,
-   )), 
+   )), */
 );
 
 //query establishments 
@@ -66,11 +70,12 @@ $filter_args_establishments = array(
 	'post_status'    => 'publish',
 	'post_type'	 => 'establishment',
 	'posts_per_page' => '4',
-	'tax_query'    => array(array(
-      'taxonomy' => 'category',
-      'field' => 'slug',
-      'terms' => $search_tag,
-   )),
+  's' => $search_term,
+	//'tax_query'    => array(array(
+  //    'taxonomy' => 'category',
+  //    'field' => 'slug',
+  //    'terms' => $search_tag,
+  //)),
  
 );
 
@@ -113,7 +118,7 @@ $outputP ='<div style=" border-right: 1px solid #e5e5e5;" class="col-sm-4"><h4>P
     
 //ESTABLISHMENTS 
 $filter_query = new WP_Query($filter_args_establishments );
-$outputE ='<div style=" border-right: 1px solid #e5e5e5;" class="col-sm-4"><h4>Establishments</h4>';
+$outputE ='<div class="col-sm-4"><h4>Establishments</h4>';
   if ( $filter_query->have_posts() ) : while ( $filter_query->have_posts() ) : $filter_query->the_post();
 
     $outputE.= '<div class="result-wrap"><a href="'.get_permalink().'">'; 

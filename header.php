@@ -75,15 +75,20 @@ html {
         <a href="https://www.instagram.com/beautyinsidersg/"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a> 
         <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> 
         </div>      
-      <div id="main-search" class="col-md-7 col-sm-7 col-xs-5 search-box">
-        <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">
-        <div class="result-box">
-          <div id="loading"></div>
-          <div id="tagged-posts"></div>
+      <div id="main-search" class="col-md-10 col-sm-10 col-xs-8 search-box">
+        <div class="col-sm-9">
+          <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">
+            
+        </div>        
+        <div class="col-sm-3">
+          <button id="bi-search-btn" class="btn btn-block register-btn">Search</button>
         </div>
-      </div>
-      <div id="main-registration" class="col-md-3 col-sm-2 col-xs-3 registration-box">
-        <a href="#" id="bi-search-btn" class="register-btn">Search</a>
+
+          <div class="result-box">
+            <div id="loading"></div>
+            <div id="tagged-posts"></div>
+          </div>    
+          
       </div>
     </div>
   </div>
