@@ -13,15 +13,75 @@
           </div>     
           <div class="col-md-8">
             <div class="row">
-              <div class="col-md-12">				
-                <div class="entry-content">				  <div class="product-attributes">                    <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>                  <?php if($attributes):?>                                 <?php foreach($attributes as $attribute):?>                      <?php if($attribute->parent > 0):?>                        <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>                      <?php endif;?>                    <?php endforeach;?>                  <?php endif;?>                  <?php $attributes = get_the_terms(get_the_id(),'category'); ?>                  <?php if($attributes):?>                                 <?php foreach($attributes as $attribute):?>                      <?php if($attribute->parent > 0):?>                        <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>                      <?php endif;?>                    <?php endforeach;?>                  <?php endif;?>                    </div>
-                  <h2 class="content-title"><?php the_title();?></h2>					<?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?>					<?php if( get_field('short_description') ): ?>						<?php the_field('short_description'); ?>							<?php else: ?>						<?php the_excerpt();?>					<?php endif; ?>					
-                </div>				
+              <div class="col-md-12">       
+                <div class="entry-content">         
+                  
+
+                  <h2 class="content-title"><?php the_title();?></h2>
+                    <div class="product-attributes">
+                    <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
+                    <?php if($attributes):?>
+                      <?php foreach($attributes as $attribute):?>
+                        <?php if($attribute->parent > 0):?>
+                          <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>
+                        <?php endif;?>
+                      <?php endforeach;?>
+                    <?php endif;?>
+
+                    <?php $attributes = get_the_terms(get_the_id(),'category'); ?>
+                      <?php if($attributes):?>
+                        <?php foreach($attributes as $attribute):?>
+                          <?php if($attribute->parent > 0):?>
+                            <span class="attribute btn btn-default btn-sm"><?php echo $attribute->name;?></span>
+                          <?php endif;?>
+                        <?php endforeach;?>
+                      <?php endif;?>
+                    </div>
+                  
+                  <?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?>
+                  <?php if( get_field('short_description') ): ?>
+                    <?php the_field('short_description'); ?>
+                  <?php else: ?>
+                    <?php the_excerpt();?>
+                  <?php endif; ?>         
+                </div>        
               </div>
             </div>
           </div>
         </div>
-        <div class="row">		<div class="col-md-12">					<div class="tabbable" id="tabs-single-product">						<ul class="nav nav-tabs">							<li>								<a href="#panel-description" data-toggle="tab">Description</a>							</li>							<li>								<a href="#panel-distributors" data-toggle="tab">Distributors</a>							</li>							<li>								<a href="#panel-benefits" data-toggle="tab">Benefits</a>							</li>							<li class="active">								<a href="#panel-reviews" data-toggle="tab">Reviews(0)</a>							</li>						</ul>						<div class="tab-content">							<div class="tab-pane" id="panel-description">								<h2>Description</h2>										<?php if( get_field('full_description') ): ?>										<?php the_field('full_description'); ?>										<?php else: ?>									<?php the_content();?>								<?php endif; ?>							</div>							<div class="tab-pane" id="panel-distributors">								<h2>Distributors</h2>								<?php the_field('distributors');?>								</div>							<div class="tab-pane" id="panel-benefits">								<h2>Benefits</h2>								<?php the_field('benefits');?>								</div>							<div class="tab-pane active" id="panel-reviews">								<h2>Reviews</h2>								<p>									<?php get_template_part('section/review','form');?>								</p>							</div>						</div>					</div>				</div>          
+        <div class="row">   <div class="col-md-12">         <div class="tabbable" id="tabs-single-product">           
+        <ul class="nav nav-tabs">             
+          <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
+          <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
+          <li><a href="#panel-distributors" data-toggle="tab">Buy</a></li>              
+          <li><a href="#panel-benefits" data-toggle="tab">Benefits</a></li>                                   
+        </ul>           
+        <div class="tab-content">             
+          <div class="tab-pane" id="panel-description">               
+            <h2>Description</h2>                    
+            <?php if( get_field('full_description') ): ?>
+              <?php the_field('full_description'); ?>
+            <?php else: ?>
+              <?php the_content();?>
+            <?php endif; ?>
+          </div>              
+          <div class="tab-pane" id="panel-distributors">
+            <h2>Distributors</h2>
+            <?php the_field('distributors');?>
+          </div>
+          <div class="tab-pane" id="panel-benefits">
+            <h2>Benefits</h2>
+            <?php the_field('benefits');?>
+          </div>
+          <div class="tab-pane active" id="panel-reviews">
+            <h2>Reviews</h2>
+            <p>
+              <?php get_template_part('section/review','form');?>
+            </p>
+          </div>
+          </div>
+          </div>
+          </div>          
         </div>
       </div>      <?php endwhile; // End the loop. Whew. ?>
     </div>
