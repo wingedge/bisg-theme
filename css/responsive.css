@@ -105,4 +105,7 @@
  div#main-search {
  width: 100%;
 }
+
+.review-image,.review-title, .review-content {max-width:100%; display:block;}
+
 }

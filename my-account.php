@@ -1,6 +1,7 @@
 <?php 
 /* Template name: My Account */
 get_header(); ?>
+<?php /*
 <style>
 .accnt-login > div, .accnt-register > div {
   background: #f7f7f7 none repeat scroll 0 0;
@@ -31,12 +32,12 @@ get_header(); ?>
 .accnt-login > div form input[type="submit"],
 .accnt-register > div form input[type="submit"]
 {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e02f78+0,e24386+100 */
-background: rgb(224,47,120); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); /* IE6-9 */
+	
+background: rgb(224,47,120); 
+	background: -moz-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%); 
+	background: -webkit-linear-gradient(top, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%);
+	background: linear-gradient(to bottom, rgba(224, 47, 120, 1) 0%, rgba(226, 67, 134, 1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', endColorstr='#e24386', GradientType=0 ); 
 	border-radius: 1px;
 	color: #fff;
 	display: block;
@@ -53,15 +54,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e02f78', end
 }
 .accnt-login > div form input[type="submit"]:hover,
 .accnt-register > div form input[type="submit"]:hover {
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e05991+0,e02f78+100 */
-background: rgb(224,89,145); /* Old browsers */
-	background: -moz-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', endColorstr='#e02f78', GradientType=0 ); /* IE6-9 */
+	
+background: rgb(224,89,145); 
+	background: -moz-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); 
+	background: -webkit-linear-gradient(top, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%);
+	background: linear-gradient(to bottom, rgba(224, 89, 145, 1) 0%, rgba(224, 47, 120, 1) 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', endColorstr='#e02f78', GradientType=0 ); 
 	color:#fff;
 }
 </style>
+*/ ?>
 <?php get_template_part('section/breadcrumbs'); ?>
 
 
@@ -73,10 +75,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 			<?php while ( have_posts() ) : the_post(); ?>
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-content">					
-						<div class="row">
+						
 							
-
-
+							<div class="col-md-12">
+								<div>
+									<h2 class="content-title">First Time Here? Create your account</h2>
+									<p>not available at the moment, please come back soon.</p>
+								</div>
+							</div>
+						
 							<?php /*
 							<div class="col-md-6 accnt-login"><div>
 								<h2 class="content-title">Login</h2>
@@ -94,7 +101,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e05991', end
 							
 							?>	
 													
-						</div>
+						
 					</div>
 				</div>
 			<?php endwhile; // End the loop. Whew. ?>

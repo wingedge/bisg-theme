@@ -48,4 +48,5 @@ Temporary Items
 ftpsync.settings
 ftpsync.settings
 /vendor/*
-sftp-config.json 
+sftp-config.json
+backup-9-14-2017.sql

@@ -1430,3 +1430,100 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	color: #444;
 	font-weight: normal;
 }
+
+.video-wrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	padding-top: 25px;
+	height: 0;
+	width:100%;
+}
+.video-wrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	min-height: 100%; 
+ 	min-width: 100%;  	
+}
+
+.review-avatar {
+	max-height: 32px;
+	max-width: 32px;
+	border-radius: 1rem;
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.review-rating {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.review-panel .panel-heading {
+	padding: 10px 0 0;
+}
+
+.review-panel .panel-body, .review-panel .panel-footer {
+	padding: 5px 0;
+}
+
+.review-image {
+	display: inline-block;
+	max-width: 20%;
+	overflow: hidden;
+	vertical-align: top;
+	text-align:center;
+}
+
+.review-content {
+	display: inline-block;
+	max-width: 70%;
+	vertical-align: top;
+}
+
+.review-panel .panel-footer {
+	padding: 5px 0;
+	background: none;
+	border-top: 0;
+	font-size: 1.1rem;
+}
+.row-reviews{
+	margin-top:20px;
+}
+
+.review-post-title{font-weight:strong;}
+
+.review-image {
+	display: inline-block;
+	max-width: 20%;
+	overflow: hidden;
+	vertical-align: top;
+	border: 1px solid #ccc;
+	margin-right: 10px;
+	border-radius: 0.5rem;
+}
+
+.review-panel {
+	border: #ccc 1px dashed;
+	padding: 0 10px;	
+}
+
+.brand-container{
+	max-width:90%;
+	margin:0 auto;
+}
+
+#wpcf7-f4785-p14860-o1 input[type="submit"] {
+	background: initial;
+	color: initial;
+	border: initial;
+	width: initial;
+	height: initial;
+	border-radius: initial;
+	margin: initial;
+	position: initial;
+	right: initial;
+	bottom: initial;
+}
