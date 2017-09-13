@@ -1,3 +1,4 @@
+</div><!-- canvass -->
 <div class="container">
   <div class="row">   
     <div class="our-partners">        

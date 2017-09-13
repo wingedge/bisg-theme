@@ -1527,3 +1527,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	right: initial;
 	bottom: initial;
 }
+
+.affix .site-logo-img {
+	max-height: 65px;
+}
