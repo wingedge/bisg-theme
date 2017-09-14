@@ -9,7 +9,8 @@
       <?php 
         $firstArticle = array(
           'category_name' => single_cat_title(null,false),
-          'posts_per_page' => 1,                    
+          'posts_per_page' => 1,  
+          'category__not_in' => array('5787'),
         );
         $q = new WP_Query( $firstArticle ); 
   
@@ -55,10 +56,12 @@
               <div class="category-video-box">
                 <?php /*set arguments */					
         					$videosArgs = array(
-      					    'posts_per_page' 	=> 4,
-      					    'category_name' 	=> NULL, //reset
-      					    'file_template'	 	=> 'section/category-video.php',					    
-      					    'tax_query' 		=> array( 
+      					    'posts_per_page' 	=> 12,
+    					     'category_name' => single_cat_title(null,false),
+      					    'file_template'	 	=> 'section/category-video.php',			
+                    'category__in'    => array('5787'),
+      					   /*
+                    'tax_query' 		=> array( 
       					    							'relation' => 'AND',
       					    							array(
       										            	'taxonomy' => 'category',
@@ -73,6 +76,7 @@
       										            	'operator' => 'IN',
       										            )
                       					    )
+                    */
                       					);
                       				?>
                 <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">

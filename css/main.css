@@ -1531,3 +1531,39 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 .affix .site-logo-img {
 	max-height: 65px;
 }
+
+.featured-brands {
+	border: 1px solid #ccc;
+	overflow: hidden;
+	/* min-height: 280px; */
+	/* padding: 15px; */
+	margin: 10px 0;
+	text-align: center;
+	border-radius: 0.90rem;
+	/* background-size: cover; */
+	padding: 10px;
+}
+
+.featured-brands a {
+	display: block;
+	overflow: hidden;
+}
+
+.brands-title {
+	min-height: 250px;
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	width: 100%;
+	/* margin: 10px; */
+	/* padding: 10px; */
+	overflow: hidden;
+	background-position: bottom;
+}
+
+.brands-title .fp-title {
+	background: #fff;
+	display: block;
+	color: #000;
+	font-weight: bold;
+	padding: 10px 0;
+}
