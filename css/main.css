@@ -36,6 +36,11 @@ img {
 body.logged-in {
 	padding-top: 30px;
 }
+.container {
+ width: 100% !important;
+ max-width:1170px !important;
+}
+
 /* 
 	HEADER
 */
