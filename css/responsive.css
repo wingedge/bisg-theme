@@ -10,6 +10,12 @@
 	.nav > li:nth-child(1) > a {
 		padding-left: 10px;
 	}
+	.featured-item {
+		max-height: 280px;
+		border-radius: 50%;
+		max-width: 280px;
+		margin: 0 auto;
+	}
 }
 /*TABLETS*/
 @media all and (max-width: 991px) {
@@ -70,6 +76,7 @@
 
 	.featured-item {
 		max-height: 280px;	
+		max-width: 280px;
 		border-radius: 50%;
 	}
 }
