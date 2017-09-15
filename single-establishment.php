@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
-<div class="main-content single-product-wrap container">
+<div class="main-content single-establishment-wrap container">
   <div class="row">
-    <div id="main" class="main-column product-column col-md-9">
+    <div id="main" class="main-column establishment-column col-md-9">
+      
       <?php while ( have_posts() ) : the_post(); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row">   
@@ -18,7 +19,7 @@
                   
 
                   <h2 class="content-title"><?php the_title();?></h2>
-                    <div class="product-attributes">
+                    <div class="product-attributes establishment-attributes">
                     <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
                     <?php if($attributes):?>
                       <?php foreach($attributes as $attribute):?>
@@ -49,44 +50,44 @@
             </div>
           </div>
         </div>
-        <div class="row">   <div class="col-md-12">         <div class="tabbable" id="tabs-single-product">           
-        <ul class="nav nav-tabs">             
-          <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
-          <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
-          <li><a href="#panel-distributors" data-toggle="tab">Buy</a></li>              
-          <li><a href="#panel-benefits" data-toggle="tab">Benefits</a></li>                                   
-        </ul>           
-        <div class="tab-content">             
-          <div class="tab-pane" id="panel-description">               
-            <h2>Description</h2>                    
-            <?php if( get_field('full_description') ): ?>
-              <?php the_field('full_description'); ?>
-            <?php else: ?>
-              <?php the_content();?>
-            <?php endif; ?>
-          </div>              
-          <div class="tab-pane" id="panel-distributors">
-            <h2>Distributors</h2>
-            <?php the_field('distributors');?>
-          </div>
-          <div class="tab-pane" id="panel-benefits">
-            <h2>Benefits</h2>
-            <?php the_field('benefits');?>
-          </div>
-          <div class="tab-pane active" id="panel-reviews">
-            <h2>Reviews</h2>
-            <p>
-              <?php get_template_part('section/review','form');?>
-            </p>
-          </div>
-          </div>
-          </div>
+        
+        <div class="row">   
+          <div class="col-md-12">
+            <div class="tabbable" id="tabs-single-product">           
+              
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
+                <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
+                <li><a href="#panel-locations" data-toggle="tab">Location</a></li>                
+              </ul>           
+
+              <div class="tab-content">                
+                <div class="tab-pane" id="panel-details">               
+                  <h2>Details</h2>                  
+                  <?php if( get_field('full_description') ): ?>
+                    <?php the_field('full_description'); ?>
+                  <?php else: ?>
+                    <?php the_content();?>
+                  <?php endif; ?>                  
+                </div>                
+                <div class="tab-pane" id="panel-locations">
+                  <h2>Locations</h2>
+                  <?php  the_field('locations');?>
+                </div>
+              </div>
+              
+            </div>
           </div>          
         </div>
-      </div>      <?php endwhile; // End the loop. Whew. ?>
+      </div>      
+
+    <?php endwhile; // End the loop. Whew. ?>
     </div>
+    
     <div id="sidebar" class="sidebar col-md-3"> 
       <?php get_sidebar('product');?>
-    </div>  </div>
+    </div>
+
+  </div>
 </div>
 <?php get_footer(); ?>

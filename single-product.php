@@ -3,6 +3,7 @@
 <div class="main-content single-product-wrap container">
   <div class="row">
     <div id="main" class="main-column product-column col-md-9">
+      
       <?php while ( have_posts() ) : the_post(); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row">   
@@ -49,44 +50,62 @@
             </div>
           </div>
         </div>
-        <div class="row">		<div class="col-md-12">					<div class="tabbable" id="tabs-single-product">						
-        <ul class="nav nav-tabs">							
-          <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
-          <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
-          <li><a href="#panel-distributors" data-toggle="tab">Buy</a></li>							
-          <li><a href="#panel-benefits" data-toggle="tab">Benefits</a></li>							          						
-        </ul>						
-        <div class="tab-content">							
-          <div class="tab-pane" id="panel-description">								
-            <h2>Description</h2>										
-            <?php if( get_field('full_description') ): ?>
-              <?php the_field('full_description'); ?>
-            <?php else: ?>
-              <?php the_content();?>
-            <?php endif; ?>
-          </div>							
-          <div class="tab-pane" id="panel-distributors">
-            <h2>Distributors</h2>
-            <?php the_field('distributors');?>
-          </div>
-          <div class="tab-pane" id="panel-benefits">
-            <h2>Benefits</h2>
-            <?php the_field('benefits');?>
-          </div>
-          <div class="tab-pane active" id="panel-reviews">
-            <h2>Reviews</h2>
-            <p>
-              <?php get_template_part('section/review','form');?>
-            </p>
-          </div>
-          </div>
-          </div>
+        
+        <div class="row">		
+          <div class="col-md-12">
+            <div class="tabbable" id="tabs-single-product">						
+              <ul class="nav nav-tabs">
+                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
+                <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
+                <li><a href="#panel-details" data-toggle="tab">Details</a></li>
+                <li><a href="#panel-ingredients" data-toggle="tab">Ingredients</a></li>
+                <li><a href="#panel-videos" data-toggle="tab">Videos</a></li>
+              </ul>						
+
+              <div class="tab-content">							
+                
+                <div class="tab-pane" id="panel-details">								
+                  <h2>Details</h2>										
+                  
+                  <?php if( get_field('full_description') ): ?>
+                    <?php the_field('full_description'); ?>
+                  <?php else: ?>
+                    <?php the_content();?>
+                  <?php endif; ?>
+                  
+                </div>							
+                
+                <div class="tab-pane" id="panel-videos">
+                  <h2>Videos</h2>
+                  <?php  the_field('videos');?>
+
+                </div>                
+
+                <div class="tab-pane" id="panel-ingredients">
+                  <h2>Ingredients</h2>
+                  <?php the_field('ingredients');?>
+                </div>
+
+                <div class="tab-pane active" id="panel-reviews">
+                  <h2>Reviews</h2>
+                  <p>
+                    <?php get_template_part('section/review','form');?>
+                  </p>
+                </div>
+
+              </div>
+            </div>
           </div>          
         </div>
-      </div>      <?php endwhile; // End the loop. Whew. ?>
+      </div>      
+
+    <?php endwhile; // End the loop. Whew. ?>
     </div>
+    
     <div id="sidebar" class="sidebar col-md-3"> 
       <?php get_sidebar('product');?>
-    </div>  </div>
+    </div>
+
+  </div>
 </div>
 <?php get_footer(); ?>
