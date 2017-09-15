@@ -1,8 +1,6 @@
 /*HI RES*/
 @media all and (max-width: 1199px) {
 }
-
-
 /*TABLETS*/
 @media all and (max-width: 991px) {
  .site-header.affix {
@@ -41,25 +39,10 @@
  max-width: 80%;
  height: auto;
 }
-	/*
-	.category-columns > div > div {
-	    max-width: 400px!important;
-	    margin: 0 auto!important;
-	    display: block!important;
-	    float: none!important;
-	    margin-bottom: 15px!important;
-	}
-	
-	div#sidebar {
-	    max-width: 400px !important;
-	    margin: 0 auto !important;
-	}
-	*/
-	.s-widget > div > img {
+.s-widget > div > img {
  width: 100%;
 }
 }
-
 
 /*PHONES LANDSCAPE*/
 @media all and (max-width: 767px) {
@@ -92,10 +75,9 @@
  height: inherit!important;
 }
 .category-page .slick-slide img, .category-page .recent-article-row img, .category-page .category-videos img, .category-page .featured-category-video img, .category-page .category-articles img {
-  width: 100%;
+ width: 100%;
 }
 }
-
 
 /*PHONES*/
 @media all and (max-width: 479px) {
@@ -105,7 +87,15 @@
  div#main-search {
  width: 100%;
 }
-
-.review-image,.review-title, .review-content {max-width:100%; display:block;}
+ .review-image, .review-title, .review-content {
+max-width:100%;
+display:block;
+}
+}
+@media all and (min-width: 380px) {
+.container {
+ width: 100% !important;
+ max-width:1170px !important;
+}
 
 }
