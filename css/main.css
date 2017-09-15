@@ -1,6 +1,10 @@
 /*
 	BASIC ELEMENTS
 */
+.html, body {
+  position: relative
+  height: auto
+}
 body {
 	font-family: "Catamaran", sans-serif;
 	font-size:16px;
@@ -33,9 +37,11 @@ img {
 	max-width:100%;
 	height:inherit;
 }
+
 body.logged-in {
-	padding-top: 30px;
+	/*padding-top: 30px;*/
 }
+
 .container {
  width: 100% !important;
  max-width:1170px !important;

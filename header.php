@@ -14,6 +14,7 @@
 html {
 	.header-wrap{ position:relative; height:161px; /*must match with affix*/}
   body{margin-top:0 !important;}
+  body.logged-in {padding-top: 0px !important;}
 }
 <?php the_field('css');?>
 </style>

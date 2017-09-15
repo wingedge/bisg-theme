@@ -4,8 +4,14 @@
 /*TABLETS*/
 @media all and (max-width: 991px) {
  .site-header.affix {
- position: static;
+ 	position: relative;
+ 	border:none;
 }
+.site-header.affix-top{
+	position: relative;
+	border:none;
+}
+
  .pink-dashed span {
  font-size:22px;
 }
