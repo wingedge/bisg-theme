@@ -754,6 +754,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	font-size: 13px;
 	background: #ce0057;
 	padding: 10px;
+	overflow:hidden;
 }
 .recent-review-comment-box > img {
 	float: left;

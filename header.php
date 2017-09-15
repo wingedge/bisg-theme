@@ -69,6 +69,7 @@ html {
   </div>
 </div>
 </div><!--header wrap-->
+
 <div class="main-search clearfix">
   <div class="container">
     <div class="row">

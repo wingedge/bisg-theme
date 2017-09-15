@@ -6,6 +6,7 @@
     <?php putRevSlider( 'homepage-featured-posts' ); ?>
   </div>
 </div>
+
 <div class="main-content container homepage-main">
   <div class="row">
     <div id="main" class="main-column col-md-9 category-columns">
@@ -76,6 +77,7 @@
           </div>
         </div>
       </div>
+      
       <div class="row">
         <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div>
           <a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank">
