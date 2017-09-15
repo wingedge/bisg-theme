@@ -1,4 +1,4 @@
-</div><!-- canvass -->
+
 <div class="container">
   <div class="row">   
     <div class="our-partners">        
@@ -95,8 +95,6 @@
   </div>
 </div>
 <!-- canvass-->
-
-
-
 <?php wp_footer(); ?>
-</body></html>
+</body>
+</html>

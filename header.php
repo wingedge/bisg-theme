@@ -7,14 +7,13 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title></title>
-<meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <?php wp_head(); ?>
 <style>
 html {
-	margin-top: 0!important;
+	.header-wrap{ position:relative; height:161px; /*must match with affix*/}
+  body{margin-top:0 !important;}
 }
 <?php the_field('css');?>
 </style>
@@ -25,7 +24,8 @@ html {
   <?php get_template_part('section/nav','offcanvass');?>
 </div>
 */?>
-<div class="canvas">
+
+<div class="header-wrap">
 <div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="161">
   <div class="container">
     <div class="row">
@@ -67,6 +67,7 @@ html {
     </div>
   </div>
 </div>
+</div><!--header wrap-->
 <div class="main-search clearfix">
   <div class="container">
     <div class="row">
