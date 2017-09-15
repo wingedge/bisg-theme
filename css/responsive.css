@@ -27,6 +27,11 @@
  .treatments-column-content {
  padding: 0 35px;
 }
+.single div#main > div,
+.page-template-default div#main > div
+ {
+    padding: 0 25px;
+}
 }
 /*TABLETS*/
 @media all and (max-width: 991px) {
