@@ -1587,6 +1587,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	margin-top:20px;
 }
 
-.nav-tabs .bi-tabs > li:nth-child(1) > a {
+.bi-tabs .nav-tabs > li:nth-child(1) > a {
 	padding-left: 15px;
 }
