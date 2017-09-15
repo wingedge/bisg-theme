@@ -77,7 +77,7 @@ html {
         <a href="https://www.instagram.com/beautyinsidersg/"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a> 
         <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> 
         </div>      
-      <div id="main-search" class="col-md-10 col-sm-10 col-xs-8 search-box">
+      <div id="main-search" class="col-md-10 col-sm-9 col-xs-8 search-box">
         <div class="col-sm-9">
           <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">
             

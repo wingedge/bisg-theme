@@ -57,10 +57,12 @@ body.logged-in {
 	z-index: 100;
  padding-top;
 }
-.site-header.affix {
+
+.site-header.affix, .site-header.affix {
 	transition: all 800ms ease;
 	border-bottom: 1px solid #ccc;
 }
+
 .site-logo-img {
 	margin: 10px 0px;
 	width:auto;
@@ -789,6 +791,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	vertical-align: middle;
 	width: 100%;
 	border: 1px solid #ccc;
+	background-size: 100% auto;
 }
 .featured-products img {
 	height: 100%;
@@ -1539,7 +1542,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	bottom: initial;
 }
 
-.affix .site-logo-img {
+.affix .site-logo-img, .affix-top .site-logo-img {
 	max-height: 65px;
 }
 
