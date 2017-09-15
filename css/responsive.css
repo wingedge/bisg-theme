@@ -59,11 +59,7 @@
  width: 100%;
 }
 }
-@media all and (min-width: 768px)
-{
-.container {
-    width: 100% !important;
-}
+
 
 /*PHONES LANDSCAPE*/
 @media all and (max-width: 767px) {
@@ -96,7 +92,10 @@
  height: inherit!important;
 }
 .category-page .slick-slide img, .category-page .recent-article-row img, .category-page .category-videos img, .category-page .featured-category-video img, .category-page .category-articles img {
-  width: 100%;
+ width: 100%;
+}
+.container {
+ width: 100% !important;
 }
 }
 
@@ -109,7 +108,8 @@
  div#main-search {
  width: 100%;
 }
-
-.review-image,.review-title, .review-content {max-width:100%; display:block;}
-
+ .review-image, .review-title, .review-content {
+max-width:100%;
+display:block;
+}
 }
