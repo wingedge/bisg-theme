@@ -1,86 +1,99 @@
 /*HI RES*/
+.erinyen .tp-thumb-title {
+	font-size: 14px;
+	padding: 9px 20px 9px 10px;
+}
+#main-search > div {
+	margin: 0;
+	padding: 0 5px;
+}
 @media all and (max-width: 1199px) {
- 	.socialicons span {	
-		font-size: 14px;	
-	}
-	.col-md-2.socialicons {
-		padding: 0;
-		padding-left: 10px;
-	}
-	.nav > li:nth-child(1) > a {
-		padding-left: 10px;
-	}
-	.featured-item {
-		max-height: 280px;
-		border-radius: 50%;
-		max-width: 280px;
-		margin: 0 auto;
-	}
+ .socialicons span {
+ font-size: 14px;
+}
+ .col-md-2.socialicons {
+ padding: 0;
+ padding-left: 10px;
+}
+ .nav > li:nth-child(1) > a {
+ padding-left: 10px;
+}
+ .featured-item {
+ max-height: 280px;
+ border-radius: 50%;
+ max-width: 280px;
+ margin: 0 auto;
+}
+ .treatments-column-content {
+ padding: 0 35px;
+}
 }
 /*TABLETS*/
 @media all and (max-width: 991px) {
-	.site-header.affix {
-		position: relative;
-		border:none;
-	}
-	.site-header.affix-top{
-		position: relative;
-		border:none;
-	}
-
-	.pink-dashed span {
-		font-size:22px;
-	}
-	.nav > li > a {
-		font-size: 13px;
-		padding: 10px 10px;
-	}
-	.register-btn {
-		font-size:15px;
-	}
-
-	.socialicons{
-		padding-right:0;
-		margin-right: 0;
-	}
-
-	.socialicons .fa {
-		font-size: 13px;
-		height: 25px;
-		line-height: 22px;
-		width: 25px;
-	}
-	#site-topmenu {
-		display:none;
-	}
-	#site-logo > a {
-		display: block;
-		text-align: center;
-	}
-	.main-search {
-		padding: 5px 15px;
-	}
-	.navbar-nav {
-		margin: 10px;
-	}
-	.img-responsive.site-logo-img {
-		max-width: 80%;
-		height: auto;
-	}
-	.s-widget > div > img {
-		width: 100%;
-	}
-	.nav > li:nth-child(1) > a {
-		padding-left: 10px;
-	}
-
-	.featured-item {
-		max-height: 280px;	
-		max-width: 280px;
-		border-radius: 50%;
-	}
+ .site-header.affix {
+ position: relative;
+ border:none;
 }
-
+ .site-header.affix-top {
+ position: relative;
+ border:none;
+}
+ .pink-dashed span {
+ font-size:22px;
+}
+ .nav > li > a {
+ font-size: 13px;
+ padding: 10px 10px;
+}
+ .register-btn {
+ font-size:15px;
+}
+ .socialicons {
+ padding-right:0;
+ margin-right: 0;
+}
+ .socialicons .fa {
+ font-size: 13px;
+ height: 25px;
+ line-height: 22px;
+ width: 25px;
+}
+ #site-topmenu {
+ display:none;
+}
+ #site-logo > a {
+ display: block;
+ text-align: center;
+}
+ .main-search {
+ padding: 5px 15px;
+}
+ .navbar-nav {
+ margin: 10px;
+}
+ .img-responsive.site-logo-img {
+ max-width: 80%;
+ height: auto;
+}
+ .s-widget > div > img {
+ width: 100%;
+}
+ .nav > li:nth-child(1) > a {
+ padding-left: 10px;
+}
+ .featured-item {
+ max-height: 280px;
+ max-width: 280px;
+ border-radius: 50%;
+}
+}
+@media all and (max-width: 860px) {
+.home .erinyen .tp-thumb-title {
+ font-size: 10px!important;
+ padding: 5px!important;
+ line-height: 1;
+}
+}
 /*PHONES LANDSCAPE*/
 @media all and (max-width: 767px) {
  .socialicons {
@@ -114,6 +127,40 @@
 .category-page .slick-slide img, .category-page .recent-article-row img, .category-page .category-videos img, .category-page .featured-category-video img, .category-page .category-articles img {
  width: 100%;
 }
+#main-search > div:nth-child(1) {
+ max-width: 70%;
+ width: 100%;
+ float: left;
+}
+#main-search > div:nth-child(2) {
+ max-width: 30%;
+ width: 100%;
+ float: left;
+}
+#main-search > div {
+ margin: 0;
+ padding: 0 5px;
+}
+.site-footer {
+ padding: 25px;
+}
+.home .tp-thumbs.inner.erinyen {
+	display:none;
+}
+.readmore.readmore-cat span {
+    font-size: 14px;
+}
+.row.row-sidebar-wrap img {
+    max-width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.row.row-sidebar-wrap {
+    max-width: 360px;
+    margin: 0 auto;
+}
 }
 
 /*PHONES*/
@@ -134,5 +181,4 @@ display:block;
  width: 100% !important;
  max-width:1170px !important;
 }
-
 }
