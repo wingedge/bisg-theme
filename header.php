@@ -46,13 +46,13 @@ html {
             <!--
             <li><a href="<?php echo site_url('/write-a-review/');?>">Write A Review</a></li>
             -->
-            <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-sign-in"></i> Login</a></li>
+            <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-sign-in"></i> Login / Signup</a></li>
             
             <li><a href="<?php echo site_url('/all-reviews/');?>"><i class="fa fa-child"></i> Read Reviews</a></li>
             <li><a href="<?php echo site_url('/insider-deals/');?>"><i class="fa fa-gift"></i> Insider Deals</a></li>
           </ul>
           <ul>
-            <li><a href="<?php echo site_url('/most-popular-videos/');?>"><i class="fa fa-video-camera"></i> Watch Videos</a></li>
+            <!--<li><a href="<?php echo site_url('/most-popular-videos/');?>"><i class="fa fa-video-camera"></i> Watch Videos</a></li>-->
             <li><a href="<?php echo site_url('/about-us/');?>"><i class="fa fa-heart"></i> About Us</a></li>
             <li><a href="<?php echo site_url('/professionals/');?>"><i class="fa fa-globe"></i> Professional</a></li> 
           </ul>
