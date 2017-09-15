@@ -59,7 +59,11 @@
  width: 100%;
 }
 }
-
+@media all and (min-width: 768px)
+{
+.container {
+    width: 100% !important;
+}
 
 /*PHONES LANDSCAPE*/
 @media all and (max-width: 767px) {
