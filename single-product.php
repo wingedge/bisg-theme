@@ -53,7 +53,7 @@
         
         <div class="row">		
           <div class="col-md-12">
-            <div class="tabbable" id="tabs-single-product">						
+            <div class="tabbable bi-tabs" id="tabs-single-product">						
               <ul class="nav nav-tabs">
                 <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
                 <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->

@@ -53,7 +53,7 @@
         
         <div class="row">   
           <div class="col-md-12">
-            <div class="tabbable" id="tabs-single-product">           
+            <div class="tabbable  bi-tabs" id="tabs-single-product">           
               
               <ul class="nav nav-tabs">
                 <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
@@ -74,8 +74,14 @@
                   <h2>Locations</h2>
                   <?php  the_field('locations');?>
                 </div>
+                <div class="tab-pane active" id="panel-reviews">
+                  <h2>Reviews</h2>
+                  <p>
+                    <?php get_template_part('section/review','form');?>
+                  </p>
+                </div>
               </div>
-              
+
             </div>
           </div>          
         </div>

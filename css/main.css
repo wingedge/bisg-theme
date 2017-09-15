@@ -1582,3 +1582,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	font-weight: bold;
 	padding: 10px 0;
 }
+
+.bi-tabs{
+	margin-top:20px;
+}
+
+.nav-tabs .bi-tabs > li:nth-child(1) > a {
+	padding-left: 15px;
+}
