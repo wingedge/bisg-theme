@@ -3,7 +3,7 @@
 
 <div class="main-banner">
   <div class="full-width">
-    <?php putRevSlider( 'homepage-featured-posts' ); ?>
+    <?php putRevSlider( '2017-09-18-homeslider' ); ?>
   </div>
 </div>
 
