@@ -33,7 +33,7 @@
         <div class="row">
           <div id="category-main-slider" class="category-main-slider col-md-12">
             <div>
-              <h3 class="cat-titles pink-dashed"><span><?php ucwords(single_cat_title());?></span></h3>
+              <h3 class="s-cat-title"><span><?php ucwords(single_cat_title());?></span></h3>
               <?php 
         				$catArticleArgsNew = array(
         					'category_name' => single_cat_title(null,false),
