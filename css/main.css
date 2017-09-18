@@ -1067,7 +1067,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	padding-left: 0;
 }
 .category-page .category-recent-articles .category-articles-container {
-	background: #f7f7f7 none repeat scroll 0 0;
+	background: #fff none repeat scroll 0 0;
 	padding: 15px;
 }
 .category-page .category-recent-articles .category-articles-container .recent-article-title {
@@ -1604,7 +1604,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', e
 	top: 25%;
 	vertical-align: middle;
 	width: 100%;
-	max-width:600px;
+	max-width:800px;
 	padding:25px;
 }
 #HomeSliderCarousel .slider-caption .post-categories {
