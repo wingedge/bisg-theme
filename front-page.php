@@ -122,7 +122,7 @@
 </div>
 
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">   
     <div class="our-partners">        
       <div class="col-md-12">
