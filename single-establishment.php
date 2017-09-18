@@ -41,10 +41,8 @@
                   
                   <?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?>
                   <?php if( get_field('short_description') ): ?>
-                    <?php the_field('short_description'); ?>
-                  <?php else: ?>
-                    <?php the_excerpt();?>
-                  <?php endif; ?>         
+                    <?php the_field('short_description'); ?>                  
+                  <?php endif; ?>
                 </div>        
               </div>
             </div>
@@ -64,15 +62,13 @@
               <div class="tab-content">                
                 <div class="tab-pane" id="panel-details">               
                   <h2>Details</h2>                  
-                  <?php if( get_field('full_description') ): ?>
-                    <?php the_field('full_description'); ?>
-                  <?php else: ?>
-                    <?php the_content();?>
-                  <?php endif; ?>                  
+                  <?php if( get_field('short_description') ): ?>
+                    <?php the_field('short_description'); ?>                  
+                  <?php endif; ?>                
                 </div>                
                 <div class="tab-pane" id="panel-locations">
                   <h2>Locations</h2>
-                  <?php  the_field('locations');?>
+                  <?php the_field('locations');?>
                 </div>
                 <div class="tab-pane active" id="panel-reviews">
                   <h2>Reviews</h2>
