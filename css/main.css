@@ -1684,10 +1684,21 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	display:none !important;
 }
 .s-cat-title {
-  border-top: 1px solid #ccc;
-  color: #e80062;
-  font-family: "Playfair Display",serif;
-  font-size: 33px;
-  margin: 20px 0 0;
-  padding: 10px 0 15px;
+	border-top: 1px solid #ccc;
+	color: #e80062;
+	font-family: "Playfair Display", serif;
+	font-size: 33px;
+	margin: 20px 0 0;
+	padding: 10px 0 15px;
+}
+.category .cat-titles {
+  margin-top: 0;
+}
+.category .cat-titles.pink-dashed > span {
+  margin-left: 0;
+  padding-left: 0;
+}
+.category .category-video-containers, 
+.category .category-product-containers {
+  padding-bottom: 25px;
 }
