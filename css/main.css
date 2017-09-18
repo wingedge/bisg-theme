@@ -1583,5 +1583,103 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	padding: 5px;
 }
 .our-partners .pink-dashed {
-  margin-top: 10px;
+	margin-top: 10px;
+}
+#HomeSliderCarousel .slider-background {
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height:480px;
+}
+#HomeSliderCarousel .slider-caption {
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.8+0,0.8+100 */
+background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.8) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', endColorstr='#cc000000', GradientType=0 ); /* IE6-9 */
+	display: inline-block;
+	left: 0;
+	min-height: 220px;
+	position: absolute;
+	top: 25%;
+	vertical-align: middle;
+	width: 100%;
+	max-width:600px;
+	padding:25px;
+}
+#HomeSliderCarousel .slider-caption .post-categories {
+	list-style: outside none none;
+	margin: 0;
+	padding: 0;
+	color:#fff;
+}
+#HomeSliderCarousel .slider-caption .post-categories li {
+	list-style: outside none none;
+	margin: 0;
+	padding: 0;
+	display:inline-block;
+}
+#HomeSliderCarousel .slider-caption .post-categories li a {
+	color: #fff;
+	font-family: "Saira Extra Condensed", sans-serif;
+	font-size: 16px;
+	margin-right: 5px;
+}
+#HomeSliderCarousel .hslide_the_title {
+	color: #fff;
+	display: block;
+	font-family: "Playfair Display", serif;
+	font-size: 28px;
+	font-weight: normal;
+	line-height: 1.1;
+	margin: 10px 0;
+}
+#HomeSliderCarousel .hslide_the_excerpt {
+	color: #fff;
+	display: block;
+	line-height: 1.2;
+}
+.carousel-indicators-1 {
+	bottom: 0;
+	list-style: outside none none;
+	margin: 0;
+	padding: 0;
+	left:30px;
+	right:0;
+	position: absolute;
+	z-index: 9999;
+}
+#HomeSliderCarousel .carousel-indicators-1 li {
+	background-color: #000;
+	background-size: cover !important;
+	cursor: pointer;
+	display: inline-block;
+	float: left;
+	height: 50px;
+	list-style: outside none none;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	width: 14%;
+}
+#HomeSliderCarousel .carousel-indicators-1 li > span {
+	color: #fff;
+	display: block;
+	font-family: "Saira Extra Condensed", sans-serif;
+	font-size: 17px;
+	line-height: 1;
+	padding: 5px 10px;
+	letter-spacing:-0.2px;
+	min-height:150px;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0.45+0,0.45+100 */
+background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45) 0%, rgba(0, 0, 0, 0.45) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', endColorstr='#73000000', GradientType=0 ); /* IE6-9 */
+}
+#HomeSliderCarousel {
+	overflow: hidden;
+}
+#HomeSliderCarousel .mobile-title {
+	display:none !important;
 }

@@ -3,19 +3,73 @@
 
 <div class="main-banner">
   <div class="full-width">
-    <?php putRevSlider( '2017-09-18-homeslider' ); ?>
+    <?php //putRevSlider( '2017-09-18-homeslider' ); ?>
+    <!--slider-->
+    <?php get_template_part('section/breadcrumbs'); ?>
+    <?php 
+
+	$argsSlider = array(
+		'posts_per_page'=>7,
+		'post_type'	=> 'post',
+		/*'category_name' 	=> NULL, //reset		*/
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',
+		'tax_query' 		=> array(array(
+					              'taxonomy' => 'post_tag',
+					              'field' => 'slug',
+					              'terms' => 'featured',
+					           )),
+	);					                    	
+	$query = new WP_Query( $argsSlider );	
+?>
+    <?php if ($query->have_posts()) : ?>
+    <div id="HomeSliderCarousel" class="carousel slide" data-ride="carousel"> 
+      <!-- Indicators -->
+      <ol class="carousel-indicators-1">
+        <?php $bulletCount = 0;?>
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <li data-target="#HomeSliderCarousel" data-slide-to="<?php echo $bulletCount;?>" class="<?php echo $ctr<=1?'active':'';?>" style="background: url(<?php 
+echo get_the_post_thumbnail_url( $post_id, 'medium' ); ?>) !important;"> <span class="desktop-title">
+          <?php  $title= get_the_title(); echo substr($title, 0, 100); ?>
+          </span> <span class="mobile-title">
+          <?php  $title= get_the_title(); echo substr($title, 0, 38).'...'; ?>
+          </span> </li>
+        <?php $bulletCount++;?>
+        <?php endwhile;?>
+        <?php wp_reset_postdata();?>
+      </ol>
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+        <?php $ctr=1;?>
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+        <div class="item <?php echo $ctr<=1?'active':'';?>">
+          <div class="slider-background" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');">
+            <div class="slider-caption">
+              <?php the_category();?>
+              <span class="hslide_the_title">
+              <?php the_title();?>
+              </span> <span class="hslide_the_excerpt">
+              <?php 
+		  $excerpt= get_the_excerpt();
+		  echo substr($excerpt, 0, 150).'...'; 
+		  ?>
+              </span> </div>
+          </div>
+        </div>
+        <?php $ctr++;?>
+        <?php endwhile;?>
+      </div>
+    </div>
+    <?php wp_reset_postdata();?>
+    <?php endif;?>    
+    <!--end of slider--> 
   </div>
 </div>
-
 <div class="main-content container homepage-main">
   <div class="row">
     <div id="main" class="main-column col-md-9 category-columns">
       <div class="row">
-        <div class="col-md-12 podiumsgbox">
-            <a href="http://www.podiumlounge.com/sg" target="_blank">
-            	<img src="/wp-content/uploads/2017/08/PLSG2017-Beauty-Insider-Leaderboard728x90px.gif" alt="podiumlounge" class="img-responsive" title="podium lounge" width="100%">
-            </a>
-        </div>
+        <div class="col-md-12 podiumsgbox"> <a href="http://www.podiumlounge.com/sg" target="_blank"> <img src="/wp-content/uploads/2017/08/PLSG2017-Beauty-Insider-Leaderboard728x90px.gif" alt="podiumlounge" class="img-responsive" title="podium lounge" width="100%"> </a> </div>
       </div>
       <div class="row">
         <div class="col-md-4 col-sm-4">
@@ -77,33 +131,32 @@
           </div>
         </div>
       </div>
-      
       <div class="row">
-        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div>
-          <a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank">
-          <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/anti-aging.jpg" alt="anti aging treatments" title="anti aging treatments"></a>
-          <h3><a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank" rel="noopener noreferrer"> ANTI-AGING</a></h3>
-          <p>Find the latest non-invasive treatments that fight lines and hyperpigmentation even before they appear. It’s never too early to start your anti-aging regimen!</p>
-        </div></div>
-        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div>
-        <a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank">
-        <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/slimming.jpg" alt="slimming treatments" title="slimming treatments"></a>
-          <h3><a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank" rel="noopener noreferrer">SLIMMING</a></h3>
-          <p>Break down stubborn fat cells, or smooth cellulite and stretchmarks that stay long after you’ve lost the pounds.</p>
-        </div></div>
-        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div> 
-        <a href="http://www.aestheticsandbeauty.com/treatment/skin-whitening-rejuvenation/" target="_blank">
-        <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/brightening.jpg" alt="brightening treatments" title="brightening treatments"></a>
-          <h3><a href="http://www.aestheticsandbeauty.com/treatment/skin-whitening-rejuvenation/" target="_blank" rel="noopener noreferrer">BRIGHTENING</a></h3>
-          <p>Find treatments that help fade scars, discoloration, and dullness. Reveal your fairest, most radiant skin yet!</p>
-        </div></div>
-        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column"><div> 
-        <a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank">
-        <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/enhancement.jpg" alt="enhancement treatments" title="enhancement treatments"></a>
-          <h3><a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank" rel="noopener noreferrer">ENHANCEMENT</a></h3>
-          <p>Find professional, credible and discreet doctors who will work with you to create the body you’ve dreamed of.</p>
-        </div></div>
-      </div>     
+        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column">
+          <div> <a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank"> <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/anti-aging.jpg" alt="anti aging treatments" title="anti aging treatments"></a>
+            <h3><a href="http://www.aestheticsandbeauty.com/treatment/anti-ageing-treatment/" target="_blank" rel="noopener noreferrer"> ANTI-AGING</a></h3>
+            <p>Find the latest non-invasive treatments that fight lines and hyperpigmentation even before they appear. It’s never too early to start your anti-aging regimen!</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column">
+          <div> <a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank"> <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/slimming.jpg" alt="slimming treatments" title="slimming treatments"></a>
+            <h3><a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank" rel="noopener noreferrer">SLIMMING</a></h3>
+            <p>Break down stubborn fat cells, or smooth cellulite and stretchmarks that stay long after you’ve lost the pounds.</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column">
+          <div> <a href="http://www.aestheticsandbeauty.com/treatment/skin-whitening-rejuvenation/" target="_blank"> <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/brightening.jpg" alt="brightening treatments" title="brightening treatments"></a>
+            <h3><a href="http://www.aestheticsandbeauty.com/treatment/skin-whitening-rejuvenation/" target="_blank" rel="noopener noreferrer">BRIGHTENING</a></h3>
+            <p>Find treatments that help fade scars, discoloration, and dullness. Reveal your fairest, most radiant skin yet!</p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 treatments-column">
+          <div> <a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank"> <img class="img-responsive" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2014/09/enhancement.jpg" alt="enhancement treatments" title="enhancement treatments"></a>
+            <h3><a href="http://www.aestheticsandbeauty.com/treatment_category/body/" target="_blank" rel="noopener noreferrer">ENHANCEMENT</a></h3>
+            <p>Find professional, credible and discreet doctors who will work with you to create the body you’ve dreamed of.</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="sidebar" class="sidebar col-md-3">
       <div class="container-sidebar">
@@ -117,46 +170,23 @@
       <p>Beauty Insider is your best source for Singapore beauty reviews on makeup, skincare, haircare, spas and salons. We don’t just give beauty tips and trends — we tell which beauty products and treatments really work!<br>
         Our exclusive Beauty Insider Rewards program also lets you earn points you can exchange for prizes, and the chance to join contests or get special beauty freebies. You can also be selected to join the Beauty Insider Trial team, where you’ll be given beauty samples to review.<br>
         Beauty Insider is your chance to read, discover, and try the best beauty products and treatments in Singapore. Whether you’re looking for a brightening cream, an anti-aging routine, or the latest treatment for acne scars or tighter pores, we are your number one source for Singapore beauty.</p>
-    </div> 
+    </div>
   </div>
 </div>
-
-
 <div class="container-fluid">
-  <div class="row">   
-    <div class="our-partners">        
+  <div class="row">
+    <div class="our-partners">
       <div class="col-md-12">
         <h3 class="pink-dashed"><span>Our Partners</span></h3>
       </div>
-      <div id="our_partners" class="text-center"> 
-        <div class="col-md-2 col-xs-6 col-sm-4">        
-          <a href="http://justrunlah.com/" target="_blank" rel="noopener"> 
-            <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/jrl-logo.png" class="img-responsive" alt="just Ran Lah"> 
-          </a>
-        </div>
-        <div class="col-md-2 col-xs-6 col-sm-4">        
-      <a href="http://www.missuniversesingapore.com.sg/" target="_blank" rel="noopener"> 
-        <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/MUS-2015-Logo-pink.png" class="img-responsive"  alt="Mus">
-      </a>
+      <div id="our_partners" class="text-center">
+        <div class="col-md-2 col-xs-6 col-sm-4"> <a href="http://justrunlah.com/" target="_blank" rel="noopener"> <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/jrl-logo.png" class="img-responsive" alt="just Ran Lah"> </a> </div>
+        <div class="col-md-2 col-xs-6 col-sm-4"> <a href="http://www.missuniversesingapore.com.sg/" target="_blank" rel="noopener"> <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/MUS-2015-Logo-pink.png" class="img-responsive"  alt="Mus"> </a> </div>
+        <div class="col-md-2 col-xs-6 col-sm-4"> <a href="https://www.facebook.com/MissSingaporeBeautyPageant/" target="_blank" rel="noopener"> <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/06/miss-singapore-beauty-pageant.png" class="img-responsive"  alt="miss singapore"> </a> </div>
+        <div class="col-md-3 col-xs-6 col-sm-6"> <a href="http://www.spaandwellness.org/" target="_blank" rel="noopener"> <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/swas-logo.png" class="img-responsive" alt="Spa &amp; Wellness"> </a> </div>
+        <div class="col-md-3 col-xs-12 col-sm-6"> <a href="http://www.cosmoprof.com.sg/" target="_blank" rel="noopener"> <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/cosmo-prof-acad-web.png" class="img-responsive"  alt="Cosnoprof"> </a> </div>
       </div>
-      <div class="col-md-2 col-xs-6 col-sm-4">        
-      <a href="https://www.facebook.com/MissSingaporeBeautyPageant/" target="_blank" rel="noopener">
-        <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/06/miss-singapore-beauty-pageant.png" class="img-responsive"  alt="miss singapore">
-      </a>
-      </div>
-      <div class="col-md-3 col-xs-6 col-sm-6">        
-      <a href="http://www.spaandwellness.org/" target="_blank" rel="noopener">
-        <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/swas-logo.png" class="img-responsive" alt="Spa &amp; Wellness">
-      </a>
-      </div>
-      <div class="col-md-3 col-xs-12 col-sm-6">        
-      <a href="http://www.cosmoprof.com.sg/" target="_blank" rel="noopener">
-        <img src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2016/04/cosmo-prof-acad-web.png" class="img-responsive"  alt="Cosnoprof">
-      </a>
-      </div>
-      </div>
-    </div>   
+    </div>
   </div>
 </div>
-
 <?php get_footer(); ?>
