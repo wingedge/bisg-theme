@@ -1,4 +1,6 @@
-<?php get_header(); ?>
+<?php 
+/* Template name: Brands Page */
+get_header(); ?>
 
 <div class="category-page general-category-layout">
 	<?php include('section/breadcrumbs.php'); ?>
