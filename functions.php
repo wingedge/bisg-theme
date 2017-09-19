@@ -86,6 +86,8 @@ function bisg_scripts(){
 	// slick slider
 	wp_enqueue_style( 'bisgtheme-slick-css', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css', array( 'bisgtheme-style' ), null );
 	wp_enqueue_script( 'bisg-slick-js', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array( 'jquery' ), null, true );
+
+	wp_enqueue_script( 'bisg-list-js', '//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js', array( 'jquery' ), null, true );	
 }
 add_action( 'wp_enqueue_scripts', 'bisg_scripts' );
 
@@ -306,3 +308,15 @@ function bi_check_category() {
 }
 
 add_action('template_redirect', 'bi_check_category');
+
+function custom_rewrite_tag() {
+  add_rewrite_tag('%showcat%', '([^&]+)'); 
+}
+add_action('init', 'custom_rewrite_tag', 10, 0);
+
+function custom_rewrite_rule() {
+	flush_rewrite_rules();
+	add_rewrite_rule('^all-products/([^/]*)?','index.php?page_id=22542&showcat=$matches[1]','top');
+	add_rewrite_rule('^all-establishments/([^/]*)?','index.php?page_id=22560&showcat=$matches[1]','top');
+}
+add_action('init', 'custom_rewrite_rule', 10, 0);
