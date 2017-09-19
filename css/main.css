@@ -789,9 +789,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	background-size: 100% auto;
 }
 .featured-products img {
-	height: 100%;
+	max-height: 100%;
 	width: auto;
-	background:1px solid #ccc;
 }
 .featured-products-title {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100&0.8+0,0.8+100 */
@@ -900,6 +899,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 }
 .breadcrumbs-container {
 	background: #f7f7f7 none repeat scroll 0 0;
+}
+.home .breadcrumbs-container {
+	display:none;
+	margin-bottom:0;
 }
 .readmore {
 	display: block;
@@ -1692,13 +1695,44 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	padding: 10px 0 15px;
 }
 .category .cat-titles {
-  margin-top: 0;
 }
 .category .cat-titles.pink-dashed > span {
-  margin-left: 0;
-  padding-left: 0;
+	margin-left: 0;
+	padding-left: 0;
 }
-.category .category-video-containers, 
-.category .category-product-containers {
-  padding-bottom: 25px;
+.category .category-video-containers, .category .category-product-containers {
+	padding-bottom: 25px;
+}
+.home .treatments-column img {
+	height: auto;
+	width: 100%;
+}
+.single-product .recent-article-thumb img, .recent-articles .recent-article-thumb img {
+	height: auto;
+	width: 100%;
+}
+.establisment-wrap > div {
+	margin: 0 0 20px;
+	min-height: 310px;
+}
+.brands-title {
+	background-size: contain;
+}
+.content-image-banner img {
+	display: block;
+	margin: 25px auto 0;
+	width: 100%;
+}
+.subpage-content-title {
+  background: transparent none repeat scroll 0 0;
+  color: #e80062;
+  display: block;
+  font-family: "Playfair Display",serif;
+  font-size: 32px;
+  margin: 15px 0 0;
+  padding: 0 15px;
+}
+.subpage-content-title hr {
+  margin: 13px 0 20px;
+  padding: 0;
 }

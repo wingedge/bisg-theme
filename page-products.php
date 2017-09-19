@@ -7,7 +7,7 @@ get_header(); ?>
 	
 	<div class="category-content container">
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-8">
 				<h3 class="cat-titles pink-dashed"><span>Products</span></h3>
 				<div class="category-product-container product-container">
 					<?php						
@@ -29,13 +29,13 @@ get_header(); ?>
     					<div class="row category-row">
     					<?php while ($query->have_posts()) :?>       	
         					<?php $query->the_post(); ?>
-							<div class="col-md-4 col-sm-4">
+							<div class="col-md-4 col-sm-6 col-xs-12">
 								<div id="post-<?php the_ID(); ?>" <?php post_class('featured-products'); ?> >
 									<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 									<?php if ( !has_post_thumbnail() ): ?>
 										<?php echo bi_get_post_image();?>
 									<?php else:?>
-										<?php the_post_thumbnail();?>	
+										<?php the_post_thumbnail('full');?>	
 									<?php endif;?>
 										<div class="featured-products-title">
 											<span class="fp-title"><?php the_title();?></span>
@@ -44,10 +44,9 @@ get_header(); ?>
 									</a>
 								</div>
 							</div>
-							<?php if($postCtr>=3): $postCtr=0;?>								
+							<!--<?php if($postCtr>=3): $postCtr=0;?>								
 								</div><div class="row category-row">
-							<?php endif;?>
-							
+							<?php endif;?>-->							
 
         					<?php $postCtr++; ?>
     					<?php endwhile;?>
@@ -57,7 +56,7 @@ get_header(); ?>
 					
                 </div>
 			</div>
-			<div id="all-articles" class="all-articles col-md-3">
+			<div id="all-articles" class="all-articles col-md-3 col-sm-4">
 				<h3 class="cat-titles"><span>Recent Posts</span></h3>
           		<?php get_sidebar('category');?>
 			</div>

@@ -33,11 +33,15 @@
       ?>
     </div>
     <div class="row">
-      <div class="col-md-12"><h3 class="s-cat-title"><span><?php ucwords(single_cat_title());?></span></h3></div>
-      <div id="category-content-left" class="category-content-left col-md-9">
+      <div class="col-md-12">
+        <h3 class="s-cat-title"><span>
+          <?php ucwords(single_cat_title());?>
+          </span></h3>
+      </div>
+      <div id="category-content-left" class="category-content-left col-md-9 col-sm-8">
         <div class="row">
           <div id="category-main-slider" class="category-main-slider col-md-12" style="padding-bottom:25px;">
-            <div>              
+            <div>
               <?php 
         				$catArticleArgsNew = array(
         					'category_name' => single_cat_title(null,false),
@@ -114,7 +118,7 @@
           </div>
         </div>
       </div>
-      <div id="category-recent-articles" class="category-recent-articles col-md-3">
+      <div id="category-recent-articles" class="category-recent-articles col-md-3 col-sm-4">
         <div>
           <h3 class="cat-titles">Latest in Article </h3>
           <div class="recent-article-wrap">
