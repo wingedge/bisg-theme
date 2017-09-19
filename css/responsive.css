@@ -97,6 +97,19 @@
  height: auto;
  width: 100%;
 }
+body {
+  overflow-x: hidden;
+}
+.page-id-1163 .category-page {
+  padding: 0 25px;
+}
+.page-id-1163 .recent-article-row {
+  margin: 0 !important;
+  text-align: center;
+}
+.page-id-1163 .fp-title {
+  padding: 10px 0 0;
+}
 }
 @media all and (max-width: 860px) {
 .home .erinyen .tp-thumb-title {
@@ -236,10 +249,6 @@ display:block;
 }
 }
 @media all and (min-width: 380px) {
-.container {
- width: 100% !important;
- max-width:1170px !important;
-}
 }
 /*home slider*/
 @media all and (max-width:1460px) {
