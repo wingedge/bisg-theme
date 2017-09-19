@@ -1707,20 +1707,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	height: auto;
 	width: 100%;
 }
-.single-product .recent-article-thumb img,
-.recent-articles .recent-article-thumb img {
+.single-product .recent-article-thumb img, .recent-articles .recent-article-thumb img {
 	height: auto;
 	width: 100%;
 }
 .establisment-wrap > div {
-  margin: 0 0 20px;
-  min-height: 310px;
+	margin: 0 0 20px;
+	min-height: 310px;
 }
 .brands-title {
-  background-size: contain;
+	background-size: contain;
 }
 .content-image-banner img {
+	display: block;
+	margin: 25px auto 0;
+	width: 100%;
+}
+.subpage-content-title {
+  background: transparent none repeat scroll 0 0;
+  color: #e80062;
   display: block;
-  margin: 25px auto 0;
-  width: 100%;
+  font-family: "Playfair Display",serif;
+  font-size: 32px;
+  margin: 15px 0 0;
+  padding: 0 15px;
+}
+.subpage-content-title hr {
+  margin: 13px 0 20px;
+  padding: 0;
 }

@@ -27,9 +27,6 @@
  .treatments-column-content {
  padding: 0 35px;
 }
-.single div#main > div, .page-template-default div#main > div {
- padding: 0 25px;
-}
 }
 /*TABLETS*/
 @media all and (max-width: 991px) {
@@ -109,6 +106,10 @@ body {
 }
 .page-id-1163 .fp-title {
   padding: 10px 0 0;
+}
+.page-template-default .category-page .recent-articles .fp-title {
+  margin-top: 10px;
+  text-align: center;
 }
 }
 @media all and (max-width: 860px) {
