@@ -89,6 +89,7 @@
  max-width: 280px;
  border-radius: 50%;
 }
+
 }
 @media all and (max-width: 860px) {
 .home .erinyen .tp-thumb-title {
@@ -173,6 +174,19 @@
 }
 .site-footer .container {
   padding: 0;
+}
+.category-row .product {
+  margin-bottom: 15px;
+  max-height: inherit;
+  overflow: hidden;
+  position: relative;
+}
+.page-template-page-products .recent-article-title {
+  padding: 10px 0;
+  text-align: center;
+}
+.page-template-page-products .row.recent-article-row.recent-article-row-1 {
+  margin: 0 !important;
 }
 }
 

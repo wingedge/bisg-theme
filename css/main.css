@@ -1705,3 +1705,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
   height: auto;
   width: 100%;
 }
+.single-product .recent-article-thumb img {
+  height: auto;
+  width: 100%;
+}

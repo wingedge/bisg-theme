@@ -35,7 +35,7 @@ get_header(); ?>
 									<?php if ( !has_post_thumbnail() ): ?>
 										<?php echo bi_get_post_image();?>
 									<?php else:?>
-										<?php the_post_thumbnail();?>	
+										<?php the_post_thumbnail('full');?>	
 									<?php endif;?>
 										<div class="featured-products-title">
 											<span class="fp-title"><?php the_title();?></span>
