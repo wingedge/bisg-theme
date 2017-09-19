@@ -164,6 +164,16 @@
  max-width: 360px;
  margin: 0 auto;
 }
+#main {
+ padding: 0;
+}
+.page-template-page-brand .row.category-row {
+  margin: 0 -35px;
+  padding: 0;
+}
+.site-footer .container {
+  padding: 0;
+}
 }
 
 /*PHONES*/
@@ -239,15 +249,15 @@ display:none;
  height: 100px;
 }
 #HomeSliderCarousel .slider-caption {
-  top: 8% !important;
+ top: 8% !important;
 }
 #HomeSliderCarousel .slider-caption {
-  min-height: 310px;
+ min-height: 310px;
 }
 }
 @media all and (max-width:310px) {
 #HomeSliderCarousel .carousel-indicators-1 li {
-  height: 105px;
+ height: 105px;
 }
 .carousel-indicators-1 {
  left:10px !important;
@@ -256,6 +266,6 @@ display:none;
 display:none;
 }
 #HomeSliderCarousel .carousel-indicators-1 li {
-  width: 23.6%;
+ width: 23.6%;
 }
 }

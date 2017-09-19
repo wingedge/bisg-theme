@@ -1692,13 +1692,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	padding: 10px 0 15px;
 }
 .category .cat-titles {
-  margin-top: 0;
+	margin-top: 0;
 }
 .category .cat-titles.pink-dashed > span {
-  margin-left: 0;
-  padding-left: 0;
+	margin-left: 0;
+	padding-left: 0;
 }
-.category .category-video-containers, 
-.category .category-product-containers {
-  padding-bottom: 25px;
+.category .category-video-containers, .category .category-product-containers {
+	padding-bottom: 25px;
+}
+.home .treatments-column img {
+  height: auto;
+  width: 100%;
 }
