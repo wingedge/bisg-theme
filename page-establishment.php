@@ -7,7 +7,7 @@ get_header(); ?>
 	
 	<div class="category-content container">
 		<div class="row">
-			<div class="col-md-9">
+			<div class="col-md-9 col-sm-8">
 				<h3 class="cat-titles pink-dashed"><span> Establishments</span></h3>
 				<div class="category-product-container product-container">
 					<?php					
@@ -31,7 +31,7 @@ get_header(); ?>
     					<div class="row category-row">
     					<?php while ($query->have_posts()) :?>       	
         					<?php $query->the_post(); ?>
-							<div class="col-md-4 col-sm-4">
+							<div class="col-md-4 col-sm-6 establisment-wrap">
 								<div id="post-<?php the_ID(); ?>" <?php post_class('establishment-items'); ?> >
 									<a href="<?php the_permalink();?>" title="<?php the_title();?>">
 										<span class="establishment-image" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');" ></span>
@@ -57,10 +57,9 @@ get_header(); ?>
 									</a>
 								</div>
 							</div>
-							<?php if($postCtr>=3): $postCtr=0;?>								
+							<!--<?php if($postCtr>=3): $postCtr=0;?>								
 								</div><div class="row category-row">
-							<?php endif;?>
-							
+							<?php endif;?>-->			
 
         					<?php $postCtr++; ?>
     					<?php endwhile;?>
@@ -70,7 +69,7 @@ get_header(); ?>
 					
                 </div>
 			</div>
-			<div id="all-articles" class="all-articles col-md-3">
+			<div id="all-articles" class="all-articles col-md-3 col-sm-4">
 				<h3 class="cat-titles"><span>Recent Posts</span></h3>
           		<?php get_sidebar('category');?>
 			</div>

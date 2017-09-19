@@ -89,7 +89,14 @@
  max-width: 280px;
  border-radius: 50%;
 }
-
+.single-product .content-image-banner img {
+ display: block;
+ margin: 0 auto;
+}
+.single-product .recent-article-thumb img {
+ height: auto;
+ width: 100%;
+}
 }
 @media all and (max-width: 860px) {
 .home .erinyen .tp-thumb-title {
@@ -113,8 +120,10 @@
  .navbar-nav > li > ul.sub-menu {
  position: inherit;
 }
-.category-recent-articles .recent-article-title .fp-title {
+.category-recent-articles .recent-article-title .fp-title,
+.single .recent-article-title .fp-title {
  margin-top: 10px;
+ text-align:center;
 }
 .category-recent-articles .recent-article-thumb {
  max-height: inherit !important;
@@ -169,24 +178,47 @@
  padding: 0;
 }
 .page-template-page-brand .row.category-row {
-  margin: 0 -35px;
-  padding: 0;
+ margin: 0 -35px;
+ padding: 0;
 }
 .site-footer .container {
-  padding: 0;
+ padding: 0;
 }
 .category-row .product {
-  margin-bottom: 15px;
+ margin-bottom: 15px;
+ max-height: inherit;
+ overflow: hidden;
+ position: relative;
+}
+.page-template-page-products .recent-article-title, .single-product .recent-article-title {
+ padding: 10px 0;
+ text-align: center;
+}
+.row.recent-article-row.recent-article-row-1 {
+ margin: 0 !important;
+}
+.establisment-wrap > div {
+ min-height: inherit;
+}
+.content-image-banner img {
+  display: block;
+  margin: 25px auto 0;
+  width: 100%;
+}
+.category .recent-article-thumb {
   max-height: inherit;
-  overflow: hidden;
-  position: relative;
+  padding: 0;
 }
-.page-template-page-products .recent-article-title {
-  padding: 10px 0;
-  text-align: center;
+#category-recent-articles {
+  margin-bottom: 25px;
 }
-.page-template-page-products .row.recent-article-row.recent-article-row-1 {
+.category .row.recent-article-row {
   margin: 0 !important;
+
+}
+.category .recent-articles .fp-title {
+  padding-top: 10px;
+  text-align: center;
 }
 }
 

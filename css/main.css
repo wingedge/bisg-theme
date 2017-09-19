@@ -789,9 +789,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	background-size: 100% auto;
 }
 .featured-products img {
-	height: 100%;
+	max-height: 100%;
 	width: auto;
-	background:1px solid #ccc;
 }
 .featured-products-title {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c60046+0,e80062+100&0.8+0,0.8+100 */
@@ -1702,10 +1701,23 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	padding-bottom: 25px;
 }
 .home .treatments-column img {
-  height: auto;
-  width: 100%;
+	height: auto;
+	width: 100%;
 }
-.single-product .recent-article-thumb img {
-  height: auto;
+.single-product .recent-article-thumb img,
+.recent-articles .recent-article-thumb img {
+	height: auto;
+	width: 100%;
+}
+.establisment-wrap > div {
+  margin: 0 0 20px;
+  min-height: 310px;
+}
+.brands-title {
+  background-size: contain;
+}
+.content-image-banner img {
+  display: block;
+  margin: 25px auto 0;
   width: 100%;
 }

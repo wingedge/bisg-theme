@@ -3,7 +3,7 @@
 
 <div class="main-content single-product-wrap container">
   <div class="row">
-    <div id="main" class="main-column product-column col-sm-9">
+    <div id="main" class="main-column product-column col-md-9 col-sm-8">
       <?php while ( have_posts() ) : the_post(); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row">
@@ -88,7 +88,7 @@
       </div>
       <?php endwhile; // End the loop. Whew. ?>
     </div>
-    <div id="sidebar" class="sidebar col-sn-3">
+    <div id="sidebar" class="sidebar col-sm-4 col-md-3">
       <?php get_sidebar('product');?>
     </div>
   </div>
