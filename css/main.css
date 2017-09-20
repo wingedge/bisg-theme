@@ -1737,5 +1737,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	padding: 0;
 }
 #tagged-posts {
-  z-index: 99999;
+	z-index: 99999;
+}
+.sort.btn.btn-info.register-btn {
+	border: medium none !important;
+	width: 100%;
+	margin:0 !important;
+	line-height: 34px !important;
+}
+#product-list .link.name {
+	color: #666;
+	font-weight: 100;
+}
+.sortbtn-wrap {
+  padding-left: 0;
 }

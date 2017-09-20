@@ -7,6 +7,8 @@
 	margin: 0;
 	padding: 0 5px;
 }
+@media all and (min-width: 768px) {
+}
 @media all and (max-width: 1199px) {
  .socialicons span {
  font-size: 14px;
