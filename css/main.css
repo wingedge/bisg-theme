@@ -1724,15 +1724,18 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	width: 100%;
 }
 .subpage-content-title {
-  background: transparent none repeat scroll 0 0;
-  color: #e80062;
-  display: block;
-  font-family: "Playfair Display",serif;
-  font-size: 32px;
-  margin: 15px 0 0;
-  padding: 0 15px;
+	background: transparent none repeat scroll 0 0;
+	color: #e80062;
+	display: block;
+	font-family: "Playfair Display", serif;
+	font-size: 32px;
+	margin: 15px 0 0;
+	padding: 0 15px;
 }
 .subpage-content-title hr {
-  margin: 13px 0 20px;
-  padding: 0;
+	margin: 13px 0 20px;
+	padding: 0;
+}
+#tagged-posts {
+  z-index: 99999;
 }
