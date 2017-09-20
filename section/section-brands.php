@@ -42,13 +42,13 @@
                   <?php echo html_entity_decode( get_field('maps'));?>
                 </div>
                 <div class="tab-pane" id="panel-products">                  
-                  Products
+                  
                 </div>
                 <div class="tab-pane" id="panel-videos">                  
-                  Videos
+                  
                 </div>
                 <div class="tab-pane" id="panel-reviews">                  
-                  Reviews
+                  
                 </div>              
               </div>
 

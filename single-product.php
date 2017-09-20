@@ -39,9 +39,9 @@
                   </div>
                   <?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?>
                   <?php if( get_field('short_description') ): ?>
-                  <?php the_field('short_description'); ?>
-                  <?php else: ?>
-                  <?php the_excerpt();?>
+                    <?php the_field('short_description'); ?>                  
+                  <?php else:?>
+                    <p>We currently have no further information at the moment, we will update this as soon as possible, please visit this page again.</p>
                   <?php endif; ?>
                 </div>
               </div>
