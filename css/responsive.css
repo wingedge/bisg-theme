@@ -189,7 +189,7 @@ body {
  margin: 0 auto;
 }
 #main {
- padding: 0;
+ padding: 0 10px;
 }
 .page-template-page-brand .row.category-row {
  margin: 0 -35px;

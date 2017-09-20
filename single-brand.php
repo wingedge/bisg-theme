@@ -12,7 +12,9 @@
         </div>      
       <?php else:?>
         <div class="entry-content container">
-        <?php the_content();?>  
+        
+          <?php get_template_part('section/section','brands');?>
+
         </div>      
       <?php endif;?>                  
       
