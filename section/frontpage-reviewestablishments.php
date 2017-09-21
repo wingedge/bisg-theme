@@ -17,7 +17,7 @@ foreach($categories as $getCat):
 	<?php if ($query->have_posts()) :?>
 		<?php while ($query->have_posts()) :?>
 	        <?php $query->the_post(); ?>
-	        	<div class="col-md-3 text-center">
+	        	<div class="col-xs-6 col-sm-3 col-md-3 text-center">
 	        		<h3><a href="<?php echo get_category_link( $category_id ); ?>"><?php echo ucwords($getCat)?></a></h3>
 	        		<a href="<?php echo get_category_link( $category_id ); ?>"><?php the_post_thumbnail();?></a>
 	        	</div>

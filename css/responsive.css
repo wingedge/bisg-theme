@@ -240,11 +240,19 @@ body {
 
 /*PHONES*/
 @media all and (max-width: 479px) {
+
+ .footer-socials .icon-title {
+  display: none;
+}
+.footer-socials li {
+  display: inline-block;
+}
+
  #main-registration {
  display:none!important;
 }
  div#main-search {
- width: 100%;
+ width: 100%; 
 }
  .review-image, .review-title, .review-content {
 max-width:100%;

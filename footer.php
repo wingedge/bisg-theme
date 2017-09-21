@@ -6,7 +6,7 @@
     <div class="row">
       <div class="col-md-3 col-sm-3 footerbox">
         <h3 class="footer-title">Connect with us!</h3>
-       	<ul>
+       	<ul class="footer-socials">
         	<li class="biph"><a href="http://www.beautyinsider.ph" target="_blank"><span class="phicon"></span><span class="icon-title">BeautyInsider PH</span></a></li>
             <li><a href="https://www.facebook.com/BeautyInsiderSG/"  target="_blank"><span class="socialmediaicon icon-fb"></span><span class="icon-title">Facebook</span></a></li>
             <li><a href="https://www.instagram.com/beautyinsidersg/" target="_blank"><span class="socialmediaicon icon-instagram"></span><span class="icon-title">Instagram</span></a></li>
