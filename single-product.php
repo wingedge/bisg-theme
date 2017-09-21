@@ -87,6 +87,9 @@
         </div>
       </div>
       <?php endwhile; // End the loop. Whew. ?>
+
+      <?php get_template_part('section/review','related'); ?>
+
     </div>
     <div id="sidebar" class="sidebar col-sm-4 col-md-3">
       <?php get_sidebar('product');?>

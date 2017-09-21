@@ -60,14 +60,26 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-md-12">
-          <h3 class="pink-dashed"><span>Latest Products</span></h3>
-          <div class="featured-video-container slick-slider-four" id="products-carousel">
-            <?php bi_display_products();?>
+          <h3 class="pink-dashed"><span>Review Now</span></h3>
+          <div class="featured-video-container" id="products-carousel">
+            <?php get_template_part('section/frontpage','reviewnow'); ?> 
           </div>
         </div>
       </div>
+
+       <div class="row">
+        <div class="col-md-12">
+          <h3 class="pink-dashed"><span>Review Now</span></h3>
+          <div class="featured-video-container" id="products-carousel">
+            <?php get_template_part('section/frontpage','reviewestablishments'); ?> 
+          </div>
+        </div>
+      </div>
+
+      <?php /*
       <div class="row">
         <div class="col-md-12">
           <h3 class="pink-dashed" style="margin-bottom:8px;"><span>Beauty Treatments</span></h3>
@@ -102,6 +114,8 @@
           </div>
         </div>
       </div>
+      */?>
+
     </div>
     <div id="sidebar" class="sidebar col-md-3">
       <div class="container-sidebar">
