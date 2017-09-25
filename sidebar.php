@@ -17,7 +17,9 @@
 
   <div class="col-md-12 col-sm-4 recent-review s-widget">
       <?php 
-        //$review = new BIReviewer();
+        #$review = new BIReviewer();
+        global $BIReview;
+
         $BIReview->render_random_review();
       ?>    
   </div>
