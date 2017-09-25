@@ -1716,7 +1716,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	min-height: 310px;
 }
 .brands-title {
-	background-size: contain;
+	background-size: cover;
 }
 .content-image-banner img {
 	display: block;

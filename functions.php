@@ -48,18 +48,14 @@ add_action( 'after_setup_theme', 'bisgtheme_setup' );
 remove_action('wp_head', 'wp_generator');
 
 // include the navigation walker
-require('vendor/autoload.php');
-
+//require('vendor/autoload.php');
+require('lib/review.php'); // review functions
 require_once('lib/navwalker.php'); // used for bootstrap navigation layout 
 require_once('lib/extract-image.php');
 require_once('lib/post-types.php'); // post types
 require_once('lib/taxonomies.php'); // taxonomies (categories/tags)
 require_once('lib/breadcrumbs.php'); // breadcrumbs
 require_once('lib/search/functions.php'); // breadcrumbs
-require_once('lib/review.php'); // review functions
-
-// require guzzle
-
 
 function bisg_scripts(){
 	// fonts
@@ -320,3 +316,6 @@ function custom_rewrite_rule() {
 	add_rewrite_rule('^all-establishments/([^/]*)?','index.php?page_id=22560&showcat=$matches[1]','top');
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
+
+
+

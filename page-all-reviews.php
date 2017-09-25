@@ -17,8 +17,8 @@ get_header(); ?>
               <div class="row row-reviews">               
               <!---->
               <?php 
-                $review = new BIReviewer();
-                $review->render_reviews();
+                //$review = new BIReviewer();
+                $BIReview->render_reviews();
               ?>
               </div>
               <?php the_content(); ?>
