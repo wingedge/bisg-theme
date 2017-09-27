@@ -58,14 +58,31 @@
           <div class="tab-pane" id="panel-maps">
             <div><?php echo html_entity_decode( get_field('brand_map'));?></div>
           </div>
-          <div class="tab-pane" id="panel-products">
-            <div>...</div>
+          <div class="tab-pane" id="panel-products">            
+            <div>
+            <?php 
+              $args = array(
+                'posts_per_page' => 4,
+                'column_width'    => 'col-md-3',
+                'file_template'   => 'section/category-product.php',        
+                'category_name' => NULL,
+                'tax_query'     => array(
+                                    array(
+                                      'taxonomy' => 'brand-category',
+                                      'field' => 'name',
+                                      'terms' => get_the_title(),
+                                  )),
+              );
+              bi_display_products($args);
+            ?>
+            </div>            
           </div>
           <div class="tab-pane" id="panel-videos">
             <div><?php echo html_entity_decode( get_field('brand_video'));?></div>
           </div>
           <div class="tab-pane" id="panel-reviews">
-            <div>...</div>
+            <h2>Reviews</h2>                  
+            <?php get_template_part('section/review','form');?>        
           </div>
         </div>
       </div>

@@ -81,7 +81,7 @@
             </div>
           </div>
                     
-          <?php if ( in_array($thisCategory->slug, array('spa','salons')) ) : ?>          
+          <?php if ( in_array($thisCategory->slug, array('spas','salons')) ) : ?>          
           <!-- establishment -->
           <div class="category-establishment-containers  col-md-12">
             <div>

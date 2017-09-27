@@ -18,7 +18,7 @@ get_header(); ?>
               <!---->
               <?php 
                 //$review = new BIReviewer();
-                $BIReview->render_reviews();
+                $BIReview->render_reviews(array('column-size'=>'col-md-6'));
               ?>
               </div>
               <?php the_content(); ?>

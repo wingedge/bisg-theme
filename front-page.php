@@ -13,9 +13,7 @@
 <div class="main-content container homepage-main">
   <div class="row">
     <div id="main" class="main-column col-md-9 category-columns">
-      <div class="row">
-        <div class="col-md-12 podiumsgbox"> <a href="http://www.podiumlounge.com/sg" target="_blank"> <img src="/wp-content/uploads/2017/08/PLSG2017-Beauty-Insider-Leaderboard728x90px.gif" alt="podiumlounge" class="img-responsive" title="podium lounge" width="100%"> </a> </div>
-      </div>
+
       <div class="row">
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'makeup'));?>

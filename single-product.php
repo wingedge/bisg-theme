@@ -76,10 +76,8 @@
                   <?php the_field('ingredients');?>
                 </div>
                 <div class="tab-pane active" id="panel-reviews">
-                  <h2>Reviews</h2>
-                  <p>
-                    <?php get_template_part('section/review','form');?>
-                  </p>
+                  <h2>Reviews</h2>                  
+                  <?php get_template_part('section/review','form');?>                  
                 </div>
               </div>
             </div>

@@ -314,6 +314,9 @@ function custom_rewrite_rule() {
 	flush_rewrite_rules();
 	add_rewrite_rule('^all-products/([^/]*)?','index.php?page_id=22542&showcat=$matches[1]','top');
 	add_rewrite_rule('^all-establishments/([^/]*)?','index.php?page_id=22560&showcat=$matches[1]','top');
+	
+	add_rewrite_rule('^([^/]*)?-products','index.php?page_id=22560&showcat=$matches[1]','top');
+	add_rewrite_rule('^([^/]*)?-establishments','index.php?page_id=22560&showcat=$matches[1]','top');
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 

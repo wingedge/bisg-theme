@@ -61,5 +61,8 @@
 </div>
 <!-- canvass-->
 <?php wp_footer(); ?>
+
+<script type='text/javascript' src='http://xslt.alexa.com/site_stats/js/s/a?url=beautyinsider.sg'></script>
+
 </body>
 </html>
