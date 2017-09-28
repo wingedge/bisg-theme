@@ -321,4 +321,61 @@ function custom_rewrite_rule() {
 add_action('init', 'custom_rewrite_rule', 10, 0);
 
 
+/*Shortcodes*/
+
+add_shortcode('bi_reviews_form', 'bi_review_formonly',11);
+function bi_review_formonly(){	
+	include( locate_template('section/review-formonly.php') );	
+}
+
+
+add_shortcode('bi_products_by_tags', 'bi_display_product_by_tags',11);
+function bi_display_product_by_tags($atts){	
+	$atts = shortcode_atts( array(
+		'columns' => '4',
+		'orderby' => 'title',
+		'order'   => 'asc',
+		'tags' 	 => '', 		
+
+	), $atts );
+	$args = array(
+		//'category_name' 	=> 'featured',
+		'posts_per_page' 	=> 8,
+		'product_tag'	=>$atts['tags'],
+		'categor_name' => NULL,
+		'post_type'			=> 'product',
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',		
+	);
+	?>
+	<div class="category-product-containers  col-md-12">
+	<div style="overflow:hidden;">	  
+	  <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
+	    <?php bi_display_products($args); ?>
+	  </div>
+	</div>
+	</div>
+	<div class="clearfix"></div>
+	<?php 
+	return;
+}
+
+//[bi_reviews_for_post post_id=”8936″]
+add_shortcode('bi_reviews_for_post', 'bi_reviews_for_post',11);
+function bi_reviews_for_post($atts){
+	global $BIReview;
+	$atts = shortcode_atts( array(
+		'post_id' => '',
+	), $atts );	?>
+	<div class="col-md-12 review-container">	
+	<?php $BIReview->show_reviews($atts['post_id']);?>
+	</div>
+	<?php 
+	return;
+}
+
+
+
+
+
 

@@ -8,7 +8,7 @@ class BIReviewer {
 	}
 
 	public function get_all(){        
-        $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC LIMIT 0,50';
+        $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC';
         $reviews = $this->rdb->get_results($sql);
         return $reviews;   
 	}
@@ -29,9 +29,7 @@ class BIReviewer {
 		error_reporting(E_ALL);
 		ini_set('display_errors', 1);
 		echo 'updating name';
-
 		global $wpdb;
-
 		$this->rdb->show_errors();
 		$sql = 'SELECT id, email FROM bir_reviewer';
 		$users = $this->rdb->get_results($sql);
@@ -57,12 +55,8 @@ class BIReviewer {
 
 					$this->rdb->update('bir_reviewer',$update,array('id'=>$user->id));
 				}
-			}
-
-
-			
+			}			
 		}
-
 	}
 
 	public function render_reviews($args=array()){
