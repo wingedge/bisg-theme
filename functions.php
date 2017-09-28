@@ -317,6 +317,8 @@ function custom_rewrite_rule() {
 	
 	add_rewrite_rule('^([^/]*)?-products','index.php?page_id=22560&showcat=$matches[1]','top');
 	add_rewrite_rule('^([^/]*)?-establishments','index.php?page_id=22560&showcat=$matches[1]','top');
+
+	add_rewrite_rule('^([^/]*)?-articles','index.php?s=$matches[1]&post_type=post','top');	
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 

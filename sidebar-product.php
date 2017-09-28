@@ -3,7 +3,7 @@
 <?php else:?>
 	<div class="row">
     	<div class="col-md-12">
-        	<h3 class="cat-titles"><span>Recent Blogs</span></h3>
+        	<h3 class="cat-titles"><span>Recent Articles</span></h3>
 			<div class="recent-articles">
 			<?php bi_display_articles(array('posts_per_page'=>5));?>
 			</div>

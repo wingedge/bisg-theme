@@ -57,6 +57,8 @@
               </div>
             </div>
           </div>
+
+          <div class="readmore readmore-cat"><a href="<?php echo site_url('/'.single_cat_title(null,false).'-articles/'); ?>"><span>View More</span></a></div>
         </div>
         
         <div class="row">
@@ -77,6 +79,7 @@
                 <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
                   <?php bi_display_popular_videos($videosArgs);?>
                 </div>
+                <div class="readmore readmore-cat" style="margin-top:10px"><a href="<?php echo site_url('/video-articles/'); ?>"><span>View More</span></a></div>
               </div>
             </div>
           </div>
@@ -97,6 +100,7 @@
               <div class="featured-establishment-container category-establishment-container slick-slider-four" id="establishment-carousel">
                 <?php bi_display_products($productArgs); ?>
               </div>
+              <div class="readmore readmore-cat" style="margin-top:10px"><a href="<?php echo site_url('/establishments/'); ?>"><span>View More</span></a></div>
             </div>
           </div>
           <?php else:?>
@@ -115,6 +119,7 @@
               <div class="featured-video-container category-product-container slick-slider-four" id="products-carousel">
                 <?php bi_display_products($productArgs); ?>
               </div>
+              <div class="readmore readmore-cat" style="margin-top:10px"><a href="<?php echo site_url('/products/'); ?>"><span>View More</span></a></div>
             </div>
           </div>
         <?php endif;?>

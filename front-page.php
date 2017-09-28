@@ -56,6 +56,7 @@
           <div class="featured-video-container slick-slider-three" id="video-carousel">
             <?php bi_display_popular_videos();?>
           </div>
+          <div class="readmore readmore-cat" style="margin-top:10px"><a href="<?php echo site_url('/video-articles/'); ?>"><span>View More</span></a></div>
         </div>
       </div>
 
