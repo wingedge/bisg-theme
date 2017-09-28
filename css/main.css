@@ -868,15 +868,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	top: 50%;
 	transform: translate(-50%, -50%);
 }
-#wpadminbar #wp-admin-bar-customize > .ab-item, #wpadminbar #wp-admin-bar-edit > .ab-item, #wpadminbar #wp-admin-bar-my-account > .ab-item, #wpadminbar #wp-admin-bar-my-sites > .ab-item, #wpadminbar #wp-admin-bar-site-name > .ab-item {
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-	width: 40px;
-	padding: 0;
-	color: #a0a5aa;
-	position: relative;
-}
+
 .breadcrumbs {
 	margin: 0;
 	padding: 0;
