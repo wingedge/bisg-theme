@@ -33,7 +33,7 @@
             <li><a href="<?php echo site_url('about-us');?>">About Us</a></li>
             <li><a href="<?php echo site_url('hey-gorgeous');?>">Hey Gorgeous Bag</a></li>
             <li><a href="<?php echo site_url('contact-us');?>">Contact Us</a></li>
-            <li><a href="<?php echo site_url('beauty-influencers');?>">Beauty Influencers</a></li>
+            <li><a href="<?php echo site_url('category/beauty-influencers');?>">Beauty Influencers</a></li>
             <li><a href="<?php echo site_url('terms-conditions');?>">Terms &amp; Conditions</a></li>
             <li><a href="<?php echo site_url('how-to-claim-your-rewards');?>">How to Claim your Rewards</a></li>
         </ul>

@@ -230,10 +230,12 @@ $j( document ).ready(function() {
       
   $j('#hearts').on('starrr:change', function(e, value){
     $j('#count').html(value);
+    $j('#review_rating').val(value);
   });
   
   $j('#hearts-existing').on('starrr:change', function(e, value){
     $j('#count-existing').html(value);
+    $j('#review_rating').val(value);
   });
 
   //$j('.review-score').starrr({ readOnly: true, rating:  });  

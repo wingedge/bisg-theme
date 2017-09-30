@@ -7,6 +7,52 @@ class BIReviewer {
 		$this->rdb = new wpdb('juxeuxkcbt', 'YVH6gra4wu', 'juxeuxkcbt', 'localhost');		
 	}
 
+	public function add_review(){
+		//error_reporting(E_ALL);
+		//ini_set('display_errors', 1);
+		$this->rdb->show_errors();
+		if( $this->is_reviewer_login() ){
+			$user = $this->get_user_profile();
+			$existing = $this->get_review_by_post($_POST['review_post_id']);
+			//    id  reviewer_id  post_id  title content rating  date_reviewed        deleted_at  approved  
+			
+
+			$reviewData = array(				
+				'reviewer_id'=>$user->id,
+				'post_id'=> $_POST['review_post_id'],
+				'title' => $_POST['review_title'],
+				'content' => $_POST['review_content'],
+				'rating' => $_POST['review_rating'],
+				'date_reviewed' => date("Y-m-d H:i:s"),
+				'deleted_at' => NULL,
+				'approved' => 1,
+			);
+			
+			if( empty($existing) ){
+				$this->add_points($user->id,'first to review','15');
+			}
+
+			$this->rdb->insert('bir_reviews',$reviewData);
+
+			if( strlen($reviewData['content']) >= 200 ){
+				$this->add_points($user->id,'added a review, 200 chars','30');				
+			}else{
+				$this->add_points($user->id,'added a review, less 200 chars','5');				
+			}
+		}		
+	}
+	public function add_points($reviewerId,$remark,$points){
+		
+		$pointsData = array(
+			'reviewer_id' => $reviewerId,
+			'points' => $points,
+			'remark' =>$remark,
+			'deleted_at' => date('Y-m-d H:i:s',strtotime(date("Y-m-d", time()) . " + 365 day")),
+			'created_at' => date('Y-m-d H:i:s'),
+		);
+		$this->rdb->insert('bir_reviewer_points',$pointsData);
+	}
+
 	public function get_all(){        
         $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC';
         $reviews = $this->rdb->get_results($sql);
@@ -130,8 +176,12 @@ class BIReviewer {
 	public function get_points($reviewerId){
 		$sql = 'SELECT SUM(points) AS total FROM bir_reviewer_points WHERE reviewer_id = "'.$reviewerId.'" AND deleted_at > NOW()';
 		$points = $this->rdb->get_row($sql);
+		
+		$sql = 'SELECT SUM(points_used) AS total FROM bir_reviewer_redeem WHERE reviewer_id = "'.$reviewerId.'" AND (deleted_at > NOW() OR deleted_at IS NULL or deleted_at = "0000-00-00 00:00:00")';
+		$used_points = $this->rdb->get_row($sql);
+
 		if($points){
-			return $points->total;			
+			return $points->total - $used_points->total;			
 		}else{
 			return 0;
 		}
@@ -167,4 +217,9 @@ if( isset($_POST['review_login']) ){
 if( isset($_GET['reviewer_logout']) ){
 	setcookie( 'biReviewer', '', time() - 86500);
 	session_destroy();
+}
+// check if post is reviewed
+if(isset($_POST['submit_review'])){
+	
+	$BIReview->add_review();
 }

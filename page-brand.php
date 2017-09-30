@@ -41,7 +41,7 @@ get_header(); ?>
 										<?php #the_post_thumbnail();?>	
 									<?php endif;?>
 										
-										<div class="brands-title" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');">
+										<div class="brands-title" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'medium_large');?>');">
 											<span class="fp-title"><?php the_title();?></span>
 											
 											<!--<span class="icon-review"><i class="fa fa-check-square-o" aria-hidden="true"></i> Review</span>-->
