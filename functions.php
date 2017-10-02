@@ -84,6 +84,13 @@ function bisg_scripts(){
 	wp_enqueue_script( 'bisg-slick-js', '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js', array( 'jquery' ), null, true );
 
 	wp_enqueue_script( 'bisg-list-js', '//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js', array( 'jquery' ), null, true );	
+
+	wp_enqueue_script('bi-filter-js',get_stylesheet_directory_uri().'/js/filter.js', array('jquery'), NULL, true);
+	wp_localize_script( 'bi-filter-js', 'bisg', array(		
+		'ajax_url' => admin_url( 'admin-ajax.php' ),  
+		'site_url' => home_url('/'),   
+	));
+
 }
 add_action( 'wp_enqueue_scripts', 'bisg_scripts' );
 
@@ -307,6 +314,7 @@ add_action('template_redirect', 'bi_check_category');
 
 function custom_rewrite_tag() {
   add_rewrite_tag('%showcat%', '([^&]+)'); 
+  add_rewrite_tag('%paged%', '([^&]+)'); 
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 
@@ -315,10 +323,15 @@ function custom_rewrite_rule() {
 	add_rewrite_rule('^all-products/([^/]*)?','index.php?page_id=22542&showcat=$matches[1]','top');
 	add_rewrite_rule('^all-establishments/([^/]*)?','index.php?page_id=22560&showcat=$matches[1]','top');
 	
-	add_rewrite_rule('^([^/]*)?-products','index.php?page_id=22542&showcat=$matches[1]','top');
+
+	add_rewrite_rule('^([^/]+)-products','index.php?page_id=22542&showcat=$matches[1]','top');
+	add_rewrite_rule('^([^/]+)-products/page/([^/]+)/','index.php?page_id=22542&showcat=$matches[1]&paged=$matches[2]','top');
+
 	add_rewrite_rule('^([^/]*)?-establishments','index.php?page_id=22560&showcat=$matches[1]','top');
 
 	add_rewrite_rule('^([^/]*)?-articles','index.php?s=$matches[1]&post_type=post','top');	
+
+	//add_rewrite_rule( 'region/([^/]+)/type/([^/]+)/page/([0-9]{1,})/?', 'index.php?taxonomy=region&term=$matches[1]&post_type=$matches[2]&paged=$matches[3]', 'top' );
 }
 add_action('init', 'custom_rewrite_rule', 10, 0);
 
@@ -374,6 +387,81 @@ function bi_reviews_for_post($atts){
 	</div>
 	<?php 
 	return;
+}
+
+
+// for filters
+error_reporting(E_ERROR);
+ini_set('display_errors', 1);
+
+add_action('wp_ajax_filter_results', 'ajax_filter_generate_results');
+add_action('wp_ajax_nopriv_filter_results', 'ajax_filter_generate_results');
+
+function ajax_filter_generate_results(){
+
+	$selected_categories = $_POST['filterCategory'];
+	$selected_attributes = $_POST['filterAttributes'];
+	$postType = $_POST['postType'];
+	$category = $_POST['category'];
+	$term = $_POST['searchTerm'];
+		
+	// do query here
+  	$args = array(
+  		'post_type' => $postType, 
+  		'posts_per_page' => -1,  		
+  		'category_name' => $category,
+  		'order' => 'asc',
+  		'orderby' => 'title',
+  	);
+
+  	if( !empty($term) ){
+  		$args['s'] = $term;
+  	}
+  	
+  	if(!empty($selected_categories)){
+	  	$args['tax_query'] = array( // tax_query is an array of arrays;	  			  		
+	  		array(
+		  		'taxonomy' => 'category',
+		        'terms' => $selected_categories,
+		        'field' => 'id',
+		        'operator' => 'IN',
+	  		),	  		
+	  	);
+  	}
+
+  	if(!empty($selected_attributes)){
+	  	$args['tax_query'] = array( // tax_query is an array of arrays;
+	  		array(
+		  		'taxonomy' => 'attribute_category',
+		        'terms' => $selected_attributes,
+		        'field' => 'id',
+		        'operator' => 'IN',
+	  		)	
+	  	);
+  	}
+
+  	if(!empty($selected_categories) && !empty($selected_attributes) ){
+  		$args['tax_query'] = array( // tax_query is an array of arrays;	  			  		
+	  		array(
+		  		'taxonomy' => 'category',
+		        'terms' => $selected_categories,
+		        'field' => 'id',
+		        'operator' => 'IN',
+	  		),
+	  		array(
+		  		'taxonomy' => 'attribute_category',
+		        'terms' => $selected_attributes,
+		        'field' => 'id',
+		        'operator' => 'IN',
+	  		)	  		
+	  	);
+  	}
+  	
+  	
+
+  	$query = new WP_Query( $args ); 
+	include(locate_template('format/result-item.php'));
+	exit();
 }
 
 

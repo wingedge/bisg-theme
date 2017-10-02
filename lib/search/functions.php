@@ -95,6 +95,8 @@ $outputB ='<div style=" border-right: 1px solid #e5e5e5;" class="col-sm-4"><h4>B
     $result = 'fail';
     $outputB.='No Articles Found';
   endif;
+    
+    $outputB .= '<div class="readmore readmore-cat"><a href="'.site_url('?s='.$search_term.'&post_type=post').'"><span>View More</span></a></div>';
     $outputB .= '</div>'; 
     
     
@@ -112,8 +114,9 @@ $outputP ='<div style=" border-right: 1px solid #e5e5e5;" class="col-sm-4"><h4>P
     $result = 'fail';
     $outputP.='No Products Found';
   endif;
-    $outputP .= '</div>'; 
     
+    $outputP .= '<div class="readmore readmore-cat"><a href="'.site_url('?s='.$search_term.'&post_type=product').'"><span>View More</span></a></div>'; 
+    $outputP .= '</div>'; 
     
     
 //ESTABLISHMENTS 
@@ -130,8 +133,8 @@ $outputE ='<div class="col-sm-4"><h4>Establishments</h4>';
     $result = 'fail';
     $outputE.='No Establishment Found';
   endif;
-    $outputE .= '</div>'; 
-            
+    $outputE .= '<div class="readmore readmore-cat"><a href="'.site_url('?s='.$search_term.'&post_type=establishment').'"><span>View More</span></a></div>';
+    $outputE .= '</div>';             
     
     $array = array($outputB,$outputP,$outputE);
     $out = array_values($array);

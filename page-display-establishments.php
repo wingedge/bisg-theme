@@ -10,14 +10,14 @@ get_header();
 	<div class="category-content container">
 		<div class="row">
 			<div class="col-md-3 filter-container">				
-				<h3 class="cat-titles pink-dashed"><span> Filters</span></h3>
-				<form  method="post">
-					<input type="text" class="form-control" placeholder="Search Product..." name="term"/>					
-				</form>			
+				<?php get_template_part('section/product','filters');?>		
 			</div>
 			<div class="col-md-9 result-container">
+				
+				<input type="hidden" show-category="<?php echo $showCat;?>" post-type="establishment" id="filterDetails"/>
+
 				<h3 class="cat-titles pink-dashed"><span> All Establishments for <?php echo ucwords($showCat);?></span></h3>
-				<div class="category-product-container product-container brand-container">
+				<div id="filter-results"  class="category-product-container product-container brand-container">
 					<?php 
 						
 						
@@ -25,7 +25,7 @@ get_header();
 						//$query = new WP_Query( array( 'paged' => $paged ) );
 
 						$productArgs = array(
-				    		'posts_per_page' 	=> -1,
+				    		'posts_per_page' 	=> 100,
 				    		'category_name'		=> $showCat,
 							'post_type'			=> 'establishment',				    		
 				    		'paged'				=> $paged,	
