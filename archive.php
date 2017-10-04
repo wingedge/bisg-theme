@@ -4,8 +4,7 @@
 <div class="main-content container single-wrap">
   <div class="row">
     <div id="main" class="main-column col-md-9 col-sm-8">
-      <?php while ( have_posts() ) : the_post(); ?>
-      <?php $format = get_post_format( get_the_id() ); ?>
+      <?php while ( have_posts() ) : the_post(); ?>      
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <?php get_template_part('format/excerpt');  ?>
       </div>

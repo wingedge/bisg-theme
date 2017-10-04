@@ -10,15 +10,15 @@
 		<?php
 		global $showCat;		
 		$parentCat = get_category_by_slug( $showCat );		 
-		$attributesCategory = array(
-			'skincare' => array('skin-type','face','eye','lip','nail','makeup-remover'),
-			'makeup' => array('product-concern','skin-type','moisturiser','cleanser-exfoliator','treatment-serums','masks-2','toner-2','sun-care'),
+		$filtersAttributes = array(
+			'makeup' => array('skin-type','face','eye','lip','nail','makeup-remover-2'),
+			'skincare' => array('skin-care-concerns','skin-type','face','eye','lip','nail','makeup-remover'),			
 			'hair' => array('styling','shampoo-conditioner','treatment','moisturiser','scalp-treatment','sun-care','fragrance'),
 			'body' => array('bath-shower','moisturiser','treatment','sun-care','fragrance','grooming'),
 		);
 		?>				
-		<?php if( array_key_exists($showCat, $attributesCategory) ): ?>
-			<?php $activeAttrs = $attributesCategory[$showCat]; ?>			
+		<?php if( array_key_exists($showCat, $filtersAttributes) ): ?>
+			<?php $activeAttrs = $filtersAttributes[$showCat]; ?>			
 			<?php foreach($activeAttrs as $attribute) :?>
 				<?php $parentAttr = get_term_by('slug',$attribute,'attribute_category'); ?>
 				<h4 class="filter-title">Filter by <?php echo $parentAttr->name;?></h4>
@@ -39,7 +39,7 @@
 		<?php endif; ?>
 	</div>
 
-	<div class="form-row category-filters filter-list">			
+	<div class="form-row category-filters filter-list">
 	<h4>Filter by Sub Categories</h4>
 	<?php $childCat = get_term_children( $parentCat->cat_ID, 'category' ); ?>														
 	<div class="attribute-child-container col-sm-12">
