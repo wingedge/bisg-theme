@@ -29,18 +29,78 @@ get_header(); ?>
 
                 <div class="row">
                   <div class="col-md-12 text-center">
-                    <h3 class="pink-dashed"><span>Recommended</span></h3>
+                    <h3 class="pink-dashed"><span>Featured</span></h3>
                     <div class="featured-container slick-slider-four" id="featured-carousel">
-                      <?php bi_display_featured();?>
+                      <?php 
+                        $args = array(
+                          'post_type' => array('brands','establishment'),
+                          'tax_query' => array(array(
+                              'taxonomy' => 'brand-category',
+                              'field' => 'slug',
+                              'terms' => 'professional',
+                          )),
+                        );                        
+                      ?>
+                      <?php bi_display_featured($args);?>
                     </div>
                   </div>
                 </div>
 
                 <div class="row">
                   <div class="col-md-12 text-center">
-                    <h3 class="pink-dashed"><span>Latest Products</span></h3>
-                    <div class="featured-video-container slick-slider-four" id="products-carousel">
-                      <?php bi_display_products();?>
+                    <h3 class="pink-dashed"><span>Blogs</span></h3>
+                    <div class="featured-video-container slick-slider-four" id="articles-carousel">
+                      <?php 
+                        $args = array(
+                          'post_type' => 'post',
+                          'tax_query' => array(array(
+                              'taxonomy' => 'category',
+                              'field' => 'slug',
+                              'terms' => 'professional',
+                          )),
+                        );                        
+                      ?>                      
+                      <?php bi_display_products($args);?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <h3 class="pink-dashed"><span>Skin Care</span></h3>
+                    <div class="featured-video-container slick-slider-four" id="skincare-carousel">
+                      <?php 
+                        $args = array(
+                          'post_type' => 'product',
+                          'tax_query' => array(array(
+                              'taxonomy' => 'category',
+                              'field' => 'slug',
+                              'terms' => array('skin-care'),
+                              'operator' => 'IN',
+                          )),
+                        );                        
+                      ?>                      
+                      <?php bi_display_products($args);?>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <h3 class="pink-dashed"><span>Hair / Grooming</span></h3>
+                    <div class="featured-video-container slick-slider-four" id="skincare-carousel">
+                      <?php 
+                        $args = array(
+                          'post_type' => 'product',
+                          'tax_query' => array(array(
+                              'taxonomy' => 'category',
+                              'field' => 'slug',
+                              'terms' => array('hair-care'),
+                              'operator' => 'IN',
+                          )),
+                        );                        
+                      ?>                      
+                      <?php bi_display_products($args);?>
                     </div>
                   </div>
                 </div>

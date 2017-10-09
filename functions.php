@@ -329,7 +329,7 @@ function custom_rewrite_rule() {
 
 	add_rewrite_rule('^([^/]*)?-establishments','index.php?page_id=22560&showcat=$matches[1]','top');
 
-	add_rewrite_rule('^([^/]*)?-articles','index.php?s=$matches[1]&post_type=post','top');	
+	add_rewrite_rule('^([^/]*)?-articles','index.php?page_id=25093&showcat=$matches[1]','top');	
 
 	//add_rewrite_rule( 'region/([^/]+)/type/([^/]+)/page/([0-9]{1,})/?', 'index.php?taxonomy=region&term=$matches[1]&post_type=$matches[2]&paged=$matches[3]', 'top' );
 }
