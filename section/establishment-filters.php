@@ -11,25 +11,24 @@
 		global $showCat;		
 		$parentCat = get_category_by_slug( $showCat );		 
 		$filtersAttributes = array(
-			'makeup' => array('skin-type','face','eye','lip','nail','makeup-remover-2'),
-			'skincare' => array('skin-care-concerns','skin-type','moisturiser','cleanser-exfoliator','treatment-serums','masks','toner','sun-care'),			
-			'hair' => array('styling','shampoo-conditioner-2','treatment'),
-			'body' => array('bath-shower','moisturiser','treatment','sun-care','fragrance','grooming'),			
+			'spas' => array('location','types'),
+			'salons' => array('location','hair-and-makeup', 'facials-peels', 'nail','body','hair-removal'),
+			'aesthetics' => array('location','face','skin','body-treatment','hair'),
 		);
 		?>				
 		<?php if( array_key_exists($showCat, $filtersAttributes) ): ?>
 			<?php $activeAttrs = $filtersAttributes[$showCat]; ?>			
 			<?php foreach($activeAttrs as $attribute) :?>
-				<?php $parentAttr = get_term_by('slug',$attribute,'attribute_category'); ?>
+				<?php $parentAttr = get_term_by('slug',$attribute,'establishment_category'); ?>
 				<h4 class="filter-title"><?php echo $parentAttr->name;?></h4>
-				<?php $childrenAttr = get_term_children($parentAttr->term_id,'attribute_category'); ?>				
+				<?php $childrenAttr = get_term_children($parentAttr->term_id,'establishment_category'); ?>				
 				<div class="attribute-child-container col-sm-12">
 				<?php if($childrenAttr):?>
 					<?php foreach($childrenAttr as $childAttrId):?>
 						<?php $childAttr = get_term($childAttrId);?>															
 						<?php if( !empty($childAttr) ):?>
 						<div class="checkbox"> 						
-							<label> <input type="checkbox" class="item-filters attr-filters" name="filterAttr[]" value="<?php echo $childAttr->term_id;?>"> 
+							<label> <input type="checkbox" class="item-filters eattr-filters" name="filterAttr[]" value="<?php echo $childAttr->term_id;?>"> 
 								<?php echo $childAttr->name;?> 
 							</label> 
 						</div>					
@@ -37,7 +36,7 @@
 					<?php endforeach;?>
 				<?php else:?>					
 					<div class="checkbox">					
-						<label> <input type="checkbox" class="item-filters attr-filters" name="filterAttr[]" value="<?php echo $parentAttr->term_id;?>"> 
+						<label> <input type="checkbox" class="item-filters eattr-filters" name="filterAttr[]" value="<?php echo $parentAttr->term_id;?>"> 
 							<?php echo $parentAttr->name;?> 
 						</label> 
 					</div>	
@@ -68,7 +67,7 @@
 					<?php $childAttr = get_term($childAttrId,'category');?>															
 					<?php #if($childAttr->count):?>
 					<div class="checkbox"> 						
-						<label> <input type="checkbox" class="item-filters cat-filters" name="filterCat[]" value="<?php echo $childAttr->term_id;?>"> 
+						<label> <input type="checkbox" class="item-filters ecat-filters" name="filterCat[]" value="<?php echo $childAttr->term_id;?>"> 
 							<?php echo $childAttr->name;?> 
 						</label> 
 					</div>					

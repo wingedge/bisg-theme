@@ -404,7 +404,9 @@ function ajax_filter_generate_results(){
 	$postType = $_POST['postType'];
 	$category = $_POST['category'];
 	$term = $_POST['searchTerm'];
-		
+
+	$e_categories = $_POST['filterECategory'];
+	$e_attributes = $_POST['filterEAttributes'];
 	// do query here
   	$args = array(
   		'post_type' => $postType, 
@@ -418,6 +420,7 @@ function ajax_filter_generate_results(){
   		$args['s'] = $term;
   	}
   	
+  	// products
   	if(!empty($selected_categories)){
 	  	$args['tax_query'] = array( // tax_query is an array of arrays;	  			  		
 	  		array(
@@ -440,6 +443,17 @@ function ajax_filter_generate_results(){
 	  	);
   	}
 
+  	if(!empty($e_attributes)){	  	
+	  	$args['tax_query'] = array( // tax_query is an array of arrays;
+	  		array(
+		  		'taxonomy' => 'establishment_category',
+		        'terms' => $e_attributes,
+		        'field' => 'id',
+		        'operator' => 'IN',
+	  		)	
+	  	);
+  	}
+
   	if(!empty($selected_categories) && !empty($selected_attributes) ){
   		$args['tax_query'] = array( // tax_query is an array of arrays;	  			  		
 	  		array(
@@ -456,16 +470,10 @@ function ajax_filter_generate_results(){
 	  		)	  		
 	  	);
   	}
-  	
-  	
 
-  	$query = new WP_Query( $args ); 
+  	  	
+
+  	$query = new WP_Query( $args );   	
 	include(locate_template('format/result-item.php'));
 	exit();
 }
-
-
-
-
-
-

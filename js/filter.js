@@ -41,8 +41,10 @@ jQuery( document ).ready( function( $ ) {
    	
     var showCategory;
     var postType;
-	var selectedCategory;
+	  var selectedCategory;
    	var selectedAttribute;
+    var selectedECategory;
+    var selectedEAttribute;
    	var selectedOrder;
    	var searchTerm;
    	var xhr;
@@ -50,19 +52,24 @@ jQuery( document ).ready( function( $ ) {
    
 
    	$('.item-filters').on('click',function(){		
+		  $('.cat-filters').removeClass('on');
+		  $(this).addClass('on');
 
-		$('.cat-filters').removeClass('on');
-		$(this).addClass('on');
+		  //get_selected_sort();
+		  get_selected_cats();
+		  get_selected_attr();
 
-		//get_selected_sort();
-		get_selected_cats();
-		get_selected_attr();
-		get_filtered_result();
+      get_selected_ecats();
+      get_selected_eattr();
+
+		  get_filtered_result();
    	});
 
    	$('#byterm').donetyping(function(e){
    		selectedCategory = null;
    		selectedAttribute = null;
+      selectedECategory = null;
+      selectedEAttribute = null;
    		searchTerm = $(this).val();
 
    		console.log(searchTerm);
@@ -81,11 +88,23 @@ jQuery( document ).ready( function( $ ) {
 		}).get(); // this works like .each()
    	}
 
+    function get_selected_ecats(){
+      selectedECategory = $("input.ecat-filters:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get(); // this works like .each()
+    }
+
    	function get_selected_attr(){
    		selectedAttribute = $("input.attr-filters:checkbox:checked").map(function(){
 			return $(this).val();
 		}).get(); // this works like .each()
    	}
+
+    function get_selected_eattr(){
+      selectedEAttribute = $("input.eattr-filters:checkbox:checked").map(function(){
+      return $(this).val();
+    }).get(); // this works like .each()
+    }
 
    	function get_filtered_result(){
    		showCategory = $('#filterDetails').attr('show-category');
@@ -100,7 +119,14 @@ jQuery( document ).ready( function( $ ) {
    		xhr = $.ajax({
 			type: 'post', 			
 			url: bisg.ajax_url,
-			data: {action: 'filter_results', filterCategory: selectedCategory, postType: postType, category: showCategory, filterAttributes: selectedAttribute, searchTerm: searchTerm },
+			data: {action: 'filter_results',              
+             postType: postType, 
+             category: showCategory, 
+             filterAttributes: selectedAttribute,
+             filterCategory: selectedCategory,  
+             filterEAttributes: selectedEAttribute,
+             filterECategory: selectedECategory,               
+             searchTerm: searchTerm },
 			success: function( data, textStatus, XMLHttpRequest ) {
 				//console.log( textStatus );
 				//console.log(data);

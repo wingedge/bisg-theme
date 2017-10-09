@@ -10,7 +10,7 @@ get_header();
 	<div class="category-content container">
 		<div class="row">
 			<div class="col-md-3 filter-container">				
-				<?php get_template_part('section/product','filters');?>		
+				<?php get_template_part('section/establishment','filters');?>		
 			</div>
 			<div class="col-md-9 result-container">
 				
