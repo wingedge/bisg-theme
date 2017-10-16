@@ -2,9 +2,11 @@
   <h1>Recent Reviews</h1>
   <p>Real women talk about products and treaments</p>
   <div class="recent-review-product-box">
-  	<?php echo get_the_post_thumbnail($r->post_id,'full'); ?>
+  	<a href="<?php echo get_permalink($r->post_id);?>">
+    <?php echo get_the_post_thumbnail($r->post_id,'full'); ?>
+    </a>
   	<strong><?php echo stripslashes($r->title);?></strong> 
-  	<span><?php echo $r->post->post_title;?></span>
+  	<a style="color:#fff;display:block;" href="<?php echo get_permalink($r->post_id);?>"><span><?php echo $r->post->post_title;?></span></a>
   	<div class="star-rating">
     	<?php for($i=0; $i<$r->rating;$i++):?>
     	<i class="fa fa-star" aria-hidden="true"></i>

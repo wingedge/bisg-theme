@@ -1,6 +1,11 @@
 <h3 class="cat-titles pink-dashed"><span> Filters</span></h3>
 <form  method="post">
 	<div class="form-row">
+		<div class="form-group">
+			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
+		</div>
+	</div>
+	<div class="form-row">
 		<h4>Search by Term</h4>
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Search Product..." id="byterm" name="term"/>					
@@ -77,12 +82,8 @@
 				</div>
 			<?php endforeach;?>
 		<?php endif; ?>
-	</div>
-
-
-	<div class="form-row">
-		<div class="form-group">
-			<button type="submit" class="btn btn-default item-filters">Filter</button>
-		</div>
-	</div>
+	</div>	
 </form> 
+
+<h4 class="filter-title">Couldn't find what your looking for? Request to add the product here. </h4>
+<?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>

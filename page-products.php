@@ -16,43 +16,61 @@ get_header(); ?>
 
 						$productArgs = array(
 				    		'posts_per_page' 	=> -1,
-							'post_type'			=> 'product',			    
+							'post_type'			=> 'brand',			    
 				    		'category_name' 	=> NULL, //reset			    		
 				    		'paged'				=> $paged,							
 				    		'orderby'			=> title,
 				    		'order'				=> asc,
+				    		'post_status'		=> 'publish',
 						);					    
                 	
 						$query = new WP_Query( $productArgs );	
 						$postCtr=1;
 					?>
 
-					<div id="product-list">
+					<div id="thisproduct-list">
 						<div class="row">
-							<div class="form-group col-md-10 col-sm-9 col-xs-8">											
-								<input class="search form-control" placeholder="Find product..." />								
-							</div>
-							<div class="form-group col-md-2 col-sm-3  col-xs-4 sortbtn-wrap">			
-	  							<span class="sort btn btn-info register-btn" data-sort="name">Sort by Name</span>
-	  						</div>
+							<div class="form-group col-md-12 col-sm-12 col-xs-12">											
+								<input class="search form-control" id="searchTerm" placeholder="Find product..." />								
+							</div>	
+
+							<div class="form-group col-md-12 range-selector">
+								<a class="range-select letter-0" data-range="#letter-0"># </a>
+								<?php foreach (range('A', 'Z') as $range):?>
+									<a class="range-select letter-<?php echo $range;?>" data-range="#letter-<?php echo $range;?>"><?php echo $range;?> </a>				
+      							<?php endforeach;?>
+      							<a class="range-select letter-all" data-range="#letter-all">ALL </a>
+							</div>						
   						</div>
 
   						<!--<span class="sort" data-sort="city">Sort by city</span>-->											
 					
-					<?php if ($query->have_posts()) : $postCtr=1;?>
-    					<div class="scroller-box" style="max-height:400px; overflow:auto;">
-	    					<ul class="list filter-list list-group">
-	    					<?php $currentLetter = '';?>
-	    					<?php while ($query->have_posts()) :?>
-	        					<?php $query->the_post(); ?>
-	        					<li class="filter-list-item list-group-item" data-id="<?php echo $postCtr;?>">        					
-									<a href="<?php the_permalink();?>" class="link name" title="<?php the_title();?>">
-										<?php the_title();?>								
-									</a>
-								</li>
-								<?php $postCtr++; ?>
-	    					<?php endwhile;?>
-	    					</ul>
+					<?php if ($query->have_posts()) : $postCtr=1;?>    					
+
+    					<div class="scroller-box">
+	    					<?php 
+	    						$currentLetter = '#';	    						
+	    						while($query->have_posts()){
+	    							$query->the_post();
+	    							$currentLetter = substr(get_the_title(), 0, 1);	  
+	    							if (!preg_match("/^[a-z]$/i", $currentLetter)) {
+	        							$currentLetter = '0';
+	        						}
+	        						$resultList[$currentLetter][] = '<a href="'.get_permalink().'" class="link name" title="'.get_the_title().'">'.get_the_title().'</a>';	        						
+	    						}	    						
+	    					?>
+	    					<div id="brand-list" class="brand-list">
+	    					<?php foreach($resultList as $listKey=>$listValues): // loop complete, display it now ?>
+	    						<div class="parent-list filter-list-item range-<?php echo $listKey;?>" id="letter-<?php echo $listKey; ?>">	    							
+	    							<ul class="child-list">
+	    							<li class="list-label"><h4 name="letter-<?php echo $listKey;?>"><?php echo ($listKey === 0)?'#':$listKey; ?></h4></li>
+	    							<?php foreach($listValues as $list):?>
+	    								<li class="filter-list-item child-filter"><?php echo $list;?></li>
+	    							<?php endforeach;?>	
+	    							</ul>
+	    						</div>
+	    					<?php endforeach; ?>
+	    					</div>
     					</div>
     					<?php wp_reset_postdata();?>
 					<?php endif;?>
@@ -60,25 +78,75 @@ get_header(); ?>
 					</div><!-- end of list-->
 
 					<script>
-						$j = jQuery.noConflict();
-						$j(document).ready(function(){
-							var options = {
-							  valueNames: [
-							    'name',
-							 //   'born',
-							    { data: ['id'] },
-							 //   { name: 'timestamp', attr: 'data-timestamp' },
-							 //  { name: 'link', attr: 'href' },
-							 //   { name: 'image', attr: 'src' }
-							  ]
-							};
+						$j = jQuery.noConflict();					
+						
+						(function ($) {
+						  // custom css expression for a case-insensitive contains()
+						  jQuery.expr[':'].Contains = function(a,i,m){
+						      return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+						  };
 
-							var productList = new List('product-list', options);
 
-							//productList.on('sortComplete',function(){								
-							//});						
+						  function listFilter(header, list) { // header is any element, list is an unordered list
+						    // create and add the filter form to the header
+						    var input = $("#searchTerm");
+						   // $(form).append(input).appendTo(header);
 
-						});				
+						   $(list).find("div").removeClass('off').show();
+						   $(list).find("li").removeClass('off').show(); //
+
+						    $(input)
+						      .keyup( function () {
+						        var filter = $(this).val();
+						        if(filter) {
+						          // this finds all links in a list that contain the input,
+						          // and hide the ones not containing the input while showing the ones that do
+						          
+						          $(list).find("div").removeClass('off').show();
+						   		  $(list).find("li").removeClass('off').show(); //
+						          
+						          $(list).find(".child-filter a:not(:Contains(" + filter + "))").parent().addClass('off').hide();
+						          $(list).find(".child-filter a:Contains(" + filter + ")").parent().show();
+						          $('.child-list').each(function(){
+						          	var off = $(this).find('li.off').length;
+						          	var on = $(this).find('li.child-filter').length;
+						          	if(off == on){
+						          		$(this).parent().hide();						          		
+						          	}
+
+						          });
+						          // check elements
+						        } else {						     
+						          $(list).find("div").removeClass('off').show();
+						          $(list).find("li").removeClass('off').show();
+						        }
+						        return false;
+						      })
+						    .keyup( function () {
+						        // fire the above change event after every letter
+						        $(this).change();
+						    });
+
+						    $('.range-select').click(function(){
+						    	var sel = $(this).attr('data-range');						    	
+						    	$('.parent-list').hide();
+						    	$(sel).show();
+						    });
+
+						    $('.letter-all').click(function(){
+						    	$(list).find("div").removeClass('off').show();
+						        $(list).find("li").removeClass('off').show();
+						    });
+						  }
+
+
+						  //ondomready
+						  $(function () {
+						    listFilter($("#thisproduct-list"), $("#brand-list"));
+
+						  });
+						}(jQuery));
+						
 					</script>
 					
                 </div>

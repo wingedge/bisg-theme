@@ -14,8 +14,23 @@ get_header(); ?>
 		'paged'				=> $paged,	
 		'orderby'			=> 'title',
 		'order'				=> 'asc',		
-		'posts_per_page' => '70',	
+		'posts_per_page' => '20',
+		'tax_query' => array(array(
+			'taxonomy' => 'post_format',
+            'field' => 'slug',
+            'terms' => array('post-format-video','video'),
+            'operator' => 'NOT IN'
+		)),	
 	);
+
+	if($showCat == 'video'){
+		$productArgs['tax_query'] = array(
+			'taxonomy' => 'post_format',
+            'field' => 'slug',
+            'terms' => array('post-format-video','video'),
+            'operator' => 'IN'
+		);
+	}
 
 	if(isset($_POST['term'])){
 		$productArgs['s'] = $_POST['term'];
@@ -34,9 +49,9 @@ get_header(); ?>
       <?php while ( $query->have_posts() ) : $query->the_post(); ?>
       <?php $format = get_post_format( get_the_id() ); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <?php 
-        $format =  get_post_format(get_the_id());        
-        get_template_part('format/video');
+      	<?php $format = get_post_format( get_the_id() ); ?>
+        <?php          	
+          	get_template_part('format/excerpt');
         ?>
       </div>
       <?php endwhile; // End the loop. Whew. ?>     

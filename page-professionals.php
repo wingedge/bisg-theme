@@ -1,5 +1,4 @@
 <?php 
-/* Template name: Full Width */
 get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
 <div class="main-content container sub-page">
@@ -32,16 +31,16 @@ get_header(); ?>
                     <h3 class="pink-dashed"><span>Featured</span></h3>
                     <div class="featured-container slick-slider-four" id="featured-carousel">
                       <?php 
-                        $args = array(
-                          'post_type' => array('brands','establishment'),
+                        $args1 = array(
+                          'post_type' => array('brand','establishment'),
                           'tax_query' => array(array(
-                              'taxonomy' => 'brand-category',
+                              'taxonomy' => 'category',
                               'field' => 'slug',
-                              'terms' => 'professional',
+                              'terms' => 'professional',                              
                           )),
                         );                        
                       ?>
-                      <?php bi_display_featured($args);?>
+                      <?php bi_display_professional($args1);?>
                     </div>
                   </div>
                 </div>

@@ -1,9 +1,23 @@
 <h3 class="cat-titles pink-dashed"><span> Filters</span></h3>
 <form  method="post">
 	<div class="form-row">
-		<h4>Search by Term</h4>
 		<div class="form-group">
-			<input type="text" class="form-control" placeholder="Search Product..." id="byterm" name="term"/>					
+			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
+		</div>
+	</div>
+	<div class="form-row">
+		<h4>Search Establishment</h4>
+		<div class="form-group">
+			<input type="text" class="form-control" placeholder="Search Establishments..." id="byterm" name="term"/>
+		</div>
+		<h4>Sort</h4>
+		<div class="form-group">
+			<div class="checkbox">
+			<label> <input type="checkbox" class="item-sort" value="" disabled> No of Reviews</label>
+			</div>
+			<div class="checkbox">
+			<label> <input type="checkbox" class="item-sort" value="" disabled> Customer Review Rating</label>
+			</div>			
 		</div>
 	</div>
 	<div class="form-row attributes-filters" >		
@@ -76,12 +90,7 @@
 				</div>
 			<?php endforeach;?>
 		<?php endif; ?>
-	</div>
-
-
-	<div class="form-row">
-		<div class="form-group">
-			<button type="submit" class="btn btn-default item-filters">Filter</button>
-		</div>
-	</div>
+	</div>	
 </form> 
+<h4 class="filter-title">Couldn't find what your looking for? Request to add the product here. </h4>
+<?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>

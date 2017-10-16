@@ -38,9 +38,10 @@ echo get_the_post_thumbnail_url( $post_id, 'medium' ); ?>) !important;"> <span c
       <div class="slider-background" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');">
         <div class="slider-caption">
           <?php the_category();?>
-          <span class="hslide_the_title">
+          
+          <a href="<?php the_permalink();?>"><span class="hslide_the_title">
           <?php the_title();?>
-          </span> <span class="hslide_the_excerpt">
+          </span></a> <span class="hslide_the_excerpt">
           <?php 
   $excerpt= get_the_excerpt();
   echo substr($excerpt, 0, 150).'...'; 

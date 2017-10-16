@@ -49,7 +49,16 @@ jQuery( document ).ready( function( $ ) {
    	var searchTerm;
    	var xhr;
 
-   
+    $('#clearFilters').on('click',function(){
+       $("input:checkbox").prop('checked', false);
+       $('#byterm').val('');
+       get_selected_cats();
+       get_selected_attr();
+
+       get_selected_ecats();
+       get_selected_eattr();
+       get_filtered_result();
+    });
 
    	$('.item-filters').on('click',function(){		
 		  $('.cat-filters').removeClass('on');

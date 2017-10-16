@@ -19,7 +19,7 @@ $current_url = home_url(add_query_arg(array(),$wp->request));
 
 	<div class="form-group">
 		<button type="submit" name="login" class="btn btn-primary">Sign In</button>
-		<a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=1203982596374020&amp;state=5ae4e3439fd7b2db73f33247a59972a2&amp;response_type=code&amp;sdk=php-sdk-5.5.0&amp;redirect_uri=http%3A%2F%2Freview.beautyinsider.sg%2Freview%2Flogin&amp;scope=email" style="color:#fff;"  class="btn btn-info btn-outline-primary"><i class="fa fa-facebook" aria-hidden="true"></i> Sign in with FB</a> or
+		<a href="https://www.facebook.com/v2.10/dialog/oauth?client_id=177828646095106&amp;state=ef04ec054659f5068801c75f6e2f7e38&amp;response_type=code&amp;sdk=php-sdk-5.5.0&amp;redirect_uri=http%3A%2F%2Freview.beautyinsider.sg%2Freview%2Flogin&amp;scope=email%2Cpublic_profile" style="color:#fff;"  class="btn btn-info btn-outline-primary"><i class="fa fa-facebook" aria-hidden="true"></i> Sign in with FB</a> or
 		<a href="//review.beautyinsider.sg/review/register" style="color:#fff;" class="btn btn-success">Create an Account</a>     
 	</div>
 

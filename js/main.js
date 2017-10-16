@@ -6,7 +6,9 @@ $j(document).ready(function(){
 	
 	$j('.slick-slider-four').slick({
 		dots: false,
-		arrows : false,
+		arrows : true,
+		nextArrow: '<i class="fa fa-arrow-right slick-right"></i>',
+  		prevArrow: '<i class="fa fa-arrow-left slick-left"></i>',
 		autoplay: true,
 		infinite: true,
 		speed: 300,
@@ -44,7 +46,9 @@ $j(document).ready(function(){
 
 	$j('.slick-slider-three').slick({
 		dots: false,
-		arrows : false,
+		arrows : true,
+		nextArrow: '<i class="fa fa-arrow-right slick-right"></i>',
+  		prevArrow: '<i class="fa fa-arrow-left slick-left"></i>',
 		autoplay: true,
 		infinite: true,
 		speed: 300,
@@ -82,7 +86,9 @@ $j(document).ready(function(){
 
 	$j('.slick-slider-one').slick({
 		dots: false,
-		arrows : false,
+		arrows : true,
+		nextArrow: '<i class="fa fa-arrow-right slick-right"></i>',
+  		prevArrow: '<i class="fa fa-arrow-left slick-left"></i>',
 		autoplay: true,
 		infinite: true,
 		speed: 300,

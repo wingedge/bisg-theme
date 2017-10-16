@@ -19,6 +19,7 @@
                   
 
                   <h2 class="content-title"><?php the_title();?></h2>
+                    <?php /*
                     <div class="product-attributes establishment-attributes">
                     <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
                     <?php if($attributes):?>
@@ -41,7 +42,9 @@
                   
                   <?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?>
 
-                  <?php echo strip_shortcodes(get_the_content());?>
+                  */ ?>
+
+                  <?php echo get_the_content();?>
                   
                   <?php /*
                   <?php if( get_field('short_description') ): ?>

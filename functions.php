@@ -241,6 +241,28 @@ function bi_display_featured(){
 	}	
 }
 
+function bi_display_professional($args=array()){
+	$default = array(
+		//'category_name' 	=> 'featured',
+		'posts_per_page' 	=> 10,		
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',		
+	);
+	$args = array_merge($default,$args);
+	$query = new WP_Query( $args );	
+	$postCtr=1;
+	if ($query->have_posts()) {		
+    	while ($query->have_posts()) {       
+        	$query->the_post();       	
+        	include(locate_template('section/frontpage-featured.php'));
+        	$postCtr++;
+    	}
+    	wp_reset_postdata();
+	}else{
+		bi_no_articles();
+	}	
+}
+
 function bi_display_popular_videos($args=array()){
 	$default = array(
 		//'category_name' 	=> 'featured',
@@ -320,12 +342,40 @@ add_action('init', 'custom_rewrite_tag', 10, 0);
 
 function custom_rewrite_rule() {
 	flush_rewrite_rules();
+	
+	
+	add_rewrite_rule('^makeup-products','index.php?page_id=25681&showcat=makeup','top');
+	add_rewrite_rule('^all-products/makeup','index.php?page_id=25681&showcat=makeup','top');
+
+	add_rewrite_rule('^skincare-products','index.php?page_id=25686&showcat=skincare','top');
+	add_rewrite_rule('^all-products/skincare','index.php?page_id=25686&showcat=skincare','top');
+
+	add_rewrite_rule('^hair-products','index.php?page_id=25688&showcat=hair','top');
+	add_rewrite_rule('^all-products/hair','index.php?page_id=25688&showcat=hair','top');
+
+	add_rewrite_rule('^body-products','index.php?page_id=25690&showcat=body','top');
+	add_rewrite_rule('^all-products/body','index.php?page_id=25690&showcat=body','top');	
+
+	add_rewrite_rule('^spas-establishments','index.php?page_id=25692&showcat=spas','top');
+	add_rewrite_rule('^all-establishments/spas','index.php?page_id=25692&showcat=spas','top');
+
+	add_rewrite_rule('^salons-establishments','index.php?page_id=25694&showcat=salons','top');
+	add_rewrite_rule('^all-establishments/salons','index.php?page_id=25694&showcat=salons','top');
+
+	add_rewrite_rule('^aesthetics-establishments','index.php?page_id=25696&showcat=aesthetics','top');
+	add_rewrite_rule('^all-establishments/aesthetics','index.php?page_id=25696&showcat=aesthetics','top');
+
+	add_rewrite_rule('^wellness-products','index.php?page_id=25699&showcat=wellness','top');
+	add_rewrite_rule('^wellness-establishments','index.php?page_id=25699&showcat=wellness','top');
+
+
+	// all other else
+	add_rewrite_rule('^([^/]+)-products/','index.php?page_id=22542&showcat=$matches[1]','top');
+	add_rewrite_rule('^([^/]+)-products/page/([^/]+)/','index.php?page_id=22542&showcat=$matches[1]&paged=$matches[2]','top');
+
+
 	add_rewrite_rule('^all-products/([^/]*)?','index.php?page_id=22542&showcat=$matches[1]','top');
 	add_rewrite_rule('^all-establishments/([^/]*)?','index.php?page_id=22560&showcat=$matches[1]','top');
-	
-
-	add_rewrite_rule('^([^/]+)-products','index.php?page_id=22542&showcat=$matches[1]','top');
-	add_rewrite_rule('^([^/]+)-products/page/([^/]+)/','index.php?page_id=22542&showcat=$matches[1]&paged=$matches[2]','top');
 
 	add_rewrite_rule('^([^/]*)?-establishments','index.php?page_id=22560&showcat=$matches[1]','top');
 

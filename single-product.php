@@ -19,6 +19,7 @@
                   <h2 class="content-title">
                     <?php the_title();?>
                   </h2>
+                  <?php /*
                   <div class="product-attributes">
                     <?php $attributes = get_the_terms(get_the_id(),'attribute_category'); ?>
                     <?php if($attributes):?>
@@ -38,10 +39,11 @@
                     <?php endif;?>
                   </div>
                   <?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?>
+                  */ ?>
                   <?php if( get_field('short_description') ): ?>
                     <?php the_field('short_description'); ?>                  
                   <?php else:?>
-                    <p>We currently have no further information at the moment, we will update this as soon as possible, please visit this page again.</p>
+                    <?php the_content(); ?>
                   <?php endif; ?>
                 </div>
               </div>
