@@ -34,8 +34,8 @@
           <div class="readmore readmore-cat"><a href="<?php echo get_category_link( get_cat_ID('spas'));?>"><span>View More</span></a></div>
         </div>
         <div class="col-md-4 col-sm-4">
-          <?php bi_display_brand(array('category_name'=>'salons'));?>
-          <div class="readmore readmore-cat"><a href="<?php echo get_category_link( get_cat_ID('salons'));?>"><span>View More</span></a></div>
+          <?php bi_display_brand(array('category_name'=>'hair-salons'));?>
+          <div class="readmore readmore-cat"><a href="<?php echo get_category_link( get_cat_ID('hair-salons'));?>"><span>View More</span></a></div>
         </div>
         <div class="col-md-4 col-sm-4">
           <?php bi_display_brand(array('category_name'=>'wellness'));?>

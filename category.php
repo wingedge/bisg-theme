@@ -78,7 +78,7 @@
             </div>
           </div>
 
-          <div class="readmore readmore-cat"><a href="<?php echo strtolower(site_url('/'.$thisCategory->slug.'-articles/'); ?>"><span>View More</span></a></div>
+          <div class="readmore readmore-cat"><a href="<?php echo site_url('/'. strtolower($thisCategory->slug) .'-articles/'); ?>"><span>View More</span></a></div>
         </div>
         
         <div class="row">
@@ -179,7 +179,7 @@
         <div>
           <h3 class="cat-titles"><span>You may also like</span></h3>
           <?php get_sidebar('category');?>
-          <div class="readmore readmore-cat"><a href="<?php echo get_post_type_archive_link( 'post' );?>"><span>View More</span></a></div>
+          
         </div>
       </div>
 

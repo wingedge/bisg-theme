@@ -336,7 +336,7 @@ add_action('template_redirect', 'bi_check_category');
 
 function custom_rewrite_tag() {
   add_rewrite_tag('%showcat%', '([^&]+)'); 
-  add_rewrite_tag('%paged%', '([^&]+)'); 
+  add_rewrite_tag('%p%', '([^&]+)'); 
 }
 add_action('init', 'custom_rewrite_tag', 10, 0);
 
@@ -461,7 +461,7 @@ function ajax_filter_generate_results(){
   	$args = array(
   		'post_type' => $postType, 
   		'posts_per_page' => -1,  		
-  		'category_name' => $category,
+  		//'category_name' => $category,
   		'order' => 'asc',
   		'orderby' => 'title',
   	);
@@ -500,7 +500,8 @@ function ajax_filter_generate_results(){
 		        'terms' => $e_attributes,
 		        'field' => 'id',
 		        'operator' => 'IN',
-	  		)	
+	  		)	  		
+
 	  	);
   	}
 

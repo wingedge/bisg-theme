@@ -4,7 +4,12 @@ get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
 
 <?php 				
+	
 	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;					
+
+	if(isset($_GET['pp'])){
+		$paged=$_GET['pp'];
+	}
 	
 	//$query = new WP_Query( array( 'paged' => $paged ) );
 	$showCat = get_query_var('showcat');	
@@ -55,6 +60,19 @@ get_header(); ?>
         ?>
       </div>
       <?php endwhile; // End the loop. Whew. ?>     
+
+      <div class="row pagination-row">        
+
+       	<?php        
+		$paginateArgs = array(			
+			'format' => '?pp=%#%',
+			'current' => $paged,
+			'total' => $query->max_num_pages
+		);
+       	echo paginate_links($paginateArgs); 
+       ?>        
+      </div>
+
     </div>
     <div id="sidebar" class="sidebar col-md-3 col-sm-4">
       <?php get_sidebar('articles');?>

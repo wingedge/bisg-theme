@@ -1865,3 +1865,32 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
     break-inside: avoid-column;         /* IE 11 */    
     display:inline-block;
 }
+
+.page-numbers {
+	display: inline-block;
+	padding: 5px 10px;
+	border: 1px solid #eee;
+	margin: 0;
+}
+
+.page-numbers.current {
+	font-weight: bold;
+	color: #fff;
+	background: #e80062;
+}
+
+.pagination-row{text-align:center;}
+
+.single-related-post {
+	min-height: 200px;
+	background-size: cover;	
+	overflow: hidden;	
+	margin: 0px 15px;
+}
+
+.single-related-title {
+	background: rgba(255,255,255,0.5);	
+	display: block;
+	text-align: center;
+	padding: 10px;	
+}

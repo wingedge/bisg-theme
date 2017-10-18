@@ -31,5 +31,5 @@
       <img src="<?php bloginfo( 'template_url' ); ?>/img/BI-membership-banner-awards-280x505.jpg" class="img-responsive"/>
     </a>
   </div>
-
+</div>
 <?php endif; ?>

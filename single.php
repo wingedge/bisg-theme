@@ -19,18 +19,20 @@
       </div>
       <?php endwhile; // End the loop. Whew. ?>
       <div class="row">
-          <div class="prev-next-button">
-              <span class="next-btn col-md-6">
-                  <i class="fa fa-2x fa-arrow-left col-xs-3" aria-hidden="true"></i>
-                  <span class="col-xs-9"><?php previous_post_link(' %link', '%title'); ?></span>
-              </span>
-              <span class="prev-btn  col-md-6">
-                  <span class="col-xs-9">
-                  <?php next_post_link('%link', '%title'); ?>
-                  </span>
-                  <i class="fa fa-2x fa-arrow-right col-xs-3" aria-hidden="true"></i>
-              </span>
+         <div>
+          <h3 class="cat-titles pink-dashed" style="text-align:left;"><span>You can check these out as well</span></h3>
+          <?php /*set arguments */
+            $productArgs = array(
+                'posts_per_page'  => 12,
+                'post_type'     => 'post',                         
+                'file_template'   => 'section/single-related-articles.php',                      
+                'orderby' => 'rand',                    
+            );
+          ?>
+          <div class="related-review-container slick-slider-four" id="products-carousel">
+            <?php bi_display_articles($productArgs); ?>
           </div>
+        </div>
       </div>
     </div>
     <div id="sidebar" class="sidebar col-md-3 col-sm-4">

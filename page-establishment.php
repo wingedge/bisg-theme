@@ -8,7 +8,7 @@ get_header(); ?>
 	<div class="category-content container">
 		<div class="row">
 			<div class="col-md-9 col-sm-8">
-				<h3 class="cat-titles pink-dashed"><span>Products</span></h3>
+				<h3 class="cat-titles pink-dashed"><span>Establishments</span></h3>
 				<div class="category-product-container product-container">
 					<?php						
 						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
@@ -31,7 +31,7 @@ get_header(); ?>
 					<div id="thisproduct-list">
 						<div class="row">
 							<div class="form-group col-md-12 col-sm-12 col-xs-12">											
-								<input class="search form-control" id="searchTerm" placeholder="Find product..." />								
+								<input class="search form-control" id="searchTerm" placeholder="Find establishment..." />								
 							</div>	
 
 							<div class="form-group col-md-12 range-selector">

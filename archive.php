@@ -9,19 +9,8 @@
         <?php get_template_part('format/excerpt');  ?>
       </div>
       <?php endwhile; // End the loop. Whew. ?>
-      <div class="row">
-          <div class="prev-next-button">
-              <span class="next-btn col-md-6">
-                  <i class="fa fa-2x fa-arrow-left col-xs-3" aria-hidden="true"></i>
-                  <span class="col-xs-9"><?php previous_post_link(' %link', '%title'); ?></span>
-              </span>
-              <span class="prev-btn  col-md-6">
-                  <span class="col-xs-9">
-                  <?php next_post_link('%link', '%title'); ?>
-                  </span>
-                  <i class="fa fa-2x fa-arrow-right col-xs-3" aria-hidden="true"></i>
-              </span>
-          </div>
+      <div class="row pagination-row">        
+       <?php echo paginate_links(); ?>        
       </div>
     </div>
     <div id="sidebar" class="sidebar col-md-3 col-sm-4">
