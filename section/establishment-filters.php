@@ -10,6 +10,7 @@
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Search Establishments..." id="byterm" name="term"/>
 		</div>
+		<?php /*
 		<h4>Sort</h4>
 		<div class="form-group">
 			<div class="checkbox">
@@ -19,6 +20,7 @@
 			<label> <input type="checkbox" class="item-sort" value="" disabled> Customer Review Rating</label>
 			</div>			
 		</div>
+		*/ ?>
 	</div>
 	<div class="form-row attributes-filters" >		
 		<?php
@@ -26,7 +28,8 @@
 		$parentCat = get_category_by_slug( $showCat );		 
 		$filtersAttributes = array(
 			'spas' => array('location','types'),
-			'salons' => array('location','hair-and-makeup', 'facials-peels', 'nail','body','hair-removal'),
+			'hair-salons' => array('location','hair-and-makeup', 'nail', 'hair-removal'),
+			'beauty-salons' => array('location','facials-peels', 'nail','body'),
 			'aesthetics' => array('location','face','skin','body-treatment','hair'),
 		);
 		?>				
@@ -40,10 +43,10 @@
 				<?php if($childrenAttr):?>
 					<?php foreach($childrenAttr as $childAttrId):?>
 						<?php $childAttr = get_term($childAttrId);?>															
-						<?php if( !empty($childAttr) ):?>
+						<?php if( $childAttr->count ):?>
 						<div class="checkbox"> 						
 							<label> <input type="checkbox" class="item-filters eattr-filters" name="filterAttr[]" value="<?php echo $childAttr->term_id;?>"> 
-								<?php echo $childAttr->name;?> 
+								<?php echo $childAttr->name; ?> 
 							</label> 
 						</div>					
 						<?php endif;?>

@@ -569,7 +569,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ccc60046', e
 	height:auto;
 }
 .featured-item {
-	max-height: 240px;
+	max-height: 180px;
 	border: 1px solid #ccc;
 	overflow: hidden;
 	vertical-align: middle;
@@ -1761,35 +1761,31 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 .AlexaSiteStatsWidget {
 	display:none !important;
 }
-.attributes-filters,
-.category-filters.filter-list
-{
+.attributes-filters, .category-filters.filter-list {
 	clear: both;
 }
-.attributes-filters .checkbox,
-.category-filters.filter-list .checkbox {
-    margin:0;
+.attributes-filters .checkbox, .category-filters.filter-list .checkbox {
+	margin:0;
 	margin-bottom: 5px;
 	font-size: 14px;
 }
 .attributes-filters .filter-title, .category-filters.filter-list .filter-title, .category-filters.filter-list h4, .filter-container h4 {
-    padding: 0;
-    margin: 0;
-        margin-bottom: 0px;
-    color: #fff;
-    padding-top: 0;
-    clear: both;
-    background: #e80062;
-    padding: 8px;
-    font-size: 15px;
-    border-radius: 3px;
-    margin-bottom: 5px;
+	padding: 0;
+	margin: 0;
+	margin-bottom: 0px;
+	color: #fff;
+	padding-top: 0;
+	clear: both;
+	background: #e80062;
+	padding: 8px;
+	font-size: 15px;
+	border-radius: 3px;
+	margin-bottom: 5px;
 }
 .filter-container .btn.btn-default.item-filters {
-    display: block;
-    float: right;
+	display: block;
+	float: right;
 }
-
 .slick-arrow {
 	position: absolute;
 	text-align: 0;
@@ -1800,46 +1796,40 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	z-index:30;
 	cursor:pointer;
 }
-
-.slick-arrow:hover{
+.slick-arrow:hover {
 	text-shadow: 0px 0px 5px #000;
 	transition: all 400ms ease;
 }
-.slick-left {  
-  left:0;
+.slick-left {
+	left:0;
 }
-
 .slick-right {
-  right:0;
+	right:0;
 }
-
-.large-category-slider .slick-arrow{
+.large-category-slider .slick-arrow {
 	top:150px;
 }
-
-.brand-list {	
+.brand-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
-
-.child-list {	
+.child-list {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 	display:inline-block;
 }
-.parent-list{
+.parent-list {
 	display:inline-block;
 	width: 100%;
 }
-
-.filter-list-item{
+.filter-list-item {
 	padding:5px 0;
 }
-
-.child-filter.off{display:none;}
-
+.child-filter.off {
+	display:none;
+}
 .range-select {
 	font-size: 22px;
 	font-weight: bold;
@@ -1847,50 +1837,62 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
 	padding: 0px 5px;
 	cursor: pointer;
 }
-
-.range-select.disabled{
+.range-select.disabled {
 	color:#ccc;
 }
-
 #brand-list {
-    -moz-column-count: 3;
-    -webkit-column-count: 3;
-    column-count: 3;    
+	-moz-column-count: 3;
+	-webkit-column-count: 3;
+	column-count: 3;
 }
-
-#brand-list .parent-list, 
-#brand-list .child-list {    
-    -webkit-column-break-inside: avoid; /* Chrome, Safari */
-    page-break-inside: avoid;           /* Theoretically FF 20+ */
-    break-inside: avoid-column;         /* IE 11 */    
-    display:inline-block;
+#brand-list .parent-list, #brand-list .child-list {
+	-webkit-column-break-inside: avoid; /* Chrome, Safari */
+	page-break-inside: avoid;           /* Theoretically FF 20+ */
+	break-inside: avoid-column;         /* IE 11 */
+	display:inline-block;
 }
-
 .page-numbers {
 	display: inline-block;
 	padding: 5px 10px;
 	border: 1px solid #eee;
 	margin: 0;
 }
-
 .page-numbers.current {
 	font-weight: bold;
 	color: #fff;
 	background: #e80062;
 }
-
-.pagination-row{text-align:center;}
-
+.pagination-row {
+	text-align:center;
+}
 .single-related-post {
 	min-height: 200px;
-	background-size: cover;	
-	overflow: hidden;	
+	background-size: cover;
+	overflow: hidden;
 	margin: 0px 15px;
 }
-
 .single-related-title {
-	background: rgba(255,255,255,0.5);	
+	background: rgba(255, 255, 255, 0.5);
 	display: block;
 	text-align: center;
-	padding: 10px;	
+	padding: 10px;
+}
+.singlepost-products-carousel .single-related-title {
+    background: #e80062;
+    line-height: 1;
+    font-size: 12px;
+    text-transform: unset;
+    text-transform: uppercase;
+    min-height: 45px;
+}
+.singlepost-products-carousel .single-related-title a {
+    color: #fff;
+}
+.singlepost-products-carousel .single-related-post {
+    height: 100px;
+    overflow: hidden;
+    display: block;
+    background-size: cover;
+    background-position: 100% 45px;
+    background-repeat: no-repeat;
 }

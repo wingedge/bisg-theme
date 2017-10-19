@@ -32,7 +32,7 @@
 				<?php if($childrenAttr):?>
 					<?php foreach($childrenAttr as $childAttrId):?>
 						<?php $childAttr = get_term($childAttrId);?>															
-						<?php if( !empty($childAttr) ):?>
+						<?php if( $childAttr->count ):?>
 						<div class="checkbox"> 						
 							<label> <input type="checkbox" class="item-filters attr-filters" name="filterAttr[]" value="<?php echo $childAttr->term_id;?>"> 
 								<?php echo $childAttr->name;?> 

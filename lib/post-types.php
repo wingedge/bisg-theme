@@ -108,5 +108,41 @@ function bi_brand_posttype() {
 }
 add_action( 'init', 'bi_brand_posttype', 0 );
 
+function cptui_register_my_cpts_insider_deals() {
+
+    /**
+     * Post Type: Insider Deals.
+     */
+
+    $labels = array(
+        "name" => __( "Insider Deals", "beautyinsider" ),
+        "singular_name" => __( "Insider Deal", "beautyinsider" ),
+    );
+
+    $args = array(
+        "label" => __( "Insider Deals", "beautyinsider" ),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => true,
+        "show_ui" => true,
+        "show_in_rest" => false,
+        "rest_base" => "",
+        "has_archive" => true,
+        "show_in_menu" => true,
+        "exclude_from_search" => false,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array( "slug" => "insider_deals", "with_front" => true ),
+        "query_var" => true,
+        "supports" => array( "title", "editor", "thumbnail", "excerpt" ),
+        "taxonomies" => array( "category", "brand-category", "attribute_category", "product_cat", "establishment_category" ),
+    );
+
+    register_post_type( "insider_deals", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_insider_deals' );
 
 

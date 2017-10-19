@@ -1,6 +1,5 @@
 <?php get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
-
 <div class="main-content container single-wrap">
   <div class="row">
     <div id="main" class="main-column col-md-9 col-sm-8">
@@ -19,7 +18,7 @@
       </div>
       <?php endwhile; // End the loop. Whew. ?>
       <div class="row">
-         <div>
+        <div>
           <h3 class="cat-titles pink-dashed" style="text-align:left;"><span>You can check these out as well</span></h3>
           <?php /*set arguments */
             $productArgs = array(
@@ -29,9 +28,7 @@
                 'orderby' => 'rand',                    
             );
           ?>
-          <div class="related-review-container slick-slider-four" id="products-carousel">
-            <?php bi_display_articles($productArgs); ?>
-          </div>
+          <div class="related-review-container slick-slider-four singlepost-products-carousel" id="products-carousel"><?php bi_display_articles($productArgs); ?></div>         
         </div>
       </div>
     </div>
@@ -39,5 +36,6 @@
       <?php get_sidebar('articles');?>
     </div>
   </div>
+  
 </div>
 <?php get_footer(); ?>

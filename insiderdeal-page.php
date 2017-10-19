@@ -1,76 +1,75 @@
 <?php 
-/* Template name: Insider Deals */
+/* Template name: Insider Deals page */
 get_header(); ?>
 <?php get_template_part('section/breadcrumbs'); ?>
 
-<div class="main-content container sub-page">
+<?php         
+  
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;         
+
+  if(isset($_GET['pp'])){
+    $paged=$_GET['pp'];
+  }
+  
+  //$query = new WP_Query( array( 'paged' => $paged ) );  
+  $insiderDealsArgs = array(       
+    'post_type'     => 'insider_deals',                
+    'paged'       => $paged,  
+    'orderby'     => 'date',
+    'order'       => 'asc',   
+    'posts_per_page' => '20',    
+  );
+  $query = new WP_Query( $insiderDealsArgs );              
+?>
+
+<div class="main-content container single-wrap">
   <div class="row">
-    <div id="main" class="main-column col-md-9">
-      <?php while ( have_posts() ) : the_post(); ?>
+    <div id="main" class="main-column col-md-9 col-sm-8">
+      <?php while ( $query->have_posts() ) : $query->the_post(); ?>
+      <?php $format = get_post_format( get_the_id() ); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="entry-content">
-          <h2 class="content-title">
-            <?php the_title();?>
-          </h2>
-          <hr class="divider"/>
-          <!---->
-          <div class="insider-wrap">
-          <span class="insider-title"><?php the_field('title');?></span>
-          <a href="<?php the_field('promo_link');?>"><img src="<?php the_field('image');?>" alt="" class="insider-img"/></a>
-          <div class="insider-promo">
-            <h3>GRAB THIS DEAL!</h3>
-            <a class="insider-promo_link" href="<?php the_field('promo_link');?>">
-            <?php the_field('promo');?>
-            </a>
+        
+        <div class="row" style="margin-bottom:20px;">
+          <div class="col-md-4">
+            <div class="content-image-banner">             
+              <a href="<?php the_permalink();?>">
+                <?php the_post_thumbnail('medium_large');?>
+              </a>              
+            </div>
           </div>
+          <div class="col-md-8">
+            <div class="content-title">
+              <h2>
+                <a href="<?php the_permalink();?>"><?php the_title();?></a>
+              </h2>
+            </div>
+            <div class="entry-content">
+              <?php the_excerpt(); ?>
+            </div>
+            <div class="readmore" style="text-align:left;"><a href="<?php the_permalink();?>"><span>Read More and Win</span></a></div>
           </div>
-          <!---->
-          <div class="insider-wrap">
-          <span class="insider-title"><?php the_field('title1');?></span>
-          <a href="<?php the_field('promo_link1');?>"><img src="<?php the_field('image1');?>" alt="" class="insider-img"/></a>
-          <div class="insider-promo">
-            <h3>GRAB THIS DEAL!</h3>
-            <a class="insider-promo_link" href="<?php the_field('promo_link1');?>">
-            <?php the_field('promo1');?>
-            </a>
-          </div>
-          </div>
-          <!---->
-          <div class="insider-wrap">
-          <span class="insider-title"><?php the_field('title2');?></span>
-          <a href="<?php the_field('promo_link2');?>"><img src="<?php the_field('image2');?>" alt="" class="insider-img"/></a>
-          <div class="insider-promo">
-            <h3>GRAB THIS DEAL!</h3>
-            <a class="insider-promo_link" href="<?php the_field('promo_link2');?>">
-            <?php the_field('promo2');?>
-            </a>
-          </div>
-          </div>
-          <!---->
-          <div class="insider-wrap">
-          <span class="insider-title"><?php the_field('title3');?></span>
-          <a href="<?php the_field('promo_link3');?>"><img src="<?php the_field('image3');?>" alt="" class="insider-img"/></a>
-          <div class="insider-promo">
-            <h3>GRAB THIS DEAL!</h3>
-            <a class="insider-promo_link" href="<?php the_field('promo_link3');?>">
-            <?php the_field('promo3');?>
-            </a>
-          </div>
-          </div>
-          <!---->
-          <?php the_content(); ?>
         </div>
+
       </div>
-      <?php endwhile; // End the loop. Whew. ?>
+      <?php endwhile; // End the loop. Whew. ?>     
+
+      <div class="row pagination-row">        
+
+        <?php        
+    $paginateArgs = array(      
+      'format' => '?pp=%#%',
+      'current' => $paged,
+      'total' => $query->max_num_pages
+    );
+        echo paginate_links($paginateArgs); 
+       ?>        
+      </div>
+
     </div>
-    <div class="category-page">
-      <div id="all-articles" class="all-articles col-md-3">
-        <div>
-          <h3 class="cat-titles"><span>Recent Posts</span></h3>
-          <?php get_sidebar('category');?>
-        </div>
-      </div>
+    <div id="sidebar" class="sidebar col-md-3 col-sm-4">
+      <?php get_sidebar('articles');?>
     </div>
   </div>
 </div>
 <?php get_footer(); ?>
+

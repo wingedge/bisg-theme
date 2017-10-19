@@ -11,6 +11,16 @@
             <div class="content-image-banner">
               <?php the_post_thumbnail();?>
             </div>
+            <div class="establishment-details">
+              <ul class="list-group" style="margin-top:20px;">
+                <li class="list-group-item"><i class="fa fa-map-marker"></i> <?php the_field('establishment_address');?></li>
+                <li class="list-group-item"><i class="fa fa-phone"></i> <?php the_field('establishment_phone');?></li>
+               
+              </ul>
+
+
+              
+            </div>
           </div>     
           <div class="col-md-8">
             <div class="row">
@@ -60,34 +70,61 @@
             </div>
           </div>
         </div>
+
+        <?php 
+          $postCategories = wp_get_post_categories(get_the_ID()); // get all categories under this post
+          foreach($postCategories as $postCategory){
+            $categoryObject = get_category($postCategory);
+            $thisCategories[] = $categoryObject->slug;
+          }
+        ?>
         
         <div class="row">   
           <div class="col-md-12">
             <div class="tabbable  bi-tabs" id="tabs-single-product">           
               
               <ul class="nav nav-tabs">
-                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
+                <?php if ( !in_array('aesthetics', $thisCategories) ) : ?>                  
+                
+                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>                
+                <li><a href="#panel-locations" data-toggle="tab">Location</a></li>
+                
+                <?php else:?>
+                                
+                <li class="active"><a href="#panel-locations" data-toggle="tab">Location</a></li>                
+                
+                <?php endif;?>
                 <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
-                <li><a href="#panel-locations" data-toggle="tab">Location</a></li>                
+                
+               
               </ul>           
 
-              <div class="tab-content">                
-                <div class="tab-pane" id="panel-details">               
-                  <h2>Details</h2>                  
-                  <?php if( get_field('short_description') ): ?>
-                    <?php the_field('short_description'); ?>                  
-                  <?php endif; ?>                
-                </div>                
-                <div class="tab-pane" id="panel-locations">
-                  <h2>Locations</h2>
-                  <?php the_field('locations');?>
-                </div>
-                <div class="tab-pane active" id="panel-reviews">
+              <div class="tab-content" style="margin-bottom:30px;">                
+                               
+                
+                <?php if ( !in_array('aesthetics', $thisCategories) ) : ?>  
+                
+                <div class="tab-pane" id="panel-reviews">
                   <h2>Reviews</h2>
                   <p>
                     <?php get_template_part('section/review','form');?>
                   </p>
                 </div>
+
+                <div class="tab-pane" id="panel-locations">
+                  <h2>Locations</h2>
+                  <?php the_field('locations');?>
+                </div>
+
+                <?php else:?>
+
+                <div class="tab-pane active" id="panel-locations">
+                  <h2>Locations</h2>
+                  <?php the_field('locations');?>
+                </div>
+                
+                <?php endif;?>
+
               </div>
 
             </div>
