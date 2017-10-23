@@ -86,7 +86,7 @@
               <ul class="nav nav-tabs">
                 <?php if ( !in_array('aesthetics', $thisCategories) ) : ?>                  
                 
-                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>                
+                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews</a></li>                
                 <li><a href="#panel-locations" data-toggle="tab">Location</a></li>
                 
                 <?php else:?>
@@ -104,7 +104,7 @@
                 
                 <?php if ( !in_array('aesthetics', $thisCategories) ) : ?>  
                 
-                <div class="tab-pane" id="panel-reviews">
+                <div class="tab-pane active" id="panel-reviews">
                   <h2>Reviews</h2>
                   <p>
                     <?php get_template_part('section/review','form');?>

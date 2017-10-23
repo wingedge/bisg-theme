@@ -29,13 +29,6 @@
     </a>
   </div>
 
-
-  <div class="col-md-12 col-sm-4 s-widget">
-    <a href="<?php echo site_url('award-winners');?>">
-      <img src="<?php bloginfo( 'template_url' ); ?>/img/Award-winners-1.jpeg"/>
-    </a>
-  </div> 
-
   <div class="col-md-12 col-sm-4 s-featured-video s-widget">
     <div class="featured-video-container slick-slider-one" id="sidebar-product-carousel">
       <?php $sidebarArgs = array(          
@@ -58,6 +51,12 @@
       <?php bi_display_products($sidebarArgs);?>
     </div>
   </div>
+
+   <div class="col-md-12 col-sm-4 s-widget">
+    <a href="<?php echo site_url('award-winners');?>">
+      <img src="<?php bloginfo( 'template_url' ); ?>/img/Award-winners-1.jpeg"/>
+    </a>
+  </div> 
 
   <div class="col-md-12 col-sm-4 s-widget">
     <a href="<?php echo site_url('how-to-claim-your-rewards');?>">   

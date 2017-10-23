@@ -183,10 +183,23 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-4 s-widget" style="margin-top:20px;">
-        <a href="<?php echo site_url('how-to-claim-your-rewards');?>">   
-          <img src="<?php bloginfo( 'template_url' ); ?>/img/BI-membership-banner-awards-280x505.jpg" class="img-responsive"/>
-        </a>
+      <div class="col-md-3 col-sm-4 s-widget category-recent-articles">
+        <div style="margin:15px 0;">
+          <h3 class="cat-titles" style="margin-bottom:20px;">Latest Deals</h3>
+          <div class="featured-deal-container slick-slider-one" id="deal-carousel">
+            <?php $sidebarArgs = array(          
+                'posts_per_page'  => 4,
+                'post_type'     => 'insider_deals',
+                'order'       => 'DESC',
+                'orderby'     => 'date',              
+                'file_template'   => 'section/sidebar-products.php', 
+              );
+
+            ?>
+            <?php bi_display_products($sidebarArgs);?>
+          </div>
+          <div class="readmore readmore-cat" style="margin-top:10px;"><a href="<?php echo site_url( 'insider-deals' );?>"><span>View Deals</span></a></div>
+        </div>
       </div>
 
     </div>
