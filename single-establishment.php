@@ -54,8 +54,8 @@
 
                   */ ?>
 
-                  <?php echo get_the_content();?>
-                  
+                  <?php #echo get_the_content();?>
+                  <?php echo preg_replace("~(?:\[/?)[^/\]]+/?\]~s", '', get_the_content());?>
                   <?php /*
                   <?php if( get_field('short_description') ): ?>
                     <?php the_field('short_description'); ?>                  

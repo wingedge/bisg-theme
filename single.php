@@ -16,6 +16,34 @@
 
         ?>
       </div>
+
+      <?php if(get_field('guest_author')) : // if it has guest author, show it?>
+      
+      <div class="clearfix"></div>
+      <div class="row" style="margin:30px 0;">
+        <div class="col-md-12 guest-author-box">
+         <?php $author = get_field('guest_author');?>
+
+         <?php # print_r($author);?>
+         <h3>Guest Author</h3>
+          <div class="col-md-3 author-image">
+            <?php # echo get_avatar($author['ID'],150); ?>
+            <?php if (get_field('writer_photo', 'user_'.$author['ID'])):?>
+            <img src="<?php the_field('writer_photo', 'user_'.$author['ID']);?>" />
+            <?php endif;?>
+          </div>
+          <div class="col-md-9">
+            <div class="author-name"><strong><?php echo $author['display_name'];?></strong></div>
+            
+            <div class="author-bio"><p><?php echo $author['user_description'];?></p></div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+      <?php endif;?>
+
       <?php endwhile; // End the loop. Whew. ?>
       <div class="row">
         <div>

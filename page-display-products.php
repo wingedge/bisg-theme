@@ -25,7 +25,7 @@ get_header();
 						//$query = new WP_Query( array( 'paged' => $paged ) );
 
 						$productArgs = array(
-				    		'posts_per_page' 	=> 50,
+				    		'posts_per_page' 	=> -1,
 				    		'category_name'		=> $showCat,
 							'post_type'			=> 'product',				    		
 				    		'paged'				=> $paged,	
@@ -34,12 +34,12 @@ get_header();
 						);
 
 						if(isset($_POST['term'])){
-							$productArgs['s'] = $_POST['term'];
+							$productArgs['s'] = $_POST['term'];							
 						}	
 
 						if(isset($_POST['filterCat'])){
 							$productArgs['category_name'] = implode(',',$_POST['filterCat']);
-						}			    
+						}	
                 	
 						$query = new WP_Query( $productArgs );							
 					?>

@@ -102,7 +102,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	height: 27px;
 	line-height: 27px;
 	margin-right: 3px;
-	margin-top: 12px;
+	margin-top: 5px;
 	text-align: center;
 	width: 27px;
 }
@@ -117,8 +117,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c60046', end
 	font-family: "Saira Extra Condensed", sans-serif;
 	font-size: 15px;
 	margin-right: 3px;
-	margin-top: 16px;
+	margin-top: 8px;
 }
+
+#ajaxsearchlite{
+	width: 97% !important;
+	margin: 8px 0px 8px 0px;
+}
+
 .register-btn {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e02f78+0,e24386+100 */
 background: rgb(224,47,120); /* Old browsers */
@@ -1642,7 +1648,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#cc000000', e
 	left:30px;
 	right:0;
 	position: absolute;
-	z-index: 9999;
+	z-index: 100;
 }
 #HomeSliderCarousel .carousel-indicators-1 li {
 	background-color: #000;
@@ -1895,4 +1901,84 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#73000000', e
     background-size: cover;
     background-position: 100% 45px;
     background-repeat: no-repeat;
+}
+
+.bilogin label {
+	display: block;
+}
+
+.bilogin .input {
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	font-size: 18px;
+	border-radius: 5px;
+}
+
+
+.alexaRankdigcms_Widget{display:none;}
+
+.login-modal .modal-dialog{
+	width:800px;
+	
+}
+.login-modal .modal-body{
+	padding:0;
+}
+.login-modal .modal-content {
+	background: url('http://beautyinsider.sg/wp-content/uploads/2017/11/10-MUST-SEE-Trending-Makeup-Products-used-by-Our-Favourite-Hollywood-Celebrities.jpg');
+	background-size: cover;
+	background-position: right center;
+}
+
+.modal-login-area {
+	background: rgba(255,255,255,0.8);
+}
+
+.login-modal .close {	
+	background: #fff !important;
+	overflow: hidden;
+	height: 20px;
+	width: 20px;
+	color:#fff;
+}
+
+/*BI REVIEW PROFILE*/
+
+.img-responsive.reviewer-avatar {
+	height: 200px;
+	background: #ccc;
+	border-radius: 50%;
+	border: none;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.bir-section-title{
+	text-align:center;
+}
+
+.bir-item {
+	display: inline-block;
+	min-width: 32%;
+	max-width: 32%;
+	margin-right: 1%;
+	text-align: center;
+	vertical-align:top;
+}
+
+.bir-item .reward-image{
+	display:inline-block;
+}
+
+.bir-item .bir-image {
+	width: 100%;
+	overflow: hidden;
+	max-width: 200px;
+}
+.bir-profile-form label{
+	min-width:150px;
+}
+
+.bir-profile-form .form-row{
+	margin-bottom:10px;
 }

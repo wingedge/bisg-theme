@@ -47,7 +47,7 @@ get_header(); ?>
 
                 <div class="row">
                   <div class="col-md-12 text-center">
-                    <h3 class="pink-dashed"><span>Blogs</span></h3>
+                    <h3 class="pink-dashed"><span>Devices</span></h3>
                     <div class="featured-video-container slick-slider-four" id="articles-carousel">
                       <?php 
                         $args = array(

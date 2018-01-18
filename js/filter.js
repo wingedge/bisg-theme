@@ -46,6 +46,7 @@ jQuery( document ).ready( function( $ ) {
     var selectedECategory;
     var selectedEAttribute;
    	var selectedOrder;
+    var selectedPage;
    	var searchTerm;
    	var xhr;
 
@@ -86,6 +87,25 @@ jQuery( document ).ready( function( $ ) {
    		
    	});
 
+    $('body').on('click','.filter-ajax-results .page-numbers' ,function(e){
+      e.preventDefault();
+
+      var href = $(this).attr('href');
+      var current = href.match(/\d+/); // 123456
+      
+      selectedPage = parseInt(current);
+
+      get_selected_cats();
+      get_selected_attr();
+
+      get_selected_ecats();
+      get_selected_eattr();
+
+
+      get_filtered_result();
+    });
+
+   
    	/*function get_selected_sort(){
    		selectedSort = $(".filter-sort.on").attr('filter-sort');
    		selectedOrder = $(".filter-sort.on").attr('filter-order');
@@ -135,7 +155,9 @@ jQuery( document ).ready( function( $ ) {
              filterCategory: selectedCategory,  
              filterEAttributes: selectedEAttribute,
              filterECategory: selectedECategory,               
-             searchTerm: searchTerm },
+             searchTerm: searchTerm,
+             filterPaged: selectedPage, 
+      },
 			success: function( data, textStatus, XMLHttpRequest ) {
 				//console.log( textStatus );
 				//console.log(data);
@@ -152,5 +174,6 @@ jQuery( document ).ready( function( $ ) {
 		})
    	}
 
+    $('#wp-submit').addClass('btn btn-primary');
 
 } );

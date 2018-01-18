@@ -21,16 +21,26 @@ get_header();
 					<?php 
 						
 						
-						$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+						$paged = ( get_query_var('pp') ) ? get_query_var('pp') : 1;
 						//$query = new WP_Query( array( 'paged' => $paged ) );
 
+						echo get_query_var('pp');
+
 						$productArgs = array(
-				    		'posts_per_page' 	=> 100,
-				    		'category_name'		=> $showCat,
+				    		'posts_per_page' 	=> 39,
+				    		//'category_name'		=> $showCat,
 							'post_type'			=> 'establishment',				    		
 				    		'paged'				=> $paged,	
 				    		'orderby'			=> 'title',
 				    		'order'				=> 'asc',			
+				    		'tax_query' => array(
+				    			array(
+							  		'taxonomy' => 'category',
+							        'terms' => $showCat,
+							        'field' => 'slug',
+							        'operator' => 'EXISTS',
+						  		),	  		
+				    		),
 						);
 
 						if(isset($_POST['term'])){
@@ -42,37 +52,7 @@ get_header();
 						$postCtr=1;
 					?>
 					
-					<?php if ($query->have_posts()) : ?>
-    					<div class="row category-row">
-    					<?php while ($query->have_posts()) :?>       	
-        					<?php $query->the_post(); ?>
-							<div class="col-md-4 col-sm-4">
-								<div id="post-<?php the_ID(); ?>" <?php post_class('featured-brands'); ?>  >
-									<a href="<?php the_permalink();?>" title="<?php the_title();?>">									
-									<?php if ( !has_post_thumbnail() ): ?>
-										<?php #echo bi_get_post_image();?>
-									<?php else:?>
-										<?php #the_post_thumbnail();?>	
-									<?php endif;?>
-										
-										<div class="brands-title" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'medium_large');?>');">
-											<span class="fp-title"><?php the_title();?></span>
-											
-											<!--<span class="icon-review"><i class="fa fa-check-square-o" aria-hidden="true"></i> Review</span>-->
-										</div>
-									</a>
-								</div>
-							</div>
-							<?php if($postCtr>=3): $postCtr=0;?>								
-								</div><div class="row category-row">
-							<?php endif;?>
-							
-
-        					<?php $postCtr++; ?>
-    					<?php endwhile;?>
-    					</div>
-    					<?php wp_reset_postdata();?>
-					<?php endif;?>
+					<?php include(locate_template('format/result-item.php')); ?>
 					
                 </div>
 			</div>			

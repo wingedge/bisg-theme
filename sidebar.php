@@ -6,7 +6,11 @@
 
 <?php else:?>
 <?php endif; // end primary widget area ?>
-
+<style>
+.s-widget.how-to-claim-your-rewards {
+    margin-top: 35px;
+}
+</style>
 <div class="row row-sidebar-wrap">
 
   <div class="col-md-12 col-sm-12 s-widget">
@@ -58,11 +62,20 @@
     </a>
   </div> 
 
+  <div class="col-md-12 col-sm-4 s-widget how-to-claim-your-rewards">
+
+      <!--<img src="<?php bloginfo( 'template_url' ); ?>/img/BI-membership-banner-awards-280x505.jpg" class="img-responsive"/>-->
+      <img src="<?php bloginfo( 'url' ); ?>/wp-content/uploads/2017/12/NSGIF.gif" class="img-responsive"/>
+
+  </div>
+
   <div class="col-md-12 col-sm-4 s-widget">
-    <a href="<?php echo site_url('how-to-claim-your-rewards');?>">   
-      <img src="<?php bloginfo( 'template_url' ); ?>/img/BI-membership-banner-awards-280x505.jpg" class="img-responsive"/>
+    <a href="http://www.mapletreemedia.com" target="_blank">   
+      <img src="http://beautyinsider.sg/wp-content/uploads/2017/10/MTM-logo-500x500.jpg" class="img-responsive"/>
     </a>
   </div>
+
+  
 
 </div>
 

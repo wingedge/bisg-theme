@@ -24,6 +24,7 @@ function bisgtheme_setup() {
 	register_nav_menus( array(
 		'top'   => __( 'Top Header Menu', 'bisgtheme' ),
 		'main' 	=> __( 'Main', 'bisgtheme' ),
+		'main_mobile' 	=> __( 'Main Mobile', 'bisgtheme' ),
 	) );
 
 	add_theme_support( 'html5', array(
@@ -74,6 +75,11 @@ function bisg_scripts(){
 	// footer scripts	
 	wp_enqueue_script( 'bisg-bootstrap', get_theme_file_uri( '/js/vendor/bootstrap.min.js' ), array( 'jquery' ), null, true );
     wp_enqueue_script( 'bisg-bootstrap-plugins', get_theme_file_uri( 'js/plugins.js' ), array( 'jquery' ), null, true );
+
+    // twentytwenty
+    wp_enqueue_script( 'bisg-twentyjs', get_theme_file_uri( 'js/jquery.event.move.js' ), array( 'jquery' ), null, true );
+    wp_enqueue_script( 'bisg-twentyjs-move', get_theme_file_uri( 'js/jquery.twentytwenty.js' ), array( 'jquery' ), null, true );
+
     //wp_enqueue_script( 'bisg-fontawesome', '//use.fontawesome.com/994fb7a61a.js', array('jquery'), '', false );
     wp_enqueue_script( 'bisg-main-js', get_theme_file_uri( 'js/main.js' ), array( 'jquery' ), null, true );
     // offcanvass script used for menu  
@@ -98,6 +104,9 @@ function bisg_load_theme(){
 	// load it last
     wp_enqueue_style( 'bisgtheme-main', get_theme_file_uri( '/css/main.css' ), array(), null );
 	wp_enqueue_style('responsive-style',get_stylesheet_directory_uri().'/css/responsive.css');
+
+	// load twentytwenty
+	wp_enqueue_style( 'bisgtheme-twentytwenty', get_theme_file_uri( '/css/twentytwenty.css' ), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'bisg_load_theme', 100 ); // load last
 
@@ -117,6 +126,18 @@ function bisg_theme_widgets_init() {
         	'id' => 'sidebar-main',
         	'description' => __( 'Widgets in this area will be shown on the front page.', 'bisg' ),
         	'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widgettitle">',
+			'after_title'   => '</h2>',
+    	)
+    );   
+
+    register_sidebar( 
+    	array(
+        	'name' => __( 'Footer Sidebar', 'bisg' ),
+        	'id' => 'sidebar-fppt',
+        	'description' => __( 'Widgets in this area will be shown on the footer.', 'bisg' ),
+        	'before_widget' => '<div id="%1$s" class="widget foot-widget %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widgettitle">',
 			'after_title'   => '</h2>',
@@ -221,6 +242,74 @@ function bi_display_featured(){
 		'post_type'			=> 'brand',
 		'order' 			=> 'DESC',
 		'orderby'			=> 'date',
+		'tax_query' 		=> array(
+								array(
+					              	'taxonomy' => 'brand-category',
+					              	'field' => 'slug',
+					              	'terms' => 'featured',
+					           	),
+					           	 array(
+							        'taxonomy' => 'brand-category',
+							        'terms' => 'dont-display-frontpage',
+							        'field' => 'slug',
+							        'operator' => 'NOT IN',
+							    ),
+		),
+	);
+
+	$query = new WP_Query( $args );	
+	$postCtr=1;
+	if ($query->have_posts()) {		
+    	while ($query->have_posts()) {       
+        	$query->the_post();       	
+        	include(locate_template('section/frontpage-featured.php'));
+        	$postCtr++;
+    	}
+    	wp_reset_postdata();
+	}else{
+		bi_no_articles();
+	}	
+}
+
+//visual composer activated start
+
+function bi_display_featured2(){
+	$args = array(
+		//'category_name' 	=> 'featured',
+		'posts_per_page' 	=> 8,
+		'post_type'			=> 'brand',
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',
+		'tax_query' 		=> array(array(
+					              'taxonomy' => 'brand-category',
+					              'field' => 'slug',
+					              'terms' => 'featured2',
+					           )),
+	);
+
+	$query = new WP_Query( $args );	
+	$postCtr=1;
+	if ($query->have_posts()) {		
+    	while ($query->have_posts()) {       
+        	$query->the_post();       	
+        	include(locate_template('section/frontpage-featured.php'));
+        	$postCtr++;
+    	}
+    	wp_reset_postdata();
+	}else{
+		bi_no_articles();
+	}	
+}
+
+//insider deals
+
+function bi_insider_deals(){
+	$args = array(
+		//'category_name' 	=> 'featured',
+		'posts_per_page' 	=> 8,
+		'post_type'			=> 'insider_deals',
+		'order' 			=> 'DESC',
+		'orderby'			=> 'date',
 		'tax_query' 		=> array(array(
 					              'taxonomy' => 'brand-category',
 					              'field' => 'slug',
@@ -241,6 +330,9 @@ function bi_display_featured(){
 		bi_no_articles();
 	}	
 }
+
+
+//visual composer activated end
 
 function bi_display_professional($args=array()){
 	$default = array(
@@ -366,7 +458,7 @@ function custom_rewrite_rule() {
 	add_rewrite_rule('^aesthetics-establishments','index.php?page_id=25696&showcat=aesthetics','top');
 	add_rewrite_rule('^all-establishments/aesthetics','index.php?page_id=25696&showcat=aesthetics','top');
 
-	add_rewrite_rule('^wellness-products','index.php?page_id=25699&showcat=wellness','top');
+	add_rewrite_rule('^wellness-products','index.php?page_id=26760&showcat=wellness','top');
 	add_rewrite_rule('^wellness-establishments','index.php?page_id=25699&showcat=wellness','top');
 
 
@@ -381,6 +473,8 @@ function custom_rewrite_rule() {
 	add_rewrite_rule('^([^/]*)?-establishments','index.php?page_id=22560&showcat=$matches[1]','top');
 
 	add_rewrite_rule('^([^/]*)?-articles','index.php?page_id=25093&showcat=$matches[1]','top');	
+
+	add_rewrite_rule('^product-tag/([^/]*)?','index.php?s=$matches[1]','top');		
 
 	//add_rewrite_rule( 'region/([^/]+)/type/([^/]+)/page/([0-9]{1,})/?', 'index.php?taxonomy=region&term=$matches[1]&post_type=$matches[2]&paged=$matches[3]', 'top' );
 }
@@ -441,9 +535,7 @@ function bi_reviews_for_post($atts){
 }
 
 
-// for filters
-error_reporting(E_ERROR);
-ini_set('display_errors', 1);
+
 
 add_action('wp_ajax_filter_results', 'ajax_filter_generate_results');
 add_action('wp_ajax_nopriv_filter_results', 'ajax_filter_generate_results');
@@ -458,13 +550,16 @@ function ajax_filter_generate_results(){
 
 	$e_categories = $_POST['filterECategory'];
 	$e_attributes = $_POST['filterEAttributes'];
+
+	$paged = $_POST['filterPaged'];
 	// do query here
   	$args = array(
   		'post_type' => $postType, 
-  		'posts_per_page' => -1,  		
+  		'posts_per_page' => 39,  		
   		//'category_name' => $category,
   		'order' => 'asc',
   		'orderby' => 'title',
+  		'paged' => $paged,
   	);
 
   	if( !empty($term) ){
@@ -478,6 +573,15 @@ function ajax_filter_generate_results(){
 		  		'taxonomy' => 'category',
 		        'terms' => $selected_categories,
 		        'field' => 'id',
+		        'operator' => 'IN',
+	  		),	  		
+	  	);
+  	}else{ // nothing, usually used in reset
+  		$args['tax_query'] = array( // tax_query is an array of arrays;	  			  		
+	  		array(
+		  		'taxonomy' => 'category',
+		        'terms' => $category,
+		        'field' => 'slug',
 		        'operator' => 'IN',
 	  		),	  		
 	  	);
@@ -523,9 +627,122 @@ function ajax_filter_generate_results(){
 	  	);
   	}
 
-  	  	
+  	//print_r($args);
 
   	$query = new WP_Query( $args );   	
+	echo '<div class="filter-ajax-results ajax-results">';
 	include(locate_template('format/result-item.php'));
+	echo '';
 	exit();
 }
+
+function add_query_vars_filter( $vars ){
+  $vars[] = "pp";
+  return $vars;
+}
+add_filter( 'query_vars', 'add_query_vars_filter' );
+
+
+/**
+ * WordPress function for redirecting users on login based on user role
+ */
+
+
+add_action('admin_init', 'bi_redirects');
+
+function bi_redirects() {
+	$user = wp_get_current_user();
+	
+	if ( ! defined( 'DOING_AJAX' ) ) {
+		if ( in_array( 'administrator', (array) $user->roles ) || in_array( 'editor', (array) $user->roles ) ) {
+			//The user has the "author" role			
+		}else{
+			wp_redirect(home_url('/my-account/')); 
+			exit;
+		}
+	}
+  
+}
+
+
+/**
+ * Disable WPES when query string variable disable_wpes is true
+ */
+function wpes_enabled($enabled) {
+    if (!empty($_GET['disable_wpes'])) {
+        return FALSE;
+    }
+    if (!empty($_POST['disable_wpes'])) {
+        return FALSE;
+    }
+    return $enabled;
+}
+add_filter('wpes_enabled', 'wpes_enabled');
+
+
+function bi_display_rating(){
+	global $BIReview; 	
+	global $post;
+	$rating = ceil($BIReview->get_ratings($post->ID));	
+	bi_render_rating($rating);
+}
+
+function bi_render_rating($rating){
+	for ($i=0; $i < $rating ; $i++) { 
+		echo '<i class="fa fa-star" aria-hidden="true"></i>';		
+	}
+	for ($i=$rating; $i < 5 ; $i++) { 
+		echo '<i class="fa fa-star-o" aria-hidden="true"></i>';		
+	}
+}
+
+/* remove yoast seo search schema */
+function bybe_remove_yoast_json($data){
+    $data = array();
+	return $data;
+}
+add_filter('wpseo_json_ld_output', 'bybe_remove_yoast_json', 10, 1);
+
+
+// modify the sent email
+//apply_filters( 'wp_new_user_notification_email', array $wp_new_user_notification_email, WP_User $user, string $blogname )
+
+add_filter('wp_new_user_notification_email','bi_new_user_email',10, 2);
+
+function bi_new_user_email($wp_new_user_notification_email, $user){
+	/*
+	$wp_new_user_notification_email
+
+    (array) Used to build wp_mail().
+
+        'to'
+        (string) The intended recipient - New user email address.
+        'subject'
+        (string) The subject of the email.
+        'message'
+        (string) The body of the email.
+        'headers'
+        (string) The headers of the email.
+       $user
+	*/
+    $newMessage  = 'Hi '.sprintf(__('%s'), $user->user_login). "\r\n\r\n\n";
+    $newMessage .= 'Congratulations! Your registration was successful!'."\r\n\r\n\n";
+	$newMessage .= "Welcome to Singapore's fastest growing  beauty community!"."\r\n";
+	$newMessage .= 'You can now earn points, redeem your favourite beauty products and services, simply by interacting with us and by leaving reviews. Not forgetting, we will send you customised content and promotions that matches your concerns, skin & hair types when you complete your registration'."\r\n\r\n\r\n";
+
+	$newMessage .= $wp_new_user_notification_email['message']. "\r\n\r\n\r\n";
+
+ 	$newMessage .= "Happy surfing Gorgeous! \r\n\r\n\r\n\r\n"; 
+	$newMessage .= "Your BEAUTY BFF.";
+
+
+	//$wp_new_user_notification_email['to'] = 'moreno.francis@gmail.com';
+	$wp_new_user_notification_email['message'] = $newMessage;
+	return $wp_new_user_notification_email;
+
+}
+//change url logo in login
+function bi_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'bi_login_logo_url' );

@@ -15,10 +15,11 @@ class BIReviewer {
 			$user = $this->get_user_profile();
 			$existing = $this->get_review_by_post($_POST['review_post_id']);
 			//    id  reviewer_id  post_id  title content rating  date_reviewed        deleted_at  approved  
-			
+			$wpuser = wp_get_current_user();
 
 			$reviewData = array(				
 				'reviewer_id'=>$user->id,
+				'wpuserid' => $wpuser->ID,
 				'post_id'=> $_POST['review_post_id'],
 				'title' => $_POST['review_title'],
 				'content' => $_POST['review_content'],
@@ -42,9 +43,10 @@ class BIReviewer {
 		}		
 	}
 	public function add_points($reviewerId,$remark,$points){
-		
+		$wpuser = wp_get_current_user();
 		$pointsData = array(
 			'reviewer_id' => $reviewerId,
+			'wpuserid' => $wpuser->ID,
 			'points' => $points,
 			'remark' =>$remark,
 			'deleted_at' => date('Y-m-d H:i:s',strtotime(date("Y-m-d", time()) . " + 365 day")),
@@ -54,7 +56,7 @@ class BIReviewer {
 	}
 
 	public function get_all(){        
-        $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC';
+        $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC LIMIT 20';
         $reviews = $this->rdb->get_results($sql);
         return $reviews;   
 	}
@@ -68,6 +70,17 @@ class BIReviewer {
 	public function get_reviewer($id){
 		$sql = 'SELECT id,avatar,first_name,last_name FROM bir_reviewer WHERE id="'.$id.'"';
 		return $this->rdb->get_row($sql);
+	}
+
+	public function get_ratings($postId){
+		$sql = 'SELECT AVG(rating) AS average FROM bir_reviews WHERE post_id = "'.$postId.'"';
+		$row =  $this->rdb->get_row($sql);
+		if($row){
+			return  number_format($row->average,1);
+		}else{
+			return '0';
+		}
+		//print_r($rows);
 	}
 
 	public function update_names(){
@@ -95,6 +108,7 @@ class BIReviewer {
 
 				if(!empty($fname->meta_value) && !empty($lname->meta_value)){					
 					$update = array(
+						'wpuserid' => $wpuser->ID,
 						'first_name'=>$fname->meta_value,
 						'last_name'=>$lname->meta_value,
 					);
@@ -102,6 +116,22 @@ class BIReviewer {
 					$this->rdb->update('bir_reviewer',$update,array('id'=>$user->id));
 				}
 			}			
+		}
+	}
+
+	public function update_wp_points(){		
+		global $wpdb;
+		$this->rdb->show_errors();
+		$sql = 'SELECT id, wpuserid FROM bir_reviewer';
+		$users = $this->rdb->get_results($sql);
+		foreach($users as $user){
+			$update = array(
+				'wpuserid' => $user->wpuserid,
+			);
+			$this->rdb->update('bir_reviewer_points',$update,array('reviewer_id'=>$user->id));
+			$this->rdb->update('bir_reviewer_redeem',$update,array('reviewer_id'=>$user->id));
+			$this->rdb->update('bir_reviews',$update,array('reviewer_id'=>$user->id));
+			echo $user->id;
 		}
 	}
 
@@ -135,6 +165,18 @@ class BIReviewer {
 			// display start
 			include(locate_template('section/review-generalbox.php'));
 		} // endforeach
+
+		$this->show_pagination(count($reviews),1);
+	}
+
+
+	public function show_pagination($total,$paged){
+		$paginateArgs = array(			
+			'format' => '?pp=%#%',
+			'current' => $paged,
+			'total' => $total
+		);
+		echo paginate_links($paginateArgs); 
 	}
 
 	public function render_random_review(){
@@ -149,10 +191,21 @@ class BIReviewer {
 		endforeach;
 	}
 
-	public function get_user_profile(){
+	public function get_user_profile($email=NULL){
+
+
 		$sessionId = $_COOKIE['biReviewer'];
-		//$sql = "SELECT r.*, o.* FROM bir_reviewer r INNER JOIN bir_reviewer_options o ON o.reviewer_id = r.id WHERE r.active=1 AND r.session_id='$sessionId'";
+		//$sql = "SELECT r.*, o.* FROM bir_reviewer r INNER JOIN bir_reviewer_options o ON o.reviewer_id = r.id WHERE r.active=1 AND r.session_id='$sessionId'";		
 		$sql = "SELECT * FROM bir_reviewer WHERE session_id = '$sessionId'";
+
+		$current_user = wp_get_current_user();
+		$email = $current_user->user_email;
+		$wpid = $current_user->ID;
+
+		if($email){
+			$sql = "SELECT * FROM bir_reviewer WHERE wpuserid = '$wpid'";
+		}
+
 		$user = $this->rdb->get_row($sql);
 		if($user){
 			$user->options = $this->rdb->get_results("SELECT * FROM bir_reviewer_options WHERE reviewer_id = '$user->id'");
@@ -166,8 +219,10 @@ class BIReviewer {
 	}
 	
 	public function is_reviewer_login(){		
-		if ( isset($_COOKIE['biReviewer']) ){
-			return true;
+		//if ( isset($_COOKIE['biReviewer']) ){
+
+		if( is_user_logged_in() ){
+			return true;		
 		}else{
 			return false;
 		}		
@@ -178,13 +233,40 @@ class BIReviewer {
 		$points = $this->rdb->get_row($sql);
 		
 		$sql = 'SELECT SUM(points_used) AS total FROM bir_reviewer_redeem WHERE reviewer_id = "'.$reviewerId.'" AND (deleted_at > NOW() OR deleted_at IS NULL or deleted_at = "0000-00-00 00:00:00")';
+		
 		$used_points = $this->rdb->get_row($sql);
 
 		if($points){
-			return $points->total - $used_points->total;			
+			//return $points->total - $used_points->total;			
+			return $points->total;
 		}else{
 			return 0;
 		}
+	}
+
+	public function get_rewards_by_points($points,$limit=3){
+		$sql = "SELECT * FROM bir_rewards WHERE required_points <= $points LIMIT $limit";
+		$rewards = $this->rdb->get_results($sql);
+		return $rewards;
+	}
+
+	public function get_redemption_by_user($userid,$limit){
+		error_reporting(E_ALL);
+		ini_set('display_errors', 1);
+
+		$sql = "SELECT * FROM bir_reviewer_redeem INNER JOIN bir_rewards ON bir_rewards.id = bir_reviewer_redeem.reward_id  WHERE wpuserid = $userid LIMIT $limit";
+		$redeem = $this->rdb->get_results($sql);
+		return $redeem;
+	}
+
+	public function get_reviews_by_user($userid,$limit){
+		global $wpdb;
+		$sql = "SELECT * FROM bir_reviews WHERE wpuserid = $userid LIMIT $limit";
+		$reviews = $this->rdb->get_results($sql);
+		return $reviews;
+
+		// get the items
+
 	}
 
 	public function get_account_type($points){    	

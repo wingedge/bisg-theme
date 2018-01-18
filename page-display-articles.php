@@ -19,7 +19,7 @@ get_header(); ?>
 		'paged'				=> $paged,	
 		'orderby'			=> 'title',
 		'order'				=> 'asc',		
-		'posts_per_page' => '20',
+		'posts_per_page' => '15',
 		'tax_query' => array(array(
 			'taxonomy' => 'post_format',
             'field' => 'slug',

@@ -21,7 +21,7 @@
         Atrix #01-07,<br/>
         82 Lorong 23 Geylang<br/>
         Singapore 388409<br/>
-        <a href="www.mapletreemedia.com">www.mapletreemedia.com</a>
+        <a href="http://www.mapletreemedia.com" target="_blank">www.mapletreemedia.com</a>
       </div>
       <div class="col-md-3 col-sm-5 footerbox">
         <h3 class="footer-title">Quick Links</h3>
@@ -60,7 +60,17 @@
     </div>
   </div>
 </div>
+
+<?php if ( is_active_sidebar( 'sidebar-fppt' ) ) : ?>
+<?php dynamic_sidebar( 'sidebar-fppt' ); ?>
+<?php else:?>
+<?php endif; // end primary widget area ?>
+
 <!-- canvass-->
+
+<?php get_template_part('section/login','modal'); ?>   
+
+
 <?php wp_footer(); ?>
 
 <script type='text/javascript' src='http://xslt.alexa.com/site_stats/js/s/a?url=beautyinsider.sg'></script>

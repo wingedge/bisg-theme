@@ -88,15 +88,16 @@
             <div>
               <h3 class="cat-titles pink-dashed" style="text-align:left;"><span><?php ucwords(single_cat_title());?> Videos</span></h3>
               <div class="category-video-box">
-                <?php /*set arguments */					
+                <?php /*set arguments */                  
         					$videosArgs = array(
       					    'posts_per_page' 	=> 12,
                     //'category_name' => single_cat_title(null,false),
                     'category_name' => '',
       					    'file_template'	 	=> 'section/category-video.php',			                    
-                    'tax_query' => array(
-                      array('taxonomy'=>'category', 'field'=>'slug', 'terms'=>array('video',$thisCategory->slug), 'compare'=>'IN')
-                    ),
+                    'category__and' => array(5787,$thisCategory->term_id),
+                    //'tax_query' => array(
+                    //  array('taxonomy'=>'category', 'field'=>'id', 'terms'=>array('5787',$thisCategory->term_id), 'operator'=>'IN')
+                    //),
                     //'category__in'    => array('5787'),
 
                   );

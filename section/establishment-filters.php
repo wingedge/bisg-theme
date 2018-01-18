@@ -31,6 +31,7 @@
 			'hair-salons' => array('location','hair-and-makeup', 'nail', 'hair-removal'),
 			'beauty-salons' => array('location','facials-peels', 'nail','body'),
 			'aesthetics' => array('location','face','skin','body-treatment','hair'),
+			'wellness' => array('location','services'),
 		);
 		?>				
 		<?php if( array_key_exists($showCat, $filtersAttributes) ): ?>
@@ -95,5 +96,5 @@
 		<?php endif; ?>
 	</div>	
 </form> 
-<h4 class="filter-title">Couldn't find what your looking for? Request to add the product here. </h4>
-<?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>
+<h4 class="filter-title">Couldn't find what your looking for? Request to add the establishment here. </h4>
+<?php echo do_shortcode('[contact-form-7 id="30550" title="Request Establishment"]');?>

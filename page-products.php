@@ -22,6 +22,7 @@ get_header(); ?>
 				    		'orderby'			=> title,
 				    		'order'				=> asc,
 				    		'post_status'		=> 'publish',
+				    		'post_parent'	=> 0,
 						);					    
                 	
 						$query = new WP_Query( $productArgs );	
@@ -152,7 +153,7 @@ get_header(); ?>
                 </div>
 			</div>
 			<div id="all-articles" class="all-articles col-md-3 col-sm-4">
-				<h3 class="cat-titles"><span>Recent Posts</span></h3>
+				<h3 class="cat-titles"><span>Latest</span></h3>
           		<?php get_sidebar('category');?>
 			</div>
 		</div>

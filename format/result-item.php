@@ -1,7 +1,33 @@
+<style>
+.brands-title {
+    background-size: auto 176px !important;
+    background-position: top center;
+    min-height: 235px;
+}
+.brands-title-img {
+    display: block;
+    min-height: 150px;
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+.brands-title .fp-title {
+    line-height: 1.2;
+}
+.category-row .product {
+    max-height: 280px;
+}
+.fa.fa-star {
+    color: #e80062;
+}
+.fa.fa-star-o {
+    color: #e80062;
+}
+</style>
 <?php $postCtr=1;?>
 <?php if ($query->have_posts()) : ?>
-<div class="row">
-	
+<div class="row">	
 </div>
 <div class="row category-row">
 <?php while ($query->have_posts()) :?>       	
@@ -15,9 +41,10 @@
 				<?php #the_post_thumbnail();?>	
 			<?php endif;?>
 				
-				<div class="brands-title" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');">
-					<span class="fp-title"><?php the_title();?></span>
-					
+				<div class="brands-title">
+					<span class="fp-title"><?php the_title();?></span>					
+                    <span class="fp-rating"><?php bi_display_rating(); ?></span>
+                    <span class="brands-title-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');"></span>			
 					<!--<span class="icon-review"><i class="fa fa-check-square-o" aria-hidden="true"></i> Review</span>-->
 				</div>
 			</a>
@@ -30,7 +57,25 @@
 
 	<?php $postCtr++; ?>
 <?php endwhile;?>
-</div>  					
+</div>  
+
+<div class="row pagination-row filter-page">
+<?php        
+	$paged = ( get_query_var( 'pp' ) ) ? get_query_var( 'pp' ) : 1;					
+	$total_pages = $query->max_num_pages;
+	
+	if(isset($_POST['filterPaged'])){
+		$paged=$_POST['filterPaged'];
+	}
+
+	$paginateArgs = array(			
+		'format' => '?pp=%#%',
+		'current' => $paged,
+		'total' => $total_pages,
+	);
+	echo paginate_links($paginateArgs); 
+?>        
+</div>					
 
 <?php wp_reset_postdata();?>
 <?php endif;?>

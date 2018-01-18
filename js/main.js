@@ -249,4 +249,12 @@ $j( document ).ready(function() {
   	//console.log($j(this).attr('data-rating'));
   	$j(this).starrr({readOnly:true, rating: $j(this).attr('data-rating')});
   });
+
+
+
+
+});
+
+$j(function(){
+  $j(".comparebox").twentytwenty();
 });

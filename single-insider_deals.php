@@ -18,6 +18,7 @@
             <div class="content-title">
               <h2>
                 <?php the_title();?>
+                
               </h2>
             </div>
           </div>
@@ -33,13 +34,14 @@
             <div class="deals-step-1">
               <strong> Step 1.)</strong> <button id="insiderShare" class="insider-btn insider-step-1 btn btn-primary" type="button"> Share on Facebook </button><br/>          
             </div>
-            <div class="deals-step-2" style="display:none;">
-              <strong> Step 2.)</strong> <a href="https://twitter.com/intent/tweet?url=<?php the_permalink();?>" id="insiderShare2" class="insider-btn insider-step-2 btn btn-primary"> Share on Twitter </a><br/>
+            <?php /*
+            <div class="deals-step-2">
+              <strong> Step 2.)</strong> <a href="https://twitter.com/intent/tweet?url=<?php the_permalink();?>" id="insiderShare2" class="insider-btn insider-step-2 btn btn-primary btn-disabled"> Share on Twitter </a><br/>
             </div>
-            <div class="deals-step-3" style="display:none;">
+            */ ?>
+            <div id="insider-form-submit" class="deals-step-2">
+              <strong>Step 2.)</strong>
               <?php echo do_shortcode('[contact-form-7 id="26444" title="Insider Deals Form"]'); ?>
-
-
             </div>
             <div class="instructions">
               <p>By submitting an entry and giving out your details, you allow Beauty Insider Singapore and the related partner merchandiser to contact you directly via email or phone call for the latest beauty updates and for your appointment even though you may be in the Do-Not-Call registry. You are also agree to receive any promotion or daily newsletter and your information will never sold to anyone. You can unsubscribe easily from Beauty Insider Singapore by sending an email to enquiry@mapletreemedia.com. Read more <a href="<?php echo site_url('terms-conditions');?>">Terms and Conditions</a></p>
@@ -82,6 +84,10 @@
                       xfbml: true,
                       oauth: true
                   });
+
+                  // add disable class to submit button
+                  $j('#insider-form-submit .wpcf7-submit').prop('disabled',true);
+                  $j('#insider-form-submit .wpcf7-submit').addClass('btn btn-default btn-primary disabled');
            
                   $j('#insiderShare').on('click',function(){
                     FB.ui(
@@ -90,7 +96,8 @@
                         link: '<?php the_permalink();?>',
                         picture: '<?php echo get_the_post_thumbnail_url(get_the_id(),'medium_large');?>',
                         caption: '<?php the_title();?>',
-                        description: 'no description'
+                        description: 'no description',
+                        quote: "Hey everyone ! Check out the latest Beauty Insider DEAL #insiderdeals #beautyinsidersg.", 
                     },
                         function (response) {                            
                             if (response === null) {
@@ -98,7 +105,8 @@
                             } else {
                                 //alert('Post was published.');
                                 $j('.insider-step-1').prop('disabled',true).removeClass('btn-primary').addClass('btn-default').text('Shared on FB'); 
-                                $j('.deals-step-2').show();
+                                $j('#insider-form-submit .wpcf7-submit').prop('disabled',false).removeClass('disabled');
+                                //$j('.deals-step-2').show();
                             }
                         }
                     );

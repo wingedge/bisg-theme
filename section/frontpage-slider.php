@@ -37,7 +37,15 @@ echo get_the_post_thumbnail_url( $post_id, 'medium' ); ?>) !important;"> <span c
     <div class="item <?php echo $ctr<=1?'active':'';?>">
       <div class="slider-background" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');">
         <div class="slider-caption">
-          <?php the_category();?>
+          <ul class="post-categories">  
+          <?php 
+            //the_category('','single');
+            $categories = get_the_category();
+            if ( ! empty( $categories ) ) {
+                echo '<li><a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a></li>';
+            }
+          ?>
+        </ul>
           
           <a href="<?php the_permalink();?>"><span class="hslide_the_title">
           <?php the_title();?>

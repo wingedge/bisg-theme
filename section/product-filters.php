@@ -9,6 +9,7 @@
 		<h4>Search by Term</h4>
 		<div class="form-group">
 			<input type="text" class="form-control" placeholder="Search Product..." id="byterm" name="term"/>					
+			<input type="hidden" name="disable_wpes" value="1"/>
 		</div>
 	</div>
 	<div class="form-row attributes-filters" >		
@@ -20,6 +21,7 @@
 			'skincare' => array('skin-care-concerns','skin-type','moisturiser','cleanser-exfoliator','treatment-serums','masks','toner','sun-care'),			
 			'hair' => array('styling','shampoo-conditioner-2','treatment'),
 			'body' => array('bath-shower','moisturiser','treatment','sun-care','fragrance','grooming'),			
+			'wellness' => array('supplements','grooming'),			
 		);
 		?>				
 		<?php if( array_key_exists($showCat, $filtersAttributes) ): ?>
@@ -85,5 +87,5 @@
 	</div>	
 </form> 
 
-<h4 class="filter-title">Couldn't find what your looking for? Request to add the product here. </h4>
+<h4 class="filter-title">Couldn't find what your looking for? Request to add the product/brand here. </h4>
 <?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>

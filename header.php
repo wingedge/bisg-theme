@@ -36,6 +36,12 @@ html {
   ga('send', 'pageview');
 </script>
 
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+
+  <?php get_template_part('seo','scheme');?>
+
 </head>
 <body <?php body_class(); ?>>
 <!-- Google Tag Manager (noscript) -->
@@ -70,11 +76,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="<?php echo site_url('/write-a-review/');?>">Write A Review</a></li>
             -->
 
+            <?php /*
             <?php if( $BIReview->is_reviewer_login() ):?>            
             <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-user"></i> My Account</a></li>            
             <?php else:?>
             <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-sign-in"></i> Login / Signup</a></li>
             <?php endif;?>
+            */ ?>
+
+            <?php if( !is_user_logged_in() ):?>
+            <!--
+            <li><a href="<?php echo site_url('/wp-login.php');?>"><i class="fa fa-sign-in"></i> Login / Signup</a></li>
+            -->
+            <!--<li><a href="<?php echo site_url('/my-account');?>"><i class="fa fa-sign-in"></i> Login / Signup</a></li>-->
+            <!-- 
+              <li><a href="<?php echo wp_login_url( site_url('/my-account/') ); ?>" title="Login" data-toggle="modal" data-target="#biLoginModal"><i class="fa fa-sign-in"></i> Login / Signup</a></li>
+            -->
+            <li><a href="#" title="Login" data-toggle="modal" data-target="#biLoginModal"><i class="fa fa-sign-in"></i> Login / Signup</a></li>
+
+            <?php else:?>
+            <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-user"></i> My Account</a></li>      
+            <?php endif;?>
+
             
             <li><a href="<?php echo site_url('/all-reviews/');?>"><i class="fa fa-child"></i> Read Reviews</a></li>
             <li><a href="<?php echo site_url('/insider-deals/');?>"><i class="fa fa-gift"></i> Insider Deals</a></li>
@@ -84,9 +107,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="<?php echo site_url('/about-us/');?>"><i class="fa fa-heart"></i> About Us</a></li>
             <li><a href="<?php echo site_url('/professionals/');?>"><i class="fa fa-globe"></i> Professional</a></li> 
 
-            <?php if( $BIReview->is_reviewer_login() ):?>            
+            <?php /* if( $BIReview->is_reviewer_login() ):?>            
             <li><a href="//review.beautyinsider.sg/review/logout?returnUrl=<?php echo site_url('my-account');?>"><i class="fa fa-sign-in"></i> Sign out</a></li>            
+            <?php endif; */?>
+
+            <?php if( is_user_logged_in() ):?>
+            <li><a href="<?php echo wp_logout_url( home_url() ); ?>"><i class="fa fa-sign-in"></i> Sign Out</a></li>
             <?php endif;?>
+
+
+
 
           </ul>
         </div>
@@ -111,20 +141,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="https://www.instagram.com/beautyinsidersg/" target="_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a> 
         <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> 
         </div>      
+      
       <div id="main-search" class="col-md-10 col-sm-9 col-xs-8 search-box">
+        <?php /*
         <div class="col-sm-9">
-          <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">
-            
+          <input name="" id="posttype_search" placeholder="Search your favourite brands here" type="text">            
         </div>        
         <div class="col-sm-3">
           <button id="bi-search-btn" class="btn btn-block register-btn">Search</button>
         </div>
+        <div class="result-box">
+          <div id="loading"></div>
+          <div id="tagged-posts"></div>
+        </div>
+        */?>
 
-          <div class="result-box">
-            <div id="loading"></div>
-            <div id="tagged-posts"></div>
-          </div>    
-          
+        <?php echo do_shortcode('[wpdreams_ajaxsearchlite]'); ?>        
       </div>
     </div>
   </div>
