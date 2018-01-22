@@ -97,6 +97,8 @@ function bisg_scripts(){
 		'site_url' => home_url('/'),   
 	));
 
+	wp_enqueue_script( 'bisg-gmaps-js', '//maps.googleapis.com/maps/api/js?key=AIzaSyBFoZTQnViWicwkUhX2LTg8VC1NymQFW9w', array( 'jquery' ), null, true );	
+
 }
 add_action( 'wp_enqueue_scripts', 'bisg_scripts' );
 
@@ -746,3 +748,29 @@ function bi_login_logo_url() {
     return home_url();
 }
 add_filter( 'login_headerurl', 'bi_login_logo_url' );
+
+function my_login_logo_url_title() {
+  return 'Beauty Insider';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+function my_acf_google_map_api( $api ){	
+	$api['key'] = 'AIzaSyBFoZTQnViWicwkUhX2LTg8VC1NymQFW9w';	
+	return $api;	
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+if ( is_user_logged_in() ) {
+    add_filter('body_class','add_role_to_body');
+    add_filter('admin_body_class','add_role_to_body');
+}
+function add_role_to_body($classes) {
+    $current_user = new WP_User(get_current_user_id());
+    $user_role = array_shift($current_user->roles);
+    if (is_admin()) {
+        $classes .= 'role-'. $user_role;
+    } else {
+        $classes[] = 'role-'. $user_role;
+    }
+    return $classes;
+}

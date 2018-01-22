@@ -1,10 +1,14 @@
 <h3 class="cat-titles pink-dashed"><span> Filters</span></h3>
 <form  method="post">
+	<center>
 	<div class="form-row">
 		<div class="form-group">
+			<button type="button" id="applyfilters" class="btn btn-default btn-sm">Apply Filter/s</button>
 			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
 		</div>
 	</div>
+	</center>
+
 	<div class="form-row">
 		<h4>Search by Term</h4>
 		<div class="form-group">
@@ -84,8 +88,23 @@
 				</div>
 			<?php endforeach;?>
 		<?php endif; ?>
+	</div>
+
+	<br><br>
+
+	<center>
+	<div class="form-row">
+		<div class="form-group">
+			<button type="button" id="applyfilters" class="btn btn-default btn-sm">Apply Filter/s</button>
+			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
+		</div>
 	</div>	
+	</center>
+
+	<br><br>
 </form> 
+
+
 
 <h4 class="filter-title">Couldn't find what your looking for? Request to add the product/brand here. </h4>
 <?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>

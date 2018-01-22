@@ -20,12 +20,13 @@ get_header();
 				<div id="filter-results" class="category-product-container product-container brand-container">
 					<?php 
 						
-						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;					
+						$paged = ( get_query_var('pp') ) ? get_query_var('pp') : 1;
+
 						
 						//$query = new WP_Query( array( 'paged' => $paged ) );
 
 						$productArgs = array(
-				    		'posts_per_page' 	=> -1,
+				    		'posts_per_page' 	=> 39,
 				    		'category_name'		=> $showCat,
 							'post_type'			=> 'product',				    		
 				    		'paged'				=> $paged,	
@@ -49,6 +50,19 @@ get_header();
                 </div>
 			</div>			
 		</div>
+
+		<br><br>
+		<div class="row mbc">
+		  <div class="col-md-12">
+		    <h3 class="cat-titles"><span>Latest</span></h3>
+		    <div class="recent-articles">
+		      <?php bi_display_articles(array('posts_per_page'=>5));?>
+		    </div>
+		    
+		    <div class="readmore readmore-cat"><a href="<?php echo site_url('/blog/'); ?>"><span>View More</span></a></div>
+		  </div>
+		</div>
+
 	</div>
 </div>
 <?php get_footer(); ?>

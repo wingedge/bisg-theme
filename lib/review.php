@@ -211,6 +211,10 @@ class BIReviewer {
 			$user->options = $this->rdb->get_results("SELECT * FROM bir_reviewer_options WHERE reviewer_id = '$user->id'");
 			$user->total_points = $this->get_points($user->id);			
 			$user->level = $this->get_account_type($user->total_points);			
+		}else{
+			$user->options = false;
+			$user->total_points = 0;
+			$user->level = 'regular';
 		}
 
 		#print_r($user);
@@ -247,7 +251,13 @@ class BIReviewer {
 	public function get_rewards_by_points($points,$limit=3){
 		$sql = "SELECT * FROM bir_rewards WHERE required_points <= $points LIMIT $limit";
 		$rewards = $this->rdb->get_results($sql);
-		return $rewards;
+
+		if($rewards){
+			return $rewards;
+		}else{
+			return false;
+		}
+		
 	}
 
 	public function get_redemption_by_user($userid,$limit){

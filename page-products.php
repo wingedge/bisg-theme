@@ -34,7 +34,8 @@ get_header(); ?>
 							<div class="form-group col-md-12 col-sm-12 col-xs-12">											
 								<input class="search form-control" id="searchTerm" placeholder="Find product..." />								
 							</div>	
-
+						</div>
+						<div class="row">
 							<div class="form-group col-md-12 range-selector">
 								<a class="range-select letter-0" data-range="#letter-0"># </a>
 								<?php foreach (range('A', 'Z') as $range):?>

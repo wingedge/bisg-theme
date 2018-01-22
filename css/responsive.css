@@ -1,11 +1,11 @@
 /*HI RES*/
 .erinyen .tp-thumb-title {
-	font-size: 14px;
-	padding: 9px 20px 9px 10px;
+  font-size: 14px;
+  padding: 9px 20px 9px 10px;
 }
 #main-search > div {
-	margin: 0;
-	padding: 0 5px;
+  margin: 0;
+  padding: 0 5px;
   min-width:97%;
 }
 @media all and (min-width: 768px) {
@@ -30,6 +30,7 @@
  .treatments-column-content {
  padding: 0 35px;
 }
+
 }
 /*TABLETS*/
 @media all and (max-width: 991px) {
@@ -114,7 +115,17 @@ body {
   margin-top: 10px;
   text-align: center;
 }
+
+#wpadminbar .ab-item{
+  max-width: 40px;  
 }
+.wpseo-score-icon{display:none !important;}
+
+}
+
+
+
+
 @media all and (max-width: 860px) {
 .home .erinyen .tp-thumb-title {
  font-size: 10px!important;
@@ -237,6 +248,18 @@ body {
   padding-top: 10px;
   text-align: center;
 }
+
+.col-item{
+  padding:5px;
+}
+
+.brands-title-img {
+  min-height: 150px;
+  background-size: auto 100%;
+}
+
+button.navbar-toggle{
+	max-width: 44px !important;
 }
 
 /*PHONES*/
@@ -286,6 +309,8 @@ display:none;
 .carousel-indicators-1 {
  left:20px !important;
 }
+  
+  
 }
 @media all and (max-width:740px) {
  #HomeSliderCarousel .carousel-indicators-1 li {
@@ -316,7 +341,7 @@ display:none;
  height: 100px;
 }
 #HomeSliderCarousel .slider-caption {
- top: 8% !important;
+ /*top: 8% !important;*/ 
 }
 #HomeSliderCarousel .slider-caption {
  min-height: 310px;
@@ -336,3 +361,4 @@ display:none;
  width: 23.6%;
 }
 }
+

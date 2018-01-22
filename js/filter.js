@@ -72,7 +72,7 @@ jQuery( document ).ready( function( $ ) {
       get_selected_ecats();
       get_selected_eattr();
 
-		  get_filtered_result();
+		  //get_filtered_result();
    	});
 
    	$('#byterm').donetyping(function(e){
@@ -83,9 +83,24 @@ jQuery( document ).ready( function( $ ) {
    		searchTerm = $(this).val();
 
    		console.log(searchTerm);
-   		get_filtered_result();
+   		//get_filtered_result();
    		
    	});
+
+    $('#applyfilters').on('click',function(){
+
+      searchTerm =  $('#byterm').val();
+
+      console.log(searchTerm);
+
+      get_selected_cats();
+      get_selected_attr();
+
+      get_selected_ecats();
+      get_selected_eattr();
+
+      get_filtered_result();
+    });
 
     $('body').on('click','.filter-ajax-results .page-numbers' ,function(e){
       e.preventDefault();

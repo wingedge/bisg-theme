@@ -6,7 +6,17 @@
     <?php //putRevSlider( '2017-09-18-homeslider' ); ?>
     <!--slider-->
     <?php get_template_part('section/breadcrumbs'); ?>
-    <?php get_template_part('section/frontpage','slider'); ?>   
+
+    <div class="mbc-off">
+      <?php get_template_part('section/frontpage','slider'); ?> 
+    </div>
+
+    <div class="mbc">
+      <?php echo do_shortcode('[rev_slider alias="mobile-slider"]'); ?> 
+
+      
+    </div>
+
   </div>
 </div>
 
@@ -17,16 +27,12 @@
 
       <div class="row">
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/makeup/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat1.jpg"></a>
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('makeup'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat1.jpg"></a>
         </div>
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/skincare/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat2.jpg"></a>
-        </div>
-
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/hair/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat3.jpg"></a>
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('skincare'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat2.jpg"></a>
         </div>
 
       </div>
@@ -35,16 +41,26 @@
 
       <div class="row">
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/body/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat4.jpg"></a>
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('hair'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat3.jpg"></a>
         </div>
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/spas/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat5.jpg"></a>
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('body'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat4.jpg"></a>
         </div>
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/beauty-salons/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat6.jpg"></a>
+      </div>
+
+      <br>
+      
+      <div class="row">
+
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('spas'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat5.jpg"></a>
+        </div>
+
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('beauty-salons'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat6.jpg"></a>
         </div>
 
       </div>
@@ -53,22 +69,32 @@
 
       <div class="row">
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/hair-salons/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat7.jpg"></a>
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('hair-salons'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat7.jpg"></a>
         </div>
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/aesthetics/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat8.jpg"></a>
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('aesthetics'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat8.jpg"></a>
         </div>
 
-        <div class="col-sm-4 col-xs-4">
-          <a href="http://beautyinsider.sg/category/wellness/"><img src="http://beautyinsider.sg/wp-content/uploads/2018/01/BN-cat9.jpg"></a>
+      </div>
+
+      <br>
+
+      <div class="row">
+
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php echo get_category_link( get_cat_ID('wellness'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat9-2.jpg"></a>
+        </div>
+
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php bloginfo('url'); ?>/insider-deals/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat10.jpg"></a>
         </div>
 
       </div>
 
 
-       <div class="readmore readmore-cat" style="margin-top:10px"><a href="http://beautyinsider.sg/products/"><span>View More</span></a></div>
+       <div class="readmore readmore-cat" style="margin-top:10px"><a href="<?php bloginfo('url'); ?>/products/"><span>View More</span></a></div>
           </div>
 
   <div class="row">
@@ -127,23 +153,7 @@
         </div>
       </div>
 
-      <div class="row cwidth">
-        <div class="col-md-12">
-          <h3 class="pink-dashed"><span>Review Now</span></h3>
-          <div class="featured-video-container" id="products-carousel">
-            <?php get_template_part('section/frontpage','reviewnow'); ?> 
-          </div>
-        </div>
-      </div>
-
-       <div class="row mbc-off">
-        <div class="col-md-12">
-          <h3 class="pink-dashed"><span>Review Now</span></h3>
-          <div class="featured-video-container" id="products-carousel">
-            <?php get_template_part('section/frontpage','reviewestablishments'); ?> 
-          </div>
-        </div>
-      </div>
+       
 
       <?php /*
       <div class="row">
@@ -190,6 +200,24 @@
     </div>
   </div>
 
+  <div class="row cwidth">
+        <div class="col-md-12">
+          <h3 class="pink-dashed"><span>Review Now</span></h3>
+          <div class="featured-video-container" id="products-carousel">
+            <?php get_template_part('section/frontpage','reviewnow'); ?> 
+          </div>
+        </div>
+  </div>      
+
+  <div class="row">
+        <div class="col-md-12">
+          <h3 class="pink-dashed"><span>Establishments</span></h3>
+          <div class="featured-video-container" id="products-carousel">
+            <?php get_template_part('section/frontpage','reviewestablishments'); ?> 
+          </div>
+        </div>
+  </div>
+
   <div class="row mbc cwidth">
         <div class="col-md-12 recommended-columns">
           <h3 class="pink-dashed"><span>Insider Deals</span></h3>
@@ -199,15 +227,16 @@
         </div>
   </div>
 
-  <div class="row mbc cwidth">
+  <div class="row cwidth">
         <div class="col-md-12 recommended-columns">
           <h3 class="pink-dashed"><span>Recommended</span></h3>
-          <div class="featured-container slick-slider-four" id="featured-carousel">
+          <div class="featured-container slick-slider-four curec" id="featured-carousel">
             <?php bi_display_featured();?>
           </div>
         </div>
   </div>
 
+<!--
   <div class="row mbc-off">
     <div class="col-md-12 col-xs-12 treatments-column-content">
       <h2>More Than Just a Singapore Beauty Magazine</h2>
@@ -217,6 +246,8 @@
     </div>
   </div>
 </div>
+-->
+
 <div class="container-fluid mbc-off">
   <div class="row">
     <div class="our-partners">

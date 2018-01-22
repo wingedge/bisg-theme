@@ -2,6 +2,7 @@
 <form  method="post">
 	<div class="form-row">
 		<div class="form-group">
+			<button type="button" id="applyfilters" class="btn btn-default btn-sm">Search</button>
 			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
 		</div>
 	</div>

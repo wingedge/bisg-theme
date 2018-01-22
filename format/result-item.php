@@ -1,30 +1,3 @@
-<style>
-.brands-title {
-    background-size: auto 176px !important;
-    background-position: top center;
-    min-height: 235px;
-}
-.brands-title-img {
-    display: block;
-    min-height: 150px;
-    width: 100%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center bottom;
-}
-.brands-title .fp-title {
-    line-height: 1.2;
-}
-.category-row .product {
-    max-height: 280px;
-}
-.fa.fa-star {
-    color: #e80062;
-}
-.fa.fa-star-o {
-    color: #e80062;
-}
-</style>
 <?php $postCtr=1;?>
 <?php if ($query->have_posts()) : ?>
 <div class="row">	
@@ -32,7 +5,7 @@
 <div class="row category-row">
 <?php while ($query->have_posts()) :?>       	
 	<?php $query->the_post(); ?>
-	<div class="col-md-4 col-sm-4">
+	<div class="col-xs-6 col-sm-4 col-item">
 		<div id="post-<?php the_ID(); ?>" <?php post_class('featured-brands result-items'); ?>  >
 			<a href="<?php the_permalink();?>" title="<?php the_title();?>">									
 			<?php if ( !has_post_thumbnail() ): ?>
@@ -51,7 +24,7 @@
 		</div>
 	</div>
 	<?php if($postCtr>=3): $postCtr=0;?>								
-		</div><div class="row category-row">
+		<!--</div><div class="row category-row">-->
 	<?php endif;?>
 	
 

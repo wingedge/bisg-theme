@@ -18,12 +18,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <?php wp_head(); ?>
 <style>
-html {
+  html { margin-top:0 !important; }
 	.header-wrap{ position:relative; height:161px; /*must match with affix*/}
   body{margin-top:0 !important;}
   body.logged-in {padding-top: 0px !important;}
-}
-<?php the_field('css');?>
+
+  <?php the_field('css');?>
+
+
+  #wpadminbar{display:none;}
+  .role-administrator #wpadminbar{display:block;}
 </style>
 
 <script>
@@ -42,6 +46,7 @@ html {
 
   <?php get_template_part('seo','scheme');?>
 
+
 </head>
 <body <?php body_class(); ?>>
 <!-- Google Tag Manager (noscript) -->
@@ -53,10 +58,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <?php get_template_part('section/nav','offcanvass');?>
 </div>
 */?>
-
+<div class="cw-above-header mbc">Review and Reward Yourself</div>
 <div class="header-wrap">
 <div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="161">
-  <div class="container">
+
+  <div class="container mbc-off">
     <div class="row">
       <div id="site-logo" class="col-sm-6">
         <?php /* disable the canvass menu 
@@ -123,14 +129,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div> 
     </div>
   </div>
-  <div id="main-nav" class="main-navigation clearfix">
-    <div class="container">
-      <div class="row">
-        <?php get_template_part('section/nav','main');?>
-      </div>
+
+
+  <!---for mobile start-->
+
+  <div class="container mbc">
+    <div class="row">
+
+       <div class="col-xs-12">
+
+          <div id="main-nav" class="main-navigation cmmenu mbc">
+            <div class="container">             
+              <div class="row">
+                <?php get_template_part('section/nav','mobile');?>
+              </div>
+            </div>
+          </div>
+
+          <center>
+          <div id="site-logo cml">        
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <img src="<?php echo get_theme_file_uri( '/img/logo.png' ); ?>" class="img-responsive site-logo-img"/> </a> 
+          </div>    
+          </center>     
+
+          <?php if( is_user_logged_in() ):?>
+          <div class="signinup">
+            <a href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout"><i class="fa fa-sign-out fa-2x" style="padding:4px;"></i></a>
+          </div>
+          <?php else:?>
+          <div class="signinup">
+            <a href="#" title="Login" data-toggle="modal" data-target="#biLoginModal"><i class="fa fa-user fa-2x" style="padding:4px;"></i></a>
+          </div>
+          <?php endif;?>
+          
+
+          <div class="clearfix">
+          </div>
+
+        </div>      
+      
     </div>
   </div>
+
+  <!---for mobile end-->
+
+<div id="main-nav" class="main-navigation clearfix mbc-off">
+            <div class="container">
+              <div class="row">
+                <?php get_template_part('section/nav','main');?>
+              </div>
+            </div>
 </div>
+
+  
+</div>
+
+
 </div><!--header wrap-->
 
 <div class="main-search clearfix">

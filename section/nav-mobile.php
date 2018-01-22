@@ -1,4 +1,4 @@
- <!--for desktop-->
+<!--for mobile-->
  <nav id="main-navmenu" class="navbar navbar navbar-top" role="navigation">
   <div class="container"> 
     
@@ -11,17 +11,17 @@
       </button>      
     </div>
     
-    
+	
 	<?php
 	    wp_nav_menu( array(
-	        'menu'              => 'main',
-	        'theme_location'    => 'main',                    
+	        'menu'              => 'main_mobile',
+	        'theme_location'    => 'main_mobile',                    
 	        'container'         => 'div',
 	        'container_class'   => 'collapse navbar-collapse',
 			'container_id'      => 'main-navbar-collapse',
 	        'menu_class'        => 'nav navbar-nav')
 	    );
 	?>
+   
   </div>
 </nav> 
-

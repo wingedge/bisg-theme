@@ -44,7 +44,7 @@
 		<?php while ( $insiderDeals->have_posts() ) : $insiderDeals->the_post(); ?>
 		<div class="col-md-4 bir-insiderdeal-item">
 			<a href="<?php the_permalink();?>">
-			<?php the_post_thumbnail('thumbnail');?><br/>
+			<?php the_post_thumbnail('medium');?><br/>
 			<?php the_title();?>
 			</a>    
 		</div>

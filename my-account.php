@@ -36,7 +36,7 @@ get_header(); ?>
 								</ul>
 							</div>
 
-							<div class="profile-tabs navigation-tabs">
+							<div class="profile-tabs navigation-tabs col-xs-12">
 								<ul class="nav nav-pills nav-stacked">
   									<li><a data-toggle="tab" href="#profile-dashboard">My Account</a></li>
   									<li class="active"><a data-toggle="tab" href="#profile-update">My Profile</a></li>

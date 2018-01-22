@@ -15,12 +15,13 @@
 	</div>
 	<div class="readmore readmore-cat"><a href="<?php echo site_url('/blog/'); ?>"><span>View More</span></a></div>
 
-	
+	     <?php /* removed 
             <div class="row">
           <div class="col-md-12 text-center" style="margin-top:20px;">
             <img class="img-logo" src="/wp-content/uploads/2017/05/binsider-circle-logo-90x90.png" height="90" width="90">
           </div>
         </div>
+   
         <div class="row">
           <div class="col-md-12">
             <h3 style="font-size: 55px;color: #d10019;text-align: center;font-family:Playfair Display;font-weight:700;font-style:normal" class="vc_custom_heading">
@@ -45,4 +46,4 @@
 			</div>
           </div>
         </div>
-	
+	*/ ?>

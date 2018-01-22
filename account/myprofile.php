@@ -26,6 +26,7 @@
 		update_user_meta($current_user->ID, 'birthday', $_POST['birthday']);
 		update_user_meta($current_user->ID, 'country', $_POST['country']);
 
+		update_user_meta($current_user->ID, 'skin_tone', $_POST['skin_tone']);
 		update_user_meta($current_user->ID, 'skin_type', $_POST['skin_type']);
 		update_user_meta($current_user->ID, 'skin_concerns', $_POST['skin_concerns']);
 		update_user_meta($current_user->ID, 'interests', $_POST['interests']);
@@ -38,7 +39,7 @@
 		}
 	}
 ?>
-
+<div class="col-xs-12">
 <form method="post" class="bir-profile-form form-inline">	
 <div class="row">
 
@@ -100,6 +101,26 @@
 
 	<div class="col-md-6">
 		<div class="row form-row"><h4>Beauty Profile</h4></div>
+
+		<div class="row form-row">
+			<div class="form-group">
+				<label>Skin Tone : <span id="skin-tone-selected"><?php echo $skin_tone = get_user_meta($current_user->ID,'skin_tone',true); ?></span></label>
+				<input type="hidden" id="skin-tone-field" name="skin_tone" value="<?php echo get_user_meta($current_user->ID,'skin_tone',true); ?>"/>
+				<div class="skin-tone-swatches">
+					
+					<div skin-tone="fair" class="skin-tone skin-2 <?php echo ($skin_tone == 'fair')?'active':'empty';?>"></div>
+					<div skin-tone="medium" class="skin-tone skin-4 <?php echo ($skin_tone == 'medium')?'active':'empty';?>"></div>
+					<div skin-tone="deep" class="skin-tone skin-6 <?php echo ($skin_tone == 'deep')?'active':'empty';?>"></div>
+					<?php /*
+					<div skin-tone="pocelain" class="skin-tone skin-1 <?php echo ($skin_tone == 'porcelain')?'active':'empty';?>"></div>					
+					<div skin-tone= "light-medium" class="skin-tone skin-3 <?php echo ($skin_tone == 'light-medium')?'active':'empty';?>"></div>					
+					<div skin-tone="medium-dark" class="skin-tone skin-5 <?php echo ($skin_tone == 'medium-dark')?'active':'empty';?>"></div>					
+					<div skin-tone="deep" class="skin-tone skin-7 <?php echo ($skin_tone == 'deep')?'active':'empty';?>"></div>
+					*/ ?>
+
+				</div>
+			</div>
+		</div>
 		
 		<div class="row form-row">
 			<div class="form-group">
@@ -152,6 +173,13 @@
 			</div>
 		</div>
 
+		<div class="row form-row">
+			<div class="form-group">
+				<label>Top 3 Beauty Products I am obsessed with</label>
+				<textarea class="form-control" rows="5" style="width:100%;" name="top_three_products"><?php echo get_user_meta( $current_user->ID, 'top_three_products', true ); ?></textarea>
+			</div>
+		</div>
+
 		
 
 	</div>
@@ -167,3 +195,5 @@
 </div>	
 
 </form>
+
+</div><!-- col-xs-12-->
