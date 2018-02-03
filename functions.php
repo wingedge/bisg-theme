@@ -104,7 +104,7 @@ add_action( 'wp_enqueue_scripts', 'bisg_scripts' );
 
 function bisg_load_theme(){
 	// load it last
-    wp_enqueue_style( 'bisgtheme-main', get_theme_file_uri( '/css/main.css' ), array(), null );
+    wp_enqueue_style( 'bisgtheme-main', get_theme_file_uri( '/css/main.css?v='.date("ymdhi") ), array(), null );
 	wp_enqueue_style('responsive-style',get_stylesheet_directory_uri().'/css/responsive.css');
 
 	// load twentytwenty
@@ -743,6 +743,39 @@ function bi_new_user_email($wp_new_user_notification_email, $user){
 	return $wp_new_user_notification_email;
 
 }
+
+//Customize Reset Password Email content
+
+
+function bi_new_user_email_reset_password_message( $message, $key ) {
+
+    if ( strpos($_POST['user_login'], '@') ) {
+        $user_data = get_user_by('email', trim($_POST['user_login']));
+    } else {
+        $login = trim($_POST['user_login']);
+        $user_data = get_user_by('login', $login);
+    }
+
+    $user_login = $user_data->user_login;
+
+    $msg = __('<html><head> <link href="https://fonts.googleapis.com/css?family=Pacifico|Raleway:300i,400" rel="stylesheet"> <meta name="viewport" content="width=device-width, initial-scale=1"> <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><style type="text/css">body{background: #f2f2f2;}img.pw-logo{padding: 30px 0;width: 200px;text-align: center;}img.pw-logo-bot{margin: 0 auto;width: 50px;}.pw-container{border-radius: 15px;width: 60%;background: #fff;margin: 0 auto;padding: 25px;margin-bottom: 30px;}.pw-container p{text-align: center;line-height: 35px;}.pw-container h1{text-align: center;font-family: "Pacifico", cursive;font-size: 60px;padding-bottom: 50px;}.pw-container h4{text-align: center;font-family: "Raleway", sans-serif;font-weight: 300;font-size: 28px;padding-bottom: 20px;}.pw-button{background: #ed0677;color: #fff;border-radius: 0 !important;border: 0;padding: 7px 20px;}@media screen and (max-width:767px){.pw-container{width: 95%;}.pw-container h1{font-size:270%;}.pw-container h4{font-size:150%;}.pw-container p{font-size:90%;}.pw-button{width: 100%;font-size:100%;}}</style></head><body><center><a href="http://beautyinsider.sg" target="_blank"><img src="http://beautyinsider.sg/wp-content/uploads/2018/02/PW-logo.jpg" class="pw-logo"></a></center><div class="pw-container"><div class="row"> <div class="col-sm-12 "> <h1>Hey gorgeous!</h1> <h4>PASSWORD RESET</h4> <p>Someone has requested a password reset for the following account:</p><p>Site name: Beauty Insider - Top Clinic, Spa, and Beauty Product Reviews!</p>');
+
+		$msg .= __('<p>Username: ' . sprintf(__('Username: %s'), $user_login) . '</p>');
+
+		$msg .= __('<p>If this was a mistake, kindly ignore this message </br> and nothing will happen.</p><br><center><a href="' . network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . '"><button type="button" class="btn btn-default pw-button">RESET MY PASSWORD</button></a><br><br><p>Have a gorgeous day,</p><a href="http://beautyinsider.sg" target="_blank"><img src="http://beautyinsider.sg/wp-content/uploads/2018/02/PW-logoB.jpg" class="pw-logo-bot"></a></center> </div></div></div></body></html>');
+
+    return $msg;
+
+}
+
+add_filter('retrieve_password_message', bi_new_user_email_reset_password_message, null, 2);
+
+function wpse27856_set_content_type(){
+    return "text/html";
+}
+add_filter( 'wp_mail_content_type','wpse27856_set_content_type' );
+
+
 //change url logo in login
 function bi_login_logo_url() {
     return home_url();
@@ -774,3 +807,12 @@ function add_role_to_body($classes) {
     }
     return $classes;
 }
+
+// Allowing contributors but not subscribers.
+function se_allow_wp_avatar() {
+	if ( current_user_can( 'edit_posts' ) )
+		return true;
+	else
+		return false;
+}
+//add_filter( 'wpua_is_author_or_above', 'se_allow_wp_avatar' );

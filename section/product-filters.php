@@ -1,13 +1,19 @@
+
+<div class="mbc">
+	<button class="btn-filters">Apply Filters</button>
+</div>
+
+<div class="filters-box-overlay"></div>
+<div id="filters-box" class="filters-box">
 <h3 class="cat-titles pink-dashed"><span> Filters</span></h3>
 <form  method="post">
-	<center>
+	
 	<div class="form-row">
 		<div class="form-group">
-			<button type="button" id="applyfilters" class="btn btn-default btn-sm">Apply Filter/s</button>
-			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
+			<button type="button" id="applyfilters" class="applyfilters btn btn-default btn-sm">Search</button>
+			<button type="button" id="clearFilters" class="clearFilters btn btn-default btn-sm">Clear All</button>
 		</div>
 	</div>
-	</center>
 
 	<div class="form-row">
 		<h4>Search by Term</h4>
@@ -32,6 +38,7 @@
 			<?php $activeAttrs = $filtersAttributes[$showCat]; ?>			
 			<?php foreach($activeAttrs as $attribute) :?>
 				<?php $parentAttr = get_term_by('slug',$attribute,'attribute_category'); ?>
+				<div class="filter-attribute-container">
 				<h4 class="filter-title"><?php echo $parentAttr->name;?></h4>
 				<?php $childrenAttr = get_term_children($parentAttr->term_id,'attribute_category'); ?>				
 				<div class="attribute-child-container col-sm-12">
@@ -54,6 +61,7 @@
 					</div>	
 				<?php endif;?>
 				</div>
+				</div><!--filter-attribute-container-->
 			<?php endforeach;?>
 		<?php endif; ?>
 	</div>
@@ -71,6 +79,7 @@
 			<?php $activeAttrs = $filtersCategories[$showCat]; ?>			
 			<?php foreach($activeAttrs as $attribute) :?>
 				<?php $parentAttr = get_term_by('slug',$attribute,'category'); ?>
+				<div class="filter-attribute-container">
 				<h4 class="filter-title"><?php echo $parentAttr->name;?></h4>
 				<?php $childrenAttr = get_term_children($parentAttr->term_id,'category'); print_r($childrenAttr); ?>				
 				<div class="attribute-child-container col-sm-12">
@@ -86,6 +95,7 @@
 					<?php #endif;?>
 				<?php endforeach;?>
 				</div>
+				</div>
 			<?php endforeach;?>
 		<?php endif; ?>
 	</div>
@@ -95,11 +105,12 @@
 	<center>
 	<div class="form-row">
 		<div class="form-group">
-			<button type="button" id="applyfilters" class="btn btn-default btn-sm">Apply Filter/s</button>
-			<button type="button" id="clearFilters" class="btn btn-default btn-sm">Clear All</button>
+			<button type="button" id="applyfilters" class="applyfilters btn btn-default btn-sm">Search</button>
+			<button type="button" id="clearFilters" class="clearFilters btn btn-default btn-sm">Clear All</button>
 		</div>
-	</div>	
+	</div>
 	</center>
+
 
 	<br><br>
 </form> 
@@ -108,3 +119,4 @@
 
 <h4 class="filter-title">Couldn't find what your looking for? Request to add the product/brand here. </h4>
 <?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>
+</div>

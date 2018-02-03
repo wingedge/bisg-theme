@@ -11,7 +11,7 @@
 			*/?>
 				<div class="featured-products-title">
 					<span class="fp-title"><?php the_title();?></span>
-					<span class="icon-review"><i class="fa fa-check-square-o" aria-hidden="true"></i> Review</span>						
+					<span class="icon-review"><i class="fa fa-pencil" aria-hidden="true"></i> Review</span>						
 				</div>
 			</a>
 		</div>

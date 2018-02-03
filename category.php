@@ -110,11 +110,11 @@
             </div>
           </div>
                     
-          <?php if ( in_array($thisCategory->slug, array('spas','salons')) ) : ?>          
+          <?php if ( in_array($thisCategory->slug, array('spas','salons', 'hair-salons')) ) : ?>          
           <!-- establishment -->
           <div class="category-establishment-containers  col-md-12">
             <div>
-              <h3 class="cat-titles pink-dashed" style="text-align:left;"><span>Establishments</span></h3>
+              <h3 class="cat-titles pink-dashed" style="text-align:left;"><span>Trending Establishments</span></h3>
               <?php /*set arguments */
                 $productArgs = array(
                     'posts_per_page'  => 10,

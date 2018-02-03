@@ -2,7 +2,7 @@
 	<div class="panel review-panel">
 		<div class="panel-heading">
 			<h3 class="review-title"><i class="fa fa-quote-left"></i> <?php echo stripslashes($r->title);?> <i class="fa fa-quote-right"></i></h3>
-			<img class="review-avatar" src="<?php echo $r->user->avatar;?>" />
+			<?php echo get_avatar( $r->wpuserid, 32 ); ?>
 			<div class="review-rating"><div class="review-score" data-rating='<?php echo $r->rating;?>'></div></div>
 			
 		</div>
@@ -26,7 +26,7 @@
 				?>
 			</div>
 		</div>
-		<div class="panel-footer review-footer">
+		<div class="panel-footer review-footer">			
 			reviewed by <?php  echo $r->user->first_name; ?> <?php  echo $r->user->last_name; ?> on <?php  echo date('F d, Y',strtotime($r->date_reviewed));?>														
 		</div>
 	</div>

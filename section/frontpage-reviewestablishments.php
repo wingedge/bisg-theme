@@ -1,6 +1,6 @@
 <?php 
 
-$categories = array('hair-salons','spas', 'beauty salons', 'wellness');
+$categories = array('hair salons','spas', 'beauty salons', 'wellness');
 
 foreach($categories as $getCat):
 	$category_id = get_cat_ID( $getCat );

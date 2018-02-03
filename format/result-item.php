@@ -17,7 +17,8 @@
 				<div class="brands-title">
 					<span class="fp-title"><?php the_title();?></span>					
                     <span class="fp-rating"><?php bi_display_rating(); ?></span>
-                    <span class="brands-title-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');"></span>			
+                    <div class="brands-title-img" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'medium');?>');">                    	
+                    </div>			
 					<!--<span class="icon-review"><i class="fa fa-check-square-o" aria-hidden="true"></i> Review</span>-->
 				</div>
 			</a>

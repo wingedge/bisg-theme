@@ -17,7 +17,7 @@
     </div> 
   </div>
   <div class="recent-review-comment-box">
-  <img src="<?php echo $r->user->avatar;?>"/> <i><?php echo $r->user->first_name; ?> <?php echo $r->user->last_name; ?></i>
+  <?php echo get_avatar( $r->wpuserid, 64 ); ?> <i><?php echo $r->user->first_name; ?> <?php echo $r->user->last_name; ?></i>
   <p><?php  
 	$text = stripslashes($r->content);
 	$more = '&nbsp;<a href="'.get_permalink($r->post_id).'"> ... read more</a>';

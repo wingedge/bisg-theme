@@ -289,7 +289,7 @@ $j(document).ready(function($){
 /* ACF Google Maps */
 
 
-$j(function($) {
+;(function($){
 
 /*
 *  new_map
@@ -452,9 +452,54 @@ $(document).ready(function(){
 		// create map
 		map = new_map( $(this) );
 	});
+
+	var url = document.location.toString();
+	if (url.match('#')) {
+	    $('.profiletabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+	    window.scrollTo(0, 0);
+	} 
+
+	// Change hash for page-reload
+	$('.profiletabs a').on('shown.bs.tab', function (e) {
+	    window.location.hash = e.target.hash;
+
+	    $('.acf-map').each(function(){
+			// create map
+			map = new_map( $(this) );
+		});
+	})
 });
 
 })(jQuery);
 
+
+jQuery(document).ready(function($) {
+    // Configure/customize these variables.
+    if ( $('.more-less p').length == 0 ){
+    	$('.show-more').hide();
+    }
+
+   
+
+    $('.more-less p').each(function(index){
+    	if(index >= 3){
+    		$(this).addClass('less-hidden');
+    	}else{
+    		$(this).addClass('always-show');
+    	}
+    });
+
+    $('.show-more').on('click',function(){
+    	$('.less-hidden').toggleClass('less-shown').toggle();
+    	$(this).toggleClass('on');
+
+    	if($(this).hasClass('on')){
+    		$(this).text('Show Less...');
+    	}else{
+    		$(this).text('Show More...');
+    	}
+    	return false;
+    });
+});
 
 

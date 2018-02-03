@@ -43,6 +43,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
   <?php get_template_part('seo','scheme');?>
 
@@ -59,6 +60,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 */?>
 <div class="cw-above-header mbc">Review and Reward Yourself</div>
+
+
+
 <div class="header-wrap">
 <div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="161">
 
@@ -101,7 +105,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <li><a href="#" title="Login" data-toggle="modal" data-target="#biLoginModal"><i class="fa fa-sign-in"></i> Login / Signup</a></li>
 
             <?php else:?>
-            <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-user"></i> My Account</a></li>      
+            <?php $current_user = wp_get_current_user();?>
+            <li><a href="<?php echo site_url('/my-account/');?>"><i class="fa fa-user"></i> Hi <?php echo $current_user->user_login;?></a></li>      
             <?php endif;?>
 
             
@@ -215,3 +220,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </div>
+
+
+<?php if( is_user_logged_in() ):?>
+<?php 
+  // check if the profiles are filled up, if not display this notice
+  $current_user = wp_get_current_user();
+  $c1 = get_user_meta( $current_user->ID, 'birthday', true );
+  $c2 = get_user_meta( $current_user->ID, 'phone', true );
+  $c3 = get_user_meta( $current_user->ID, 'address', true );      
+?>
+  <?php if( empty($c1) || empty($c2) || empty($c3) ):?>
+  <div class="container user-profile-notification text-center">
+    <h4>Complete your beauty <a href="<?php echo site_url('/my-account/#profile-update');?>">profile</a> to earn points</h4>
+  </div>
+  <?php endif;?>
+<?php endif;?>

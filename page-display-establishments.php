@@ -38,7 +38,7 @@ get_header();
 							  		'taxonomy' => 'category',
 							        'terms' => $showCat,
 							        'field' => 'slug',
-							        'operator' => 'EXISTS',
+							        //'operator' => 'EXISTS',
 						  		),	  		
 				    		),
 						);

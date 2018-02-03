@@ -1,4 +1,9 @@
 /*HI RES*/
+
+.multi-checkbox{
+  font-size:12px;
+}
+
 .erinyen .tp-thumb-title {
   font-size: 14px;
   padding: 9px 20px 9px 10px;
@@ -362,3 +367,503 @@ display:none;
 }
 }
 
+
+
+/******************* TIMS CHANGES ******************************/
+
+
+
+@media screen and (max-width:767px){
+  /*
+  .cft{
+    text-align: center;
+    font-size: 115%;
+    line-height: 130%;
+  }*/
+
+  .footer-title strong{
+    font-size: 85%;
+  }
+
+
+  .featured-item {
+      border-radius: 50% !important;
+      width: 90% !important;
+  }
+
+  .mbc{
+    display: block !important;
+  }
+
+  .mbc-off{
+    display: none !important;
+  }
+
+  /**above header**/
+  .cw-above-header{
+    background: #d0004e;
+    font-family: Catamaran;
+      font-weight: 400;
+      font-size: 80%;
+      color: #fff;
+      text-align: center;
+      text-transform: uppercase;
+      padding:3px 0;
+  }
+
+  img.site-logo-img{
+    max-width: 55% !important;
+  }
+
+
+  /**menu**/
+  .navbar-header{
+    left: 80px !important;
+    margin-top: -65px !important;
+  } 
+
+  .navbar-toggle{
+    left: 0% !important;
+      top: 0% !important;
+  }
+
+  .nav > li {
+      margin-left: -10px !important;
+  }
+
+  #main-search{
+     z-index: 1 !important;
+  }
+
+  .collapsing{
+    position: absolute !important;
+      top: 77px !important;
+  }
+
+
+  .navbar-collapse.in {
+
+      position: absolute;
+      background: #ddd;
+      width: 100%;
+      top: 77px;
+      z-index: 9999;
+
+  }
+
+  .signinup{
+    border-radius: 4px;
+    border: solid 1px #e80062;
+    background: #e80062;
+    width: 48px;
+    font-size: 55%;
+    color: #fff;
+    text-align: center;
+    padding: 3px 0px;
+    float: right;
+    margin-right: -10px;
+  }
+
+  .signinup a{
+    color: #fff !important;
+    text-decoration: none;
+  }
+
+  .signinup a:hover{
+    text-decoration: underline !important;
+  }
+
+  .rdcm{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  } 
+
+  /***sidebar***/
+  
+  .gettouch{    
+    text-align: center;
+  }
+  /*
+  .gettouch h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 150%;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-style: italic;
+    color: #222222 !important;
+  }
+
+  .gettouch strong{
+    font-family: Catamaran;
+      font-weight: 400;
+      font-size: 120%;
+      color: #222222 !important;
+      text-transform: uppercase;
+  }
+
+  .gettouch a{
+    font-family: Catamaran;
+      font-weight: 400;
+      font-size: 100%;
+      /***color: #222222 !important;
+  }*/
+
+  h3.adcustom{
+    font-size: 90%;
+    line-height: 150%;
+  }
+
+
+  /***footer***/
+  ul.smedia{
+    padding: 5px 0 20px 0;
+
+    margin: 0;
+  }
+
+  ul.smedia li{
+    list-style: none;
+    display: inline;
+  }
+
+  ul.footpage{
+    text-align: center;
+    padding: 5px 0 5px 0;
+    margin: 0;
+  }
+
+  ul.footpage li{
+    list-style: none;
+    display: inline;
+    padding-right: 10px;
+  }
+
+  p.cfoot{
+    font-size: 70%;
+  }
+
+  /***slider**/
+
+  .carousel-indicators-1{
+    display: none !important;
+  }
+  /*
+  div.slider-caption ul.post-categories{ Gio: who put this in?
+    display: none !important;
+  }*/
+
+  #HomeSliderCarousel .slider-caption {
+      min-height: 48px !important;
+      top: inherit !important;
+      bottom: 0 !important;
+      width: 100% !important;
+      padding-top: 2% !important;
+  }
+  
+  /*
+  #HomeSliderCarousel .hslide_the_title { Gio: who put this in? /
+      font-size: 70% !important;
+  }*/
+
+  #HomeSliderCarousel .carousel-indicators-1 li{
+    height: 70px;
+  }
+
+  #HomeSliderCarousel .slider-caption .post-categories li a {
+      font-size: 80% !important;
+  } 
+  /*
+  #HomeSliderCarousel .hslide_the_excerpt{ Gio: who put this in? /
+      display: none !important;
+  }*/
+
+  span.mobile-title{
+    font-size: 80% !important;
+  }
+
+  .modal-login-area {
+      padding: 10px;
+      z-index: 9999
+  }
+
+  .modal-dialog {
+      margin: 15% auto !important;
+  }
+
+  #loginform input[type="text"], #loginform input[type="password"]{
+    width: 100% !important;
+  }
+
+  .cwidth{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /***my account***/
+
+  .yp {
+		    margin-bottom: 20px;
+		}
+		
+
+		.yp-line {
+		    position: absolute;
+		}
+
+		.yp-reco{
+			width: 100%;
+		    margin: 0 auto;
+		}
+
+
+		.yp-estab {
+		    width: 56%;
+		    margin: 0 auto;
+		}
+
+		.yp-grab{
+			width: 70%;
+		    margin: 0 auto;
+		}
+
+		.yp-deal{
+			width: 70%;
+		    margin: 0 auto;
+		    margin-bottom: 20px;
+		}
+
+		.yp-ld{
+			background: url('images/yp-md-box.jpg') 100% 100% no-repeat !important;
+		    width: 100%;
+		    font-size: 100%;
+		    padding-top: 26px;
+    		font-size: 90%;
+    		margin: 20px 0 20px 0;
+		}
+
+
+		.ylr-content-details {
+		    width: 180px;
+		}
+
+		.ylr {
+		    background: #fc1d78;
+		    min-height: 579px;
+		    width: 300px;
+		    margin: 0 auto;
+		}
+
+}
+
+
+
+@media screen and (min-width: 320px) and (max-width: 359px) {
+
+  .header-wrap{
+      margin-top: 5% !important;
+  }
+
+  .navbar-toggle{
+      margin-top: 85px;
+      margin-left: -73px;
+  }
+
+  .navbar-collapse.in {
+      top: 77px;
+  }
+
+  .signinup {
+      margin-top: -55px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+  
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 374px) {
+
+  .navbar-toggle{
+        margin-top: 85px;
+        margin-left: -75px;
+  }
+
+  .navbar-collapse.in {
+      top: 83px;
+  }
+
+  .signinup {
+      margin-top: -60px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+
+}
+
+@media screen and (min-width: 375px) and (max-width: 411px) {
+
+  .navbar-toggle{
+        margin-top: 88px;
+        margin-left: -75px;
+  }
+
+  .navbar-collapse.in {
+      top: 86px;
+  }
+
+  .signinup {
+      margin-top: -60px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+
+}
+
+@media screen and (min-width: 412px) and (max-width: 413px) {
+
+  .navbar-toggle{
+        margin-top: 90px;
+        margin-left: -75px;
+  }
+
+  .navbar-collapse.in {
+      top: 89px;
+  }
+
+  .signinup {
+      margin-top: -60px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+
+}
+
+@media screen and (min-width: 414px) and (max-width: 639px) {
+
+  .navbar-toggle{
+        margin-top: 91px;
+        margin-left: -75px;
+  }
+
+  .navbar-collapse.in {
+      top: 89px;
+  }
+
+  .signinup {
+      margin-top: -60px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+
+}
+
+@media screen and (min-width: 640px) and (max-width: 666px) {
+
+  .navbar-toggle{
+        margin-top: 95px;
+        margin-left: -75px;
+  }
+
+  .navbar-collapse.in {
+      top: 95px;
+  }
+
+  .signinup {
+      margin-top: -65px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+
+}
+
+@media screen and (min-width: 667px) and (max-width: 767px) {
+
+  .navbar-toggle{
+        margin-top: 95px;
+        margin-left: -75px;
+  }
+
+  .navbar-collapse.in {
+      top: 91px;
+  }
+
+  .signinup {
+      margin-top: -60px;
+  }
+
+  /***login***/
+  .login-modal .modal-dialog {
+      width: 88%;
+  }
+
+}
+
+/* pop up filters for products and establishments */
+@media screen and (max-width:767px){
+  #filters-box{
+    display:none;
+  }
+  .filters-box-overlay{
+    display:none;
+  }
+
+
+  .filters-box-overlay.displayOn {
+      display:block;
+      position: fixed;
+      left: 0;      
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 500;
+  }
+
+  .btn-filters {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    font-weight: bold;
+    background: #e80062;
+    color: #fff;
+    border: 0;
+  }
+
+  #filters-box.displayOn{
+      position: absolute;
+      /* max-width: 100%; */
+      background: #fff;
+      overflow: hidden;
+      z-index: 600;
+      margin:15px;
+      padding: 10px;
+      left: 0;
+      top: 40px;
+      display:block;
+  }
+}
+
+/* pop up filters for products and establishments */
+@media screen and (min-width:768px){
+  .btn-filters{
+    display:none;  
+  }
+}

@@ -142,7 +142,40 @@ function cptui_register_my_cpts_insider_deals() {
 
     register_post_type( "insider_deals", $args );
 }
-
 add_action( 'init', 'cptui_register_my_cpts_insider_deals' );
+
+function cptui_register_my_cpts_beauty_tips() {
+    /* beauty tips*/
+
+    $labels = array(
+        "name" => __( "Beauty Tips", "beautyinsider" ),
+        "singular_name" => __( "Beauty Tip", "beautyinsider" ),
+    );
+
+    $args = array(
+        "label" => __( "Beauty Tips", "beautyinsider" ),
+        "labels" => $labels,
+        "description" => "",
+        "public" => true,
+        "publicly_queryable" => false,
+        "show_ui" => true,
+        "show_in_rest" => false,
+        "rest_base" => "",
+        "has_archive" => false,
+        "show_in_menu" => true,
+        "exclude_from_search" => true,
+        "capability_type" => "post",
+        "map_meta_cap" => true,
+        "hierarchical" => false,
+        "rewrite" => array( "slug" => "beauty_tips", "with_front" => true ),
+        "query_var" => true,
+        "supports" => array( "title", "editor", "excerpt" ),        
+    );
+
+    register_post_type( "beauty_tips", $args );
+
+}
+
+add_action( 'init', 'cptui_register_my_cpts_beauty_tips' );
 
 

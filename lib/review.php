@@ -36,7 +36,7 @@ class BIReviewer {
 			$this->rdb->insert('bir_reviews',$reviewData);
 
 			if( strlen($reviewData['content']) >= 200 ){
-				$this->add_points($user->id,'added a review, 200 chars','30');				
+				$this->add_points($user->id,'added a review, 200 chars','10');				
 			}else{
 				$this->add_points($user->id,'added a review, less 200 chars','5');				
 			}
@@ -45,7 +45,7 @@ class BIReviewer {
 	public function add_points($reviewerId,$remark,$points){
 		$wpuser = wp_get_current_user();
 		$pointsData = array(
-			'reviewer_id' => $reviewerId,
+			'reviewer_id' => $wpuser->ID, //$reviewerId,
 			'wpuserid' => $wpuser->ID,
 			'points' => $points,
 			'remark' =>$remark,
@@ -53,6 +53,30 @@ class BIReviewer {
 			'created_at' => date('Y-m-d H:i:s'),
 		);
 		$this->rdb->insert('bir_reviewer_points',$pointsData);
+	}
+
+	public function get_user_points($reviewerId){
+		$wpuser = wp_get_current_user();
+		$sql = 'SELECT * FROM bir_reviewer_points WHERE reviewer_id = "'.$reviewerId.'" OR wpuserid = "'.$wpuser->ID.'" ORDER BY created_at DESC';		
+		$points = $this->rdb->get_results($sql);
+		return $points;
+	}
+
+	// check remark if it exists, if not add it (profile,thumbnail, one time points only)
+	public function check_and_add_points($remark,$points){
+		$wpuser = wp_get_current_user();
+		$check = 'SELECT * FROM bir_reviewer_points WHERE remark = "'.$remark.'" AND wpuserid = "'.$wpuser->ID.'"';		
+		//echo $check;
+		$exists = $this->rdb->get_row($check);
+		if($exists){
+			// do nothing, it already exists
+			//print_r($exists);
+			return false;
+		}else{
+			//print_r($exists);
+			$this->add_points($wpuser->ID,$remark,$points);
+			return true;
+		}		
 	}
 
 	public function get_all(){        
@@ -145,7 +169,8 @@ class BIReviewer {
 
 		$reviews = $this->get_all();		
 		foreach($reviews as $r){
-			$r->user = $this->get_reviewer($r->reviewer_id);
+			//$r->user = $this->get_reviewer($r->reviewer_id);
+			$r->user = get_userdata( $r->wpuserid );
 			$r->post = get_post($r->post_id);
 			// display start
 			include(locate_template('section/review-generalbox.php'));
@@ -160,13 +185,20 @@ class BIReviewer {
 		$reviews = $this->get_review_by_post($post_id);		
 
 		foreach($reviews as $r){
-			$r->user = $this->get_reviewer($r->reviewer_id);
+			//$r->user = $this->get_reviewer($r->reviewer_id);
+			$r->user = get_userdata( $r->wpuserid );
 			$r->post = get_post($r->post_id);
 			// display start
 			include(locate_template('section/review-generalbox.php'));
 		} // endforeach
 
 		$this->show_pagination(count($reviews),1);
+	}
+
+	public function get_review_count($post_id){
+		$sql = 'SELECT COUNT(*) as total FROM bir_reviews  WHERE approved="1" AND post_id="'.$post_id.'"';
+        $reviews = $this->rdb->get_row($sql);        
+        return $reviews->total; 	
 	}
 
 
@@ -176,7 +208,7 @@ class BIReviewer {
 			'current' => $paged,
 			'total' => $total
 		);
-		echo paginate_links($paginateArgs); 
+		//echo paginate_links($paginateArgs); 
 	}
 
 	public function render_random_review(){
@@ -207,15 +239,22 @@ class BIReviewer {
 		}
 
 		$user = $this->rdb->get_row($sql);
-		if($user){
-			$user->options = $this->rdb->get_results("SELECT * FROM bir_reviewer_options WHERE reviewer_id = '$user->id'");
-			$user->total_points = $this->get_points($user->id);			
-			$user->level = $this->get_account_type($user->total_points);			
-		}else{
-			$user->options = false;
-			$user->total_points = 0;
-			$user->level = 'regular';
+		//if($user){
+		
+		$user->options = $this->rdb->get_results("SELECT * FROM bir_reviewer_options WHERE reviewer_id = '$user->id'");
+		$user->total_points = $this->get_points($wpid);			
+		$user->level = $this->get_account_type($user->total_points);			
+		if(empty($user->id)){
+			$user->id = $wpid;
 		}
+
+		//}else{
+		//	$user->options = false;
+		// $user->total_points = $this->get_points($user->id);		
+		//	$user->level = 'regular';
+		//}
+
+		// get user using wp_id
 
 		#print_r($user);
 
@@ -233,10 +272,10 @@ class BIReviewer {
 	}
 
 	public function get_points($reviewerId){
-		$sql = 'SELECT SUM(points) AS total FROM bir_reviewer_points WHERE reviewer_id = "'.$reviewerId.'" AND deleted_at > NOW()';
+		$sql = 'SELECT SUM(points) AS total FROM bir_reviewer_points WHERE wpuserid = "'.$reviewerId.'" AND deleted_at > NOW()';
 		$points = $this->rdb->get_row($sql);
 		
-		$sql = 'SELECT SUM(points_used) AS total FROM bir_reviewer_redeem WHERE reviewer_id = "'.$reviewerId.'" AND (deleted_at > NOW() OR deleted_at IS NULL or deleted_at = "0000-00-00 00:00:00")';
+		$sql = 'SELECT SUM(points_used) AS total FROM bir_reviewer_redeem WHERE wpuserid = "'.$reviewerId.'" AND (deleted_at > NOW() OR deleted_at IS NULL or deleted_at = "0000-00-00 00:00:00")';
 		
 		$used_points = $this->rdb->get_row($sql);
 

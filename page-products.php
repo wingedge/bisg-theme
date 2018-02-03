@@ -156,6 +156,10 @@ get_header(); ?>
 			<div id="all-articles" class="all-articles col-md-3 col-sm-4">
 				<h3 class="cat-titles"><span>Latest</span></h3>
           		<?php get_sidebar('category');?>
+
+          		<h3 class="cat-titles">Couldn't find what your looking for? Request to add the product/brand here. </h3>
+				<?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>
+
 			</div>
 		</div>
 	</div>

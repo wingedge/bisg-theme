@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+﻿<?php get_header(); ?>
 <?php /*front page slider*/ ?>
 
 <div class="main-banner">
@@ -28,11 +28,11 @@
       <div class="row">
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('makeup'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat1.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/makeup/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat1.jpg"></a>
         </div>
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('skincare'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat2.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/skincare/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat2.jpg"></a>
         </div>
 
       </div>
@@ -42,11 +42,11 @@
       <div class="row">
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('hair'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat3.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/hair/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat3.jpg"></a>
         </div>
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('body'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat4.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/body/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat4.jpg"></a>
         </div>
 
       </div>
@@ -56,25 +56,11 @@
       <div class="row">
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('spas'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat5.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/spas/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat5.jpg"></a>
         </div>
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('beauty-salons'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat6.jpg"></a>
-        </div>
-
-      </div>
-
-      <br>
-
-      <div class="row">
-
-        <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('hair-salons'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat7.jpg"></a>
-        </div>
-
-        <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('aesthetics'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat8.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/beauty-salons/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat6.jpg"></a>
         </div>
 
       </div>
@@ -84,7 +70,21 @@
       <div class="row">
 
         <div class="col-sm-6 col-xs-6">
-          <a href="<?php echo get_category_link( get_cat_ID('wellness'));?>"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat9-2.jpg"></a>
+          <a href="<?php bloginfo('url'); ?>/category/hair-salons/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat7.jpg"></a>
+        </div>
+
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php bloginfo('url'); ?>/category/aesthetics/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat8.jpg"></a>
+        </div>
+
+      </div>
+
+      <br>
+
+      <div class="row">
+
+        <div class="col-sm-6 col-xs-6">
+          <a href="<?php bloginfo('url'); ?>/category/wellness/"><img src="<?php bloginfo('url'); ?>/wp-content/uploads/2018/01/BS-cat9-2.jpg"></a>
         </div>
 
         <div class="col-sm-6 col-xs-6">
@@ -263,5 +263,7 @@
       </div>
     </div>
   </div>
+</div>
+
 </div>
 <?php get_footer(); ?>

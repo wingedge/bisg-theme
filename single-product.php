@@ -57,7 +57,7 @@
           <div class="col-md-12">
             <div class="tabbable bi-tabs" id="tabs-single-product">
               <ul class="nav nav-tabs">
-                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews(0)</a></li>
+                <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews( <?php echo $BIReview->get_review_count(get_the_ID());?> )</a></li>
                 <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
                 <li><a href="#panel-details" data-toggle="tab">Details</a></li>
                 <li><a href="#panel-ingredients" data-toggle="tab">Ingredients</a></li>
