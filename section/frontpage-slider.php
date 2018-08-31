@@ -35,7 +35,7 @@ echo get_the_post_thumbnail_url( $post_id, 'medium' ); ?>) !important;"> <span c
     <?php $ctr=1;?>
     <?php while ($query->have_posts()) : $query->the_post(); ?>
     <div class="item <?php echo $ctr<=1?'active':'';?>">
-      <div class="slider-background" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'full');?>');">
+      <div class="slider-background updated" style="background-image:url('<?php echo get_the_post_thumbnail_url(get_the_id(),'medium');?>');">
         <div class="slider-caption">
           <ul class="post-categories">  
           <?php 

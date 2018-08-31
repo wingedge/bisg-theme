@@ -1,14 +1,11 @@
 	<div class="recent-articles">
-	<?php 
-		$defaultArticles = array(		
-		'posts_per_page' 	=> 4,
-		'post_type'			=> 'post',		
-		);
+	<?php 	
 		$defaultArticles = array(
                 'category_name' => single_cat_title(null,false),                
-                'posts_per_page' => 5,
+                'posts_per_page' => 4,
                 'orderby' => 'date',                
                 'order' => 'desc',
+                'post_type'     => 'post',
               );
 	?>
 	<?php bi_display_articles($defaultArticles);?>

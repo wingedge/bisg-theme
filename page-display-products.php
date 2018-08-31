@@ -28,7 +28,7 @@ get_header();
 						$productArgs = array(
 				    		'posts_per_page' 	=> 39,
 				    		'category_name'		=> $showCat,
-							'post_type'			=> 'product',				    		
+							'post_type'			=> array('product','beauty_winners'),				    		
 				    		'paged'				=> $paged,	
 				    		'orderby'			=> 'title',
 				    		'order'				=> 'asc',			

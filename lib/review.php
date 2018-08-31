@@ -79,8 +79,16 @@ class BIReviewer {
 		}		
 	}
 
-	public function get_all(){        
-        $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC LIMIT 20';
+	public function get_all(){     
+
+		$paged = ( get_query_var( 'pp' ) ) ? get_query_var( 'pp' ) : 0;    
+		$limit = 20;
+		$offset = $paged * $limit;
+
+		
+
+
+        $sql = 'SELECT * FROM bir_reviews  WHERE approved="1" ORDER BY date_reviewed DESC LIMIT '.$offset.',20';
         $reviews = $this->rdb->get_results($sql);
         return $reviews;   
 	}
@@ -167,14 +175,24 @@ class BIReviewer {
 		);
 		$args = array_merge($default,$args);
 
-		$reviews = $this->get_all();		
-		foreach($reviews as $r){
-			//$r->user = $this->get_reviewer($r->reviewer_id);
-			$r->user = get_userdata( $r->wpuserid );
-			$r->post = get_post($r->post_id);
-			// display start
-			include(locate_template('section/review-generalbox.php'));
-		} // endforeach
+		$reviews = $this->get_all();	
+		$counter=1;	
+		if($reviews){
+			foreach($reviews as $r){
+				$counter++;
+				//$r->user = $this->get_reviewer($r->reviewer_id);
+				$r->user = get_userdata( $r->wpuserid );
+				$r->post = get_post($r->post_id);
+				// display start
+				include(locate_template('section/review-generalbox.php'));
+
+				if($counter%2 == 1){
+					echo '<div class="col-sm-12"></div>';
+				}
+			} // endforeach
+		}else{
+			echo '<div class="col-sm-12">No reviews yet, be the first to leave a review</div>';
+		}
 	}
 
 	public function show_reviews($post_id){
@@ -183,22 +201,30 @@ class BIReviewer {
 		$args['full-content'] = true;
 
 		$reviews = $this->get_review_by_post($post_id);		
-
-		foreach($reviews as $r){
-			//$r->user = $this->get_reviewer($r->reviewer_id);
-			$r->user = get_userdata( $r->wpuserid );
-			$r->post = get_post($r->post_id);
-			// display start
-			include(locate_template('section/review-generalbox.php'));
-		} // endforeach
-
-		$this->show_pagination(count($reviews),1);
+		if($reviews){
+			foreach($reviews as $r){
+				//$r->user = $this->get_reviewer($r->reviewer_id);
+				$r->user = get_userdata( $r->wpuserid );
+				$r->post = get_post($r->post_id);
+				// display start
+				include(locate_template('section/review-generalbox.php'));
+			} // endforeach
+			$this->show_pagination(count($reviews),1);
+		}else{
+			echo '<div class="col-sm-12">No reviews yet, be the first to leave a review</div>';
+		}
 	}
 
 	public function get_review_count($post_id){
 		$sql = 'SELECT COUNT(*) as total FROM bir_reviews  WHERE approved="1" AND post_id="'.$post_id.'"';
         $reviews = $this->rdb->get_row($sql);        
         return $reviews->total; 	
+	}
+
+	function get_all_review_count(){
+		$sql = 'SELECT COUNT(*) as total FROM bir_reviews  WHERE approved="1"';
+        $reviews = $this->rdb->get_row($sql);        
+        return $reviews->total; 
 	}
 
 
@@ -308,9 +334,13 @@ class BIReviewer {
 		return $redeem;
 	}
 
-	public function get_reviews_by_user($userid,$limit){
+	public function get_reviews_by_user($userid,$limit=false){
 		global $wpdb;
-		$sql = "SELECT * FROM bir_reviews WHERE wpuserid = $userid LIMIT $limit";
+		if($limit){
+			$sql = "SELECT * FROM bir_reviews WHERE wpuserid = $userid LIMIT $limit";
+		}else{
+			$sql = "SELECT * FROM bir_reviews WHERE wpuserid = $userid";
+		}
 		$reviews = $this->rdb->get_results($sql);
 		return $reviews;
 

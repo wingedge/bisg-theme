@@ -17,8 +17,9 @@ get_header(); ?>
 		'category_name'		=> $showCat,
 		'post_type'			=> 'post',				    		
 		'paged'				=> $paged,	
-		'orderby'			=> 'title',
-		'order'				=> 'asc',		
+		//'orderby'			=> 'title',
+		'orderby'			=> 'date',
+		'order'				=> 'desc',		
 		'posts_per_page' => '15',
 		'tax_query' => array(array(
 			'taxonomy' => 'post_format',

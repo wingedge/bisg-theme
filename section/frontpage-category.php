@@ -13,13 +13,11 @@
 <?php else:?>
 <div id="post-<?php the_ID(); ?>" <?php post_class('category-mini-container'); ?> >
   <div class="row">
-    <div class="col-xs-4 category-thumbnail-mini"> <a href="<?php the_permalink();?>" class="scale-image">
-      <?php if ( !has_post_thumbnail() ): ?>
-      <?php echo bi_get_post_image();?>
-      <?php else:?>
-      <?php the_post_thumbnail();?>
-      <?php endif;?>
-      </a> </div>
+    <div class="col-xs-4 category-thumbnail-mini"> 
+      <a href="<?php the_permalink();?>" class="scale-image">     
+        <?php the_post_thumbnail('thumbnail');?>     
+      </a> 
+    </div>
     <div class="col-xs-8 category-mini-article"><a href="<?php the_permalink();?>">
       <?php the_title();?>
       </a></div>

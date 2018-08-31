@@ -38,7 +38,20 @@ body.login div#login p#nav a {}
 body.login div#login p#backtoblog {}
 body.login div#login p#backtoblog a {}
 
+p.login-head {
+	text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
 
+p.login-sub {
+	text-align: center;
+    font-style: italic;
+}
+
+.login form {
+	margin-top: 0px;
+}
 
 .wow-fb-login::before {
 	font-family: "FontAwesome";
@@ -58,4 +71,79 @@ body.login div#login p#backtoblog a {}
 	box-shadow: 0px 1px 1px #000;
 	display:block;
 	width: 100%;
+}
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+.wplogin_lm_title {
+    font-family: 'Playfair Display', serif;
+    padding: 0;
+    margin: 0;
+        margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+    font-size: 36px;
+    color: #111;
+    display: block;
+    margin-bottom: 15px;
+    margin-bottom: 15px !important;
+    line-height: 1;
+    font-weight: normal;
+}
+.wplogin_lm_sub-title, .message.register {
+    line-height: 1;
+	background: #e80062;
+    color: #fff;
+    text-align: center;
+    font-weight: 100;
+    font-size: 18px;
+    padding: 15px 0;
+    margin: 0;
+        margin-top: 0px;
+        margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    letter-spacing: 0;
+    width: 100%;
+    display: block;
+    margin-top: 15px !important;
+	border:none !important;
+}
+#wp-submit {
+    background: #e80062;
+    display: block;
+    border: 2px solid #e80062;
+    border-radius: 0;
+    text-shadow: none !important;
+    box-shadow: none;
+    text-transform: uppercase;
+    font-size: 21px;
+    height: auto;
+    padding: 10px 5px;
+}
+.wow-fb-login {
+    background: #666!important;
+    display: block!important;
+    border: 2px solid #666!important;
+    border-radius: 0!important;
+    text-shadow: none !important;
+    box-shadow: none!important;
+    text-transform: uppercase!important;
+    font-size: 21px!important;
+    height: auto!important;
+    padding: 10px 5px!important;
+}
+.wow-fb-login::before {
+    font-size: 18px !important;
+}
+.login #nav {
+    margin: 24px 0 0;
+    text-align: center;
+}
+body.login div#login p#backtoblog {
+    text-align: center;
 }

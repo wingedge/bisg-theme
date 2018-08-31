@@ -10,7 +10,7 @@
         <?php the_content();?>
       </div>
       <?php else:?>
-      <div class="entry-content container">
+      <div class="entry-content container test">
         <?php get_template_part('section/section','brands');?>
       </div>
       <?php endif;?>

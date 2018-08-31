@@ -1,6 +1,4 @@
-<div class="yp-title1 mintop20">My Profile</div>
-<div class="yp-title2 mintop20"></div>
-<div class="yp-line"></div>
+<div class="yp-title1">My Profile</div>
 <div class="clearfx"></div>
 
 <div class="yp-mp">
@@ -37,54 +35,16 @@
 			update_user_meta($current_user->ID, 'skin_tone', $_POST['skin_tone']);
 			update_user_meta($current_user->ID, 'skin_type', $_POST['skin_type']);
 			update_user_meta($current_user->ID, 'skin_concerns', $_POST['skin_concerns']);
+			update_user_meta($current_user->ID, 'hair_concern', $_POST['hair_concern']);
+			update_user_meta($current_user->ID, 'body_concerns', $_POST['body_concerns']);
+			update_user_meta($current_user->ID, 'aesthethic_concerns', $_POST['aesthethic_concerns']);
+			update_user_meta($current_user->ID, 'makeup_essentials', $_POST['makeup_essentials']);
+			update_user_meta($current_user->ID, 'skincare_essentials', $_POST['skincare_essentials']);
 			update_user_meta($current_user->ID, 'interests', $_POST['interests']);
 
 			update_user_meta($current_user->ID, 'top_three_products', $_POST['top_three_products']);
-			update_user_meta($current_user->ID, 'top_three_makeup', $_POST['top_three_makeup']);
-			update_user_meta($current_user->ID, 'top_three_skincare', $_POST['top_three_skincare']);
-			update_user_meta($current_user->ID, 'what_skincare', $_POST['what_skincare']);
-			update_user_meta($current_user->ID, 'what_treatment', $_POST['what_treatment']);
-			update_user_meta($current_user->ID, 'disliked_products', $_POST['disliked_products']);
-
-			$prev_ttf = get_user_meta( $current_user->ID, 'join_trial_team', true );
-			// check if trial team is not set, and is set now then send email
-
-			if( empty($prev_ttf) && isset($_POST['join_trial_team']) ) {
-				// send email to notify
-				$trial_message  = 'Form Information Details: <br/>';
-				$trial_message .= 'Name: '.$me->first_name.' <br/>';
-				$trial_message .= 'Email: '.$user->email.' <br/>';
-				$trial_message .= 'Birthdate:  '. get_user_meta( $current_user->ID, 'birthday', true ) .' <br/>';
-				$trial_message .= 'Phone number: '. get_user_meta( $current_user->ID, 'phone', true ) .'  <br/>';
-				$trial_message .= 'Address line1: '. get_user_meta( $current_user->ID, 'address', true ) .'  <br/>';				
-				$trial_message .= 'City: '. get_user_meta( $current_user->ID, 'city', true ) .'  <br/>';				
-				$trial_message .= 'Country: '. get_user_meta( $current_user->ID, 'country', true ) .'  <br/><br/><br/>';
-
-				$ttm_skintype=get_term(get_user_meta( $current_user->ID, 'skin_type', true ));
-				$ttm_interest=get_term(get_user_meta( $current_user->ID, 'interests', true ));
-				$ttm_skinconcern=get_term(get_user_meta( $current_user->ID, 'skin_concerns', true ));
-
-				$trial_message .= 'Skin Type: '. $ttm_skintype->name .'  <br/>';
-				$trial_message .= 'Skin Tone: '. get_user_meta( $current_user->ID, 'skin_tone', true ) .'  <br/>';
-				$trial_message .= 'Skin Concerns: '. $ttm_skinconcern->name .'  <br/>';
-				$trial_message .= 'Interests: '. $ttm_interest->name .'  <br/><br/>';
-
-				$trial_message .= 'Top Three Products: '. get_user_meta( $current_user->ID, 'top_three_products', true ) .'  <br/>';
-				$trial_message .= 'Top Three Makeup: '. get_user_meta( $current_user->ID, 'top_three_makeup', true ) .' <br/>';
-				$trial_message .= 'Skincare Products: '. get_user_meta( $current_user->ID, 'top_three_skincare', true ) .'  <br/>';
-				$trial_message .= 'Skincare Treatments in the past 4 weeks: '. get_user_meta( $current_user->ID, 'what_treatment', true ) .'  <br/>';
-				$trial_message .= 'Disliked Products: '. get_user_meta( $current_user->ID, 'disliked_products', true ) .'  <br/><br/>';
-
-				//echo $trial_message;
-				wp_mail( 'Seangerard2013@gmail.com, georgio.amista@gmail.com, top.garperio@gmail.com', 'Trial Form details submitted by '.$me->first_name.' '.$user->email, $trial_message);
-
-			}
-
-
-
-			update_user_meta($current_user->ID, 'join_trial_team', $_POST['join_trial_team']);
-			
-
+			update_user_meta($current_user->ID, 'top_three_services', $_POST['top_three_services']);
+						
 
 			if ( is_wp_error( $current_user->ID ) ) {
 			//	echo '<p>There was a problem updating your profile</p>';
@@ -134,7 +94,7 @@
 				<div class="row form-row">
 					<div class="form-group">
 						<label>Birthday :</label> 
-						<input type="text" name="birthday" placeholder="YYYY-MM-DD" class="form-control" value="<?php echo get_user_meta( $current_user->ID, 'birthday', true ); ?>" />
+						<input type="text" name="birthday" id="datepicker" placeholder="YYYY-MM-DD" class="form-control" value="<?php echo get_user_meta( $current_user->ID, 'birthday', true ); ?>" />
 					</div>
 				</div>
 
@@ -171,14 +131,13 @@
 
 			<div class="col-md-12">
 				<div class="row form-row">
-					<div class="yp-title1 mintop20">Beauty Profile</div>
-					<div class="yp-title2 mintop20"></div>
-					<div class="yp-line"></div>
+					<div class="cpdtop"></div>
+					<div class="yp-title1">Beauty Profile</div>
 					<div class="clearfx"></div>
 				</div>				
 			</div>
 
-			<div class="col-md-7">			
+			<div class="col-md-12">			
 
 				<div class="row form-row">
 					<div class="form-group">
@@ -207,7 +166,8 @@
 						<?php 
 							$term_taxonomy = 'attribute_category';
 							$term = get_term_by('slug', 'skin-type', 'attribute_category');
-							$term_children = get_term_children( $term->term_id, $term_taxonomy );				
+							$term_children = get_term_children( $term->term_id, $term_taxonomy );	
+							$skin_type = get_user_meta( $current_user->ID, 'skin_type', true );
 						?>
 						<?php foreach($term_children as $term_child):?>
 							<?php $skintype=get_term($term_child); ?>
@@ -233,6 +193,124 @@
 							<div class="col-sm-4">							
 							<input type="checkbox" name="skin_concerns[]" value="<?php echo $term_child;?>" <?php echo (in_array($term_child, $skin_concerns ))?'checked="checked"':'';?>/>							
 							<?php echo $skintype->name;?>
+							</div>						
+
+						<?php endforeach; ?>
+						</div>
+						
+					</div>
+				</div>
+
+				<div class="row form-row">
+					<div class="form-group">
+						<label>Hair Concerns (if any)</label>
+						<div class="row col-md-12 multi-checkbox">
+						<?php 
+							$term_taxonomy = 'attribute_category';
+							$term = get_term_by('slug', 'hair-concern', 'attribute_category');
+							$term_children = get_term_children( $term->term_id, $term_taxonomy );
+							$hair_concern =  get_user_meta( $current_user->ID, 'hair_concern', true );				
+						?>
+						<?php foreach($term_children as $term_child):?>
+							<?php $result=get_term($term_child); ?>
+							
+							<div class="col-sm-4">							
+							<input type="checkbox" name="hair_concern[]" value="<?php echo $term_child;?>" <?php echo (in_array($term_child, $hair_concern ))?'checked="checked"':'';?>/>							
+							<?php echo $result->name;?>
+							</div>
+
+						<?php endforeach; ?>
+						</div>				
+					</div>
+				</div>
+
+				<div class="row form-row">
+					<div class="form-group">
+						<label>Body Concerns (if any)</label>
+						<div class="row col-md-12 multi-checkbox">
+						<?php 
+							$term_taxonomy = 'attribute_category';
+							$term = get_term_by('slug', 'body-concerns', 'attribute_category');
+							$term_children = get_term_children( $term->term_id, $term_taxonomy );
+							$body_concerns =  get_user_meta( $current_user->ID, 'body_concerns', true );				
+						?>
+						<?php foreach($term_children as $term_child):?>
+							<?php $result=get_term($term_child); ?>
+							
+							<div class="col-sm-4">							
+							<input type="checkbox" name="body_concerns[]" value="<?php echo $term_child;?>" <?php echo (in_array($term_child, $body_concerns ))?'checked="checked"':'';?>/>							
+							<?php echo $result->name;?>
+							</div>
+
+						<?php endforeach; ?>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row form-row">
+					<div class="form-group">
+						<label>Other Aesthetics Interests (if any)</label>
+						<div class="row col-md-12 multi-checkbox">
+						<?php 
+							$term_taxonomy = 'attribute_category';
+							$term = get_term_by('slug', 'other-aesthetics-interests', 'attribute_category');
+							$term_children = get_term_children( $term->term_id, $term_taxonomy );
+							$aesthethic_concerns =  get_user_meta( $current_user->ID, 'aesthethic_concerns', true );				
+						?>
+						<?php foreach($term_children as $term_child):?>
+							<?php $result=get_term($term_child); ?>
+							
+							<div class="col-sm-4">							
+							<input type="checkbox" name="aesthethic_concerns[]" value="<?php echo $term_child;?>" <?php echo (in_array($term_child, $aesthethic_concerns ))?'checked="checked"':'';?>/>							
+							<?php echo $result->name;?>
+							</div>
+
+						<?php endforeach; ?>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row form-row">
+					<div class="form-group">
+						<label>My Makeup Essentials</label>
+						<div class="row col-md-12 multi-checkbox">
+						<?php 
+							$term_taxonomy = 'attribute_category';
+							$term = get_term_by('slug', 'makeup-essentials', 'attribute_category');
+							$term_children = get_term_children( $term->term_id, $term_taxonomy );
+							$makeup_essentials =  get_user_meta( $current_user->ID, 'makeup_essentials', true );				
+						?>
+						<?php foreach($term_children as $term_child):?>
+							<?php $result=get_term($term_child); ?>
+							
+							<div class="col-sm-4">							
+							<input type="checkbox" name="makeup_essentials[]" value="<?php echo $term_child;?>" <?php echo (in_array($term_child, $makeup_essentials ))?'checked="checked"':'';?>/>							
+							<?php echo $result->name;?>
+							</div>
+
+						<?php endforeach; ?>
+						</div>						
+					</div>
+				</div>
+
+				<div class="row form-row">
+					<div class="form-group">
+						<label>My Skincare Essentials</label>
+						<div class="row col-md-12 multi-checkbox">
+						<?php 
+							$term_taxonomy = 'attribute_category';
+							$term = get_term_by('slug', 'skincare-essential', 'attribute_category');
+							$term_children = get_term_children( $term->term_id, $term_taxonomy );
+							$skincare_essentials =  get_user_meta( $current_user->ID, 'skincare_essentials', true );				
+						?>
+						<?php foreach($term_children as $term_child):?>
+							<?php $result=get_term($term_child); ?>
+							
+							<div class="col-sm-4">							
+							<input type="checkbox" name="skincare_essentials[]" value="<?php echo $term_child;?>" <?php echo (in_array($term_child, $skincare_essentials ))?'checked="checked"':'';?>/>							
+							<?php echo $result->name;?>
 							</div>
 
 						<?php endforeach; ?>
@@ -251,10 +329,11 @@
 							$interests =  get_user_meta( $current_user->ID, 'interests', true );
 						?>
 						<?php foreach($terms as $term):?>
-							<?php if($term->parent == "0"):?>
-							<div class="col-sm-4">							
+							<?php $allowedInterests = array('hair','makeup','skincare','body','spa','beauty-salon','hair-salon','aesthetics','wellness','fitness');?>
+							<?php if($term->parent == "0" && in_array($term->slug, $allowedInterests)):?>
+							<div class="col-sm-4">														
 							<input type="checkbox" name="interests[]" value="<?php echo $term->term_id;?>" <?php echo (in_array($term->term_id, $interests ))?'checked="checked"':'';?>/>							
-							<?php echo $term->name;?>															
+							<?php echo $term->name;?>									
 							</div>
 							<?php endif;?>
 						<?php endforeach; ?>
@@ -265,62 +344,22 @@
 
 				<div class="row form-row">
 					<div class="form-group">
-						<label>Top 3 Beauty Products I am obsessed with</label>
-						<textarea class="form-control" rows="5" style="width:90%;" name="top_three_products"><?php echo get_user_meta( $current_user->ID, 'top_three_products', true ); ?></textarea>
+						<label>Top 3 Beauty Products I am obsessed with (optional)</label>
+						<textarea class="form-control" rows="5" style="width:90%;" name="top_three_products"><?php echo $top3products = get_user_meta( $current_user->ID, 'top_three_products', true ); ?></textarea>
+					</div>
+				</div>
+				<div class="row form-row">
+					<div class="form-group">
+						<label>Top 3 Beauty Services I am obsessed with (optional)</label>
+						<textarea class="form-control" rows="5" style="width:90%;" name="top_three_services"><?php echo $top3services = get_user_meta( $current_user->ID, 'top_three_services', true ); ?></textarea>
 					</div>
 				</div>
 
 			</div>
-			<div class="col-md-5">
+			
+			
 
-				<div class="row form-row">
-					<div class="form-group">
-						<label>What are your top 3 favourite makeup products?</label>
-						<textarea class="form-control" rows="5" style="width:90%;" name="top_three_makeup"><?php echo get_user_meta( $current_user->ID, 'top_three_makeup', true ); ?></textarea>
-					</div>
-				</div>
-
-				<div class="row form-row">
-					<div class="form-group">
-						<label>What are your top 3 favourite skincare products?</label>
-						<textarea class="form-control" rows="5" style="width:90%;" name="top_three_skincare"><?php echo get_user_meta( $current_user->ID, 'top_three_skincare', true ); ?></textarea>
-					</div>
-				</div>
-
-						
-
-				<div class="row form-row">
-					<div class="form-group">
-						<label>What skincare products are you using now?</label>
-						<textarea class="form-control" rows="5" style="width:90%;" name="what_skincare"><?php echo get_user_meta( $current_user->ID, 'what_skincare', true ); ?></textarea>
-					</div>
-				</div>
-
-				<div class="row form-row">
-					<div class="form-group">
-						<label>What skincare treatments have you had in the past 4 weeks (peels, facials, injectibles, etc)</label>
-						<textarea class="form-control" rows="5" style="width:90%;" name="what_treatment"><?php echo get_user_meta( $current_user->ID, 'what_treatment', true ); ?></textarea>
-					</div>
-				</div>
-
-				<div class="row form-row">
-					<div class="form-group">
-						<label>Skin care products you have disliked before, and why?</label>
-						<textarea class="form-control" rows="5" style="width:90%;" name="disliked_products"><?php echo get_user_meta( $current_user->ID, 'disliked_products', true ); ?></textarea>
-					</div>
-				</div>				
-
-			</div>
-
-			<div class="col-md-12">
-				<?php  $ttf = get_user_meta( $current_user->ID, 'join_trial_team', true );  ?>
-				<div class="trial-team-form row form-row">					
-					<div class="form-group">
-						<label>I would like to join the Trial Team</label>
-						<input type="checkbox" name="join_trial_team" value="true" <?php if($ttf){echo 'checked="checked"';} ?>/>						
-					</div>
-				</div>				
-			</div>
+			
 
 		</div><!--row-->
 		<div class="clearfx"></div>		
@@ -336,5 +375,45 @@
 
 
 <div class="cpdtop"></div>
-
 <div class="cpdbotpad"></div>
+
+
+<div class="yp-title1">Trial Team Form</div>
+<div class="clearfx"></div>
+<div class="yp-mp">
+	<div class="row">
+	<?php // TRIAL TEAM FORM CHECK ?>
+	<?php  $joined_trial_team = get_user_meta($current_user->ID,'joined_trial_team',true); ?>	
+	<?php if( $joined_trial_team ):?>
+		<div class="col-xs-12">
+		<p>We have received your Trial Team application form. We will get in touch with you as soon as possible once a new applicable trial campaign launches</p>
+		</div>
+	<?php else:?>
+
+		<?php if( 
+					empty($skin_type) || 
+					empty($skin_concerns) || 
+					empty($hair_concern) ||  
+					empty($body_concerns) ||  
+					empty($aesthethic_concerns) ||  
+					empty($makeup_essentials) ||  
+					empty($skincare_essentials) ||  
+					empty($interests) ||  
+					empty($top3products) ||  
+					empty($top3services)
+				):
+		?>
+			<div class="col-xs-12">			
+				please complete profile to join the trial team form			
+			</div>
+		<?php else:?>
+			<div class="col-xs-12">			
+				<?php echo do_shortcode('[contact-form-7 id="4787" title="Trial Team"]');?>
+			</div>
+		<?php endif;?>
+
+	<?php endif;?>
+
+
+	</div>
+</div>

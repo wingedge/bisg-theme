@@ -381,6 +381,14 @@ display:none;
     line-height: 130%;
   }*/
 
+  .nmobile{
+    display: none;
+  }
+
+  .header-wrap{
+    height: auto !important;
+  }
+
   .footer-title strong{
     font-size: 85%;
   }
@@ -397,6 +405,10 @@ display:none;
 
   .mbc-off{
     display: none !important;
+  }
+
+  .mbc-off2 {
+	display: none !important;
   }
 
   /**above header**/
@@ -477,6 +489,11 @@ display:none;
     margin-top: 10px;
     margin-bottom: 10px;
   } 
+
+  .yp-p-thumb img {
+      width: 70% !important;
+  }
+
 
   /***sidebar***/
   
@@ -601,13 +618,32 @@ display:none;
 
   /***my account***/
 
+  .mintop20{
+  	margin-top: 0px;
+  }
+
   .yp {
 		    margin-bottom: 20px;
 		}
-		
+
+  #profile-points .yp-mp{
+  		padding: 0;
+  }
+
+  .yp-p button {
+    font-size: 80% !important;
+    width: 150px !important;
+    padding: 8px 20px !important;
+  }
+
 
 		.yp-line {
 		    position: absolute;
+		}
+
+		.yp-line1 {
+		    position: absolute;
+		    margin-top: 20px;
 		}
 
 		.yp-reco{
@@ -617,7 +653,7 @@ display:none;
 
 
 		.yp-estab {
-		    width: 56%;
+		    width: 100%;
 		    margin: 0 auto;
 		}
 
@@ -633,12 +669,12 @@ display:none;
 		}
 
 		.yp-ld{
-			background: url('images/yp-md-box.jpg') 100% 100% no-repeat !important;
-		    width: 100%;
-		    font-size: 100%;
-		    padding-top: 26px;
-    		font-size: 90%;
-    		margin: 20px 0 20px 0;
+			background: #fc1d78;
+      width: 100%;
+      padding: 15px;
+      font-size: 90%;
+      margin: 20px 0 20px 0;
+      height: auto;
 		}
 
 
@@ -646,12 +682,172 @@ display:none;
 		    width: 180px;
 		}
 
+		.yp-r-details{
+		 width: 75%
+		}
+
 		.ylr {
 		    background: #fc1d78;
 		    min-height: 579px;
-		    width: 300px;
-		    margin: 0 auto;
+		    width: 250px;
+        margin: 0 auto 50px auto;
 		}
+
+
+
+    .yp-title1 {
+      background: #fac9cc;
+      float: none;
+      text-align: center;
+      font-size: 78%;
+      padding: 12px 10px 0 10px;
+    }
+
+    .yp-ld {
+        background: #fac9cc;
+    }
+
+    .newylr-white {
+        margin-bottom: 30px;
+    }
+
+    .edav {
+      margin: 0 !important;
+      top: 10px;
+      right: 20px;
+  }
+
+   .newylr-container p {
+      font-size: 75%;
+      height: auto; 
+      overflow: visible; 
+      text-overflow: inherit; 
+  }
+
+
+
+
+/***pw reset****/
+		.pw-container{
+			width: 95%;
+		}
+
+		.pw-container h1{
+			font-size:270%;
+		}
+
+		.pw-container h4{
+			font-size:150%;
+		}
+
+		.pw-container h3{
+			font-size:150%;
+		}
+
+		.pw-container p{
+			font-size:90%;
+		}
+
+		.pw-button{
+			width: 100%;
+			font-size:100%;
+		}
+
+    .cwmappadd{
+      padding: 0 15px;
+    }
+
+    .modal-login-btn-signin, .modal-login-btn-register, .wplogin_lm_sub-title, body.login div#login form#loginform p.submit input#wp-submit, #wp-submit{
+      font-size: 100%;
+    }
+
+    .wow-fb-login{
+      font-size: 100% !important;
+    }
+
+
+  /***New Home Page Responsive ****/
+
+  .NFCattitle{         
+      font-size: 50%;
+    }
+
+    .NFCatdesc{
+      font-size: 50%;
+    }
+
+    .carousel-inner {
+      height: auto;
+  }
+
+  .carousel-caption {   
+    top: 0;
+    left: 5px !important;
+    font-size: 100%;
+  }
+
+  .carousel-caption h5{
+    font-size: 50%;
+  }
+
+  .carousel-caption h1 {   
+    font-size: 50%;
+    overflow: visible;
+    height: auto;
+  }
+
+  .carousel-caption p{
+    font-size: 45%;
+    height: auto;
+  }
+
+  .Mpad{
+    margin-bottom: 20px;
+  }
+
+  .NFMainCatImg img {
+    width: 100%;  
+  }
+
+  .NFMainCatImg-medium img {
+    width: 100%;  
+  }
+
+  .NFMainCatImg-box img{
+    width: 100%;
+    height: 200px;
+  }  
+
+  .NFborderred {
+    width: 90%;
+    margin: 10px auto;
+    height: auto;
+    max-height: auto;
+    overflow: visible;
+  }
+
+  .NFMCHK {   
+    padding: 10px;
+  }
+
+  .NFnopadding-LR{
+    padding: 0 15px !important;
+  }
+
+  .NFMainCatTR-title{
+    font-size: 100%;
+    padding-top: 10px;
+  }
+
+  .NFMainCatTR-desc {
+    font-size: 100%;
+    padding-top: 10px;
+  }
+
+
+  .single-wrap .content-image-banner img{
+    height: 300px;
+  }
 
 }
 

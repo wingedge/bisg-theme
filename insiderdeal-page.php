@@ -46,7 +46,8 @@ get_header(); ?>
             <div class="entry-content">
               <?php the_excerpt(); ?>
             </div>
-            <div class="readmore" style="text-align:left;"><a href="<?php the_permalink();?>"><span>Read More and Win</span></a></div>
+            <!-- <div class="readmore" style="text-align:left;"><a href=""><span>Read More and Win</span></a></div> -->
+            <div class="readmore readmore-cat"><a href="<?php the_permalink();?>"><span>Read More and Win</span></a></div>
           </div>
         </div>
 

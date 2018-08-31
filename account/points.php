@@ -1,9 +1,9 @@
+<div class="cpdtop"></div>
 <div class="yp-title1 mintop20">Points History</div>
-<div class="yp-title2 mintop20"></div>
-<div class="yp-line"></div>
 <div class="clearfx"></div>
 
 <div class="yp-mp">
+<div class="cpdbotpad"></div>
 
 <?php $points = $BIReview->get_user_points($user->id);?>
 <table class="table table-bordered table-condensed">

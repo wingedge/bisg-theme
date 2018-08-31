@@ -157,8 +157,11 @@ get_header(); ?>
 				<h3 class="cat-titles"><span>Latest</span></h3>
           		<?php get_sidebar('category');?>
 
-          		<h3 class="cat-titles">Couldn't find what your looking for? Request to add the product/brand here. </h3>
+          		<h3 class="cat-titles">Couldn't find what your looking for? Request to add the product/brand here. </h3><br>
 				<?php echo do_shortcode('[contact-form-7 id="25660" title="Request Products"]');?>
+
+				<br>
+				<a href="https://beautyinsider.sg/award-winners/"><img src="https://beautyinsider.sg/wp-content/uploads/2014/09/Award-winners.jpeg"></a>
 
 			</div>
 		</div>

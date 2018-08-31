@@ -20,6 +20,26 @@
 
 .less-hidden{display:none;}
 
+.msg1 #no-article, .msg2 #no-article{
+  display: none;
+}
+
+/** collapse readmore **/
+#summary {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+#summary p.collapse:not(.show) {
+    height: 62px !important;
+    overflow: hidden;
+  
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;  
+}
+
+
 </style>
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="row">
@@ -35,10 +55,26 @@
     </div>
     <div class="col-md-8 brand_content">
       <div class="brand_tag_list"><?php echo get_the_tag_list('<p>Tags: ',', ','</p>'); ?></div>
-      <div class="brand_content_wrap more-less">        
-          <?php the_field('brand_content');?>               
+      
+      <div class="brand_content_wrap more-less" id="summary">     
+
+        <?php if (strlen(get_field('brand_content')) > 250):?>
+          <div class="short-content">
+            <?php 
+              echo wp_trim_words( get_field('brand_content'), 50, ' <p><a href="#" class="load-more">read more</a></p>' );
+            ?>
+          </div>
+          <div class="full-content" style="display:none;">
+            <?php echo  get_field('brand_content'); ?>
+            <p><a href="#" class="load-less">read less</a></p>
+          </div>
+        <?php else:?>
+          <div class="full-content">
+            <?php echo  get_field('brand_content'); ?>
+          </div>
+        <?php endif;?>
       </div>
-      <a href="#" class="show-more">More</a>
+      
       <?php //the_content();?>
     </div>
   </div>
@@ -50,8 +86,17 @@
           <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
           <!--<li><a href="#panel-maps" data-toggle="tab">Maps</a></li>-->
           <li><a href="#panel-products" data-toggle="tab">Products</a></li>
+          
+          <?php if (get_field('brand_video')):?>
           <li><a href="#panel-videos" data-toggle="tab">Videos</a></li>
-          <li><a href="#panel-reviews" data-toggle="tab">Reviews</a></li>
+          <?php endif;?>
+
+          <!-- <li><a href="#panel-reviews" data-toggle="tab">Reviews</a></li> -->
+
+          <?php if( get_field('where_to_buy') ): ?>
+            <li><a href="#panel-wheretobuy" data-toggle="tab">Where to buy</a></li>
+          <?php endif;?>
+          
         </ul>
         <div class="tab-content">
           <div class="tab-pane active" id="panel-contact">
@@ -64,14 +109,41 @@
             <div><?php echo html_entity_decode( get_field('brand_map'));?></div>
           </div>
           -->
-          <div class="tab-pane" id="panel-products">            
+          <div class="tab-pane modifiedimg" id="panel-products">            
             <div>
+
+            <!-- award product -->
+            <center>              
+
+            <div class="msg1">
             <?php 
+              //$current_page = 'acuvue';
               $current_page = get_post_field( 'post_name', get_post() );
               //echo $current_page;
               $args = array(
+                'post_type' => 'beauty_winners',
+                'posts_per_page' => -1,
+                //'column_width'    => 'col-md-3',
+                'file_template'   => 'section/category-product.php',        
+                'category_name' => NULL,
+                'tax_query'     => array(
+                                    array(
+                                      'taxonomy' => 'winners_cat',
+                                      'field' => 'slug',
+                                      'terms' => $current_page,
+                                  )),
+              );
+              bi_display_products($args);
+            ?>
+            </div>
+           
+            <div class="msg2">
+            <?php 
+              
+              //echo $current_page;
+              $args = array(
                 'posts_per_page' => 4,
-                'column_width'    => 'col-md-3',
+                //'column_width'    => 'col-md-3',
                 'file_template'   => 'section/category-product.php',        
                 'category_name' => NULL,
                 'tax_query'     => array(
@@ -83,15 +155,31 @@
               );
               bi_display_products($args);
             ?>
+            </div>
+            </center>
+
+
             </div>            
           </div>
+          <?php if (get_field('brand_video')):?>
           <div class="tab-pane" id="panel-videos">
-            <div><?php echo html_entity_decode( get_field('brand_video'));?></div>
+            <div><?php the_field('brand_video');?></div>
           </div>
-          <div class="tab-pane" id="panel-reviews">
+          <?php endif;?>
+          <!-- <div class="tab-pane" id="panel-reviews">
             <h2>Reviews</h2>                  
             <?php get_template_part('section/review','form');?>        
-          </div>
+          </div> -->
+
+          <?php if( get_field('where_to_buy') ): ?>
+            <div class="tab-pane" id="panel-wheretobuy">
+              <h2>Where to buy</h2>                  
+              <div><?php the_field('where_to_buy');?></div>    
+            </div>
+          <?php endif; ?>
+
+          
+
         </div>
       </div>
     </div>

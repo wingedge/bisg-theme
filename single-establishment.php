@@ -5,6 +5,19 @@
   <div class="row">
     <div id="main" class="main-column establishment-column col-md-9">
       <?php while ( have_posts() ) : the_post(); ?>
+
+        <?php 
+          $postCategories = wp_get_post_categories(get_the_ID()); // get all categories under this post
+          foreach($postCategories as $postCategory){
+            $categoryObject = get_category($postCategory);
+            $thisCategories[] = $categoryObject->slug;
+          }
+        ?>
+      
+      <?php  if( has_term('Featured', 'brand-category') ):?>
+        <?php the_content();?>
+      <?php else:?>
+
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="row">
           <div class="col-md-4">
@@ -17,7 +30,7 @@
                   <?php the_field('establishment_address');?>
                 </li>
                 <li class="list-group-item"><i class="fa fa-phone"></i>
-                  <?php the_field('establishment_phone');?>
+                  <a href="tel:<?php the_field('establishment_phone');?>"><?php the_field('establishment_phone');?></a>
                 </li>
               </ul>
             </div>
@@ -68,13 +81,7 @@
             </div>
           </div>
         </div>
-        <?php 
-          $postCategories = wp_get_post_categories(get_the_ID()); // get all categories under this post
-          foreach($postCategories as $postCategory){
-            $categoryObject = get_category($postCategory);
-            $thisCategories[] = $categoryObject->slug;
-          }
-        ?>
+        
         <div class="row">
           <div class="col-md-12">
             <div class="tabbable  bi-tabs" id="tabs-single-product">
@@ -86,9 +93,9 @@
                 <?php else:?>
                 <?php if( get_field('locations') ): ?><li class="active"><a href="#panel-locations" data-toggle="tab">Location</a></li><?php endif;?>
                 <?php endif; ?>
-                <li><a href="#panel-map" data-toggle="tab">Map</a></li>
+                <!--<li><a href="#panel-map" data-toggle="tab">Map</a></li>-->
                 <li><a href="#panel-services" data-toggle="tab">Services</a></li>
-                <li class=""><a href="#panel-booking" data-toggle="tab">Book a Visit</a></li>
+                <li class="cbookEstablisment"><a href="#panel-booking" data-toggle="tab">Book a Visit</a></li>
                 
 
                 
@@ -137,7 +144,21 @@
             </div>
           </div>
         </div>
+
+        <div class="row cwmappadd">
+          <h2>Map</h2>
+          <?php if( get_field('establishment_map') ): ?>          
+          <?php $map = get_field('establishment_map'); ?>
+          <div class="acf-map">
+            <div class="marker" data-lat="<?php echo $map['lat']; ?>" data-lng="<?php echo $map['lng']; ?>"></div>
+          </div>                  
+          <?php endif; ?>          
+        </div>
+
       </div>
+
+      <?php endif;?>
+
       <?php endwhile; // End the loop. Whew. ?>
       <?php get_template_part('section/review','related'); ?>
     </div>

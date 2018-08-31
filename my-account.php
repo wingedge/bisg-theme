@@ -64,32 +64,43 @@ get_header(); ?>
 
 
 					    <div class="col-sm-3">
-					    	<div class="yp">					    		
-						    	<div class="yp-title">
-						    		Your profile
-						    	</div>
 
-						    	<div class="yp-pic">
-						    		<!--<img src="<?php echo get_avatar_url( $current_user->ID ); ?>" />-->
-						    		<div class="edav"><a data-toggle="tab" href="#profile-avatar">Edit Avatar</a></div>
-						    		<?php echo get_avatar($current_user->ID); ?>						    		
-						    	</div>
+					    	<div class="newylr-white">
+						    	<div class="newylr-title">YOUR PROFILE</div>
 
-						    	<div class="yp-body profiletabs">
-						    		<h1><?php echo ucwords($current_user->first_name);?></h1>
+						    	<div class="newylr-container">
 
-						    		<h2><span><?php echo $user->total_points;?></span> points</h2> 
-						    		<h4>member level: <?php echo $user->level;?></h4>
+							    	<div class="row">
+										<div class="col-xs-12 newylr-yp-pic">	
+												<div class="edav"><a data-toggle="tab" href="#profile-avatar">Edit Avatar</a></div>	
+							    				<?php echo get_wp_user_avatar($current_user->ID, 'medium'); ?>
+							    		</div>
+							    	</div>
 
-						    		
-						    		<h3 class="active"><a data-toggle="tab" href="#profile-dashboard">My Account</a></strong></h3>
-						    		<h3><a data-toggle="tab" href="#profile-update">My Profile</a></h3>
-						    		<h3><a data-toggle="tab" href="#profile-points">My Points History</a></h3>
-						    		<h3><a data-toggle="tab" href="#profile-redemptions">My Redemptions</a></h3>
-						    		<h3><a href="<?php echo wp_logout_url( home_url() ); ?>">Sign Out</a></h3>
+							    	<div class="newylr-container-details profiletabs">
+							    		<h1><?php echo ucwords($current_user->first_name);?></h1>
 
-						    	</div>
+							    		<h2><span><?php echo $user->total_points;?></span> points</h2> 
+						    			<h4>member level: <?php echo $user->level;?></h4>
+
+										<ul class="nav nav-tabs">
+											<li><a data-toggle="tab" href="#profile-points">Points</a></li>
+											<li class="active"><a data-toggle="tab" href="#profile-dashboard">My Account</a></strong></li>
+											<li><a data-toggle="tab" href="#profile-update">My Profile</a></li>											
+											<li><a data-toggle="tab" href="#profile-redemptions">My Redemptions</a></li>
+											<?php  if ( in_array( 'administrator', (array) $current_user->roles ) || in_array( 'editor', (array) $current_user->roles ) ) :?>
+											<li><a data-toggle="tab" href="#review-helpers">Review Helper</a></li>
+											<?php endif;?>
+
+											<li><a href="<?php echo wp_logout_url( home_url() ); ?>">Sign Out</a></li>
+										</ul>
+
+							    	</div>
+
+							    </div>
+
 						    </div>
+					    	
 					    </div>
 
 
@@ -116,6 +127,14 @@ get_header(); ?>
 
 									<div id="profile-points" class="tab-pane fade">
 										<?php include(locate_template('account/points.php'));?>
+									</div>
+
+									<div id="current-user-reviews" class="tab-pane fade">
+										<?php include(locate_template('account/reviews.php'));?>
+									</div>
+
+									<div id="review-helpers" class="tab-pane fade">
+										<?php include(locate_template('account/helper.php'));?>
 									</div>
 
 

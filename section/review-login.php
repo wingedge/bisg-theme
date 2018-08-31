@@ -51,7 +51,7 @@ $current_url = home_url(add_query_arg(array(),$wp->request));
         ?>
 
 		<?php wp_login_form($fargs); ?>
-	</div>
-
-	<?php echo do_shortcode('[Wow-Facebook-Login]');?>
+		<div class="clearfix"></div>
+		<?php echo do_shortcode('[Wow-Facebook-Login]');?>
+	</div>	
 </div>

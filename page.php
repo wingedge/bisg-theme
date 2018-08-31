@@ -2,6 +2,7 @@
 <?php get_template_part('section/breadcrumbs'); ?>
 
 <div class="main-content container sub-page">
+  
   <div class="row">
     <div id="main" class="main-column col-md-9 col-sm-8">
       <?php while ( have_posts() ) : the_post(); ?>

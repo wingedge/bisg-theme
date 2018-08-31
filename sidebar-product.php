@@ -27,4 +27,9 @@
     </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-md-12 col-sm-12 s-widget"> 
+    <a href="<?php echo site_url('award-winners');?>"> <img src="<?php bloginfo( 'template_url' ); ?>/img/Award-winners-1.jpeg"/> </a> 
+  </div>
+  </div>
 <?php endif; ?>

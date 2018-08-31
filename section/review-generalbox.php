@@ -1,5 +1,5 @@
 <div class="<?php echo $args['column-size'];?>">					
-	<div class="panel review-panel">
+	<div class="panel review-panel" data-review-id="<?php echo $r->id;?>">
 		<div class="panel-heading">
 			<h3 class="review-title"><i class="fa fa-quote-left"></i> <?php echo stripslashes($r->title);?> <i class="fa fa-quote-right"></i></h3>
 			<?php echo get_avatar( $r->wpuserid, 32 ); ?>
@@ -27,7 +27,8 @@
 			</div>
 		</div>
 		<div class="panel-footer review-footer">			
-			reviewed by <?php  echo $r->user->first_name; ?> <?php  echo $r->user->last_name; ?> on <?php  echo date('F d, Y',strtotime($r->date_reviewed));?>														
+			<?php /* reviewed by <?php  echo $r->user->first_name; ?> <?php  echo $r->user->last_name; ?> */?>
+			reviewed on <?php  echo date('F d, Y',strtotime($r->date_reviewed));?>														
 		</div>
 	</div>
 	

@@ -44,7 +44,7 @@
               <?php echo do_shortcode('[contact-form-7 id="26444" title="Insider Deals Form"]'); ?>
             </div>
             <div class="instructions">
-              <p>By submitting an entry and giving out your details, you allow Beauty Insider Singapore and the related partner merchandiser to contact you directly via email or phone call for the latest beauty updates and for your appointment even though you may be in the Do-Not-Call registry. You are also agree to receive any promotion or daily newsletter and your information will never sold to anyone. You can unsubscribe easily from Beauty Insider Singapore by sending an email to enquiry@mapletreemedia.com. Read more <a href="<?php echo site_url('terms-conditions');?>">Terms and Conditions</a></p>
+              <p>By submitting an entry and giving out your details, you allow Beauty Insider Singapore and the related partner merchandiser to contact you directly via email or phone call for the latest beauty updates and for your appointment even though you may be in the Do-Not-Call registry. You are also agree to receive any promotion or daily newsletter and your information will never sold to anyone. You can unsubscribe easily from Beauty Insider Singapore by sending an email to <a href="mailto:hello@beautyinsider.sg">hello@beautyinsider.sg</a>. Read more <a href="<?php echo site_url('terms-conditions');?>">Terms and Conditions</a></p>
             </div>
             <script>                
                 $j = jQuery.noConflict();

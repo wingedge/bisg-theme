@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php language_attributes(); ?>"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="<?php language_attributes(); ?>" style="margin-top:0 !important;"> <!--<![endif]-->
 
 <head>
 <!-- Google Tag Manager -->
@@ -15,7 +15,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
 <?php wp_head(); ?>
 <style>
   html { margin-top:0 !important; }
@@ -45,9 +47,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
   <?php get_template_part('seo','scheme');?>
-
-
 </head>
 <body <?php body_class(); ?>>
 <!-- Google Tag Manager (noscript) -->
@@ -59,6 +61,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <?php get_template_part('section/nav','offcanvass');?>
 </div>
 */?>
+
+<?php
+if ( is_front_page() ) {
+  
+    if( is_user_logged_in() ) {
+      echo '<div style="padding-top:14px;" class="mbc"></div><div style="margin-top:10px;"></div>';      
+    }
+    else{
+      echo '<div style="margin-top:-23px;" class="mbc-off2"></div><div style="margin-top:-22px;" class="mbc"></div>';
+    }
+} 
+
+else {
+
+   if( is_user_logged_in() ) {
+      
+      if( is_page() ) {
+        
+              if( is_page('all-beauty-reviews') || is_page('my-account') || is_page('beauty-wellness-awards-2018-winner') ) {
+                echo '<div style="padding-top: 14px;" class="mbc"></div><div style="margin-top:32px;"></div>';
+              }
+
+              else{
+                echo '<div style="padding-top: 14px;" class="mbc"></div><div style="margin-top:10px;"></div>';
+              }
+      }
+
+      else{
+      
+        echo '<div style="padding-top: 14px;" class="mbc"></div><div style="margin-top:32px;"></div>';
+      
+      }
+    }
+
+    else{      
+        
+        if( is_page() ) {
+
+              if( is_page('insider-deals') || is_page('rewards-and-redemption') || is_page('about-us') || is_page('beauty-wellness-awards-2018-winner')) {
+                echo '<div style="padding-top: 14px;" class="mbc"></div><div style="margin-top:-1px;"></div>';
+              }
+
+              else{
+                echo '<div style="padding-top: 14px;" class="mbc"></div><div style="margin-top:-22px;"></div>';
+              }
+
+          
+        }
+
+        else{
+          echo '<div style="margin-top:-1px;" class="mbc-off2"></div><div style="padding-top:0px;" class="mbc"></div>';
+        }
+    }
+
+}?>
+
+
+
+
 <div class="cw-above-header mbc">Review and Reward Yourself</div>
 
 
@@ -66,7 +127,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="header-wrap">
 <div id="masthead" class="site-header" role="banner" data-spy="affix" data-offset-top="161">
 
-  <div class="container mbc-off">
+  <div class="container mbc-off2">
     <div class="row">
       <div id="site-logo" class="col-sm-6">
         <?php /* disable the canvass menu 
@@ -110,13 +171,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <?php endif;?>
 
             
-            <li><a href="<?php echo site_url('/all-reviews/');?>"><i class="fa fa-child"></i> Read Reviews</a></li>
+            <li><a href="<?php echo site_url('/write-a-review/all-beauty-reviews/');?>"><i class="fa fa-child"></i> Read Reviews</a></li>
             <li><a href="<?php echo site_url('/insider-deals/');?>"><i class="fa fa-gift"></i> Insider Deals</a></li>
+            <li><a href="<?php echo site_url('/rewards-and-redemption/');?>"><i class="fa fa-star"></i> Rewards and Redemption</a></li>
           </ul>
           <ul>
             <!--<li><a href="<?php echo site_url('/most-popular-videos/');?>"><i class="fa fa-video-camera"></i> Watch Videos</a></li>-->
             <li><a href="<?php echo site_url('/about-us/');?>"><i class="fa fa-heart"></i> About Us</a></li>
-            <li><a href="<?php echo site_url('/professionals/');?>"><i class="fa fa-globe"></i> Professional</a></li> 
+            <li><a href="http://professional.beautyinsider.sg/"><i class="fa fa-globe"></i> Professional</a></li> 
 
             <?php /* if( $BIReview->is_reviewer_login() ):?>            
             <li><a href="//review.beautyinsider.sg/review/logout?returnUrl=<?php echo site_url('my-account');?>"><i class="fa fa-sign-in"></i> Sign out</a></li>            
@@ -159,11 +221,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
           <?php if( is_user_logged_in() ):?>
           <div class="signinup">
-            <a href="<?php echo wp_logout_url( home_url() ); ?>" title="Logout"><i class="fa fa-sign-out fa-2x" style="padding:4px;"></i></a>
+            <a href="<?php echo site_url( 'my-account' ); ?>" title="My Account"><i class="fa fa-user fa-2x" style="padding:4px;"></i></a>
           </div>
           <?php else:?>
           <div class="signinup">
-            <a href="#" title="Login" data-toggle="modal" data-target="#biLoginModal"><i class="fa fa-user fa-2x" style="padding:4px;"></i></a>
+            <a href="#" title="Login" data-toggle="modal" data-target="#biLoginModal"><i class="fa fa-sign-in fa-2x" style="padding:4px;"></i></a>
           </div>
           <?php endif;?>
           
@@ -178,7 +240,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!---for mobile end-->
 
-<div id="main-nav" class="main-navigation clearfix mbc-off">
+<div id="main-nav" class="main-navigation clearfix mbc-off2">
             <div class="container">
               <div class="row">
                 <?php get_template_part('section/nav','main');?>
@@ -197,8 +259,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-4 socialicons"> <span>FOLLOW US ON :</span> 
         <a href="https://www.facebook.com/BeautyInsiderSG/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a> 
-        <a href="https://www.instagram.com/beautyinsidersg/" target="_blank"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a> 
-        <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> 
+        <a href="https://www.instagram.com/beautyinsidersg/" target="_blank"><i class="fa fa-instagram fa-lg" aria-hidden="true"></i></a> 
+        <a href="https://www.youtube.com/channel/UCivBkbF77mVPcpGfgz9dMxA" target="_blank"><i class="fa fa-youtube fa-lg" aria-hidden="true"></i></a> 
         </div>      
       
       <div id="main-search" class="col-md-10 col-sm-9 col-xs-8 search-box">
@@ -231,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   $c3 = get_user_meta( $current_user->ID, 'address', true );      
 ?>
   <?php if( empty($c1) || empty($c2) || empty($c3) ):?>
-  <div class="container user-profile-notification text-center">
+  <div class="user-profile-notification text-center">
     <h4>Complete your beauty <a href="<?php echo site_url('/my-account/#profile-update');?>">profile</a> to earn points</h4>
   </div>
   <?php endif;?>

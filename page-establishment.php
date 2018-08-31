@@ -155,7 +155,7 @@ get_header(); ?>
 				<h3 class="cat-titles"><span>Recent Posts</span></h3>
           		<?php get_sidebar('category');?>
 
-          		<h3 class="cat-titles">Couldn't find what your looking for? Request to add the establishment here. </h3>
+          		<h3 class="cat-titles">Couldn't find what your looking for? Request to add the establishment here. </h3> <br>
 				<?php echo do_shortcode('[contact-form-7 id="30550" title="Request Establishment"]');?>
 
 			</div>

@@ -1,6 +1,6 @@
 <!-- related products -->
 <div class="row">
-  <div class="category-related-containers">
+  <div id="more-review-products" class="category-related-containers">
       <div>
         <h3 class="cat-titles pink-dashed" style="text-align:left;"><span>You can check these out as well</span></h3>        
 
@@ -18,7 +18,7 @@
           $term_list = wp_list_pluck( $terms, 'slug' );
           $related_args = array(
             'post_type' => get_post_type(),
-            'posts_per_page' => 10,
+            'posts_per_page' => 8,
             'post_status' => 'publish',
             'post__not_in' => array( get_the_ID() ),
             'orderby' => 'rand',

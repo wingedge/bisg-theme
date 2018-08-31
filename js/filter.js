@@ -109,7 +109,7 @@ jQuery( document ).ready( function( $ ) {
     });
 
      
-    $('.applyfilters').on('click touchstart',function(){  
+    $('.applyfilters').on('click',function(){  
 
       searchTerm =  $('#byterm').val();
 
@@ -125,8 +125,8 @@ jQuery( document ).ready( function( $ ) {
 
       // remove the filter on mobile
 
-      $('.filters-box-overlay').removeClass('displayOn');      
-      $('#filters-box').removeClass('displayOn');
+  //    $('.filters-box-overlay').removeClass('displayOn');      
+  //    $('#filters-box').removeClass('displayOn');
       
 
     });
@@ -207,6 +207,11 @@ jQuery( document ).ready( function( $ ) {
         //console.log( textStatus );
         //console.log(data);
         $('#filter-results').html( data );
+
+        $('.filters-box-overlay').removeClass('displayOn');      
+        $('#filters-box').removeClass('displayOn');
+        window.scrollTo(0, 0);
+
         //console.log( XMLHttpRequest );
       },
       error: function( MLHttpRequest, textStatus, errorThrown ) {
@@ -214,6 +219,10 @@ jQuery( document ).ready( function( $ ) {
         //console.log( textStatus );
         //console.log( errorThrown );
         $('#filter-results').html( 'No Results found' );
+
+        $('.filters-box-overlay').removeClass('displayOn');      
+        $('#filters-box').removeClass('displayOn');
+        window.scrollTo(0, 0);
         //$('#tagged-posts').fadeIn(0.001);
       }
     })

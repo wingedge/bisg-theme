@@ -8,9 +8,9 @@
 <div class="row">
   <div class="col-md-12">
     <div class="content-title">
-      <h2>
+      <h1>
         <?php the_title();?>
-      </h2>
+      </h1>
     </div>
   </div>
 </div>

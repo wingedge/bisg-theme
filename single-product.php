@@ -60,7 +60,7 @@
                 <li class="active"><a href="#panel-reviews" data-toggle="tab">Reviews( <?php echo $BIReview->get_review_count(get_the_ID());?> )</a></li>
                 <!--<li><a href="#panel-description" data-toggle="tab">Description</a></li>-->
                 <li><a href="#panel-details" data-toggle="tab">Details</a></li>
-                <li><a href="#panel-ingredients" data-toggle="tab">Ingredients</a></li>
+                <!-- <li><a href="#panel-ingredients" data-toggle="tab">Ingredients</a></li> -->
                 <li><a href="#panel-videos" data-toggle="tab">Videos</a></li>
               </ul>
               <div class="tab-content">
@@ -76,10 +76,10 @@
                   <h2>Videos</h2>
                   <?php  the_field('videos');?>
                 </div>
-                <div class="tab-pane" id="panel-ingredients">
+                <!-- <div class="tab-pane" id="panel-ingredients">
                   <h2>Ingredients</h2>
                   <?php the_field('ingredients');?>
-                </div>
+                </div> -->
                 <div class="tab-pane active" id="panel-reviews">
                   <h2>Reviews</h2>                  
                   <?php get_template_part('section/review','form');?>                  

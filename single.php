@@ -1,8 +1,38 @@
 <?php get_header(); ?>
+<style type="text/css">
+	
+	.customtag ul{
+		margin-left: -25px;
+	}
+
+	.customtag ul li{
+		display: inline;
+		list-style: none;
+		padding: 10px;
+	    border: 1px solid rgba(197,197,197,.52);	    
+	    margin-right: 8px;
+	    margin-bottom: 10px;
+	}
+
+
+	.customtag a{	    
+	    color: #b9b9b9;
+	    font-size: 12px;
+	    text-transform: uppercase;
+	}	
+
+	.customtag a:hover{
+	    color: #e80062;
+	}	
+
+</style>
+
 <?php get_template_part('section/breadcrumbs'); ?>
 <div class="main-content container single-wrap">
+
   <div class="row">
-    <div id="main" class="main-column col-md-9 col-sm-8">
+    <div id="main" class="main-column col-md-9 col-sm-8 fullwidth-FT">
+      <div class="NFpad10"></div>
       <?php while ( have_posts() ) : the_post(); ?>
       <?php $format = get_post_format( get_the_id() ); ?>
       <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -45,9 +75,30 @@
       <?php endif;?>
 
       <?php endwhile; // End the loop. Whew. ?>
+
       <div class="row">
-        <div>
-          <h3 class="cat-titles pink-dashed" style="text-align:left;"><span>You can check these out as well</span></h3>
+      	<div class="NFpad10"></div>
+      	<h3 class="NFMainCat" style="text-align:left; padding-left: 15px;"><span>Topics</span></h3>      	
+        <div class="customtag">
+          <?php $terms = get_field('visible_tags',get_the_ID());?>
+          <?php if($terms):?>
+            <ul>
+            <?php foreach($terms as $term):?>
+            <li class="visible-tag-present"><?php echo $term->name;?></li>
+            <?php endforeach;?>
+            </ul>
+          <?php else:?>            
+            <?php the_tags( '<ul><li>', '</li><li>', '</li></ul>' ); ?>            
+          <?php endif;?>
+        </div>
+      	
+        <div class="NFpad20"></div>
+      </div>
+
+      
+      <div class="row">
+        <div>          
+          <h3 class="NFMainCat" style="text-align:left; padding-left: 15px;"><span>You can check these out as well</span></h3>
           <?php /*set arguments */
             $productArgs = array(
                 'posts_per_page'  => 12,
@@ -56,10 +107,25 @@
                 'orderby' => 'rand',                    
             );
           ?>
+
+
           <div class="related-review-container slick-slider-four singlepost-products-carousel" id="products-carousel"><?php bi_display_articles($productArgs); ?></div>         
         </div>
-      </div>
+      </div> 
+
+
+
+
+
+
+
+
+
+
+
     </div>
+
+
     <div id="sidebar" class="sidebar col-md-3 col-sm-4">
       <?php get_sidebar('articles');?>
     </div>

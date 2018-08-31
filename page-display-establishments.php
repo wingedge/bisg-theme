@@ -16,7 +16,7 @@ get_header();
 				
 				<input type="hidden" show-category="<?php echo $showCat;?>" post-type="establishment" id="filterDetails"/>
 
-				<h3 class="cat-titles pink-dashed"><span> All Establishments for <?php echo ucwords($showCat);?></span></h3>
+				<h3 class="cat-titles pink-dashed"><span> All Establishments for <?php $str = str_replace("-", " ", $showCat); echo ucwords($str);?></span></h3>
 				<div id="filter-results"  class="category-product-container product-container brand-container">
 					<?php 
 						

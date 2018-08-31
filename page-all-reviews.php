@@ -20,14 +20,29 @@ get_header(); ?>
                 //$review = new BIReviewer();
                 $BIReview->render_reviews(array('column-size'=>'col-md-6'));
               ?>
-              </div>
+              </div>              
               <?php the_content(); ?>
             </div>
          
         </div>
       </div>
       <?php endwhile; // End the loop. Whew. ?>
+<div class="row pagination-row filter-page">
+
+      <?php        
+                $paged = ( get_query_var( 'pp' ) ) ? get_query_var( 'pp' ) : 1;         
+                $total_pages = $BIReview->get_all_review_count();
+                
+                $paginateArgs = array(      
+                  'format' => '?pp=%#%',
+                  'current' => $paged,
+                  'total' => $total_pages,
+                );
+                echo paginate_links($paginateArgs); 
+              ?>    
+              </div>    
+
     </div>
-    
+</div>
 </div>
 <?php get_footer(); ?>

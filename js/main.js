@@ -3,6 +3,47 @@
 $j = jQuery.noConflict();
 
 $j(document).ready(function(){
+
+	//will edit
+	$j('.responsive').slick({
+		  dots: false,
+		  arrows : true,
+		  nextArrow: '<i class="fa fa-arrow-right slick-right"></i>',
+  		  prevArrow: '<i class="fa fa-arrow-left slick-left"></i>',
+		  autoplay: true,
+		  infinite: true,
+		  speed: 300,
+		  slidesToShow: 4,
+		  slidesToScroll: 4,
+		  responsive: [
+		    {
+		      breakpoint: 1024,
+		      settings: {
+		        slidesToShow: 3,
+		        slidesToScroll: 3,
+		        infinite: true,
+		        dots: true
+		      }
+		    },
+		    {
+		      breakpoint: 600,
+		      settings: {
+		        slidesToShow: 2,
+		        slidesToScroll: 2
+		      }
+		    },
+		    {
+		      breakpoint: 480,
+		      settings: {
+		        slidesToShow: 1,
+		        slidesToScroll: 1
+		      }
+		    }
+		    // You can unslick at a given breakpoint now by adding:
+		    // settings: "unslick"
+		    // instead of a settings object
+		  ]
+	});
 	
 	$j('.slick-slider-four').slick({
 		dots: false,
@@ -475,31 +516,63 @@ $(document).ready(function(){
 
 jQuery(document).ready(function($) {
     // Configure/customize these variables.
-    if ( $('.more-less p').length == 0 ){
-    	$('.show-more').hide();
-    }
-
-   
-
-    $('.more-less p').each(function(index){
-    	if(index >= 3){
-    		$(this).addClass('less-hidden');
-    	}else{
-    		$(this).addClass('always-show');
-    	}
-    });
-
-    $('.show-more').on('click',function(){
-    	$('.less-hidden').toggleClass('less-shown').toggle();
-    	$(this).toggleClass('on');
-
-    	if($(this).hasClass('on')){
-    		$(this).text('Show Less...');
-    	}else{
-    		$(this).text('Show More...');
-    	}
+    $('.load-more').on('click',function(){
+    	$('.short-content').fadeOut(function(){
+    		$('.full-content').fadeIn();
+    	});    	
     	return false;
     });
+
+    $('.load-less').on('click',function(){
+    	$('.full-content').fadeOut(function(){
+    		$('.short-content').fadeIn();
+    	});    	
+    	return false;
+    });
+
+    $( "#datepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
+
+    //$('a[href*=#]:not([href=#])').click(function() {
+    $('.animate-scroll').click(function() {	    
+	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+	        || location.hostname == this.hostname) {
+	        var target = $(this.hash);
+	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	           if (target.length) {
+	             $('html,body').animate({
+	                 scrollTop: target.offset().top
+	            }, 1000);
+	            return false;
+	        }
+	    }
+	});
 });
 
+function share_add_points(shareData){      
+	var xhr;
+	if(xhr && xhr.readyState != 4){
+	    xhr.abort();
+	}
+        // load ajax
+		xhr = jQuery.ajax({
+		type: 'post',       
+	    url: bisg.ajax_url,
+	    data: 
+	    {
+	    	action: 'share_add_points',              
+	 	   	shareUrl: shareData.url,
+	 	   	shareService: shareData.service,
 
+		},    
+	    success: function( data, textStatus, XMLHttpRequest ) {        
+	    	console.log(data);
+	        console.log( XMLHttpRequest );
+	    },	    
+	    error: function( MLHttpRequest, textStatus, errorThrown ) {
+	    	console.log( MLHttpRequest );
+	        console.log( textStatus );
+	        console.log( errorThrown );
+	    }	    
+    });
+
+}
